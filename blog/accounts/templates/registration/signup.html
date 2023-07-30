@@ -17,7 +17,7 @@
 
     <div class="form signup">
       <header>Signup</header>
-      <form action="#">
+      <form method="post" role="form">
         {% csrf_token %}
         <input type="text" name="username" placeholder="Username" required />
         <input type="text" name="email" placeholder="Email address" required />
@@ -31,16 +31,7 @@
       </form>
     </div>
 
-    <div class="form login">
-      <header>Login</header>
-      <form action="#">
-        {% csrf_token %}
-        <input type="text" placeholder="Email address" required />
-        <input type="password" placeholder="Password" required />
-        <a href="#">Forgot password?</a>
-        <input type="submit" value="Login" />
-      </form>
-    </div>
+
 
 
     <script>
