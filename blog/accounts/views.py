@@ -17,10 +17,6 @@ class LogIn(CreateView):
     template_name = "registration/login.html"
 
 
-def logout1(request):
-    return render(request, "registration/logout.html")
-
-
 def finish(request):
     return render(request, "registration/finish.html")
 
