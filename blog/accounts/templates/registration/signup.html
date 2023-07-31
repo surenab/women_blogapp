@@ -1,7 +1,6 @@
 {% load static%}
 
 <!DOCTYPE html>
-<!-- Coding By CodingNepal - codingnepalweb.com -->
 <html lang="en">
 
 <head>
@@ -21,7 +20,10 @@
 
                 {% csrf_token %}
                 {{form}}
-
+                <div class="checkbox">
+                    <input type="checkbox" id="signupCheck" required />
+                    <label for="signupCheck">I accept all <a href="{% static 'terms_conditions.html' %}" onclick="openTermsModal()" target="blank">terms & conditions </a></label>
+                </div>
                 <input type="submit" value="Signup" />
             </form>
         </div>
