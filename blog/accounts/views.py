@@ -15,9 +15,5 @@ def finish(request):
     return render(request, "registration/finish.html")
 
 
-def home(request):
-    return render(request, "registration/home.html")
-
-
 def terms_conditions(request):
     return render(request, "registration/terms_conditions.html")
