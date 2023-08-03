@@ -1,6 +1,7 @@
 {% load static%}
 
 <!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
 <html lang="en">
 
 <head>
@@ -8,23 +9,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login & Signup Form</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link rel="stylesheet" href="{% static 'registration/style.css' %}" />
 </head>
 
 <body>
     <section class="wrapper">
         <div class="form signup">
-            <header>Signup</header>
+            <header>Login</header>
             <form method="POST" role="form">
                 {% csrf_token %}
                 {{form.as_p}}
-                <div class="checkbox">
-                    <input type="checkbox" id="signupCheck" required />
-                    <label for="signupCheck">I accept all <a href="{% url 'terms_conditions'%}"
-                            onclick="openTermsModal()" target="blank"> terms & conditions </a></label>
-                </div>
-                <input type="submit" value="Signup" />
+                <input type="submit" value="Login" />
             </form>
+            <br>
+            <a href="/accounts/password_reset">
+                <p style="color:rgb(40, 36, 36);">Forgot password?</p>
+            </a>
         </div>
     </section>
 </body>
