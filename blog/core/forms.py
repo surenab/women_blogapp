@@ -16,16 +16,14 @@ class BlogForm(forms.ModelForm):
 
     )
 
-    blog_category = forms.ChoiceField(
-        label="", choices=BLOG_CATEGORIES, widget=forms.Select())
     title = forms.CharField(label="", widget=forms.TextInput(
         attrs={'placeholder': 'Title'}))
     description = forms.CharField(label="", widget=forms.Textarea(
         attrs={'placeholder': 'Blog Description'}))
-    images = forms.ImageField(label="", widget=forms.ClearableFileInput(
-        attrs={'multiple': True, 'placeholder': 'Images related to your blog'}))
-    created_on = forms.DateTimeField(auto_now=True)
+    blog_category = forms.ChoiceField(
+        label="", choices=BLOG_CATEGORIES, widget=forms.Select())
+    images = forms.ImageField(label="Images related to your blog")
 
     class Meta:
         model = Blog
-        fields = ["blog_category", "title", "description", "images"]
+        fields = ["title", "description", "blog_category", "images"]
