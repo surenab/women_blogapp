@@ -4,13 +4,16 @@ from django.contrib .auth import get_user_model
 User = get_user_model()
 
 class Blog(models.Model):
-  
+
     BLOG_CATEGORIES = (
         ("1", "Travel"),
-        ("2", "Sport") ,
-        ("3", "Natural"),
-        ("4", "Funny animals"),
-        ("5", "nature")
+        ("2", "Sport"),
+        ("3", "Nature"),
+        ("4", "Animals"),
+        ("5", "Food"),
+        ("6", "DIY and Crafts"),
+        ("7", "Science and Technology")
+
     )
     
     blog_category= models.CharField(choices=BLOG_CATEGORIES, default="1", max_length=1)
