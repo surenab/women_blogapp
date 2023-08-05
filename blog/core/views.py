@@ -1,18 +1,18 @@
-from django.forms.models import BaseModelForm
-from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.generic import CreateView
-from .forms import CreateBlogForm
+from .forms import BlogForm
 from django.urls import reverse_lazy
+from .models import Blog
 # Create your views here.
 
 
 def home(request):
-    return render(request, "core/home.html")
+    bolgs = Blog.objects.all()
+    return render(request, "core/home.html", context={"blogs": bolgs})
 
 
 class CreateBlog(CreateView):
-    form_class = CreateBlogForm
+    form_class = BlogForm
     success_url = reverse_lazy("home")
     template_name = "core/create_blog.html"
 
