@@ -1,51 +1,53 @@
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      margin: 20px;
-    }
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
 
-    h1 {
-      font-size: 28px;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
+body {
+  font-family: font-family: 'EB Garamond', serif;
+  line-height: 1.6;
+  color: #333;
+  margin: 20px;
+}
 
-    p {
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
+h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
 
-    ul {
-      list-style-type: none;
-      padding-left: 20px;
-    }
+p {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
 
-    li {
-      font-size: 18px;
-      margin-bottom: 8px;
-      position: relative;
-    }
+ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
 
-    li:before {
-      content: "\2022";
-      position: absolute;
-      left: -20px;
-      color: #0066cc;
-    }
+li {
+  font-size: 18px;
+  margin-bottom: 8px;
+  position: relative;
+}
 
-    a {
-      color: #0066cc;
-      text-decoration: none;
-      border-bottom: 1px dashed #0066cc;
-    }
+li:before {
+  content: "\2022";
+  position: absolute;
+  left: -20px;
+  color: #0066cc;
+}
 
-    a:hover {
-      background-color: #f5f5f5;
-    }
+a {
+  color: #0066cc;
+  text-decoration: none;
+  border-bottom: 1px dashed #0066cc;
+}
 
-    /* Add a custom class for the bolded part */
-    .bold-blue {
-      font-weight: bold;
-      color: #0066cc;
-    }
+a:hover {
+  background-color: #f5f5f5;
+}
+
+/* Add a custom class for the bolded part */
+.bold-blue {
+  font-weight: bold;
+  color: #0066cc;
+}
