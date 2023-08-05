@@ -17,11 +17,12 @@ class Blog(models.Model):
     )
     
     blog_category= models.CharField(choices=BLOG_CATEGORIES, default="1", max_length=1)
-    title = models.CharField(max_length=50)
+    title = models.CharField(max_length=70)
     created_on = models.DateField(auto_now=True)
     user =models.ForeignKey(User, on_delete= models.CASCADE)
     description = models.TextField()
     image = models.ImageField(upload_to="media", default=None, null=True, blank=True)
 
     def __str__(self) -> str:
-        return f"{self.title}"
+        return f"{self.blog_category}, {self.title}"
+
