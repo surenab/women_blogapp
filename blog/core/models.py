@@ -3,6 +3,10 @@ from django.contrib .auth import get_user_model
 
 User = get_user_model()
 
+class SkillManager(models.Manager):
+    pass
+
+
 class Blog(models.Model):
 
     BLOG_CATEGORIES = (
@@ -23,6 +27,18 @@ class Blog(models.Model):
     description = models.TextField()
     image = models.ImageField(upload_to="media", default=None, null=True, blank=True)
 
+    objects = SkillManager()
+
     def __str__(self) -> str:
         return f"{self.blog_category}, {self.title}"
+    
+
+class Message(models.Model):
+    full_name = models.CharField(max_length=100)
+    email = models.EmailField()
+    subject = models.CharField(max_length=150)
+    message = models.TextField(max_length=1000)
+    created_on = models.DateTimeField(auto_now=True)
+
+    objects = SkillManager()
 
