@@ -25,4 +25,3 @@ class Blog(models.Model):
 
     def __str__(self) -> str:
         return f"{self.blog_category}, {self.title}"
-

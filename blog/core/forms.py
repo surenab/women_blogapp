@@ -26,3 +26,6 @@ class BlogForm(forms.ModelForm):
         model = Blog
         fields = ["title", "description", "blog_category", "images"]
 
+
+
+
