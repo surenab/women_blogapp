@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-vx5u_kr1clq$nugz_58e()p@e_0i6#rbjg=3zbkj+dfb*nk_es
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["naraman.pythonanywhere.com", "127.0.0.1"]
 
 
 # Application definition
