@@ -15,8 +15,8 @@ def home(request) -> HttpResponse:
         if form.is_valid():
             form.save()
 
-    bolgs = Blog.objects.all()
-    return render(request, "core/home.html", context={"blogs": bolgs})
+    blogs = Blog.objects.all()
+    return render(request, "core/home.html", context={"blogs": blogs})
 
 
 class CreateBlog(CreateView):
