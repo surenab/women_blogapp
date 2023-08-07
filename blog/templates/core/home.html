@@ -18,6 +18,11 @@
                 <a href="single-post.html" class="img-bg d-flex align-items-end"
                   style="background-image: url('{% static 'core/assets/img/post-slide-1.jpg'%});">
                   <div class="img-bg-inner">
+
+                    {% if request.user.is_authenticated %}
+                    <a type="button" href="{% url 'createblog' %}"> New blog</a>
+                    {% endif %}
+
                     <h2>The Best Homemade Masks for Face (keep the Pimples Away)</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem neque est mollitia! Beatae
                       minima assumenda repellat harum vero, officiis ipsam magnam obcaecati cumque maxime inventore
@@ -28,7 +33,7 @@
 
               <div class="swiper-slide">
                 <a href="single-post.html" class="img-bg d-flex align-items-end"
-                  style="background-image: url('assets/img/post-slide-2.jpg');">
+                  style="background-image: url('assets/img/post-slide-2.jpg')">
                   <div class="img-bg-inner">
                     <h2>17 Pictures of Medium Length Hair in Layers That Will Inspire Your New Haircut</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem neque est mollitia! Beatae
@@ -86,6 +91,7 @@
                 class="img-fluid"></a>
             <div class="post-meta"><span class="date">Culture</span> <span class="mx-1">&bullet;</span> <span>Jul 5th
                 '22</span></div>
+
             <h2><a href="single-post.html">11 Work From Home Part-Time Jobs You Can Do Now</a></h2>
             <p class="mb-4 d-block">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero temporibus
               repudiandae, inventore pariatur numquam cumque possimus exercitationem? Nihil tempore odit ab minus
