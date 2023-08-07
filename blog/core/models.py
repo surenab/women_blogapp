@@ -26,4 +26,6 @@ class Blog(models.Model):
         upload_to="media", default=None, null=True, blank=True)
 
     def __str__(self) -> str:
+
         return f"{self.user.username} , {self.title}, {self.blog_category}, {self.created_on}"
+
