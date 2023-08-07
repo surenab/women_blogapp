@@ -4,7 +4,7 @@
 
 {%block bodycontent%}
 
-{%include "core/header.html"%}
+
 
 <main id="main">
   <!-- ======= Hero Slider Section ======= -->
@@ -13,59 +13,23 @@
       <div class="row">
         <div class="col-12">
           <div class="swiper sliderFeaturedPosts">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <a href="single-post.html" class="img-bg d-flex align-items-end"
-                  style="background-image: url('{% static 'core/assets/img/post-slide-1.jpg'%});">
+
+
+            <div class="swiper-wrapper"> 
+              
+              {% for blog in blogs %}
+              
+              <div class=" swiper-slide">
+                <a href="core/single_post.html" class="img-bg d-flex align-items-end"
+                  style="background-image: url({{blog.image.url}})">
                   <div class="img-bg-inner">
-
-                    {% if request.user.is_authenticated %}
-                    <a type="button" href="{% url 'createblog' %}"> New blog</a>
-                    {% endif %}
-
-                    <h2>The Best Homemade Masks for Face (keep the Pimples Away)</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem neque est mollitia! Beatae
-                      minima assumenda repellat harum vero, officiis ipsam magnam obcaecati cumque maxime inventore
-                      repudiandae quidem necessitatibus rem atque.</p>
+                    <h2>{{blog.title}}</h2>
+                    <p>{{ blog.description|truncatewords:15 }}</p>
                   </div>
                 </a>
               </div>
+              {%endfor%}
 
-              <div class="swiper-slide">
-                <a href="single-post.html" class="img-bg d-flex align-items-end"
-                  style="background-image: url('assets/img/post-slide-2.jpg')">
-                  <div class="img-bg-inner">
-                    <h2>17 Pictures of Medium Length Hair in Layers That Will Inspire Your New Haircut</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem neque est mollitia! Beatae
-                      minima assumenda repellat harum vero, officiis ipsam magnam obcaecati cumque maxime inventore
-                      repudiandae quidem necessitatibus rem atque.</p>
-                  </div>
-                </a>
-              </div>
-
-              <div class="swiper-slide">
-                <a href="single-post.html" class="img-bg d-flex align-items-end"
-                  style="background-image: url('assets/img/post-slide-3.jpg');">
-                  <div class="img-bg-inner">
-                    <h2>13 Amazing Poems from Shel Silverstein with Valuable Life Lessons</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem neque est mollitia! Beatae
-                      minima assumenda repellat harum vero, officiis ipsam magnam obcaecati cumque maxime inventore
-                      repudiandae quidem necessitatibus rem atque.</p>
-                  </div>
-                </a>
-              </div>
-
-              <div class="swiper-slide">
-                <a href="single-post.html" class="img-bg d-flex align-items-end"
-                  style="background-image: url('assets/img/post-slide-4.jpg');">
-                  <div class="img-bg-inner">
-                    <h2>9 Half-up/half-down Hairstyles for Long and Medium Hair</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem neque est mollitia! Beatae
-                      minima assumenda repellat harum vero, officiis ipsam magnam obcaecati cumque maxime inventore
-                      repudiandae quidem necessitatibus rem atque.</p>
-                  </div>
-                </a>
-              </div>
             </div>
             <div class="custom-swiper-button-next">
               <span class="bi-chevron-right"></span>
@@ -211,57 +175,58 @@
     </div>
   </section> <!-- End Post Grid Section -->
 
-  <!-- ======= Culture Category Section ======= -->
-  <section class="category-section">
+  <!-- ======= Travel Category Section ======= -->
+
+  <section id="travel" class="category-section">
     <div class="container" data-aos="fade-up">
 
       <div class="section-header d-flex justify-content-between align-items-center mb-5">
-        <h2>Culture</h2>
-        <div><a href="category.html" class="more">See All Culture</a></div>
+        <h2>Travel</h2>
+        <div><a href="{% url 'category' %}" class="more">See All Travel</a></div>
       </div>
 
       <div class="row">
         <div class="col-md-9">
+          {% for blog in blogs %}
 
           <div class="d-lg-flex post-entry-2">
-            <a href="single-post.html" class="me-4 thumbnail mb-4 mb-lg-0 d-inline-block">
-              <img src="{% static 'core/assets/img/post-landscape-6.jpg' %}" alt="" class="img-fluid">
+            <a href="{% url 'singlepost' %}" class="me-4 thumbnail mb-4 mb-lg-0 d-inline-block">
+              <img src="{{blog.image.url}}" alt="" class="img-fluid" width="600">
             </a>
             <div>
-              <div class="post-meta"><span class="date">Culture</span> <span class="mx-1">&bullet;</span> <span>Jul
-                  5th '22</span></div>
-              <h3><a href="single-post.html">What is the son of Football Coach John Gruden, Deuce Gruden doing
-                  Now?</a></h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio placeat exercitationem magni
-                voluptates dolore. Tenetur fugiat voluptates quas, nobis error deserunt aliquam temporibus sapiente,
-                laudantium dolorum itaque libero eos deleniti?</p>
+              <div class="post-meta"><span class="date">Travel</span> <span class="mx-1">&bullet;</span>
+                <span>{{blog.created_on}}</span>
+              </div>
+              <h3><a href="{% url 'singlepost' %}">1--{{blog.title}}</a></h3>
+              <p>{{blog.description}}</p>
               <div class="d-flex align-items-center author">
-                <div class="photo"><img src="{% static 'core/assets/img/person-2.jpg' %}" alt="" class="img-fluid">
-                </div>
                 <div class="name">
-                  <h3 class="m-0 p-0">Wade Warren</h3>
+                  <h3 class="m-0 p-0">{{blog.user.first_name}} {{blog.user.last_name}}</h3>
                 </div>
               </div>
             </div>
           </div>
+          {%endfor%}
 
           <div class="row">
+            {% for blog in blogs %}
             <div class="col-lg-4">
               <div class="post-entry-1 border-bottom">
-                <a href="single-post.html"><img src="{% static 'core/assets/img/post-landscape-1.jpg' %}" alt=""
-                    class="img-fluid"></a>
-                <div class="post-meta"><span class="date">Culture</span> <span class="mx-1">&bullet;</span> <span>Jul
-                    5th '22</span></div>
-                <h2 class="mb-2"><a href="single-post.html">11 Work From Home Part-Time Jobs You Can Do Now</a></h2>
-                <span class="author mb-3 d-block">Jenny Wilson</span>
-                <p class="mb-4 d-block">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero temporibus
-                  repudiandae, inventore pariatur numquam cumque possimus</p>
+                <a href="{% url 'singlepost' %}"><img src="{{blog.image.url}}" width="250" alt="" class="img-fluid"></a>
+                <div class="post-meta"><span class="date">Travel</span> <span class="mx-1">&bullet;</span>
+                  <span>J{{blog.created_on}}</span>
+                </div>
+
+                <h2 class="mb-2"><a href="{% url 'singlepost' %}"> 2-- {{blog.title}}</a></h2>
+                <span class="author mb-3 d-block">{{blog.user.first_name}} {{blog.user.last_name}}</span>
+                <p class="mb-4 d-block">{{blog.description|truncatewords:10}}</p>
               </div>
+              {%endfor%}
 
               <div class="post-entry-1">
                 <div class="post-meta"><span class="date">Culture</span> <span class="mx-1">&bullet;</span> <span>Jul
                     5th '22</span></div>
-                <h2 class="mb-2"><a href="single-post.html">5 Great Startup Tips for Female Founders</a></h2>
+                <h2 class="mb-2"><a href="single-post.html">3-- Great Startup Tips for Female Founders</a></h2>
                 <span class="author mb-3 d-block">Jenny Wilson</span>
               </div>
             </div>
@@ -621,7 +586,7 @@
 
 </main><!-- End #main -->
 
-{% include "core/footer.html"%}
+
 
 {%endblock%}
 <!-- Vendor JS Files -->

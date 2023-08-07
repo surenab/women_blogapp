@@ -1,6 +1,7 @@
 from django import forms
 from .models import Blog
 
+
 class BlogForm(forms.ModelForm):
 
     BLOG_CATEGORIES = (
@@ -20,12 +21,9 @@ class BlogForm(forms.ModelForm):
         attrs={'placeholder': 'Blog Description'}))
     blog_category = forms.ChoiceField(
         label="", choices=BLOG_CATEGORIES, widget=forms.Select())
-    images = forms.ImageField(label="Images related to your blog")
+    image = forms.ImageField(label="")
 
     class Meta:
         model = Blog
-        fields = ["title", "description", "blog_category", "images"]
-
-
-
+        fields = ["title", "description", "blog_category", "image"]
 
