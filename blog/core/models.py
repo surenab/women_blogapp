@@ -23,7 +23,7 @@ class Blog(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     description = models.TextField()
     image = models.ImageField(
-        upload_to="media", default=None, null=True, blank=True)
+        upload_to="Media", default=None, null=True, blank=True)
 
     def __str__(self) -> str:
 
