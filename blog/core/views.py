@@ -22,7 +22,7 @@ class CreateBlog(CreateView):
         return super().form_valid(form)
 
 
-def signle_post(request):
+def single_post(request):
     blogs = Blog.objects.all()
     return render(request, "core/single_post.html", context={"blogs": blogs})
 
