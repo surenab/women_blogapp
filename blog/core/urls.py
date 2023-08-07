@@ -19,7 +19,7 @@ from .views import home, CreateBlog, signle_post, about, category, contact, sear
 
 urlpatterns = [
     path("", home, name="home"),
-    path("createblob/", CreateBlog.as_view(), name="createblog"),
+    path("createblog/", CreateBlog.as_view(), name="createblog"),
     path("singlepost/", signle_post, name="singlepost"),
     path("about/", about, name="about"),
     path("category/", category, name="category"),
