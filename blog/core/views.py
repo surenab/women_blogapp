@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.views.generic import CreateView
-from .forms import BlogForm
+from django.contrib import messages
 from django.urls import reverse_lazy
+from .forms import BlogForm
 from .models import Blog
 
 # Create your views here.
