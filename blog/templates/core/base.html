@@ -40,6 +40,7 @@
 </head>
 
 <body>
+
   <div class="messages">
     {% for message in messages %}
     <div class="alert {{message.tags}} alert-dismissible fade show" role="alert">
@@ -50,6 +51,7 @@
     </div>
     {% endfor %}
     
+
   {% include "core/header.html" %}
 
   {% block bodycontent %} {% endblock %}
