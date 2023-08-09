@@ -34,17 +34,16 @@
 
     <!-- <div class="position-relative"> -->
 
-
-
-
     <nav id="navbar" class="navbar">
       <ul>
+        
+        <a class="btn btn-secondary" href="{% url 'home' %}">Home</a>
         {% if request.user.is_authenticated %}
-        <li><a type="button" href="{% url 'createblog' %}"> Add new blog</a></li>
+        <a class="btn btn-secondary" href="{% url 'my_blogs' %}">My Blogs</a>
+        <p>User logged by {{request.user.email}} email</p>
         <li><a type="button" href="{% url 'logout' %}"> Log Out</a></li>
 
         {% else %}
-        <li><a type="button" href="{% url 'signup' %}">Sig up </a></li>
         <li><a type="button" href="{% url 'login' %}"> Log in</a></li>
 
         {% endif %}
