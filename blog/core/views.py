@@ -22,11 +22,6 @@ class CreateBlog(CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         messages.success(self.request, "Blog was created successfully!")
-        messages.error(self.request, "Invalid information!")
-        messages.info(self.request, "")
-        messages.warning(self.request, "")
-        messages.error(self.request, "")
-        messages.debug(self.request, "")
         return super().form_valid(form)
     
 class MyBlog(LoginRequiredMixin, ListView):
