@@ -13,6 +13,18 @@
             </div>
             <div class="justify-content-center">
 
+
+                <div class="messages">
+                    {% for message in messages %}
+                    <div class="alert {{message.tags}} alert-dismissible fade show" role="alert">
+                        <strong>{{message}}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                    </div>
+                    {% endfor %}
+                </div>
+
                 <table class="table">
                     <thead>
                         <tr>
@@ -32,7 +44,7 @@
                             <th scope="row">{{blog.id}}</th>
                             <td>{{blog.get_blog_category_display}}</td>
                             <td>{{blog.title}}</td>
-                            <td>{{blog.description|truncatewords:10}}</td>
+                            <td>{{blog.description|truncatewords:6}}</td>
                             <td>{{blog.image}}</td>
                             <td>{{blog.created_on}}</td>
                             <td>

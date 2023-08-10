@@ -1,0 +1,27 @@
+{% extends 'core/base.html' %}
+{% load static%}
+{% block bodycontent %}
+<p>Blog Update Page</p>
+
+<main id="main">
+
+    <section>
+
+        <div class="container" data-aos="fade-up">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+
+                    <h1 class="page-title">Update blog</h1>
+                </div>
+            </div>
+<div class="center">
+    <form method="post" class="card">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <p class="form-buttons">
+        </p>
+    </form>
+</div>
+{% endblock bodycontent %}
+        </div>
+    </section>

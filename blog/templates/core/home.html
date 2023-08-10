@@ -14,11 +14,10 @@
         <div class="col-12">
           <div class="swiper sliderFeaturedPosts">
 
+            <div class="swiper-wrapper">
 
-            <div class="swiper-wrapper"> 
-              
-             
-              
+              {% for blog in blogs%}
+
               <div class=" swiper-slide">
                 <a href="core/single_post.html" class="img-bg d-flex align-items-end"
                   style="background-image: url({{blog.image.url}})">
@@ -28,7 +27,9 @@
                   </div>
                 </a>
               </div>
-            
+
+              {% endfor %}
+
 
             </div>
             <div class="custom-swiper-button-next">
@@ -190,6 +191,7 @@
      
 
           <div class="d-lg-flex post-entry-2">
+            {% for blog in blogs%}
             <a href="{% url 'singlepost' %}" class="me-4 thumbnail mb-4 mb-lg-0 d-inline-block">
               <img src="{{blog.image.url}}" alt="" class="img-fluid" width="600">
             </a>
@@ -206,7 +208,9 @@
               </div>
             </div>
           </div>
-          
+
+          {% endfor %}
+
 
           <div class="row">
           
