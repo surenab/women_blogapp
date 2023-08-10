@@ -1,11 +1,11 @@
 from django.shortcuts import render
 from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView
-from .forms import BlogForm
 from django.urls import reverse_lazy
 from .forms import BlogForm
 from .models import Blog
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
+
 
 # Create your views here.
 
@@ -17,7 +17,7 @@ def home(request):
 
 class CreateBlog(CreateView):
     form_class = BlogForm
-    success_url = reverse_lazy("home")
+    success_url = reverse_lazy("my_blogs")
     template_name = "core/create_blog.html"
 
     def form_valid(self, form):
@@ -58,7 +58,7 @@ class MyBlogUpdate(LoginRequiredMixin, UpdateView):
         return queryset
 
     def form_valid(self, form):
-        messages.success(self.request, "Blog instance is updated!")
+        messages.success(self.request, "Blog is updated!")
         return super().form_valid(form)
 
 
@@ -73,7 +73,7 @@ class MyBlogDelete(LoginRequiredMixin, DeleteView):
         return queryset
 
     def form_valid(self, form):
-        messages.info(self.request, "Blog instance is deleted!")
+        messages.info(self.request, "Blog is deleted!")
         return super().form_valid(form)
 
 

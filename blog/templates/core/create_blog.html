@@ -3,6 +3,7 @@
 {% load static %}
 
 {% block bodycontent %}
+
 <main>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -10,7 +11,23 @@
     <title>Add a New Blog</title>
     <link rel="stylesheet" href="{% static 'core/style_createblog.css' %}" />
 
+    <div class="messages">
+        {% for message in messages %}
+        <div class="alert {{message.tags}} alert-dismissible fade show" role="alert">
+            <strong> {{message}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true"></span>
+                </button>
+        </div>
+        {% endfor %}
+    </div>
+    <div>
+        {% if request.user.is_authenticated %}
+        <a class="btn btn-secondary" href="{% url 'my_blogs' %}">My Blogs</a>
+        <p>User logged by {{request.user.email}} email</p>
 
+        {% endif %}
+    </div>
     <section class="wrapper">
         <div class="form signup">
             <header>About New Blog</header>
