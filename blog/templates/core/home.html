@@ -15,10 +15,10 @@
           <div class="swiper sliderFeaturedPosts">
 
 
-            <div class="swiper-wrapper"> 
-              
-            {% for blog in blogs%}
-              
+            <div class="swiper-wrapper">
+
+              {% for blog in blogs%}
+
               <div class=" swiper-slide">
                 <a href="core/single_post.html" class="img-bg d-flex align-items-end"
                   style="background-image: url({{blog.image.url}})">
@@ -28,7 +28,7 @@
                   </div>
                 </a>
               </div>
-          {% endblog %}
+              {% endfor %}
 
             </div>
             <div class="custom-swiper-button-next">
