@@ -16,6 +16,7 @@ Including another URLconf
 from django.urls import path
 from .views import home, CreateBlog, MyBlog, single_post, about, category, contact, search_result, MyBlogDetail, MyBlogDelete, MyBlogUpdate
 
+
 urlpatterns = [
     path("", home, name="home"),
     path("my-blogs", MyBlog.as_view(), name="my_blogs"),
