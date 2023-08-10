@@ -1,8 +1,11 @@
 from django.shortcuts import render
-from django.views.generic import CreateView
-from .forms import BlogForm
+from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView
 from django.urls import reverse_lazy
+from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin
+from .forms import BlogForm
 from .models import Blog
+
 
 # Create your views here.
 
@@ -14,11 +17,63 @@ def home(request):
 
 class CreateBlog(CreateView):
     form_class = BlogForm
-    success_url = reverse_lazy("home")
+    success_url = reverse_lazy("my_blogs")
     template_name = "core/create_blog.html"
 
     def form_valid(self, form):
         form.instance.user = self.request.user
+        messages.success(self.request, "Blog was created successfully!")
+        return super().form_valid(form)
+    
+class MyBlog(LoginRequiredMixin, ListView):
+    model = Blog
+
+    context_object_name = "blogs"
+
+    def get_queryset(self):
+        queryset = super(MyBlog, self).get_queryset()
+        queryset = queryset.filter(user=self.request.user)
+        return queryset
+
+
+class MyBlogDetail(LoginRequiredMixin, DetailView):
+    model = Blog
+    context_object_name = "blog"
+
+    def get_queryset(self):
+        queryset = super(MyBlogDetail, self).get_queryset()
+        queryset = queryset.filter(user=self.request.user)
+        return queryset
+
+
+class MyBlogUpdate(LoginRequiredMixin, UpdateView):
+    model = Blog
+    context_object_name = "blog"
+    form_class = BlogForm
+    success_url = reverse_lazy("my_todos")
+
+    def get_queryset(self):
+        queryset = super(MyBlogUpdate, self).get_queryset()
+        queryset = queryset.filter(user=self.request.user)
+        return queryset
+
+    def form_valid(self, form):
+        messages.success(self.request, "Blog is updated!")
+        return super().form_valid(form)
+
+
+class MyBlogDelete(LoginRequiredMixin, DeleteView):
+    model = Blog
+    context_object_name = "blog"
+    success_url = reverse_lazy("my_blogs")
+
+    def get_queryset(self):
+        queryset = super(MyBlogDelete, self).get_queryset()
+        queryset = queryset.filter(user=self.request.user)
+        return queryset
+
+    def form_valid(self, form):
+        messages.info(self.request, "Blog is deleted!")
         return super().form_valid(form)
 
 
