@@ -24,11 +24,13 @@ class CreateBlog(CreateView):
         form.instance.user = self.request.user
         messages.success(self.request, "Blog was created successfully!")
         return super().form_valid(form)
-    
+
+
 class MyBlog(LoginRequiredMixin, ListView):
     model = Blog
 
     context_object_name = "blogs"
+    template_name = "core/blog_list.html"
 
     def get_queryset(self):
         queryset = super(MyBlog, self).get_queryset()
@@ -81,11 +83,14 @@ def single_post(request):
     blogs = Blog.objects.all()
     return render(request, "core/single_post.html", context={"blogs": blogs})
 
+
 def about(request):
     return render(request, "core/about.html")
 
+
 def contact(request):
     return render(request, "core/contact.html")
+
 
 def category(request):
     blogs = Blog.objects.all()
