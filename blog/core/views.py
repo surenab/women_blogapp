@@ -41,6 +41,7 @@ class MyBlog(LoginRequiredMixin, ListView):
 class MyBlogDetail(LoginRequiredMixin, DetailView):
     model = Blog
     context_object_name = "blog"
+    template_name = "core/blog_detail.html"
 
     def get_queryset(self):
         queryset = super(MyBlogDetail, self).get_queryset()
@@ -53,6 +54,7 @@ class MyBlogUpdate(LoginRequiredMixin, UpdateView):
     context_object_name = "blog"
     form_class = BlogForm
     success_url = reverse_lazy("my_blogs")
+    template_name = "core/blog_update.html"
 
     def get_queryset(self):
         queryset = super(MyBlogUpdate, self).get_queryset()
@@ -68,6 +70,7 @@ class MyBlogDelete(LoginRequiredMixin, DeleteView):
     model = Blog
     context_object_name = "blog"
     success_url = reverse_lazy("my_blogs")
+    template_name = "core/blog_confirm_delete.html"
 
     def get_queryset(self):
         queryset = super(MyBlogDelete, self).get_queryset()

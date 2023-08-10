@@ -7,16 +7,23 @@
         <div class="container" data-aos="fade-up">
             <div class="row">
                 <div class="col-lg-12 text-center mb-5">
-                    <h3 class="page-title">Delete blogs</h3>
+                    <h4 class="page-title">Delete blogs</h4>
                 </div>
             </div>
             <div class="center">
                 <form method="post" class="card">
                     {% csrf_token %}
-                    <h4>Are you sure that you want to delete "{{ blog.title }}"?</h4>
-                    <p class="form-buttons">
-                        <input type="submit" class="btn btn-primary" value="Delete" />
-                        <a href="{% url 'my_blogs' %}" class="btn btn-outline">Cancel</a>
+                    <h4 class="text-center">Are you sure that you want to delete "{{ blog.title }}"?</h4>
+                    <p class="text-center">
+
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">
+                            Delete blog
+                        </button>
+
+                        <a href="{% url 'my_blogs' %}" class="btn btn-outline">
+                            <button class="btn btn-lg btn-primary btn-block" type="submit">Cancel
+                            </button>
+                        </a>
                     </p>
                 </form>
             </div>
