@@ -14,7 +14,6 @@
         <div class="col-12">
           <div class="swiper sliderFeaturedPosts">
 
-
             <div class="swiper-wrapper">
 
               {% for blog in blogs%}
@@ -28,7 +27,9 @@
                   </div>
                 </a>
               </div>
+
               {% endfor %}
+
 
             </div>
             <div class="custom-swiper-button-next">
@@ -187,9 +188,10 @@
 
       <div class="row">
         <div class="col-md-9">
-          {% for blog in blogs %}
+     
 
           <div class="d-lg-flex post-entry-2">
+            {% for blog in blogs%}
             <a href="{% url 'singlepost' %}" class="me-4 thumbnail mb-4 mb-lg-0 d-inline-block">
               <img src="{{blog.image.url}}" alt="" class="img-fluid" width="600">
             </a>
@@ -206,10 +208,12 @@
               </div>
             </div>
           </div>
+
           {% endfor %}
 
+
           <div class="row">
-            {% for blog in blogs %}
+          
             <div class="col-lg-4">
               <div class="post-entry-1 border-bottom">
                 <a href="{% url 'singlepost' %}"><img src="{{blog.image.url}}" width="250" alt="" class="img-fluid"></a>
@@ -221,7 +225,7 @@
                 <span class="author mb-3 d-block">{{blog.user.first_name}} {{blog.user.last_name}}</span>
                 <p class="mb-4 d-block">{{blog.description|truncatewords:10}}</p>
               </div>
-              {%endfor%}
+           
 
               <div class="post-entry-1">
                 <div class="post-meta"><span class="date">Culture</span> <span class="mx-1">&bullet;</span> <span>Jul
