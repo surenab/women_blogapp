@@ -52,7 +52,7 @@ class MyBlogUpdate(LoginRequiredMixin, UpdateView):
     model = Blog
     context_object_name = "blog"
     form_class = BlogForm
-    success_url = reverse_lazy("my_todos")
+    success_url = reverse_lazy("my_blogs")
 
     def get_queryset(self):
         queryset = super(MyBlogUpdate, self).get_queryset()
