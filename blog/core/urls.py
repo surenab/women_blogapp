@@ -31,3 +31,4 @@ urlpatterns = [
     path("contact/", contact, name="contact"),
     path("searchresult/", search_result, name="searchresult"),
 ]
+
