@@ -21,7 +21,7 @@ class BlogForm(forms.ModelForm):
         attrs={'placeholder': 'Blog Description'}))
     blog_category = forms.ChoiceField(
         label="", choices=BLOG_CATEGORIES, widget=forms.Select())
-    image = forms.ImageField(label="")
+    image = forms.ImageField(label="", required=False)
 
     class Meta:
         model = Blog
