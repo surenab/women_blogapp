@@ -13,15 +13,23 @@
                 </div>
             </div>
             <div class="text-center">
+
                 <h4>
-                    <div> <b>Id is:</b> {{blog.id}}</div>
-                    <div> <b>Category is:</b> {{blog.get_blog_category_display}}</div>
-                    <div> <b>Title is:</b> {{blog.title}}</div>
-                    <div> <b>Description is:</b>{{blog.description}}</div>
-                    <div> <b>Image is:</b> {{blog.image}}</div>
+                    <div> <b>Id:</b> {{blog.id}}</div>
+                    <hr>
+                    <div> <b>Category:</b> {{blog.get_blog_category_display}}</div>
+                    <hr>
+                    <div> <b>Title:</b> {{blog.title}}</div>
+                    <hr>
+                    <div> <b>Description:</b>{{blog.description}}</div>
+                    <hr>
+                    <div> <b>Image:</b> {{blog.image}}</div>
+                    <hr>
                     <div><b>Create on:</b> {{blog.created_on}}</div>
                 </h4>
+
             </div>
         </div>
     </section>
-    {%endblock%}
+</main>
+{%endblock%}
