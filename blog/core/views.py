@@ -5,6 +5,8 @@ from .forms import BlogForm
 from .models import Blog
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django_filters.views import FilterView
+from .filters import BlogFilter
 
 
 # Create your views here.
@@ -26,17 +28,23 @@ class CreateBlog(CreateView):
         return super().form_valid(form)
 
 
-class MyBlog(LoginRequiredMixin, ListView):
+class MyBlog(LoginRequiredMixin, FilterView):
     model = Blog
 
     context_object_name = "blogs"
     template_name = "core/blog_list.html"
+    filterset_class = BlogFilter
 
     def get_queryset(self):
         queryset = super(MyBlog, self).get_queryset()
         queryset = queryset.filter(user=self.request.user)
         return queryset
-
+    
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        most_viewed_blogs = Blog.objects.order_by('-view_count')[:5] 
+        context['most_viewed_blogs'] = most_viewed_blogs
+        return context
 
 class MyBlogDetail(LoginRequiredMixin, DetailView):
     model = Blog
