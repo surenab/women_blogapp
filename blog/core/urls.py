@@ -31,7 +31,5 @@ urlpatterns = [
     path("category/", category, name="category"),
     path("contact/", contact, name="contact"),
     path("searchresult/", search_result, name="searchresult"),
-    path("my-blogs/details/<int:pk>", MyBlogDetail.as_view(), name="my_blog_details"),
-    path("my-blogs/update/<int:pk>", MyBlogUpdate.as_view(), name="my_blog_update"),
-    path("my-blogs/delete/<int:pk>", MyBlogDelete.as_view(), name="my_blog_delete"),
+   
 ]

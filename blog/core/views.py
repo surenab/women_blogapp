@@ -11,8 +11,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 def home(request):
-    blogs = Blog.objects.all()
-    return render(request, "core/home.html", context={"blogs": blogs})
+    blog = Blog.objects.first()
+    return render(request, "core/home.html", context={"blog": blog})
 
 
 class CreateBlog(CreateView):

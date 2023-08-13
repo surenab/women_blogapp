@@ -21,7 +21,7 @@
                             <div> Title is: {{blog.title}}</div>
                             <div> Description is: {{blog.description}}</div>
                             <div> Image is: {{blog.image}}</div>
-                            <div>Create on: {{blog.created_on}}</div>
+                            <div> Create on is: {{blog.created_on}}</div>
                            
                         
                         
