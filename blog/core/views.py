@@ -56,9 +56,22 @@ class MyBlogUpdate(BlogBase, UpdateView):
     template_name = "core/blog_update.html"
 
 
-class MyBlogDelete(BlogBase, DeleteView):
-    success_text = "Blog is deleted!"
+
+# This view dosn't delete the blog
+
+# class MyBlogDelete(BlogBase, DeleteView):
+#   success_text = "Blog is deleted!"
+#   template_name = "core/blog_confirm_delete.html"
+
+class MyBlogDelete(DeleteView):
+    model = Blog
+    context_object_name = 'blog'
+    success_url = reverse_lazy('my_blogs')
     template_name = "core/blog_confirm_delete.html"
+
+    def form_valid(self, form):
+        messages.success(self.request, "The blog was deleted.")
+        return super().form_valid(form)
 
 
 def single_post(request):
