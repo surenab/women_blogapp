@@ -39,23 +39,20 @@ class BlogBase(Base):
 class CreateBlog(BlogBase, CreateView):
     template_name = "core/create_blog.html"
 
+
     def form_valid(self, form):
         form.instance.user = self.request.user
         messages.success(self.request, "Blog was created successfully!")
         return super().form_valid(form)
 
 
-#class MyBlog(BlogBase, ListView):
- #   context_object_name = "blogs"
-  #  template_name = "core/blog_list.html"
-
 
 class MyBlog(LoginRequiredMixin, FilterView):
     model = Blog
-
     context_object_name = "blogs"
     template_name = "core/blog_list.html"
     filterset_class = BlogFilter
+    paginate_by = 2
 
     def get_queryset(self):
         queryset = super(MyBlog, self).get_queryset()
@@ -69,9 +66,15 @@ class MyBlog(LoginRequiredMixin, FilterView):
         return context
 
 
-
+      
 class MyBlogDetail(BlogBase, DetailView):
     template_name = "core/blog_detail.html"
+
+    def get_queryset(self):
+        queryset = super(MyBlogDetail, self).get_queryset()
+        queryset = queryset.filter(user=self.request.user)
+        return queryset
+
 
 
 class MyBlogUpdate(BlogBase, UpdateView):
@@ -90,6 +93,11 @@ class MyBlogDelete(DeleteView):
     context_object_name = 'blog'
     success_url = reverse_lazy('my_blogs')
     template_name = "core/blog_confirm_delete.html"
+
+    def get_queryset(self):
+        queryset = super(MyBlogDelete, self).get_queryset()
+        queryset = queryset.filter(user=self.request.user)
+        return queryset
 
     def form_valid(self, form):
         messages.success(self.request, "The blog was deleted.")
