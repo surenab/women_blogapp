@@ -2,7 +2,7 @@
 
 {% load static %}
 {% block bodycontent %}
-
+{% load pagination_tags %}
 <main id="main">
     <section>
         <div class="container" data-aos="fade-up">
@@ -92,7 +92,8 @@
     <nav aria-label="Page navigation example" class="d-flex justify-content-center pt-3">
         <ul class="pagination">
             {% if page_obj.has_previous and page_obj.number != 2 %}
-            <li class="page-item"><a class="page-link text-dark" href="?{% url_replace request 'page' 1 %}" tabindex="-1"
+            <li class="page-item"><a class="page-link text-dark" 
+                href="?{% url_replace request 'page' 1 %}" tabindex="-1"
                     aria-disabled="true">First Page</a></li>
             {% endif %}
             {% if page_obj.has_previous %}
