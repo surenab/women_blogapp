@@ -48,7 +48,7 @@ class CreateBlog(BlogBase, CreateView):
 class MyBlog(LoginRequiredMixin, FilterView):
     model = Blog
     context_object_name = "blogs"
-    template_name = "core/blog_list.html
+    template_name = "core/blog_list.html"
     filterset_class = BlogFilter
     paginate_by = 2
 
