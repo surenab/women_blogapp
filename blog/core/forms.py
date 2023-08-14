@@ -11,8 +11,11 @@ class BlogForm(forms.ModelForm):
         ("4", "Animals"),
         ("5", "Food"),
         ("6", "DIY and Crafts"),
-        ("7", "Science and Technology")
-
+        ("7", "Science and Technology"),
+        ("8", "Fashion"),
+        ("9", "Medicine"),
+        ("10", "Psycology"),
+        ("11", "Art"),
     )
 
     title = forms.CharField(label="", widget=forms.TextInput(
@@ -26,4 +29,3 @@ class BlogForm(forms.ModelForm):
     class Meta:
         model = Blog
         fields = ["title", "description", "blog_category", "image"]
-
