@@ -125,3 +125,8 @@ def category(request):
 def search_result(request):
     blogs = Blog.objects.all()
     return render(request, "core/search_result.html", context={"blogs": blogs})
+
+
+class MyBlogFilter(MyBlog):
+
+    template_name = "core/blogs_filter.html"
