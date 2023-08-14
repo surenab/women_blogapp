@@ -15,11 +15,11 @@ Including another URLconf
 """
 from django.urls import path
 
-from .views import home, CreateBlog, MyBlog, MyBlogDelete, MyBlogUpdate, MyBlogDetail, single_post, about, category, contact, search_result
+from .views import Home, CreateBlog, MyBlog, MyBlogDelete, MyBlogUpdate, MyBlogDetail, single_post, about, category, contact, search_result
 
 
 urlpatterns = [
-    path("", home, name="home"),
+    path("", Home.as_view(), name="home"),
     path("my-blogs/", MyBlog.as_view(), name="my_blogs"),
     path("my-blogs/details/<int:pk>",MyBlogDetail.as_view(), name="my_blog_details"),
     path("my-blogs/update/<int:pk>", MyBlogUpdate.as_view(), name="my_blog_update"),
@@ -31,4 +31,3 @@ urlpatterns = [
     path("contact/", contact, name="contact"),
     path("searchresult/", search_result, name="searchresult"),
 ]
-
