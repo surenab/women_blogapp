@@ -11,15 +11,31 @@ from .filters import BlogFilter
 
 # Create your views here.
 
-
 def home(request):
     blogs = Blog.objects.all()
     return render(request, "core/home.html", context={"blogs": blogs})
 
 
-class CreateBlog(CreateView):
+class Base(LoginRequiredMixin, CreateView):
+    def get_queryset(self):
+        queryset = super(Base, self).get_queryset()
+        queryset = queryset.filter(user=self.request.user)
+        return queryset
+
+
+class BlogBase(Base):
+    model = Blog
     form_class = BlogForm
+    context_object_name = "blog"
     success_url = reverse_lazy("my_blogs")
+    success_text = ""
+
+    def form_valid(self, form):
+        messages.success(self.request, self.success_text)
+        return super().form_valid(form)
+
+
+class CreateBlog(BlogBase, CreateView):
     template_name = "core/create_blog.html"
 
     def form_valid(self, form):
@@ -30,7 +46,6 @@ class CreateBlog(CreateView):
 
 class MyBlog(LoginRequiredMixin, FilterView):
     model = Blog
-
     context_object_name = "blogs"
     template_name = "core/blog_list.html"
     filterset_class = BlogFilter
@@ -39,54 +54,38 @@ class MyBlog(LoginRequiredMixin, FilterView):
         queryset = super(MyBlog, self).get_queryset()
         queryset = queryset.filter(user=self.request.user)
         return queryset
-    
+      
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         most_viewed_blogs = Blog.objects.order_by('-view_count')[:5] 
         context['most_viewed_blogs'] = most_viewed_blogs
         return context
 
-class MyBlogDetail(LoginRequiredMixin, DetailView):
-    model = Blog
-    context_object_name = "blog"
+      
+class MyBlogDetail(BlogBase, DetailView):
     template_name = "core/blog_detail.html"
 
-    def get_queryset(self):
-        queryset = super(MyBlogDetail, self).get_queryset()
-        queryset = queryset.filter(user=self.request.user)
-        return queryset
 
-
-class MyBlogUpdate(LoginRequiredMixin, UpdateView):
-    model = Blog
-    context_object_name = "blog"
-    form_class = BlogForm
-    success_url = reverse_lazy("my_blogs")
+class MyBlogUpdate(BlogBase, UpdateView):
+    success_text = "Blog is updated!"
     template_name = "core/blog_update.html"
 
-    def get_queryset(self):
-        queryset = super(MyBlogUpdate, self).get_queryset()
-        queryset = queryset.filter(user=self.request.user)
-        return queryset
-
-    def form_valid(self, form):
-        messages.success(self.request, "Blog is updated!")
-        return super().form_valid(form)
 
 
-class MyBlogDelete(LoginRequiredMixin, DeleteView):
+# This view dosn't delete the blog
+
+# class MyBlogDelete(BlogBase, DeleteView):
+#   success_text = "Blog is deleted!"
+#   template_name = "core/blog_confirm_delete.html"
+
+class MyBlogDelete(DeleteView):
     model = Blog
-    context_object_name = "blog"
-    success_url = reverse_lazy("my_blogs")
+    context_object_name = 'blog'
+    success_url = reverse_lazy('my_blogs')
     template_name = "core/blog_confirm_delete.html"
 
-    def get_queryset(self):
-        queryset = super(MyBlogDelete, self).get_queryset()
-        queryset = queryset.filter(user=self.request.user)
-        return queryset
-
     def form_valid(self, form):
-        messages.info(self.request, "Blog is deleted!")
+        messages.success(self.request, "The blog was deleted.")
         return super().form_valid(form)
 
 
