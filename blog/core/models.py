@@ -34,3 +34,9 @@ class Blog(models.Model):
 
         return f"{self.user.username} , {self.title}, {self.blog_category}, {self.created_on}"
 
+class Message(models.Model):
+    full_name = models.CharField(max_length=100)
+    email = models.EmailField()
+    subject = models.CharField(max_length=150)
+    message = models.TextField(max_length=1000)
+    created_on = models.DateTimeField(auto_now=True)

@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView
 from django.urls import reverse_lazy
-from .forms import BlogForm
+from django.http import HttpResponse
+from .forms import BlogForm, MessageForm
 from .models import Blog
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -12,10 +13,22 @@ from .filters import BlogFilter
 # Create your views here.
 
 class Home(FilterView):
-
     context_object_name = "blogs"
     filterset_class = BlogFilter
     template_name = "core/home.html"
+
+    def get(self, request, *args, **kwargs):
+        return super().get(request, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        messageForm = MessageForm(request.POST)
+        if messageForm.is_valid():
+            messageForm.save()
+            messages.success(request, "Message submitted successfully!")
+
+        return redirect('home')
+
+    
 
 class Base(LoginRequiredMixin, CreateView):
     def get_queryset(self):
@@ -66,7 +79,6 @@ class MyBlog(LoginRequiredMixin, FilterView):
         return context
 
 
-      
 class MyBlogDetail(BlogBase, DetailView):
     template_name = "core/blog_detail.html"
 
