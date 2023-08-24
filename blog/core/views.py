@@ -1,5 +1,7 @@
+
 from django.shortcuts import render, redirect
 from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView
+
 from django.urls import reverse_lazy
 from django.http import HttpResponse
 from .forms import BlogForm, MessageForm
@@ -28,8 +30,6 @@ class Home(FilterView):
 
         return redirect('home')
 
-    
-
 class Base(LoginRequiredMixin, CreateView):
     def get_queryset(self):
         queryset = super(Base, self).get_queryset()
@@ -52,12 +52,10 @@ class BlogBase(Base):
 class CreateBlog(BlogBase, CreateView):
     template_name = "core/create_blog.html"
 
-
     def form_valid(self, form):
         form.instance.user = self.request.user
         messages.success(self.request, "Blog was created successfully!")
         return super().form_valid(form)
-
 
 
 class MyBlog(LoginRequiredMixin, FilterView):
@@ -71,10 +69,10 @@ class MyBlog(LoginRequiredMixin, FilterView):
         queryset = super(MyBlog, self).get_queryset()
         queryset = queryset.filter(user=self.request.user)
         return queryset
-    
+
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
-        most_viewed_blogs = Blog.objects.order_by('-view_count')[:5] 
+        most_viewed_blogs = Blog.objects.order_by('-view_count')[:5]
         context['most_viewed_blogs'] = most_viewed_blogs
         return context
 
@@ -87,6 +85,12 @@ class MyBlogDetail(BlogBase, DetailView):
         queryset = queryset.filter(user=self.request.user)
         return queryset
 
+    def get(self, request: HttpRequest, *args: Any, **kwargs: Any) -> HttpResponse:
+        self.object = self.get_object()
+        self.object.view_count += 1
+        self.object.save()
+        context = self.get_context_data(object=self.object)
+        return self.render_to_response(context)
 
 
 class MyBlogUpdate(BlogBase, UpdateView):
