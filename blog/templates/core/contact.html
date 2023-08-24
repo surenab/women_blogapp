@@ -46,7 +46,7 @@
       </div>
 
       <div class="form mt-5">
-        <form action="/" method="post" role="form" class="php-email-form">
+        <form action="{% url 'home' %}" method="post" role="form" class="php-email-form">
           {% csrf_token %}
           <div class="row">
             <div class="form-group col-md-6">

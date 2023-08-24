@@ -1,9 +1,9 @@
 
 from django.shortcuts import render, redirect
 from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView
-
+from typing import Any
 from django.urls import reverse_lazy
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpRequest
 from .forms import BlogForm, MessageForm
 from .models import Blog
 from django.contrib import messages
@@ -27,8 +27,8 @@ class Home(FilterView):
         if messageForm.is_valid():
             messageForm.save()
             messages.success(request, "Message submitted successfully!")
+        return redirect("{% url 'home'%}")
 
-        return redirect('home')
 
 class Base(LoginRequiredMixin, CreateView):
     def get_queryset(self):

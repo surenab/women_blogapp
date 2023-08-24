@@ -21,7 +21,6 @@ from .views import MyBlogFilter, Home, CreateBlog, MyBlog, MyBlogDelete, MyBlogU
 urlpatterns = [
     path("", Home.as_view(), name="home"),
     path("my-blogs/", MyBlog.as_view(), name="my_blogs"),
-    path("my-blogs/filter", MyBlogFilter.as_view(), name="my_blogs_filter"),
     path("my-blogs/details/<int:pk>",
          MyBlogDetail.as_view(), name="my_blog_details"),
     path("my-blogs/update/<int:pk>", MyBlogUpdate.as_view(), name="my_blog_update"),
