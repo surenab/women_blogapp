@@ -1,5 +1,5 @@
 from django import forms
-from .models import Blog
+from .models import Blog, Message
 
 
 class BlogForm(forms.ModelForm):
@@ -29,3 +29,15 @@ class BlogForm(forms.ModelForm):
     class Meta:
         model = Blog
         fields = ["title", "description", "blog_category", "image"]
+
+
+
+class MessageForm(forms.ModelForm):
+    full_name = forms.CharField(max_length=100, required=True)
+    email = forms.EmailField(required=True)
+    subject = forms.CharField(max_length=150, required=True)
+    message = forms.CharField(max_length=1000, required=True)
+
+    class Meta:
+        model = Message
+        exclude = ()
