@@ -1,6 +1,6 @@
 
 from django.shortcuts import render, redirect
-from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView
+from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
 from typing import Any
 from django.urls import reverse_lazy
 from django.http import HttpResponse, HttpRequest
@@ -13,21 +13,6 @@ from .filters import BlogFilter
 
 
 # Create your views here.
-
-class Home(FilterView):
-    context_object_name = "blogs"
-    filterset_class = BlogFilter
-    template_name = "core/home.html"
-
-    def get(self, request, *args, **kwargs):
-        return super().get(request, *args, **kwargs)
-
-    def post(self, request, *args, **kwargs):
-        messageForm = MessageForm(request.POST)
-        if messageForm.is_valid():
-            messageForm.save()
-            messages.success(request, "Message submitted successfully!")
-        return redirect("{% url 'home'%}")
 
 
 class Base(LoginRequiredMixin, CreateView):
@@ -49,7 +34,7 @@ class BlogBase(Base):
         return super().form_valid(form)
 
 
-class CreateBlog(BlogBase, CreateView):
+class CreateBlog(BlogBase):
     template_name = "core/create_blog.html"
 
     def form_valid(self, form):
@@ -58,23 +43,41 @@ class CreateBlog(BlogBase, CreateView):
         return super().form_valid(form)
 
 
-class MyBlog(LoginRequiredMixin, FilterView):
+class MyFilters(LoginRequiredMixin, FilterView):
     model = Blog
     context_object_name = "blogs"
-    template_name = "core/blog_list.html"
     filterset_class = BlogFilter
-    paginate_by = 2
 
     def get_queryset(self):
-        queryset = super(MyBlog, self).get_queryset()
+        queryset = super(MyFilters, self).get_queryset()
         queryset = queryset.filter(user=self.request.user)
         return queryset
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
-        most_viewed_blogs = Blog.objects.order_by('-view_count')[:5]
+        most_viewed_blogs = Blog.objects.order_by('-view_count')[:3]
         context['most_viewed_blogs'] = most_viewed_blogs
         return context
+
+
+class Home(MyFilters):
+    template_name = "core/home.html"
+
+    def get(self, request, *args, **kwargs):
+        return super().get(request, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        messageForm = MessageForm(request.POST)
+        if messageForm.is_valid():
+            messageForm.save()
+            messages.success(request, "Message submitted successfully!")
+
+        return redirect("{% url 'home'%}")
+
+
+class MyBlog(MyFilters):
+    template_name = "core/blog_list.html"
+    paginate_by = 2
 
 
 class MyBlogDetail(BlogBase, DetailView):
@@ -141,8 +144,3 @@ def category(request):
 def search_result(request):
     blogs = Blog.objects.all()
     return render(request, "core/search_result.html", context={"blogs": blogs})
-
-
-class MyBlogFilter(MyBlog):
-
-    template_name = "core/blogs_filter.html"

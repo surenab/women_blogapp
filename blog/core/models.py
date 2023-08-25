@@ -31,7 +31,6 @@ class Blog(models.Model):
     view_count = models.PositiveIntegerField(default=0) 
 
     def __str__(self) -> str:
-
         return f"{self.user.username} , {self.title}, {self.blog_category}, {self.created_on}"
 
 class Message(models.Model):
