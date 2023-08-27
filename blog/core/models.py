@@ -23,7 +23,7 @@ class Blog(models.Model):
     blog_category = models.CharField(
         choices=BLOG_CATEGORIES, default="1", max_length=2)
     title = models.CharField(max_length=150)
-    created_on = models.DateField(auto_now=True)
+    created_on = models.DateField(auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     description = models.TextField()
     image = models.ImageField(

@@ -28,7 +28,7 @@ urlpatterns = [
     path("createblog/", CreateBlog.as_view(), name="createblog"),
     path("singlepost/", single_post, name="singlepost"),
     path("about/", about, name="about"),
-    path("category", category, name="category"),
+    path("category/", category, name="category"),
     path("contact/", contact, name="contact"),
     path("searchresult/", search_result, name="searchresult"),
 ]
