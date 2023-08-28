@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.urls import path
 
-from .views import category, Home, CreateBlog, MyBlog, MyBlogDelete, MyBlogUpdate, MyBlogDetail, single_post, about, contact, search_result
+from .views import NatureCategory, SportCategory, TravelCategory, Category, Home, CreateBlog, MyBlog, MyBlogDelete, MyBlogUpdate, MyBlogDetail, single_post, about, contact, search_result
 
 
 urlpatterns = [
@@ -28,7 +28,10 @@ urlpatterns = [
     path("createblog/", CreateBlog.as_view(), name="createblog"),
     path("singlepost/", single_post, name="singlepost"),
     path("about/", about, name="about"),
-    path("category/", category, name="category"),
     path("contact/", contact, name="contact"),
     path("searchresult/", search_result, name="searchresult"),
+    path("category/", Category.as_view(), name="category"),
+    path("category#travel", TravelCategory.as_view(), name="travel_category"),
+    path("category#sport", SportCategory.as_view(), name="sport_category"),
+    path("category#nature", NatureCategory.as_view(), name="nature_category"),
 ]

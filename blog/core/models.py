@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib .auth import get_user_model
+from PIL import Image
+
 
 User = get_user_model()
 
@@ -28,10 +30,20 @@ class Blog(models.Model):
     description = models.TextField()
     image = models.ImageField(
         upload_to="Media", default=None, null=True, blank=True)
-    view_count = models.PositiveIntegerField(default=0) 
+    view_count = models.PositiveIntegerField(default=0)
 
     def __str__(self) -> str:
         return f"{self.user.username} , {self.title}, {self.blog_category}, {self.created_on}"
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        img = Image.open(self.image.path)
+
+        if img.height > 500 or img.width > 700:
+            output_size = (500, 700)
+            img.thumbnail(output_size)
+            img.save(self.image.path)
+
 
 class Message(models.Model):
     full_name = models.CharField(max_length=100)
