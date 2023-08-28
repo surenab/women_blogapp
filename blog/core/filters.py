@@ -1,5 +1,5 @@
 from django_filters import FilterSet, CharFilter, ChoiceFilter
-from django.db.models import Q, Count
+from django.db.models import Q, F
 from .models import Blog
 
 
@@ -31,5 +31,5 @@ class BlogFilter(FilterSet):
         elif value == 'oldest':
             return queryset.order_by('created_on')
         elif value == 'most_viewed':
-            return queryset.annotate(view_count=Count('blogview')).order_by('-view_count')
+            return queryset.annotate(blog_view_count=F('view_count')).order_by('-blog_view_count')
         return queryset

@@ -117,7 +117,22 @@ class NatureCategory(MyFilters):
 
 class MyBlog(MyFilters):
     template_name = "core/blog_list.html"
-    paginate_by = 8
+
+    def get_paginate_by(self, queryset):
+        blogs_per_page = self.request.GET.get('blogs_per_page')
+        
+        default_blogs_per_page = 7
+        
+        try:
+            blogs_per_page = int(blogs_per_page)
+        except (ValueError, TypeError):
+            blogs_per_page = default_blogs_per_page
+        
+        blogs_per_page = max(1, min(blogs_per_page, 50)) 
+        
+        return blogs_per_page
+
+
 
 
 class MyBlogDetail(BlogBase, DetailView):

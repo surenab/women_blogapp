@@ -99,8 +99,10 @@
                     class="align-items-center"></a>
                 <div class="post-meta"><span class="date">{{blog.get_blog_category_display}}</span> <span
                     class="mx-1">&bullet;</span> <span>{{blog.created_on}}</span><span
-                    class="mx-1">&bullet;</span><span>Viewes: {{blog.view_count}}</span></div>
-                <h3><a href="{% url 'my_blog_details' blog.id %}">{{blog.title}}</a></h3>
+
+                    class="mx-1">&bullet;</span><span>Viewes: {{blog.annotated_view_count}}</span></div>
+                <h2><a href="{% url 'my_blog_details' blog.id %}">{{blog.title}}</a></h2>
+
               </div>
             </div>
             {%endfor%}
