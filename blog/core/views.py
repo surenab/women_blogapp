@@ -10,6 +10,7 @@ from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django_filters.views import FilterView
 from .filters import BlogFilter
+from .models import About
 
 
 # Create your views here.
@@ -129,6 +130,7 @@ def single_post(request):
 
 
 def about(request):
+    abouts= About.objects.all()
     return render(request, "core/about.html")
 
 

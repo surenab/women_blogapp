@@ -85,36 +85,14 @@
             </div>
           </div>
         </div>
+        {% for about in abouts %}
         <div class="col-lg-4 text-center mb-5">
-          <img src="assets/img/person-1.jpg" alt="" class="img-fluid rounded-circle w-50 mb-4">
-          <h4>Alvard</h4>
-          <span class="d-block mb-3 text-uppercase">Founder &amp; CEO</span>
-          <p> Text About Alvard </p>
+          <img>{{about.image}} </img>
+          <h4>{{about.name}}</h4>
+          <span class="d-block mb-3 text-uppercase">{{about.about}}</span>
+          <p> {{about.text_about}} </p>
         </div>
-        <div class="col-lg-4 text-center mb-5">
-          <img src="assets/img/person-2.jpg" alt="" class="img-fluid rounded-circle w-50 mb-4">
-          <h4>Lilit</h4>
-          <span class="d-block mb-3 text-uppercase">Founder, VP</span>
-          <p>Text About Lilit</p>
-        </div>
-        <div class="col-lg-4 text-center mb-5">
-          <img src="assets/img/person-3.jpg" alt="" class="img-fluid rounded-circle w-50 mb-4">
-          <h4>Almast</h4>
-          <span class="d-block mb-3 text-uppercase">Editor Staff</span>
-          <p>Text about Almast</p>
-        </div>
-        <div class="col-lg-4 text-center mb-5">
-          <img src="assets/img/person-4.jpg" alt="" class="img-fluid rounded-circle w-50 mb-4">
-          <h4>Mari</h4>
-          <span class="d-block mb-3 text-uppercase">Editor Staff</span>
-          <p>Text about Mari</p>
-        </div>
-        <div class="col-lg-4 text-center mb-5">
-          <img src="assets/img/person-5.jpg" alt="" class="img-fluid rounded-circle w-50 mb-4">
-          <h4>Naira</h4>
-          <span class="d-block mb-3 text-uppercase">Editor Staff</span>
-          <p>Text about Naira</p>
-        </div>
+        {% endfor %}
 
       </div>
     </div>

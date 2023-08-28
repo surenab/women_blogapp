@@ -39,3 +39,9 @@ class Message(models.Model):
     subject = models.CharField(max_length=150)
     message = models.TextField(max_length=1000)
     created_on = models.DateTimeField(auto_now=True)
+ 
+class About(models.Model):
+    name= models.CharField(max_length=20)
+    about =models.CharField(max_length=20)
+    about_text=models.TextField(max_length=1000)
+    image= models.ImageField( upload_to="Media", default=None, null=True, blank=True)
