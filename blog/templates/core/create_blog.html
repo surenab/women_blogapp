@@ -1,6 +1,6 @@
 {% extends "core/base.html" %}
 
-{% load static %}
+{% load widget_tweaks %}
 
 {% block bodycontent %}
 
@@ -16,10 +16,14 @@
                 <form role="form" method="POST" enctype="multipart/form-data">
 
                     {% csrf_token %}
-                    {{form.media}}
-                    {{ form.as_p }}
 
                     <p class="text-center">
+
+                        {% render_field form.title placeholder="Title" class+="form-control" %}
+                        {% render_field form.description placeholder="Description" class+="form-control" %}
+                        {% render_field form.blog_category placeholder="Blog Category" class+="form-control" %}
+                        {% render_field form.image placeholder="Image" class+="form-control" %}
+
                         <button class="btn btn-lg btn-primary btn-block" type="submit">
                             Add blog
                         </button>
