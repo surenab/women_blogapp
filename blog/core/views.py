@@ -55,16 +55,21 @@ class MyFilters(LoginRequiredMixin, FilterView):
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
-        most_viewed_blogs = Blog.objects.order_by('-view_count')[:3]
+        most_viewed_blogs = Blog.objects.order_by('-view_count')[:5]
         context['most_viewed_blogs'] = most_viewed_blogs
         return context
 
 
 class Home(MyFilters):
     template_name = "core/home.html"
+    paginate_by = 12
 
     def get(self, request, *args, **kwargs):
         return super().get(request, *args, **kwargs)
+
+    def get_queryset(self):
+        queryset = super(MyFilters, self).get_queryset()
+        return queryset.order_by('-created_on')
 
     def post(self, request, *args, **kwargs):
         messageForm = MessageForm(request.POST)
@@ -75,9 +80,44 @@ class Home(MyFilters):
         return redirect("{% url 'home'%}")
 
 
+class Category(MyFilters):
+    template_name = "core/category.html"
+    paginate_by = 12
+
+
+class TravelCategory(MyFilters):
+    context_object_name = "travel_blogs"
+    template_name = "core/category.html"
+    paginate_by = 12
+
+    def get_queryset(self):
+        queryset = super(TravelCategory, self).get_queryset()
+        return queryset.filter(blog_category=1)
+
+
+class SportCategory(MyFilters):
+    context_object_name = "sport_blogs"
+    template_name = "core/category.html"
+    paginate_by = 12
+
+    def get_queryset(self):
+        queryset = super(SportCategory, self).get_queryset()
+        return queryset.filter(blog_category=2)
+
+
+class NatureCategory(MyFilters):
+    context_object_name = "nature_blogs"
+    template_name = "core/category.html"
+    paginate_by = 12
+
+    def get_queryset(self):
+        queryset = super(NatureCategory, self).get_queryset()
+        return queryset.filter(blog_category=3)
+
+
 class MyBlog(MyFilters):
     template_name = "core/blog_list.html"
-    paginate_by = 2
+    paginate_by = 8
 
 
 class MyBlogDetail(BlogBase, DetailView):
@@ -134,11 +174,6 @@ def about(request):
 
 def contact(request):
     return render(request, "core/contact.html")
-
-
-def category(request):
-    blogs = Blog.objects.all()
-    return render(request, "core/category.html", context={"blogs": blogs})
 
 
 def search_result(request):

@@ -459,7 +459,12 @@ section {
 
 .post-entry-1 img {
   margin-bottom: 30px;
- 
+}
+
+.post-entry-1-small img {
+  margin-bottom: 30px;
+  height: 175px;
+  width: 250px;
 }
 
 .post-entry-1 h2 {
@@ -480,7 +485,7 @@ section {
 }
 
 .post-meta {
-  font-size: 11px;
+  font-size: 10px;
   letter-spacing: 0.07rem;
   text-transform: uppercase;
   font-weight: 600;
