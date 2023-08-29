@@ -18,20 +18,23 @@
                     {% csrf_token %}
                     <p class="text-center">
                         {% render_field form.title placeholder="Title" class+="form-control" %}
+                        <br>
                         {% render_field form.description placeholder="Description" class+="form-control" %}
+                        <br>
                         {% render_field form.blog_category placeholder="Blog Category" class+="form-control" %}
+                        <br>
                         {% render_field form.image placeholder="Image" class+="form-control" %}
 
-     
+                        <br>
 
                         <button class="btn btn-lg btn-primary btn-block" type="submit">
                             Add Blog
                         </button>
-                    </div>
-
-                </form>
             </div>
+
+            </form>
         </div>
+    </div>
     </div>
 
 </main>

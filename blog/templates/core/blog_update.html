@@ -12,23 +12,28 @@
                     <p class="page-title">Update blog</p>
                 </div>
             </div>
-            <div class="center">
-                <div class="text-center">
-                    <form method="post" class="card">
-                        {% csrf_token %}
-                        <p class="text-center">
-                            {% render_field form.title placeholder="Title" class+="form-control" %}
-                            {% render_field form.description placeholder="Description" class+="form-control" %}
-                            {% render_field form.blog_category placeholder="Blog Category" class+="form-control" %}
-                            {% render_field form.image placeholder="Image" class+="form-control" %}
-                            <button class="btn btn-lg btn-primary btn-block" type="submit">
-                                Update blog
-                            </button>
-                        </p>
-                    </form>
-                </div>
-            </div>
 
+            <div class="text-center">
+                <form method="post" class="card">
+                    {% csrf_token %}
+                    <p class="text-center">
+                        {% render_field form.title placeholder="Title" class+="form-control" %}
+                        <br>
+                        {% render_field form.description placeholder="Description" class+="form-control" %}
+                        <br>
+                        {% render_field form.blog_category placeholder="Blog Category" class+="form-control" %}
+                        <br>
+                        {% render_field form.image placeholder="Image" class+="form-control" %}
+                        <br>
+
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">
+                            Update blog
+                        </button>
+                    </p>
+                </form>
+            </div>
         </div>
+
+
     </section>
     {% endblock bodycontent %}
