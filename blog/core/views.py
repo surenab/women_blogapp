@@ -26,6 +26,7 @@ class BlogBase(Base):
     model = Blog
     form_class = BlogForm
     context = {'form': form_class}
+    context_object_name = "blog"
     success_url = reverse_lazy("my_blogs")
     success_text = ""
 
