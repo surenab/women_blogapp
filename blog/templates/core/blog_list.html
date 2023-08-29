@@ -1,8 +1,11 @@
 {% extends "core/base.html" %}
 
 {% load static %}
+
 {% block bodycontent %}
+
 {% load pagination_tags %}
+
 <main id="main">
     <section>
         <div class="container" data-aos="fade-up">
@@ -17,52 +20,46 @@
                     <h4>Filtration:</h4>
                     <form action="" method="get">
                         {{ filter.form }}
+
                         <button type="submit" class="btn btn-primary">Submit</button>
+
                     </form>
                     <hr>
                     <br>
                 </div>
             </div>
 
-
-
             <div class="justify-content-center">
-                <table class="table table-bordered table-dark">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th scop="col">ID</th>
-                            <th scop="col">Blog Category</th>
-                            <th scop="col">Title</th>
-                            <th scop="col">Description</th>
-                            <th scop="col">Image</th>
-                            <th scop="col">Created_on</th>
-                            <th scop="col">Views</th>
-                            <th scop="col">Actions</th>
-                        </tr>
-                    </thead>
 
-                    <tbody class="table table-striped">
-                        {% for blog in blogs%}
-                        <tr>
-                            <th scope="row">{{blog.id}}</th>
-                            <td>{{blog.get_blog_category_display}}</td>
-                            <td>{{blog.title|truncatewords:5}}</td>
-                            <td>{{blog.description|truncatewords:5}}</td>
-                            <td>{{blog.image}}</td>
-                            <td>{{blog.created_on}}</td>
-                            <td>{{blog.view_count}}</td>
-                            <td>
-                                <a type="button" class="btn btn-primary" href="{% url 'my_blog_details' blog.id %}"><i
-                                        class="far fa-eye"></i></a>
-                                <a type="button" class="btn btn-success" href="{% url 'my_blog_update' blog.id %}"><i
-                                        class="fas fa-edit"></i></a>
-                                <a type="button" class="btn btn-danger" href="{% url 'my_blog_delete' blog.id  %}"><i
-                                        class="far fa-trash-alt"></i></a>
-                            </td>
-                        </tr>
-                        {%endfor%}
-                    </tbody>
-                </table>
+                {% for blog in blogs %}
+                <div class="d-md-flex post-entry-2 half">
+                    <a href="{% url 'my_blog_details' blog.id %}" class="me-4 thumbnail">
+                        <img src="{{blog.image.url}}" alt="" class="img-fluid">
+                    </a>
+                    <div>
+                        <div class="post-meta"><span>Blog ID: {{blog.id}}</span> <span class="mx-1">&bullet;</span><span
+                                class="date">Category: {{blog.get_blog_category_display}}</span>
+                            <span class="mx-1">&bullet;</span>
+                            <span>{{blog.created_on}}</span>
+                        </div>
+                        <h3><a href="{% url 'my_blog_details' blog.id %}">{{blog.titel}}</a></h3>
+                        <p>{{blog.description}}</p>
+                        <div class="d-flex align-items-center author">
+                            <a type="button" class="btn btn-success" href="{% url 'my_blog_update' blog.id %}"><i
+                                    class="fas fa-edit"></i></a>
+                            <span class="mx-1">&bullet;</span>
+                            <a type="button" class="btn btn-danger" href="{% url 'my_blog_delete' blog.id  %}"><i
+                                    class="far fa-trash-alt"></i></a>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                {%endfor%}
+
 
 
             </div>
@@ -103,7 +100,7 @@
             <option value="10" selected>10</option>
             <option value="20">20</option>
         </select>
-            
+
     </section>
 </main>
 <script>
@@ -111,7 +108,7 @@
     document.getElementById('blogs_per_page').addEventListener('change', function () {
         // Get the selected value
         var selectedValue = this.value;
-        
+
         // Redirect to the current URL with the selected value as a query parameter
         window.location.href = updateQueryStringParameter(window.location.href, 'blogs_per_page', selectedValue);
     });

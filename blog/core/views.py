@@ -25,7 +25,6 @@ class Base(LoginRequiredMixin, CreateView):
 class BlogBase(Base):
     model = Blog
     form_class = BlogForm
-    context = {'form': form_class}
     context_object_name = "blog"
     success_url = reverse_lazy("my_blogs")
     success_text = ""
@@ -44,15 +43,11 @@ class CreateBlog(BlogBase):
         return super().form_valid(form)
 
 
-class MyFilters(LoginRequiredMixin, FilterView):
+
+class Filters(FilterView):
     model = Blog
     context_object_name = "blogs"
     filterset_class = BlogFilter
-
-    def get_queryset(self):
-        queryset = super(MyFilters, self).get_queryset()
-        queryset = queryset.filter(user=self.request.user)
-        return queryset
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
@@ -60,16 +55,22 @@ class MyFilters(LoginRequiredMixin, FilterView):
         context['most_viewed_blogs'] = most_viewed_blogs
         return context
 
+class MyFilters(LoginRequiredMixin, Filters):
 
-class Home(MyFilters):
+    def get_queryset(self):
+        queryset = super(MyFilters, self).get_queryset()
+        queryset = queryset.filter(user=self.request.user)
+        return queryset
+
+class Home(Filters):
     template_name = "core/home.html"
-    paginate_by = 12
+    paginate_by = 6
 
     def get(self, request, *args, **kwargs):
         return super().get(request, *args, **kwargs)
 
     def get_queryset(self):
-        queryset = super(MyFilters, self).get_queryset()
+        queryset = super(Home, self).get_queryset()
         return queryset.order_by('-created_on')
 
     def post(self, request, *args, **kwargs):
@@ -77,123 +78,12 @@ class Home(MyFilters):
         if messageForm.is_valid():
             messageForm.save()
             messages.success(request, "Message submitted successfully!")
-
         return redirect("{% url 'home'%}")
 
 
-class Category(MyFilters):
+class Category(Home):
     template_name = "core/category.html"
-    paginate_by = 12
-
-
-class TravelCategory(MyFilters):
-    context_object_name = "travel_blogs"
-    template_name = "core/category.html"
-    paginate_by = 12
-
-    def get_queryset(self):
-        queryset = super(TravelCategory, self).get_queryset()
-        return queryset.filter(blog_category=1)
-
-
-class SportCategory(MyFilters):
-    context_object_name = "sport_blogs"
-    template_name = "core/category.html"
-    paginate_by = 12
-
-    def get_queryset(self):
-        queryset = super(SportCategory, self).get_queryset()
-        return queryset.filter(blog_category=2)
-
-
-class NatureCategory(MyFilters):
-    context_object_name = "nature_blogs"
-    template_name = "core/category.html"
-    paginate_by = 12
-
-    def get_queryset(self):
-        queryset = super(NatureCategory, self).get_queryset()
-        return queryset.filter(blog_category=3)
-
-
-class AnimalsCategory(MyFilters):
-    context_object_name = "animals_blogs"
-    template_name = "core/category.html"
-    paginate_by = 12
-
-    def get_queryset(self):
-        queryset = super(AnimalsCategory, self).get_queryset()
-        return queryset.filter(blog_category=4)
-
-
-class FoodCategory(MyFilters):
-    context_object_name = "food_blogs"
-    template_name = "core/category.html"
-    paginate_by = 12
-
-    def get_queryset(self):
-        queryset = super(FoodCategory, self).get_queryset()
-        return queryset.filter(blog_category=5)
-
-
-class DIYandCraftsCategory(MyFilters):
-    context_object_name = "diy_blogs"
-    template_name = "core/category.html"
-    paginate_by = 12
-
-    def get_queryset(self):
-        queryset = super(DIYandCraftsCategory, self).get_queryset()
-        return queryset.filter(blog_category=6)
-
-
-class ScienceCategory(MyFilters):
-    context_object_name = "science_blogs"
-    template_name = "core/category.html"
-    paginate_by = 12
-
-    def get_queryset(self):
-        queryset = super(ScienceCategory, self).get_queryset()
-        return queryset.filter(blog_category=7)
-
-
-class FashionCategory(MyFilters):
-    context_object_name = "fashion_blogs"
-    template_name = "core/category.html"
-    paginate_by = 12
-
-    def get_queryset(self):
-        queryset = super(FashionCategory, self).get_queryset()
-        return queryset.filter(blog_category=8)
-
-
-class MedicineCategory(MyFilters):
-    context_object_name = "medicine_blogs"
-    template_name = "core/category.html"
-    paginate_by = 12
-
-    def get_queryset(self):
-        queryset = super(MedicineCategory, self).get_queryset()
-        return queryset.filter(blog_category=9)
-
-
-class PsycologyCategory(MyFilters):
-    context_object_name = "psycology_blogs"
-    template_name = "core/category.html"
-    paginate_by = 12
-
-    def get_queryset(self):
-        queryset = super(PsycologyCategory, self).get_queryset()
-        return queryset.filter(blog_category=10)
-
-
-class ArtCategory(MyFilters):
-    context_object_name = "art_blogs"
-    template_name = "core/category.html"
-    paginate_by = 12
-
-    def get_queryset(self):
-        queryset = super(ArtCategory, self).get_queryset()
-        return queryset.filter(blog_category=11)
+    paginate_by = 6
 
 
 class MyBlog(MyFilters):
@@ -201,28 +91,23 @@ class MyBlog(MyFilters):
 
     def get_paginate_by(self, queryset):
         blogs_per_page = self.request.GET.get('blogs_per_page')
-        
+
         default_blogs_per_page = 7
-        
+
         try:
             blogs_per_page = int(blogs_per_page)
         except (ValueError, TypeError):
             blogs_per_page = default_blogs_per_page
-        
-        blogs_per_page = max(1, min(blogs_per_page, 50)) 
-        
+
+        blogs_per_page = max(1, min(blogs_per_page, 50))
+
         return blogs_per_page
 
 
-
-
-class MyBlogDetail(BlogBase, DetailView):
+class MyBlogDetail(DetailView):
+    model = Blog
     template_name = "core/blog_detail.html"
-
-    def get_queryset(self):
-        queryset = super(MyBlogDetail, self).get_queryset()
-        queryset = queryset.filter(user=self.request.user)
-        return queryset
+    context_object_name = "blog"
 
     def get(self, request: HttpRequest, *args: Any, **kwargs: Any) -> HttpResponse:
         self.object = self.get_object()
@@ -243,14 +128,14 @@ class MyBlogUpdate(BlogBase, UpdateView):
 #   success_text = "Blog is deleted!"
 #   template_name = "core/blog_confirm_delete.html"
 
-class MyBlogDelete(DeleteView):
+class BlogDelete(DeleteView):
     model = Blog
     context_object_name = 'blog'
     success_url = reverse_lazy('my_blogs')
     template_name = "core/blog_confirm_delete.html"
 
     def get_queryset(self):
-        queryset = super(MyBlogDelete, self).get_queryset()
+        queryset = super(BlogDelete, self).get_queryset()
         queryset = queryset.filter(user=self.request.user)
         return queryset
 
@@ -264,12 +149,12 @@ def single_post(request):
     return render(request, "core/single_post.html", context={"blogs": blogs})
 
 
-def about(request):
-    return render(request, "core/about.html")
+class About(Home):
+    template_name ="core/about.html"
 
 
-def contact(request):
-    return render(request, "core/contact.html")
+class Contact(Home):
+    template_name ="core/contact.html"
 
 
 def search_result(request):
