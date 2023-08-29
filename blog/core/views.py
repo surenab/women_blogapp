@@ -115,6 +115,86 @@ class NatureCategory(MyFilters):
         return queryset.filter(blog_category=3)
 
 
+class AnimalsCategory(MyFilters):
+    context_object_name = "animals_blogs"
+    template_name = "core/category.html"
+    paginate_by = 12
+
+    def get_queryset(self):
+        queryset = super(AnimalsCategory, self).get_queryset()
+        return queryset.filter(blog_category=4)
+
+
+class FoodCategory(MyFilters):
+    context_object_name = "food_blogs"
+    template_name = "core/category.html"
+    paginate_by = 12
+
+    def get_queryset(self):
+        queryset = super(FoodCategory, self).get_queryset()
+        return queryset.filter(blog_category=5)
+
+
+class DIYandCraftsCategory(MyFilters):
+    context_object_name = "diy_blogs"
+    template_name = "core/category.html"
+    paginate_by = 12
+
+    def get_queryset(self):
+        queryset = super(DIYandCraftsCategory, self).get_queryset()
+        return queryset.filter(blog_category=6)
+
+
+class ScienceCategory(MyFilters):
+    context_object_name = "science_blogs"
+    template_name = "core/category.html"
+    paginate_by = 12
+
+    def get_queryset(self):
+        queryset = super(ScienceCategory, self).get_queryset()
+        return queryset.filter(blog_category=7)
+
+
+class FashionCategory(MyFilters):
+    context_object_name = "fashion_blogs"
+    template_name = "core/category.html"
+    paginate_by = 12
+
+    def get_queryset(self):
+        queryset = super(FashionCategory, self).get_queryset()
+        return queryset.filter(blog_category=8)
+
+
+class MedicineCategory(MyFilters):
+    context_object_name = "medicine_blogs"
+    template_name = "core/category.html"
+    paginate_by = 12
+
+    def get_queryset(self):
+        queryset = super(MedicineCategory, self).get_queryset()
+        return queryset.filter(blog_category=9)
+
+
+class PsycologyCategory(MyFilters):
+    context_object_name = "psycology_blogs"
+    template_name = "core/category.html"
+    paginate_by = 12
+
+    def get_queryset(self):
+        queryset = super(PsycologyCategory, self).get_queryset()
+        return queryset.filter(blog_category=10)
+
+
+class ArtCategory(MyFilters):
+    context_object_name = "art_blogs"
+    template_name = "core/category.html"
+    paginate_by = 12
+
+    def get_queryset(self):
+        queryset = super(ArtCategory, self).get_queryset()
+        return queryset.filter(blog_category=11)
+
+
 class MyBlog(MyFilters):
     template_name = "core/blog_list.html"
     paginate_by = 8

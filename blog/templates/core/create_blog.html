@@ -5,28 +5,59 @@
 {% block bodycontent %}
 
 <main id="main">
-    <section>
-        <div class="container" data-aos="fade-up">
-            <div class="row">
-                <div class="col-lg-12 text-center mb-5">
-                    <p class="page-title">Add a New Blog</p>
-                </div>
+    <div class="container" data-aos="fade-up">
+        <div class="row">
+            <div class="col-lg-12 text-center mb-5">
+                <p class="page-title">Add a New Blog</p>
             </div>
-            <div class="text-center">
-                <form role="form" method="POST" enctype="multipart/form-data">
+        </div>
 
+        <div class="justify-content-center">
+            <div class="form mt-5">
+                <form role="form" method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{form.media}}
-                    {{ form.as_p }}
 
-                    <p class="text-center">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="title" name="title" placeholder="Title" required>
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" name="description" id="description" rows="10"
+                            placeholder="Description" required></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <input class="form-control" list="datalistOptions" id="blog_category" name="blog_category"
+                            placeholder="Choose blog categoty...">
+                        <datalist id="datalistOptions">
+                            <option value="Trave">
+                            <option value="Sport">
+                            <option value="Nature">
+                            <option value="Animals">
+                            <option value="Food">
+                            <option value="DIY and Crafts">
+                            <option value="Science and Technology">
+                            <option value="Fashion">
+                            <option value="Medicine">
+                            <option value="Psycology">
+                            <option value="Art">
+                        </datalist>
+                    </div>
+
+                    <div class="mb-3">
+                        <input class="form-control" type="file" id="image" name="image">
+                    </div>
+
+                    <div class="justify-content-center">
                         <button class="btn btn-lg btn-primary btn-block" type="submit">
-                            Add blog
+                            Add Blog
                         </button>
-                    </p>
+                    </div>
+
                 </form>
             </div>
         </div>
-    </section>
+    </div>
+
 </main>
 {% endblock %}

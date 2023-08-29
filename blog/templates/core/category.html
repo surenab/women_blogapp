@@ -16,45 +16,38 @@
           {% if travel_blogs%}
           <div id="travel">
             <h3 class="category-title">Category: Travel </h3>
-
             {% for blog in travel_blogs %}
-
             <div class="d-md-flex post-entry-2 half">
               <a href="{% url 'my_blog_details' blog.id %}" class="me-4 thumbnail">
                 <img src="{{blog.image.url}}" alt="" class="img-fluid">
               </a>
               <div>
-                <div class="post-meta"><span class="date">{{blog.blog_category}}</span> <span
+                <div class="post-meta"><span class="date">{{blog.get_blog_category_display}}</span> <span
                     class="mx-1">&bullet;</span>
                   <span>{{blog.created_on}}</span>
                 </div>
                 <h3><a href="{% url 'my_blog_details' blog.id %}">{{blog.titel}}</a></h3>
                 <p>{{blog.description}}</p>
                 <div class="d-flex align-items-center author">
-
                   <div class="name">
-                    <h3 class="m-0 p-0">{{blog.user.username}}</h3>
+                    <h3 class="m-0 p-0"> Author: {{blog.user.username}}</h3>
                   </div>
                 </div>
               </div>
             </div>
-
             {%endfor%}
-
           </div>
 
           {% elif sport_blogs%}
           <div id="sport">
             <h3 class="category-title">Category: Sport </h3>
-
             {% for blog in sport_blogs %}
-
             <div class="d-md-flex post-entry-2 half">
               <a href="{% url 'my_blog_details' blog.id %}" class="me-4 thumbnail">
                 <img src="{{blog.image.url}}" alt="" class="img-fluid">
               </a>
               <div>
-                <div class="post-meta"><span class="date">{{blog.blog_category}}</span> <span
+                <div class="post-meta"><span class="date">{{blog.get_blog_category_display}}</span> <span
                     class="mx-1">&bullet;</span>
                   <span>{{blog.created_on}}</span>
                 </div>
@@ -63,28 +56,24 @@
                 <div class="d-flex align-items-center author">
 
                   <div class="name">
-                    <h3 class="m-0 p-0">{{blog.user.username}}</h3>
+                    <h3 class="m-0 p-0">Author: {{blog.user.username}}</h3>
                   </div>
                 </div>
               </div>
             </div>
-
             {%endfor%}
-
           </div>
 
           {% elif nature_blogs%}
           <div id="nature">
             <h3 class="category-title">Category: Nature </h3>
-
             {% for blog in nature_blogs %}
-
             <div class="d-md-flex post-entry-2 half">
               <a href="{% url 'my_blog_details' blog.id %}" class="me-4 thumbnail">
                 <img src="{{blog.image.url}}" alt="" class="img-fluid">
               </a>
               <div>
-                <div class="post-meta"><span class="date">{{blog.blog_category}}</span> <span
+                <div class="post-meta"><span class="date">{{blog.get_blog_category_display}}</span> <span
                     class="mx-1">&bullet;</span>
                   <span>{{blog.created_on}}</span>
                 </div>
@@ -93,15 +82,225 @@
                 <div class="d-flex align-items-center author">
 
                   <div class="name">
-                    <h3 class="m-0 p-0">{{blog.user.username}}</h3>
+                    <h3 class="m-0 p-0">Author: {{blog.user.username}}</h3>
                   </div>
                 </div>
               </div>
             </div>
-
             {%endfor%}
-
           </div>
+
+          {% elif animals_blogs%}
+          <div id="nature">
+            <h3 class="category-title">Category: Animals </h3>
+            {% for blog in animals_blogs %}
+            <div class="d-md-flex post-entry-2 half">
+              <a href="{% url 'my_blog_details' blog.id %}" class="me-4 thumbnail">
+                <img src="{{blog.image.url}}" alt="" class="img-fluid">
+              </a>
+              <div>
+                <div class="post-meta"><span class="date">{{blog.get_blog_category_display}}</span> <span
+                    class="mx-1">&bullet;</span>
+                  <span>{{blog.created_on}}</span>
+                </div>
+                <h3><a href="{% url 'my_blog_details' blog.id %}">{{blog.titel}}</a></h3>
+                <p>{{blog.description}}</p>
+                <div class="d-flex align-items-center author">
+
+                  <div class="name">
+                    <h3 class="m-0 p-0"> Author: {{blog.user.username}}</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {%endfor%}
+          </div>
+
+          {% elif food_blogs%}
+          <div id="nature">
+            <h3 class="category-title">Category: Food </h3>
+            {% for blog in food_blogs %}
+            <div class="d-md-flex post-entry-2 half">
+              <a href="{% url 'my_blog_details' blog.id %}" class="me-4 thumbnail">
+                <img src="{{blog.image.url}}" alt="" class="img-fluid">
+              </a>
+              <div>
+                <div class="post-meta"><span class="date">{{blog.get_blog_category_display}}</span> <span
+                    class="mx-1">&bullet;</span>
+                  <span>{{blog.created_on}}</span>
+                </div>
+                <h3><a href="{% url 'my_blog_details' blog.id %}">{{blog.titel}}</a></h3>
+                <p>{{blog.description}}</p>
+                <div class="d-flex align-items-center author">
+
+                  <div class="name">
+                    <h3 class="m-0 p-0">Author: {{blog.user.username}}</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {%endfor%}
+          </div>
+
+          {% elif diy_blogs%}
+          <div id="nature">
+            <h3 class="category-title">Category: DIY and Crafts </h3>
+            {% for blog in diy_blogs %}
+            <div class="d-md-flex post-entry-2 half">
+              <a href="{% url 'my_blog_details' blog.id %}" class="me-4 thumbnail">
+                <img src="{{blog.image.url}}" alt="" class="img-fluid">
+              </a>
+              <div>
+                <div class="post-meta"><span class="date">{{blog.get_blog_category_display}}</span> <span
+                    class="mx-1">&bullet;</span>
+                  <span>{{blog.created_on}}</span>
+                </div>
+                <h3><a href="{% url 'my_blog_details' blog.id %}">{{blog.titel}}</a></h3>
+                <p>{{blog.description}}</p>
+                <div class="d-flex align-items-center author">
+
+                  <div class="name">
+                    <h3 class="m-0 p-0">Author: {{blog.user.username}}</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {%endfor%}
+          </div>
+
+          {% elif science_blogs%}
+          <div id="nature">
+            <h3 class="category-title">Category: Science and Technology </h3>
+            {% for blog in science_blogs %}
+            <div class="d-md-flex post-entry-2 half">
+              <a href="{% url 'my_blog_details' blog.id %}" class="me-4 thumbnail">
+                <img src="{{blog.image.url}}" alt="" class="img-fluid">
+              </a>
+              <div>
+                <div class="post-meta"><span class="date">{{blog.get_blog_category_display}}</span> <span
+                    class="mx-1">&bullet;</span>
+                  <span>{{blog.created_on}}</span>
+                </div>
+                <h3><a href="{% url 'my_blog_details' blog.id %}">{{blog.titel}}</a></h3>
+                <p>{{blog.description}}</p>
+                <div class="d-flex align-items-center author">
+
+                  <div class="name">
+                    <h3 class="m-0 p-0">Author: {{blog.user.username}}</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {%endfor%}
+          </div>
+
+          {% elif fashion_blogs%}
+          <div id="nature">
+            <h3 class="category-title">Category: Fashion </h3>
+            {% for blog in fashion_blogs %}
+            <div class="d-md-flex post-entry-2 half">
+              <a href="{% url 'my_blog_details' blog.id %}" class="me-4 thumbnail">
+                <img src="{{blog.image.url}}" alt="" class="img-fluid">
+              </a>
+              <div>
+                <div class="post-meta"><span class="date">{{blog.get_blog_category_display}}</span> <span
+                    class="mx-1">&bullet;</span>
+                  <span>{{blog.created_on}}</span>
+                </div>
+                <h3><a href="{% url 'my_blog_details' blog.id %}">{{blog.titel}}</a></h3>
+                <p>{{blog.description}}</p>
+                <div class="d-flex align-items-center author">
+
+                  <div class="name">
+                    <h3 class="m-0 p-0">Author: {{blog.user.username}}</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {%endfor%}
+          </div>
+
+          {% elif medicine_blogs%}
+          <div id="nature">
+            <h3 class="category-title">Category: Medicine </h3>
+            {% for blog in medicine_blogs %}
+            <div class="d-md-flex post-entry-2 half">
+              <a href="{% url 'my_blog_details' blog.id %}" class="me-4 thumbnail">
+                <img src="{{blog.image.url}}" alt="" class="img-fluid">
+              </a>
+              <div>
+                <div class="post-meta"><span class="date">{{blog.get_blog_category_display}}</span> <span
+                    class="mx-1">&bullet;</span>
+                  <span>{{blog.created_on}}</span>
+                </div>
+                <h3><a href="{% url 'my_blog_details' blog.id %}">{{blog.titel}}</a></h3>
+                <p>{{blog.description}}</p>
+                <div class="d-flex align-items-center author">
+
+                  <div class="name">
+                    <h3 class="m-0 p-0">Author: {{blog.user.username}}</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {%endfor%}
+          </div>
+
+          {% elif psycology_blogs%}
+          <div id="nature">
+            <h3 class="category-title">Category: Psycology </h3>
+            {% for blog in psycology_blogs %}
+            <div class="d-md-flex post-entry-2 half">
+              <a href="{% url 'my_blog_details' blog.id %}" class="me-4 thumbnail">
+                <img src="{{blog.image.url}}" alt="" class="img-fluid">
+              </a>
+              <div>
+                <div class="post-meta"><span class="date">{{blog.get_blog_category_display}}</span> <span
+                    class="mx-1">&bullet;</span>
+                  <span>{{blog.created_on}}</span>
+                </div>
+                <h3><a href="{% url 'my_blog_details' blog.id %}">{{blog.titel}}</a></h3>
+                <p>{{blog.description}}</p>
+                <div class="d-flex align-items-center author">
+
+                  <div class="name">
+                    <h3 class="m-0 p-0">Author: {{blog.user.username}}</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {%endfor%}
+          </div>
+
+
+          {% elif art_blogs%}
+          <div id="art">
+            <h3 class="category-title">Category: Art </h3>
+            {% for blog in nature_blogs %}
+            <div class="d-md-flex post-entry-2 half">
+              <a href="{% url 'my_blog_details' blog.id %}" class="me-4 thumbnail">
+                <img src="{{blog.image.url}}" alt="" class="img-fluid">
+              </a>
+              <div>
+                <div class="post-meta"><span class="date">{{blog.get_blog_category_display}}</span> <span
+                    class="mx-1">&bullet;</span>
+                  <span>{{blog.created_on}}</span>
+                </div>
+                <h3><a href="{% url 'my_blog_details' blog.id %}">{{blog.titel}}</a></h3>
+                <p>{{blog.description}}</p>
+                <div class="d-flex align-items-center author">
+
+                  <div class="name">
+                    <h3 class="m-0 p-0">Author: {{blog.user.username}}</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {%endfor%}
+          </div>
+
+          {%else %}
+          <h3> You can add first blog in this category !!!</h3>
           {%endif%}
         </div>
 
