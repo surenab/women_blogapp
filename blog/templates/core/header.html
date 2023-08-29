@@ -12,21 +12,21 @@
     <nav id="navbar" class="navbar">
       <ul>
         <li><a href="{% url 'home' %}">Blog</a></li>
-        <li class="dropdown"><a href="{% url 'category' %}"><span>Categories</span> <i
+
+        <li class="dropdown"><a href=""><span>Categories</span> <i
               class="bi bi-chevron-down dropdown-indicator"></i></a>
           <ul>
-            <li><a href="{% url 'searchresult' %}">Search Result</a></li>
-            <li><a href="#travel">Travel</a></li>
-            <li><a href="#sport">Sport</a></li>
-            <li><a href="#nature">Nature</a></li>
-            <li><a href="#animals">Animals</a></li>
-            <li><a href="#food">Food</a></li>
-            <li><a href="#DIYandCrafts">DIY and Crafts</a></li>
-            <li><a href="#science">Science and Technology</a></li>
-            <li><a href="#fashion">Fashion</a></li>
-            <li><a href="#medicine">Medicine</a></li>
-            <li><a href="#psycology">Psycology</a></li>
-            <li><a href="#art">Art</a></li>
+            <li><a href="{% url 'travel_category' %}">Travel</a></li>
+            <li><a href="{% url 'sport_category'%}">Sport</a></li>
+            <li><a href="{% url 'nature_category' %}">Nature</a></li>
+            <li><a href="{% url 'animals_category' %}">Animals</a></li>
+            <li><a href="{% url 'food_category' %}">Food</a></li>
+            <li><a href="{% url 'diy_category' %}">DIY and Crafts</a></li>
+            <li><a href="{% url 'science_category' %}">Science and Technology</a></li>
+            <li><a href="{% url 'fashion_category' %}">Fashion</a></li>
+            <li><a href="{% url 'medicine_category' %}">Medicine</a></li>
+            <li><a href="{% url 'psycology_category' %}">Psycology</a></li>
+            <li><a href="{% url 'art_category' %}">Art</a></li>
           </ul>
         </li>
 

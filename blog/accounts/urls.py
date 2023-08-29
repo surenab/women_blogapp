@@ -17,11 +17,9 @@ from django.urls import path, include
 from .views import SignUp, terms_conditions
 
 
-
 urlpatterns = [
     path("", include("django.contrib.auth.urls")),
     path("signup/", SignUp.as_view(), name="signup"),
     path("terms_conditions/", terms_conditions, name="terms_conditions"),
 
-    
 ]
