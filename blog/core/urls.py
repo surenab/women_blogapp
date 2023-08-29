@@ -15,14 +15,36 @@ Including another URLconf
 """
 from django.urls import path
 
-from .views import NatureCategory, SportCategory, TravelCategory, Category, Home, CreateBlog, MyBlog, MyBlogDelete, MyBlogUpdate, MyBlogDetail, single_post, about, contact, search_result
+from .views import (
+    DIYandCraftsCategory,
+    ScienceCategory,
+    FashionCategory,
+    MedicineCategory,
+    PsycologyCategory,
+    FoodCategory,
+    AnimalsCategory,
+    ArtCategory,
+    NatureCategory,
+    SportCategory,
+    TravelCategory,
+    Category,
+    Home,
+    CreateBlog,
+    MyBlog,
+    MyBlogDelete,
+    MyBlogUpdate,
+    MyBlogDetail,
+    single_post,
+    about,
+    contact,
+    search_result,
+)
 
 
 urlpatterns = [
     path("", Home.as_view(), name="home"),
     path("my-blogs/", MyBlog.as_view(), name="my_blogs"),
-    path("my-blogs/details/<int:pk>",
-         MyBlogDetail.as_view(), name="my_blog_details"),
+    path("my-blogs/details/<int:pk>", MyBlogDetail.as_view(), name="my_blog_details"),
     path("my-blogs/update/<int:pk>", MyBlogUpdate.as_view(), name="my_blog_update"),
     path("my-blogs/delete/<int:pk>", MyBlogDelete.as_view(), name="my_blog_delete"),
     path("createblog/", CreateBlog.as_view(), name="createblog"),
@@ -34,4 +56,12 @@ urlpatterns = [
     path("category#travel", TravelCategory.as_view(), name="travel_category"),
     path("category#sport", SportCategory.as_view(), name="sport_category"),
     path("category#nature", NatureCategory.as_view(), name="nature_category"),
+    path("category#animals", AnimalsCategory.as_view(), name="animals_category"),
+    path("category#food", FoodCategory.as_view(), name="food_category"),
+    path("category#diy", DIYandCraftsCategory.as_view(), name="diy_category"),
+    path("category#science", ScienceCategory.as_view(), name="science_category"),
+    path("category#fashion", FashionCategory.as_view(), name="fashion_category"),
+    path("category#medicine", MedicineCategory.as_view(), name="medicine_category"),
+    path("category#psycology", PsycologyCategory.as_view(), name="psycology_category"),
+    path("category#art", ArtCategory.as_view(), name="art_category"),
 ]
