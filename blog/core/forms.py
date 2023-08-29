@@ -35,8 +35,6 @@ class BlogForm(forms.ModelForm):
         fields = ["title", "description", "blog_category", "image"]
 
 
-
-
 class MessageForm(forms.ModelForm):
     full_name = forms.CharField(max_length=100, required=True)
     email = forms.EmailField(required=True)

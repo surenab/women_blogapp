@@ -11,9 +11,5 @@ class SignUp(CreateView):
     template_name = "registration/signup.html"
 
 
-def finish(request):
-    return render(request, "registration/finish.html")
-
-
 def terms_conditions(request):
     return render(request, "registration/terms_conditions.html")

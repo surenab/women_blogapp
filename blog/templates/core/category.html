@@ -9,28 +9,263 @@
 <main id="main">
   <section>
     <div class="container">
-      <div class="row">
+      <div class="row g-5">
 
+        <div class="col-lg-9" data-aos="fade-up">
 
-
-        <div class="col-md-9" data-aos="fade-up">
-
-          <h3 class="category-title">Category: Travel </h3>
-          {% for blog in travel_blogs %}
-          <div class="d-md-flex post-entry-2 half">
-            <a href="{% url 'my_blog_details' blog.id %}" class="me-4 thumbnail">
-              <img src="{{blog.image.url}}" alt="" class="img-fluid">
-            </a>
-            <div>
-              <div class="post-meta"><span class="date">{{blog.blog_category}}</span> <span class="mx-1">&bullet;</span>
-                <span>{{blog.created_on}}</span>
+          {% if travel_blogs%}
+          <div id="travel">
+            <h3 class="category-title">Category: Travel </h3>
+            {% for blog in travel_blogs %}
+            <div class="d-md-flex post-entry-2 half">
+              <a href="{% url 'my_blog_details' blog.id %}" class="me-4 thumbnail">
+                <img src="{{blog.image.url}}" alt="" class="img-fluid">
+              </a>
+              <div>
+                <div class="post-meta"><span class="date">{{blog.get_blog_category_display}}</span> <span
+                    class="mx-1">&bullet;</span>
+                  <span>{{blog.created_on}}</span>
+                </div>
+                <h3><a href="{% url 'my_blog_details' blog.id %}">{{blog.titel}}</a></h3>
+                <p>{{blog.description}}</p>
+                <div class="d-flex align-items-center author">
+                  <div class="name">
+                    <h3 class="m-0 p-0"> Author: {{blog.user.username}}</h3>
+                  </div>
+                </div>
               </div>
-              <h3><a href="{% url 'my_blog_details' blog.id %}">{{blog.titel}}</a></h3>
-              <p>{{blog.description}}</p>
-              <div class="d-flex align-items-center author">
+            </div>
+            {%endfor%}
+          </div>
 
-                <div class="name">
-                  <h3 class="m-0 p-0">{{blog.user.username}}</h3>
+          {% elif sport_blogs%}
+          <div id="sport">
+            <h3 class="category-title">Category: Sport </h3>
+            {% for blog in sport_blogs %}
+            <div class="d-md-flex post-entry-2 half">
+              <a href="{% url 'my_blog_details' blog.id %}" class="me-4 thumbnail">
+                <img src="{{blog.image.url}}" alt="" class="img-fluid">
+              </a>
+              <div>
+                <div class="post-meta"><span class="date">{{blog.get_blog_category_display}}</span> <span
+                    class="mx-1">&bullet;</span>
+                  <span>{{blog.created_on}}</span>
+                </div>
+                <h3><a href="{% url 'my_blog_details' blog.id %}">{{blog.titel}}</a></h3>
+                <p>{{blog.description}}</p>
+                <div class="d-flex align-items-center author">
+
+                  <div class="name">
+                    <h3 class="m-0 p-0">Author: {{blog.user.username}}</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {%endfor%}
+          </div>
+
+          {% elif nature_blogs%}
+          <div id="nature">
+            <h3 class="category-title">Category: Nature </h3>
+            {% for blog in nature_blogs %}
+            <div class="d-md-flex post-entry-2 half">
+              <a href="{% url 'my_blog_details' blog.id %}" class="me-4 thumbnail">
+                <img src="{{blog.image.url}}" alt="" class="img-fluid">
+              </a>
+              <div>
+                <div class="post-meta"><span class="date">{{blog.get_blog_category_display}}</span> <span
+                    class="mx-1">&bullet;</span>
+                  <span>{{blog.created_on}}</span>
+                </div>
+                <h3><a href="{% url 'my_blog_details' blog.id %}">{{blog.titel}}</a></h3>
+                <p>{{blog.description}}</p>
+                <div class="d-flex align-items-center author">
+
+                  <div class="name">
+                    <h3 class="m-0 p-0">Author: {{blog.user.username}}</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {%endfor%}
+          </div>
+
+          {% elif animals_blogs%}
+          <div id="nature">
+            <h3 class="category-title">Category: Animals </h3>
+            {% for blog in animals_blogs %}
+            <div class="d-md-flex post-entry-2 half">
+              <a href="{% url 'my_blog_details' blog.id %}" class="me-4 thumbnail">
+                <img src="{{blog.image.url}}" alt="" class="img-fluid">
+              </a>
+              <div>
+                <div class="post-meta"><span class="date">{{blog.get_blog_category_display}}</span> <span
+                    class="mx-1">&bullet;</span>
+                  <span>{{blog.created_on}}</span>
+                </div>
+                <h3><a href="{% url 'my_blog_details' blog.id %}">{{blog.titel}}</a></h3>
+                <p>{{blog.description}}</p>
+                <div class="d-flex align-items-center author">
+
+                  <div class="name">
+                    <h3 class="m-0 p-0"> Author: {{blog.user.username}}</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {%endfor%}
+          </div>
+
+          {% elif food_blogs%}
+          <div id="nature">
+            <h3 class="category-title">Category: Food </h3>
+            {% for blog in food_blogs %}
+            <div class="d-md-flex post-entry-2 half">
+              <a href="{% url 'my_blog_details' blog.id %}" class="me-4 thumbnail">
+                <img src="{{blog.image.url}}" alt="" class="img-fluid">
+              </a>
+              <div>
+                <div class="post-meta"><span class="date">{{blog.get_blog_category_display}}</span> <span
+                    class="mx-1">&bullet;</span>
+                  <span>{{blog.created_on}}</span>
+                </div>
+                <h3><a href="{% url 'my_blog_details' blog.id %}">{{blog.titel}}</a></h3>
+                <p>{{blog.description}}</p>
+                <div class="d-flex align-items-center author">
+
+                  <div class="name">
+                    <h3 class="m-0 p-0">Author: {{blog.user.username}}</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {%endfor%}
+          </div>
+
+          {% elif diy_blogs%}
+          <div id="nature">
+            <h3 class="category-title">Category: DIY and Crafts </h3>
+            {% for blog in diy_blogs %}
+            <div class="d-md-flex post-entry-2 half">
+              <a href="{% url 'my_blog_details' blog.id %}" class="me-4 thumbnail">
+                <img src="{{blog.image.url}}" alt="" class="img-fluid">
+              </a>
+              <div>
+                <div class="post-meta"><span class="date">{{blog.get_blog_category_display}}</span> <span
+                    class="mx-1">&bullet;</span>
+                  <span>{{blog.created_on}}</span>
+                </div>
+                <h3><a href="{% url 'my_blog_details' blog.id %}">{{blog.titel}}</a></h3>
+                <p>{{blog.description}}</p>
+                <div class="d-flex align-items-center author">
+
+                  <div class="name">
+                    <h3 class="m-0 p-0">Author: {{blog.user.username}}</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {%endfor%}
+          </div>
+
+          {% elif science_blogs%}
+          <div id="nature">
+            <h3 class="category-title">Category: Science and Technology </h3>
+            {% for blog in science_blogs %}
+            <div class="d-md-flex post-entry-2 half">
+              <a href="{% url 'my_blog_details' blog.id %}" class="me-4 thumbnail">
+                <img src="{{blog.image.url}}" alt="" class="img-fluid">
+              </a>
+              <div>
+                <div class="post-meta"><span class="date">{{blog.get_blog_category_display}}</span> <span
+                    class="mx-1">&bullet;</span>
+                  <span>{{blog.created_on}}</span>
+                </div>
+                <h3><a href="{% url 'my_blog_details' blog.id %}">{{blog.titel}}</a></h3>
+                <p>{{blog.description}}</p>
+                <div class="d-flex align-items-center author">
+
+                  <div class="name">
+                    <h3 class="m-0 p-0">Author: {{blog.user.username}}</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {%endfor%}
+          </div>
+
+          {% elif fashion_blogs%}
+          <div id="nature">
+            <h3 class="category-title">Category: Fashion </h3>
+            {% for blog in fashion_blogs %}
+            <div class="d-md-flex post-entry-2 half">
+              <a href="{% url 'my_blog_details' blog.id %}" class="me-4 thumbnail">
+                <img src="{{blog.image.url}}" alt="" class="img-fluid">
+              </a>
+              <div>
+                <div class="post-meta"><span class="date">{{blog.get_blog_category_display}}</span> <span
+                    class="mx-1">&bullet;</span>
+                  <span>{{blog.created_on}}</span>
+                </div>
+                <h3><a href="{% url 'my_blog_details' blog.id %}">{{blog.titel}}</a></h3>
+                <p>{{blog.description}}</p>
+                <div class="d-flex align-items-center author">
+
+                  <div class="name">
+                    <h3 class="m-0 p-0">Author: {{blog.user.username}}</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {%endfor%}
+          </div>
+
+          {% elif medicine_blogs%}
+          <div id="nature">
+            <h3 class="category-title">Category: Medicine </h3>
+            {% for blog in medicine_blogs %}
+            <div class="d-md-flex post-entry-2 half">
+              <a href="{% url 'my_blog_details' blog.id %}" class="me-4 thumbnail">
+                <img src="{{blog.image.url}}" alt="" class="img-fluid">
+              </a>
+              <div>
+                <div class="post-meta"><span class="date">{{blog.get_blog_category_display}}</span> <span
+                    class="mx-1">&bullet;</span>
+                  <span>{{blog.created_on}}</span>
+                </div>
+                <h3><a href="{% url 'my_blog_details' blog.id %}">{{blog.titel}}</a></h3>
+                <p>{{blog.description}}</p>
+                <div class="d-flex align-items-center author">
+
+                  <div class="name">
+                    <h3 class="m-0 p-0">Author: {{blog.user.username}}</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {%endfor%}
+          </div>
+
+          {% elif psycology_blogs%}
+          <div id="nature">
+            <h3 class="category-title">Category: Psycology </h3>
+            {% for blog in psycology_blogs %}
+            <div class="d-md-flex post-entry-2 half">
+              <a href="{% url 'my_blog_details' blog.id %}" class="me-4 thumbnail">
+                <img src="{{blog.image.url}}" alt="" class="img-fluid">
+              </a>
+              <div>
+                <div class="post-meta"><span class="date">{{blog.get_blog_category_display}}</span> <span
+                    class="mx-1">&bullet;</span>
+                  <span>{{blog.created_on}}</span>
+                </div>
+                <h3><a href="{% url 'my_blog_details' blog.id %}">{{blog.titel}}</a></h3>
+                <p>{{blog.description}}</p>
+                <div class="d-flex align-items-center author">
+
+                  <div class="name">
+                    <h3 class="m-0 p-0">Author: {{blog.user.username}}</h3>
+                  </div>
                 </div>
               </div>
             </div>
@@ -38,7 +273,39 @@
           </div>
 
 
+          {% elif art_blogs%}
+          <div id="art">
+            <h3 class="category-title">Category: Art </h3>
+            {% for blog in nature_blogs %}
+            <div class="d-md-flex post-entry-2 half">
+              <a href="{% url 'my_blog_details' blog.id %}" class="me-4 thumbnail">
+                <img src="{{blog.image.url}}" alt="" class="img-fluid">
+              </a>
+              <div>
+                <div class="post-meta"><span class="date">{{blog.get_blog_category_display}}</span> <span
+                    class="mx-1">&bullet;</span>
+                  <span>{{blog.created_on}}</span>
+                </div>
+                <h3><a href="{% url 'my_blog_details' blog.id %}">{{blog.titel}}</a></h3>
+                <p>{{blog.description}}</p>
+                <div class="d-flex align-items-center author">
 
+                  <div class="name">
+                    <h3 class="m-0 p-0">Author: {{blog.user.username}}</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {%endfor%}
+          </div>
+
+          {%else %}
+          <h3> You can add first blog in this category !!!</h3>
+          {%endif%}
+        </div>
+
+
+        <div class="col-lg-3" data-aos="fade-up">
           <!-- ======= Sidebar ======= -->
           <div class="aside-block">
 
@@ -80,8 +347,10 @@
                 </div>
 
                 <div class="post-entry-1 border-bottom">
-                  <div class="post-meta"><span class="date">Culture</span> <span class="mx-1">&bullet;</span> <span>Jul
-                      5th '22</span></div>
+                  <div class="post-meta"><span class="date">Culture</span> <span class="mx-1">&bullet;</span>
+                    <span>Jul
+                      5th '22</span>
+                  </div>
                   <h2 class="mb-2"><a href="#">9 Half-up/half-down Hairstyles for Long and Medium Hair</a></h2>
                   <span class="author mb-3 d-block">Jenny Wilson</span>
                 </div>
@@ -95,8 +364,10 @@
                 </div>
 
                 <div class="post-entry-1 border-bottom">
-                  <div class="post-meta"><span class="date">Business</span> <span class="mx-1">&bullet;</span> <span>Jul
-                      5th '22</span></div>
+                  <div class="post-meta"><span class="date">Business</span> <span class="mx-1">&bullet;</span>
+                    <span>Jul
+                      5th '22</span>
+                  </div>
                   <h2 class="mb-2"><a href="#">The Best Homemade Masks for Face (keep the Pimples Away)</a></h2>
                   <span class="author mb-3 d-block">Jenny Wilson</span>
                 </div>
@@ -122,8 +393,10 @@
                 </div>
 
                 <div class="post-entry-1 border-bottom">
-                  <div class="post-meta"><span class="date">Culture</span> <span class="mx-1">&bullet;</span> <span>Jul
-                      5th '22</span></div>
+                  <div class="post-meta"><span class="date">Culture</span> <span class="mx-1">&bullet;</span>
+                    <span>Jul
+                      5th '22</span>
+                  </div>
                   <h2 class="mb-2"><a href="#">9 Half-up/half-down Hairstyles for Long and Medium Hair</a></h2>
                   <span class="author mb-3 d-block">Jenny Wilson</span>
                 </div>
@@ -143,8 +416,10 @@
                   <span class="author mb-3 d-block">Jenny Wilson</span>
                 </div>
                 <div class="post-entry-1 border-bottom">
-                  <div class="post-meta"><span class="date">Business</span> <span class="mx-1">&bullet;</span> <span>Jul
-                      5th '22</span></div>
+                  <div class="post-meta"><span class="date">Business</span> <span class="mx-1">&bullet;</span>
+                    <span>Jul
+                      5th '22</span>
+                  </div>
                   <h2 class="mb-2"><a href="#">The Best Homemade Masks for Face (keep the Pimples Away)</a></h2>
                   <span class="author mb-3 d-block">Jenny Wilson</span>
                 </div>
@@ -169,8 +444,10 @@
                 </div>
 
                 <div class="post-entry-1 border-bottom">
-                  <div class="post-meta"><span class="date">Business</span> <span class="mx-1">&bullet;</span> <span>Jul
-                      5th '22</span></div>
+                  <div class="post-meta"><span class="date">Business</span> <span class="mx-1">&bullet;</span>
+                    <span>Jul
+                      5th '22</span>
+                  </div>
                   <h2 class="mb-2"><a href="#">The Best Homemade Masks for Face (keep the Pimples Away)</a></h2>
                   <span class="author mb-3 d-block">Jenny Wilson</span>
                 </div>
@@ -200,48 +477,51 @@
                 </div>
 
                 <div class="post-entry-1 border-bottom">
-                  <div class="post-meta"><span class="date">Culture</span> <span class="mx-1">&bullet;</span> <span>Jul
-                      5th '22</span></div>
+                  <div class="post-meta"><span class="date">Culture</span> <span class="mx-1">&bullet;</span>
+                    <span>Jul
+                      5th '22</span>
+                  </div>
                   <h2 class="mb-2"><a href="#">9 Half-up/half-down Hairstyles for Long and Medium Hair</a></h2>
                   <span class="author mb-3 d-block">Jenny Wilson</span>
                 </div>
+              </div>
+            </div> <!-- End Latest -->
 
-              </div> <!-- End Latest -->
 
 
+            <div class="aside-block">
+              <h3 class="aside-title">Categories</h3>
+              <ul class="aside-links list-unstyled">
+                <li><a href="category.html"><i class="bi bi-chevron-right"></i> Business</a></li>
+                <li><a href="category.html"><i class="bi bi-chevron-right"></i> Culture</a></li>
+                <li><a href="category.html"><i class="bi bi-chevron-right"></i> Sport</a></li>
+                <li><a href="category.html"><i class="bi bi-chevron-right"></i> Food</a></li>
+                <li><a href="category.html"><i class="bi bi-chevron-right"></i> Politics</a></li>
+                <li><a href="category.html"><i class="bi bi-chevron-right"></i> Celebrity</a></li>
+                <li><a href="category.html"><i class="bi bi-chevron-right"></i> Startups</a></li>
+                <li><a href="category.html"><i class="bi bi-chevron-right"></i> Travel</a></li>
+              </ul>
+            </div><!-- End Categories -->
 
-              <div class="aside-block">
-                <h3 class="aside-title">Categories</h3>
-                <ul class="aside-links list-unstyled">
-                  <li><a href="category.html"><i class="bi bi-chevron-right"></i> Business</a></li>
-                  <li><a href="category.html"><i class="bi bi-chevron-right"></i> Culture</a></li>
-                  <li><a href="category.html"><i class="bi bi-chevron-right"></i> Sport</a></li>
-                  <li><a href="category.html"><i class="bi bi-chevron-right"></i> Food</a></li>
-                  <li><a href="category.html"><i class="bi bi-chevron-right"></i> Politics</a></li>
-                  <li><a href="category.html"><i class="bi bi-chevron-right"></i> Celebrity</a></li>
-                  <li><a href="category.html"><i class="bi bi-chevron-right"></i> Startups</a></li>
-                  <li><a href="category.html"><i class="bi bi-chevron-right"></i> Travel</a></li>
-                </ul>
-              </div><!-- End Categories -->
-
-              <div class="aside-block">
-                <h3 class="aside-title">Tags</h3>
-                <ul class="aside-tags list-unstyled">
-                  <li><a href="category.html">Business</a></li>
-                  <li><a href="category.html">Culture</a></li>
-                  <li><a href="category.html">Sport</a></li>
-                  <li><a href="category.html">Food</a></li>
-                  <li><a href="category.html">Politics</a></li>
-                  <li><a href="category.html">Celebrity</a></li>
-                  <li><a href="category.html">Startups</a></li>
-                  <li><a href="category.html">Travel</a></li>
-                </ul>
-              </div><!-- End Tags -->
-
-            </div>
+            <div class="aside-block">
+              <h3 class="aside-title">Tags</h3>
+              <ul class="aside-tags list-unstyled">
+                <li><a href="category.html">Business</a></li>
+                <li><a href="category.html">Culture</a></li>
+                <li><a href="category.html">Sport</a></li>
+                <li><a href="category.html">Food</a></li>
+                <li><a href="category.html">Politics</a></li>
+                <li><a href="category.html">Celebrity</a></li>
+                <li><a href="category.html">Startups</a></li>
+                <li><a href="category.html">Travel</a></li>
+              </ul>
+            </div><!-- End Tags -->
 
           </div>
+
         </div>
+      </div>
+    </div>
   </section>
 </main><!-- End #main -->
 
