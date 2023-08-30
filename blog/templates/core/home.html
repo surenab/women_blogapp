@@ -55,7 +55,8 @@
           <div class="post-entry-1">
             <a href="{% url 'my_blog_details' blog.id %}"><img src="{{blog.image.url}}" alt="" class="img-fluid"></a>
             <div class="post-meta"><span class="date">{{blog.get_blog_category_display}}</span> <span
-                class="mx-1">&bullet;</span> <span>{{blog.created_on}}</span></div>
+                class="mx-1">&bullet;</span> <span>{{blog.created_on}}</span><span class="mx-1">&bullet;</span> Viewes:
+              {{blog.view_count}}</span> </div>
 
             <h2><a href="single-post.html">{{blog.title}}</a></h2>
             <p class="mb-4 d-block">{{blog.description}}</p>
@@ -99,8 +100,7 @@
                     class="align-items-center"></a>
                 <div class="post-meta"><span class="date">{{blog.get_blog_category_display}}</span> <span
                     class="mx-1">&bullet;</span> <span>{{blog.created_on}}</span><span
-
-                    class="mx-1">&bullet;</span><span>Viewes: {{blog.annotated_view_count}}</span></div>
+                    class="mx-1">&bullet;</span><span>Viewes: {{blog.view_count}}</span></div>
                 <h2><a href="{% url 'my_blog_details' blog.id %}">{{blog.title}}</a></h2>
 
               </div>

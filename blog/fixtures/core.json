@@ -1,1 +1,287 @@
-[]
+[
+    {
+        "model": "core.blog",
+        "pk": 11,
+        "fields": {
+            "blog_category": "2",
+            "title": "Competitive swimming",
+            "created_on": "2023-08-07",
+            "user": 6,
+            "description": "Internationally, competitive swimming came into prominence with its inclusion in the modern Olympic Games from their inception in 1896. Olympic events were originally only for men, but women’s events were added in 1912. Before the formation of FINA, the Games included some unusual events. In 1900, for instance, when the Games’ swimming events were held on the Seine River in France, a 200-metre obstacle race involved climbing over a pole and a line of boats and swimming under them. Such oddities disappeared after FINA took charge. Under FINA regulations, for both Olympic and other world competition, race lengths came increasingly to be measured in metres, and in 1969 world records for yard-measured races were abolished. The kinds of strokes allowed were reduced to freestyle (crawl), backstroke, breaststroke, and butterfly. All four strokes were used in individual medley races. Many nations have at one time or another dominated Olympic and world competition, including Hungary, Denmark, Australia, Germany, France, Great Britain, Canada, Japan, and the United States.",
+            "image": "Media/Man-swimming.png",
+            "image1": "",
+            "image2": "",
+            "image3": "",
+            "view_count": 0
+        }
+    },
+    {
+        "model": "core.blog",
+        "pk": 12,
+        "fields": {
+            "blog_category": "4",
+            "title": "Golden Retriever",
+            "created_on": "2023-08-25",
+            "user": 3,
+            "description": "The Golden Retriever is a Scottish breed of retriever dog of medium size. It is characterised by a gentle and affectionate nature and a striking golden coat. It is commonly kept as a pet and is among the most frequently registered breeds in several Western countries. It is a frequent competitor in dog shows and obedience trials; it is also used as a gundog, and may be trained for use as a guide dog.\r\n\r\nThe breed was created by Sir Dudley Marjoribanks at his Scottish estate Guisachan in the late nineteenth century. He cross-bred Flat-coated Retrievers with Tweed Water Spaniels, with some further infusions of Red Setter, Labrador Retriever and Bloodhound. The breed was recognised by the Kennel Club in 1913, and during the interwar period spread to many parts of the world.",
+            "image": "Media/golden_retriver.jpg",
+            "image1": "Media/golden-retriever3.webp",
+            "image2": "Media/goldenretriver2.jpeg",
+            "image3": "Media/goldenretriver1.webp",
+            "view_count": 30
+        }
+    },
+    {
+        "model": "core.blog",
+        "pk": 13,
+        "fields": {
+            "blog_category": "4",
+            "title": "Poodle",
+            "created_on": "2023-08-25",
+            "user": 3,
+            "description": "The poodle, one of a number of elegant French dog breeds, is often seen as high maintenance. (That curly hair isn’t going to style itself, after all.) But don’t be fooled into thinking that makes them any less clever. The breed gets high marks for its emotional and cognitive intelligence. In fact, Coren ranks the poodle second among the smartest dog breeds, right after the border collie.\r\n\r\nAnd yes, sure, the dogs can look a bit posh, but they’ve also been employed during wartime to deliver supplies to soldiers on the battlefield. The job required obedience, steadfast focus, and clear-headed decision-making, and quick-learning poodles became the obvious choice. Veterinarian Wendy Hauser, DVM, says poodles are readily trainable and enjoy activities that allow them to be challenged, such as hunting, tracking, agility sports, and obedience work. On top of all that, the breed has a jovial sense of humor and a tendency to perform tricks and deliberately act cute. Not that humans need more reasons to love ’em. No matter the size—from teacup to standard—poodles are oodles of fun and majorly cute.",
+            "image": "Media/myking.jpg",
+            "image1": "",
+            "image2": "",
+            "image3": "",
+            "view_count": 17
+        }
+    },
+    {
+        "model": "core.blog",
+        "pk": 14,
+        "fields": {
+            "blog_category": "5",
+            "title": "Cake Prague",
+            "created_on": "2023-08-25",
+            "user": 3,
+            "description": "As a self-proclaimed chocolate lover, Cake Prague is near and dear to my heart. When I say it’s chocolate overload, I mean it. The chocolate sponge cake, chocolate cream, and chocolate ganache will quench your sweet tooth for the entire next year. It’s that good!\r\n\r\nCake Prague represents everything that’s great about Soviet baking. It’s ultra-sweet, soaked in sweetened condensed milk, and worthy of bring in the window of the fanciest bakery.\r\n\r\nAlthough the recipe card looks quite long, Cake Prague doesn’t require super technical baking skills to make. There’s a lot of layers and steps, but the prep time is totally worth the luscious result!",
+            "image": "Media/praga.jpg",
+            "image1": "",
+            "image2": "",
+            "image3": "",
+            "view_count": 5
+        }
+    },
+    {
+        "model": "core.blog",
+        "pk": 15,
+        "fields": {
+            "blog_category": "1",
+            "title": "Italy",
+            "created_on": "2023-08-25",
+            "user": 3,
+            "description": "Italy’s political geography has been conditioned by this rugged landscape. With few direct roads between them, and with passage from one point to another traditionally difficult, Italy’s towns and cities have a history of self-sufficiency, independence, and mutual mistrust. Visitors today remark on how unlike one town is from the next, on the marked differences in cuisine and dialect, and on the many subtle divergences that make Italy seem less a single nation than a collection of culturally related points in an uncommonly pleasing setting.",
+            "image": "Media/italy.webp",
+            "image1": "",
+            "image2": "",
+            "image3": "",
+            "view_count": 3
+        }
+    },
+    {
+        "model": "core.blog",
+        "pk": 18,
+        "fields": {
+            "blog_category": "3",
+            "title": "Red rose",
+            "created_on": "2023-08-25",
+            "user": 3,
+            "description": "The majority of ornamental roses are hybrids that were bred for their flowers. A few, mostly species roses are grown for attractive or scented foliage (such as Rosa glauca and Rosa rubiginosa), ornamental thorns (such as Rosa sericea) or for their showy fruit (such as Rosa moyesii).\r\n\r\nOrnamental roses have been cultivated for millennia, with the earliest known cultivation known to date from at least 500 BC in Mediterranean countries, Persia, and China.[11] It is estimated that 30 to 35 thousand rose hybrids and cultivars have been bred and selected for garden use as flowering plants.[12] Most are double-flowered with many or all of the stamens having morphed into additional petals.\r\n\r\nIn the early 19th century the Empress Josephine of France patronized the development of rose breeding at her gardens at Malmaison. As long ago as 1840 a collection numbering over one thousand different cultivars, varieties and species was possible when a rosarium was planted by Loddiges nursery for Abney Park Cemetery, an early Victorian garden cemetery and arboretum in England.",
+            "image": "Media/rose_uT0CKto.jpeg",
+            "image1": "",
+            "image2": "",
+            "image3": "",
+            "view_count": 0
+        }
+    },
+    {
+        "model": "core.blog",
+        "pk": 21,
+        "fields": {
+            "blog_category": "3",
+            "title": "rose",
+            "created_on": "2023-08-27",
+            "user": 3,
+            "description": "The majority of ornamental roses are hybrids that were bred for their flowers. A few, mostly species roses are grown for attractive or scented foliage (such as Rosa glauca and Rosa rubiginosa), ornamental thorns (such as Rosa sericea) or for their showy fruit (such as Rosa moyesii).\r\n\r\nOrnamental roses have been cultivated for millennia, with the earliest known cultivation known to date from at least 500 BC in Mediterranean countries, Persia, and China.[11] It is estimated that 30 to 35 thousand rose hybrids and cultivars have been bred and selected for garden use as flowering plants.[12] Most are double-flowered with many or all of the stamens having morphed into additional petals.\r\n\r\nIn the early 19th century the Empress Josephine of France patronized the development of rose breeding at her gardens at Malmaison. As long ago as 1840 a collection numbering over one thousand different cultivars, varieties and species was possible when a rosarium was planted by Loddiges nursery for Abney Park Cemetery, an early Victorian garden cemetery and arboretum in England.",
+            "image": "Media/rose_JAyaanx.jpeg",
+            "image1": "",
+            "image2": "",
+            "image3": "",
+            "view_count": 6
+        }
+    },
+    {
+        "model": "core.blog",
+        "pk": 24,
+        "fields": {
+            "blog_category": "5",
+            "title": "Cake",
+            "created_on": "2023-08-25",
+            "user": 3,
+            "description": "This is the ultimate rainbow cake… rainbow sponge, rainbow buttercream, rainbow piping! The fun ...\r\nIngredients\r\n330 g Margarine\r\n330 g Caster Sugar\r\n6 Medium Eggs (beaten)\r\n15 ml Dr. Oetker Madagascan Vanilla Extract (1tbsp)\r\n330 g Self-Raising Flour",
+            "image": "Media/pinata-rainbow-cake_wOBatPx.jpg",
+            "image1": "",
+            "image2": "",
+            "image3": "",
+            "view_count": 0
+        }
+    },
+    {
+        "model": "core.blog",
+        "pk": 27,
+        "fields": {
+            "blog_category": "2",
+            "title": "Swiming",
+            "created_on": "2023-08-28",
+            "user": 3,
+            "description": "Swimming is an individual or team racing sport that requires the use of one's entire body to move through water. The sport takes place in pools or open water (e.g., in a sea or lake). Competitive swimming is one of the most popular Olympic sports,[1] with varied distance events in butterfly, backstroke, breaststroke, freestyle, and individual medley. In addition to these individual events, four swimmers can take part in either a freestyle or medley relay. A medley relay consists of four swimmers who will each swim a different stroke, ordered as backstroke, breaststroke, butterfly and freestyle.[2]\r\n\r\nSwimming each stroke requires a set of specific techniques; in competition, there are distinct regulations concerning the acceptable form for each individual stroke.[3] There are also regulations on what types of swimsuits, caps, jewelry and injury tape that are allowed at competitions.[4] Although it is possible for competitive swimmers to incur several injuries from the sport, such as tendinitis in the shoulders or knees, there are also multiple health benefits associated with the sport.",
+            "image": "Media/Swimming.jpg",
+            "image1": "",
+            "image2": "",
+            "image3": "",
+            "view_count": 6
+        }
+    },
+    {
+        "model": "core.blog",
+        "pk": 28,
+        "fields": {
+            "blog_category": "2",
+            "title": "yoga",
+            "created_on": "2023-08-29",
+            "user": 3,
+            "description": "Yoga (/ˈjoʊɡə/ (listen);[1] Sanskrit: योग, lit. 'yoke' or 'union' pronounced [joːɡɐ]) is a group of physical, mental, and spiritual practices or disciplines which originated in ancient India and aim to control (yoke) and still the mind, recognizing a detached witness-consciousness untouched by the mind (Chitta) and mundane suffering (Duḥkha). There is a wide variety of schools of yoga, practices, and goals[2] in Hinduism, Buddhism, and Jainism,[3][4][5] and traditional and modern yoga is practiced worldwide.[6]\r\n\r\nYoga-like practices were first mentioned in the ancient Hindu text known as Rigveda.[7] Yoga is referred to in a number of the Upanishads.[8][9][10] The first known appearance of the word \"yoga\" with the same meaning as the modern term is in the Katha Upanishad,[11][12] which was probably composed between the fifth and third centuries BCE.[13][14] Yoga continued to develop as a systematic study and practice during the fifth and sixth centuries BCE in ancient India's ascetic and Śramaṇa movements.[15] The most comprehensive text on Yoga, the Yoga Sutras of Patanjali, date to the early centuries of the Common Era;[16][17][note 1] Yoga philosophy became known as one of the six orthodox philosophical schools (Darśanas) of Hinduism in the second half of the first millennium CE.[18][web 1] Hatha yoga texts began to emerge between the ninth and 11th centuries, originating in tantra.[19][20]",
+            "image": "Media/yoga.jpeg",
+            "image1": "",
+            "image2": "",
+            "image3": "",
+            "view_count": 11
+        }
+    },
+    {
+        "model": "core.blog",
+        "pk": 29,
+        "fields": {
+            "blog_category": "2",
+            "title": "Physical fitness",
+            "created_on": "2023-08-29",
+            "user": 3,
+            "description": "Fitness is defined as the quality or state of being fit and healthy.[5] Around 1950, perhaps consistent with the Industrial Revolution and the treatise of World War II, the term \"fitness\" increased in western vernacular by a factor of ten.[6] The modern definition of fitness describes either a person or machine's ability to perform a specific function or a holistic definition of human adaptability to cope with various situations. This has led to an interrelation of human fitness and physical attractiveness that has mobilized global fitness and fitness equipment industries. Regarding specific function, fitness is attributed to persons who possess significant aerobic or anaerobic ability (i.e., endurance or strength). A well-rounded fitness program improves a person in all aspects of fitness compared to practicing only one, such as only cardio/respiratory or only weight training.\r\n\r\nA comprehensive fitness program tailored to an individual typically focuses on one or more specific skills,[7] and on age-[8] or health-related needs such as bone health.[9] Many sources[10] also cite mental, social and emotional health as an important part of overall fitness. This is often presented in textbooks as a triangle made up of three points, which represent physical, emotional, and mental fitness. Physical fitness has been shown to have benefits in preventing ill health and assisting recovery from injury or illness. Along with the physical health benefits of fitness, it has also been shown to have a positive impact on mental health as well by assisting in treating anxiety and depression.[11] Physical fitness can also prevent or treat many other chronic health conditions brought on by unhealthy lifestyle or aging as well and has been listed frequently as one of the most popular and advantageous self-care therapies.[12] Working out can also help some people sleep better by building up sleeping pressure and possibly alleviate some mood disorders in certain individuals.[13]\r\n\r\nDeveloping research has demonstrated that many of the benefits of exercise are mediated through the role of skeletal muscle as an endocrine organ. That is, contracting muscles release multiple substances known as myokines, which promote the growth of new tissue, tissue repair, and various anti-inflammatory functions, which in turn reduce the risk of developing various inflammatory diseases.[14]",
+            "image": "Media/Fitness.jpg",
+            "image1": "Media/Fitness-Goals3.jpg",
+            "image2": "Media/fitness-4.jpeg",
+            "image3": "Media/fitness2.jpeg",
+            "view_count": 23
+        }
+    },
+    {
+        "model": "core.blog",
+        "pk": 30,
+        "fields": {
+            "blog_category": "9",
+            "title": "Computed Tomography",
+            "created_on": "2023-08-30",
+            "user": 4,
+            "description": "Unlike a conventional x-ray—which uses a fixed x-ray tube—a CT scanner uses a motorized x-ray source that rotates around the circular opening of a donut-shaped structure called a gantry. During a CT scan, the patient lies on a bed that slowly moves through the gantry while the x-ray tube rotates around the patient, shooting narrow beams of x-rays through the body. Instead of film, CT scanners use special digital x-ray detectors, which are located directly opposite the x-ray source. As the x-rays leave the patient, they are picked up by the detectors and transmitted to a computer.\r\n\r\nEach time the x-ray source completes one full rotation, the CT computer uses sophisticated mathematical techniques to construct a two-dimensional image slice of the patient. The thickness of the tissue represented in each image slice can vary depending on the CT machine used, but usually ranges from 1-10 millimeters. When a full slice is completed, the image is stored and the motorized bed is moved forward incrementally into the gantry. The x-ray scanning process is then repeated to produce another image slice. This process continues until the desired number of slices is collected.\r\n\r\nImage slices can either be displayed individually or stacked together by the computer to generate a 3D image of the patient that shows the skeleton, organs, and tissues as well as any abnormalities the physician is trying to identify. This method has many advantages including the ability to rotate the 3D image in space or to view slices in succession, making it easier to find the exact place where a problem may be located.",
+            "image": "Media/CT-Scan.jpg",
+            "image1": "",
+            "image2": "",
+            "image3": "",
+            "view_count": 9
+        }
+    },
+    {
+        "model": "core.blog",
+        "pk": 31,
+        "fields": {
+            "blog_category": "7",
+            "title": "What Is Robotics?",
+            "created_on": "2023-08-30",
+            "user": 4,
+            "description": "Robotics is the intersection of science, engineering and technology that produces machines, called robots, that replicate or substitute for human actions. Pop culture has always been fascinated with robots — examples include R2-D2, the Terminator and WALL-E. These over-exaggerated, humanoid concepts of robots usually seem like a caricature of the real thing. But are they more forward thinking than we realize? Robots are gaining intellectual and mechanical capabilities that don’t put the possibility of a R2-D2-like machine out of reach in the future.\r\n\r\nAs technology progresses, so too does the scope of what is considered robotics. In 2005, 90 percent of all robots could be found assembling cars in automotive factories. These robots consist mainly of mechanical arms tasked with welding or screwing on certain parts of a car. \r\n\r\nToday, we’re seeing an evolved and expanded definition of robotics that includes the development, creation and use of bots that accomplish tasks like exploring the planet’s harshest conditions, assisting law enforcement,  streamlining surgical procedures and undertaking rescue missions.",
+            "image": "Media/robot3.jpg",
+            "image1": "",
+            "image2": "",
+            "image3": "",
+            "view_count": 3
+        }
+    },
+    {
+        "model": "core.message",
+        "pk": 1,
+        "fields": {
+            "full_name": "Naira",
+            "email": "naraman@bk.ru",
+            "subject": "test",
+            "message": "Test",
+            "created_on": "2023-08-24T18:31:25.144Z"
+        }
+    },
+    {
+        "model": "core.message",
+        "pk": 2,
+        "fields": {
+            "full_name": "Naira",
+            "email": "naira@gmail.com",
+            "subject": "test 2",
+            "message": "Test 2",
+            "created_on": "2023-08-24T18:37:39.552Z"
+        }
+    },
+    {
+        "model": "core.message",
+        "pk": 3,
+        "fields": {
+            "full_name": "Naira Mangasaryan",
+            "email": "naraman@bk.ru",
+            "subject": "Good morning",
+            "message": "test",
+            "created_on": "2023-08-24T18:40:02.271Z"
+        }
+    },
+    {
+        "model": "core.message",
+        "pk": 4,
+        "fields": {
+            "full_name": "nnn",
+            "email": "hhj@jkkk.kkj",
+            "subject": "test",
+            "message": "test",
+            "created_on": "2023-08-24T18:54:07.663Z"
+        }
+    },
+    {
+        "model": "core.message",
+        "pk": 5,
+        "fields": {
+            "full_name": "Naira Mangasaryan",
+            "email": "mangasaryannaira@gmail.com",
+            "subject": "test",
+            "message": "test",
+            "created_on": "2023-08-24T18:59:29.955Z"
+        }
+    },
+    {
+        "model": "core.message",
+        "pk": 6,
+        "fields": {
+            "full_name": "Naira",
+            "email": "kar@gmail.com",
+            "subject": "Good morning",
+            "message": "Goog day",
+            "created_on": "2023-08-25T10:03:35.368Z"
+        }
+    },
+    {
+        "model": "core.message",
+        "pk": 7,
+        "fields": {
+            "full_name": "Naira",
+            "email": "naraman@bk.ru",
+            "subject": "vjjjoi",
+            "message": "ftygijok",
+            "created_on": "2023-08-29T20:21:45.091Z"
+        }
+    }
+]
