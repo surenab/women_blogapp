@@ -1,4 +1,5 @@
 
+from django.forms.models import BaseModelForm
 from django.shortcuts import render, redirect
 from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
 from typing import Any, Dict
@@ -41,26 +42,21 @@ class CreateBlog(BlogBase):
         form.instance.user = self.request.user
         messages.success(self.request, "Blog was created successfully!")
         return super().form_valid(form)
-    
 
 
-class CreateBlogComment( CreateView):
+class CreateBlogComment(CreateView):
     model = BlogComment
     form_class = BlogCommentForm
     success_text = "Done!"
 
-
     def get_success_url(self) -> str:
         return reverse_lazy("blog_details", kwargs={"pk": self.request.POST.get("blog")})
-
 
     def form_valid(self, form):
         form.instance.owner = self.request.user
 
         messages.success(self.request, "Blog Comment instanse is created!")
         return super().form_valid(form)
-
-
 
 
 class Filters(FilterView):
@@ -137,12 +133,6 @@ class BlogDetail(DetailView):
         context = self.get_context_data(object=self.object)
         return self.render_to_response(context)
 
-    
-class BlogDetail(DetailView):
-    model = Blog
-    context_object_name = "blog"
-
-
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         data = super().get_context_data(**kwargs)
         data['comment_form'] = BlogCommentForm
@@ -150,16 +140,25 @@ class BlogDetail(DetailView):
         return data
 
 
+class CreateBlogComment(CreateView):
+    model = BlogComment
+    form_class = BlogCommentForm
+    success_text = "Created"
+
+    def get_success_url(self) -> str:
+        return reverse_lazy("blog_details", kwargs={"pk": self.request.POST.get("blog")})
+
+    def form_valid(self, form):
+        form.instance.owner = self.request.user
+
+        messages.success(self.request, "Comment is created")
+        return super().form_valid(form)
+
+
 class MyBlogUpdate(BlogBase, UpdateView):
     success_text = "Blog is updated!"
     template_name = "core/blog_update.html"
 
-
-# This view dosn't delete the blog
-
-# class MyBlogDelete(BlogBase, DeleteView):
-#   success_text = "Blog is deleted!"
-#   template_name = "core/blog_confirm_delete.html"
 
 class BlogDelete(DeleteView):
     model = Blog
