@@ -28,6 +28,7 @@ from .views import (
     About,
     Contact,
     search_result,
+    search_suggestions,
 )
 
 
@@ -42,6 +43,7 @@ urlpatterns = [
     path("singlepost/", single_post, name="singlepost"),
     path("about/", About.as_view(), name="about"),
     path("contact/", Contact.as_view(), name="contact"),
-    path("searchresult/", search_result, name="searchresult"),
+    path('search/', search_result, name='search_result'),
     path("category/", Category.as_view(), name="category"),
+    path('search-suggestions/', search_suggestions, name='search_suggestions'),
 ]

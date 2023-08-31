@@ -1,5 +1,5 @@
 
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_list_or_404
 from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
 from typing import Any
 from django.urls import reverse_lazy
@@ -10,6 +10,10 @@ from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django_filters.views import FilterView
 from .filters import BlogFilter
+from django.http import JsonResponse
+from django.db.models import Q
+from itertools import chain
+
 
 
 # Create your views here.
@@ -43,7 +47,6 @@ class CreateBlog(BlogBase):
         return super().form_valid(form)
 
 
-
 class Filters(FilterView):
     model = Blog
     context_object_name = "blogs"
@@ -55,12 +58,14 @@ class Filters(FilterView):
         context['most_viewed_blogs'] = most_viewed_blogs
         return context
 
+
 class MyFilters(LoginRequiredMixin, Filters):
 
     def get_queryset(self):
         queryset = super(MyFilters, self).get_queryset()
         queryset = queryset.filter(user=self.request.user)
         return queryset
+
 
 class Home(Filters):
     template_name = "core/home.html"
@@ -79,6 +84,12 @@ class Home(Filters):
             messageForm.save()
             messages.success(request, "Message submitted successfully!")
         return redirect("{% url 'home'%}")
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['filter'] = BlogFilter(
+            self.request.GET, queryset=self.get_queryset())
+        return context
 
 
 class Category(Home):
@@ -150,13 +161,38 @@ def single_post(request):
 
 
 class About(Home):
-    template_name ="core/about.html"
+    template_name = "core/about.html"
 
 
 class Contact(Home):
-    template_name ="core/contact.html"
+    template_name = "core/contact.html"
 
 
 def search_result(request):
-    blogs = Blog.objects.all()
-    return render(request, "core/search_result.html", context={"blogs": blogs})
+    query = request.GET.get('search')
+    blog_filter = BlogFilter(request.GET, queryset=Blog.objects.all())
+
+    context = {
+        'query': query,  
+        'blog_filter': blog_filter,
+    }
+
+    if query:
+        blog_filter_qs = blog_filter.qs.filter(
+            Q(title__icontains=query) | Q(description__icontains=query))
+        context['blog_filter'] = blog_filter_qs
+
+    return render(request, 'core/search_result.html', context)
+
+
+def search_suggestions(request):
+    search_query = request.GET.get('q', '')
+
+    blogs_title = get_list_or_404(Blog, title__icontains=search_query)
+    blogs_description = get_list_or_404(Blog, description__icontains=search_query)
+    blogs = list(chain(blogs_title, blogs_description))
+
+    suggestions = [{'title': blog.title, 'description': blog.description}
+                   for blog in blogs]
+    
+    return JsonResponse(suggestions, safe=False)
