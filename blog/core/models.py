@@ -58,6 +58,17 @@ class Message(models.Model):
     message = models.TextField(max_length=1000)
     created_on = models.DateTimeField(auto_now=True)
 
+ 
+class TeamMember(models.Model):
+    full_name= models.CharField(max_length=50)
+    job_position = models.CharField(max_length=50)
+    about_member= models.TextField(max_length=1000)
+    image= models.ImageField( upload_to="Media", default=None, null=True, blank=True)
+
+
+class AboutTeam(models.Model):
+    about_team = models.TextField(max_length=1000)
+  
 
 class BlogComment(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -67,3 +78,4 @@ class BlogComment(models.Model):
 
     def __str__(self) -> str:
         return f"{self.owner.username} is commented {self.text}"
+

@@ -10,6 +10,7 @@ from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django_filters.views import FilterView
 from .filters import BlogFilter
+from .models import About
 
 
 # Create your views here.
@@ -155,11 +156,7 @@ class MyBlogUpdate(BlogBase, UpdateView):
     template_name = "core/blog_update.html"
 
 
-# This view dosn't delete the blog
 
-# class MyBlogDelete(BlogBase, DeleteView):
-#   success_text = "Blog is deleted!"
-#   template_name = "core/blog_confirm_delete.html"
 
 class BlogDelete(DeleteView):
     model = Blog
@@ -184,6 +181,8 @@ def single_post(request):
 
 class About(Home):
     template_name = "core/about.html"
+    model = TeamMember
+    contex_object_name = team_members
 
 
 class Contact(Home):

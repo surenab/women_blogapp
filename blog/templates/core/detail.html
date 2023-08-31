@@ -1,0 +1,36 @@
+{% extends "core/base.html" %}
+
+{% load static %}
+
+{% block bodycontent %}
+<main id="main">
+    <section>
+        <div class="container" data-aos="fade-up">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h1 class="page-title">My blogs Details</h1>
+                </div>
+            </div>
+            <div class="justify-content-center">
+
+               
+
+                    
+                            <div> Id is: {{blog.id}}</div> 
+                            <div> Category is: {{blog.get_blog_category_display}}</div>
+                            <div> Title is: {{blog.title}}</div>
+                            <div> Description is: {{blog.description}}</div>
+                            <div> Image is: {{blog.image}}</div>
+                            <div> Create on is: {{blog.created_on}}</div>
+                           
+                        
+                        
+
+                    </tbody>
+
+                </table>
+
+            </div>
+        </div>
+    </section>
+    {%endblock%}
