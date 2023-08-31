@@ -45,18 +45,21 @@
 <body>
 
   {% include "core/header.html" %}
-  <div class="messages">
-    {% for message in messages %}
-    <div class="alert {{message.tags}} alert-dismissible fade show" role="alert">
-      <strong>{{message}}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+  <main id="main">
+    <div class="messages">
+      {% for message in messages %}
+      <div class="alert {{message.tags}} alert-dismissible fade show" role="alert">
+        <strong>{{message}}
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      {% endfor %}
     </div>
-    {% endfor %}
-  </div>
+  </main>
 
   {% block bodycontent %} {% endblock %}
+
 
   {% include "core/footer.html" %}
 
