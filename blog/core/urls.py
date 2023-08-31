@@ -25,11 +25,12 @@ from .views import (
     MyBlogUpdate,
     BlogDetail,
     single_post,
-    About,
+
     Contact,
     search_result,
     CreateBlogComment,
-   
+    about
+
 )
 
 
@@ -42,11 +43,10 @@ urlpatterns = [
     path("my-blogs/delete/<int:pk>", BlogDelete.as_view(), name="my_blog_delete"),
     path("createblog/", CreateBlog.as_view(), name="createblog"),
     path("singlepost/", single_post, name="singlepost"),
-    path("about/", About.as_view(), name="about"),
+    path("about/", about, name="about"),
     path("contact/", Contact.as_view(), name="contact"),
     path("searchresult/", search_result, name="searchresult"),
     path("category/", Category.as_view(), name="category"),
     path("create_comment", CreateBlogComment.as_view(), name="create_comment"),
-    path("details/<int:pk>",BlogDetail.as_view(), name="blog_details"),
+    path("details/<int:pk>", BlogDetail.as_view(), name="blog_details"),
 ]
-

@@ -16,7 +16,7 @@
             </div>
 
             <div class="text-center">
-                <form method="post" class="card">
+                <form action="" method="post" class="card">
                     {% csrf_token %}
                     <p class="text-center">
                         {% render_field form.title placeholder="Title" class+="form-control" %}
@@ -27,13 +27,10 @@
                         <br>
                         {% render_field form.image placeholder="General Image" class+="form-control" %}
                         <br>
+                        {% render_field form.image1 placeholder="General Image" class+="form-control" %}
+                        <br>
 
-                        {% render_field form.image1 placeholder="Additional Image" class+="form-control" %}
-                        <br>
-                        {% render_field form.image2 placeholder="Additional Image" class+="form-control" %}
-                        <br>
-                        {% render_field form.image3 placeholder="Additional Image" class+="form-control" %}
-                        <br>
+
 
                         <button class="btn btn-lg btn-primary btn-block" type="submit">
                             Update blog

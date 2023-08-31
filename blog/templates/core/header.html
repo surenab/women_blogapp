@@ -30,7 +30,7 @@
           </ul>
         </li>
 
-        <li><a href="{% url 'about' %}">About</a></li>
+        <li><a href="{%url 'about'%}">About</a></li>
         <li><a href="{% url 'contact' %}">Contact</a></li>
       </ul>
     </nav><!-- .navbar -->
@@ -43,7 +43,7 @@
         <li><a type="button" href="{% url 'createblog' %}"> Add new blog</a></li>
         <li><a type="button" href="{% url 'my_blogs' %}"> My blogs</a></li>
         <li><a type="button" href="{% url 'logout' %}"> Log Out</a></li>
-       
+
         {% else %}
         <li><a type="button" href="{% url 'signup' %}">Sig up </a></li>
         <li><a type="button" href="{% url 'login' %}"> Log in</a></li>

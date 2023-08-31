@@ -6,12 +6,11 @@ from typing import Any, Dict
 from django.urls import reverse_lazy
 from django.http import HttpResponse, HttpRequest
 from .forms import BlogForm, MessageForm, BlogCommentForm
-from .models import Blog, BlogComment
+from .models import Blog, BlogComment, AboutTeam, TeamMember
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django_filters.views import FilterView
 from .filters import BlogFilter
-from .models import About
 
 
 # Create your views here.
@@ -182,10 +181,12 @@ def single_post(request):
     return render(request, "core/single_post.html", context={"blogs": blogs})
 
 
-class About(Home):
-    template_name = "core/about.html"
-    model = TeamMember
-    contex_object_name = team_members
+def about(request):
+    team_members = TeamMember.objects.all()
+    about_team = AboutTeam.objects.all()
+
+    return render(request, "core/about.html", context={"team_members": team_members,
+                                                       "about_team": about_team})
 
 
 class Contact(Home):
