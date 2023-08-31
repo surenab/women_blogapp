@@ -43,7 +43,6 @@ class CreateBlog(BlogBase):
         return super().form_valid(form)
 
 
-
 class Filters(FilterView):
     model = Blog
     context_object_name = "blogs"
@@ -55,12 +54,14 @@ class Filters(FilterView):
         context['most_viewed_blogs'] = most_viewed_blogs
         return context
 
+
 class MyFilters(LoginRequiredMixin, Filters):
 
     def get_queryset(self):
         queryset = super(MyFilters, self).get_queryset()
         queryset = queryset.filter(user=self.request.user)
         return queryset
+
 
 class Home(Filters):
     template_name = "core/home.html"
@@ -104,7 +105,7 @@ class MyBlog(MyFilters):
         return blogs_per_page
 
 
-class MyBlogDetail(DetailView):
+class BlogDetail(DetailView):
     model = Blog
     template_name = "core/blog_detail.html"
     context_object_name = "blog"
@@ -150,11 +151,11 @@ def single_post(request):
 
 
 class About(Home):
-    template_name ="core/about.html"
+    template_name = "core/about.html"
 
 
 class Contact(Home):
-    template_name ="core/contact.html"
+    template_name = "core/contact.html"
 
 
 def search_result(request):
