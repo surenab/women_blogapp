@@ -13,22 +13,58 @@
 
                     <!-- ======= Single Post Content ======= -->
 
-
                     <div class="single-post">
                         <div class="post-meta"><span class="date">{{blog.get_blog_category_display}}</span> <span
-                                class="mx-1">&bullet;</span><span>{{blog.created_on}}</span>
+                                class="mx-1">&bullet;</span><span>{{blog.created_on}}</span><span
+                                class="mx-1">&bullet;</span><span>Author: {{blog.user.first_name}}
+                                {{blog.user.last_name}}</span>
                         </div>
 
                         <h1 class="mb-5">{{blog.title}}</h1>
                         <p> {{blog.description}} </p>
 
-                        <figure class="my-4">
-                            <img src="{{ blog.image.url}}" alt="" class="img-fluid" width="800">
+                        <div class="container-md" data-aos="fade-in">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="swiper sliderFeaturedPosts">
+
+                                        <div class="swiper-wrapper">
+                                            {% if blog.image %}
+                                            <div class=" swiper-slide" class="img-bg-inner  d-flex align-items-end">
+                                                <img src="{{blog.image.url}}" alt="" height="300px" width="450px">
+                                            </div>
+                                            {%endif%}
+                                            {% if blog.image1 %}
+                                            <div class=" swiper-slide" class="img-bg-inner  d-flex align-items-end">
+                                                <img src="{{blog.image1.url}}" alt="" height="300px" width="450px">
+                                            </div>
+                                            {%endif%}
+
+                                            {% if blog.image2 %}
+                                            <div class=" swiper-slide" class="img-bg-inner d-flex align-items-end">
+                                                <img src="{{blog.image2.url}}" alt="" height="300px" width="450px">
+                                            </div>
+                                            {%endif%}
+                                            {% if blog.image3 %}
+                                            <div class=" swiper-slide" class="img-bg-inner  d-flex align-items-end">
+                                                <img src="{{blog.image3.url}}" alt="" height="300px" width="450px">
+                                            </div>
+                                            {%endif%}
+
+                                        </div>
+                                        <div class="custom-swiper-button-next">
+                                            <span class="bi-chevron-right"></span>
+                                        </div>
+                                        <div class="custom-swiper-button-prev">
+                                            <span class="bi-chevron-left"></span>
+                                        </div>
+                                        <div class="swiper-pagination"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
-
-
-
                 </div>
             </div>
         </div>

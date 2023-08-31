@@ -39,10 +39,11 @@
     <nav id="navbar" class="navbar">
       <ul>
         {% if request.user.is_authenticated %}
+
         <li><a type="button" href="{% url 'createblog' %}"> Add new blog</a></li>
         <li><a type="button" href="{% url 'my_blogs' %}"> My blogs</a></li>
         <li><a type="button" href="{% url 'logout' %}"> Log Out</a></li>
-
+       
         {% else %}
         <li><a type="button" href="{% url 'signup' %}">Sig up </a></li>
         <li><a type="button" href="{% url 'login' %}"> Log in</a></li>
