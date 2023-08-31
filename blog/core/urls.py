@@ -28,6 +28,8 @@ from .views import (
     About,
     Contact,
     search_result,
+    CreateBlogComment,
+   
 )
 
 
@@ -44,4 +46,7 @@ urlpatterns = [
     path("contact/", Contact.as_view(), name="contact"),
     path("searchresult/", search_result, name="searchresult"),
     path("category/", Category.as_view(), name="category"),
+    path("create_comment", CreateBlogComment.as_view(), name="create_comment"),
+    path("details/<int:pk>",BlogDetail.as_view(), name="blog_details"),
 ]
+

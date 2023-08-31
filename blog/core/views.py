@@ -1,11 +1,11 @@
 
 from django.shortcuts import render, redirect
 from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
-from typing import Any
+from typing import Any, Dict
 from django.urls import reverse_lazy
 from django.http import HttpResponse, HttpRequest
-from .forms import BlogForm, MessageForm
-from .models import Blog
+from .forms import BlogForm, MessageForm, BlogCommentForm
+from .models import Blog, BlogComment
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django_filters.views import FilterView
@@ -41,6 +41,26 @@ class CreateBlog(BlogBase):
         form.instance.user = self.request.user
         messages.success(self.request, "Blog was created successfully!")
         return super().form_valid(form)
+    
+
+
+class CreateBlogComment( CreateView):
+    model = BlogComment
+    form_class = BlogCommentForm
+    success_text = "Done!"
+
+
+    def get_success_url(self) -> str:
+        return reverse_lazy("blog_details", kwargs={"pk": self.request.POST.get("blog")})
+
+
+    def form_valid(self, form):
+        form.instance.owner = self.request.user
+
+        messages.success(self.request, "Blog Comment instanse is created!")
+        return super().form_valid(form)
+
+
 
 
 class Filters(FilterView):
@@ -116,6 +136,18 @@ class BlogDetail(DetailView):
         self.object.save()
         context = self.get_context_data(object=self.object)
         return self.render_to_response(context)
+
+    
+class BlogDetail(DetailView):
+    model = Blog
+    context_object_name = "blog"
+
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        data = super().get_context_data(**kwargs)
+        data['comment_form'] = BlogCommentForm
+        data['comments'] = BlogComment.objects.filter(blog=data['blog'])
+        return data
 
 
 class MyBlogUpdate(BlogBase, UpdateView):
