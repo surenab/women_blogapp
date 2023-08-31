@@ -59,3 +59,11 @@ class Message(models.Model):
     created_on = models.DateTimeField(auto_now=True)
 
 
+class BlogComment(models.Model):
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
+    text = models.TextField(max_length=400)
+    created_on = models.DateField(auto_now_add=True)
+
+    def __str__(self) -> str:
+        return f"{self.owner.username} is commented {self.text}"
