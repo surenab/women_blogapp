@@ -15,20 +15,38 @@ Including another URLconf
 """
 from django.urls import path
 
-from .views import category, Home, CreateBlog, MyBlog, MyBlogDelete, MyBlogUpdate, MyBlogDetail, single_post, about, contact, search_result
+from .views import (
+
+    Category,
+    Home,
+    CreateBlog,
+    MyBlog,
+    BlogDelete,
+    MyBlogUpdate,
+    BlogDetail,
+    single_post,
+    About,
+    Contact,
+    search_result,
+    CreateBlogComment,
+   
+)
 
 
 urlpatterns = [
     path("", Home.as_view(), name="home"),
     path("my-blogs/", MyBlog.as_view(), name="my_blogs"),
-    path("my-blogs/details/<int:pk>",
-         MyBlogDetail.as_view(), name="my_blog_details"),
+    path("blog-details/<int:pk>",
+         BlogDetail.as_view(), name="blog_details"),
     path("my-blogs/update/<int:pk>", MyBlogUpdate.as_view(), name="my_blog_update"),
-    path("my-blogs/delete/<int:pk>", MyBlogDelete.as_view(), name="my_blog_delete"),
+    path("my-blogs/delete/<int:pk>", BlogDelete.as_view(), name="my_blog_delete"),
     path("createblog/", CreateBlog.as_view(), name="createblog"),
     path("singlepost/", single_post, name="singlepost"),
-    path("about/", about, name="about"),
-    path("category", category, name="category"),
-    path("contact/", contact, name="contact"),
+    path("about/", About.as_view(), name="about"),
+    path("contact/", Contact.as_view(), name="contact"),
     path("searchresult/", search_result, name="searchresult"),
+    path("category/", Category.as_view(), name="category"),
+    path("create_comment", CreateBlogComment.as_view(), name="create_comment"),
+    path("details/<int:pk>",BlogDetail.as_view(), name="blog_details"),
 ]
+

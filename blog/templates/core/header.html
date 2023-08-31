@@ -12,21 +12,21 @@
     <nav id="navbar" class="navbar">
       <ul>
         <li><a href="{% url 'home' %}">Blog</a></li>
-        <li class="dropdown"><a href="{% url 'category' %}"><span>Categories</span> <i
+
+        <li class="dropdown"><a href=""><span>Categories</span> <i
               class="bi bi-chevron-down dropdown-indicator"></i></a>
           <ul>
-            <li><a href="{% url 'searchresult' %}">Search Result</a></li>
-            <li><a href="#travel">Travel</a></li>
-            <li><a href="#sport">Sport</a></li>
-            <li><a href="#nature">Nature</a></li>
-            <li><a href="#animals">Animals</a></li>
-            <li><a href="#food">Food</a></li>
-            <li><a href="#DIYandCrafts">DIY and Crafts</a></li>
-            <li><a href="#science">Science and Technology</a></li>
-            <li><a href="#fashion">Fashion</a></li>
-            <li><a href="#medicine">Medicine</a></li>
-            <li><a href="#psycology">Psycology</a></li>
-            <li><a href="#art">Art</a></li>
+            <li><a href="/category/?blog_category=1">Travel</a></li>
+            <li><a href="/category/?blog_category=2">Sport</a></li>
+            <li><a href="/category/?blog_category=3">Nature</a></li>
+            <li><a href="/category/?blog_category=4">Animals</a></li>
+            <li><a href="/category/?blog_category=5">Food</a></li>
+            <li><a href="/category/?blog_category=6">DIY and Crafts</a></li>
+            <li><a href="/category/?blog_category=7">Science and Technology</a></li>
+            <li><a href="/category/?blog_category=8">Fashion</a></li>
+            <li><a href="/category/?blog_category=9">Medicine</a></li>
+            <li><a href="/category/?blog_category=10">Psycology</a></li>
+            <li><a href="/category/?blog_category=11">Art</a></li>
           </ul>
         </li>
 
@@ -39,10 +39,11 @@
     <nav id="navbar" class="navbar">
       <ul>
         {% if request.user.is_authenticated %}
+
         <li><a type="button" href="{% url 'createblog' %}"> Add new blog</a></li>
         <li><a type="button" href="{% url 'my_blogs' %}"> My blogs</a></li>
         <li><a type="button" href="{% url 'logout' %}"> Log Out</a></li>
-
+       
         {% else %}
         <li><a type="button" href="{% url 'signup' %}">Sig up </a></li>
         <li><a type="button" href="{% url 'login' %}"> Log in</a></li>
