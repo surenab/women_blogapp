@@ -11,6 +11,7 @@ from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django_filters.views import FilterView
 from .filters import BlogFilter
+from .models import About
 
 
 # Create your views here.
@@ -183,6 +184,8 @@ def single_post(request):
 
 class About(Home):
     template_name = "core/about.html"
+    model = TeamMember
+    contex_object_name = team_members
 
 
 class Contact(Home):
