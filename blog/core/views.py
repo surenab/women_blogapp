@@ -1,5 +1,3 @@
-
-
 from django.shortcuts import render, redirect, get_list_or_404
 from django.forms.models import BaseModelForm
 from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
@@ -15,8 +13,6 @@ from .filters import BlogFilter
 from django.http import JsonResponse
 from django.db.models import Q
 from itertools import chain
-
-
 
 # Create your views here.
 
@@ -49,7 +45,6 @@ class CreateBlog(BlogBase):
         return super().form_valid(form)
 
 
-
 class CreateBlogComment(CreateView):
     model = BlogComment
     form_class = BlogCommentForm
@@ -64,7 +59,7 @@ class CreateBlogComment(CreateView):
         messages.success(self.request, "Blog Comment instanse is created!")
         return super().form_valid(form)
 
-      
+
 class Filters(FilterView):
     model = Blog
     context_object_name = "blogs"
@@ -113,8 +108,6 @@ class Home(Filters):
 class Category(Home):
     template_name = "core/category.html"
     paginate_by = 6
-
-
 
 
 class MyBlog(MyFilters):
@@ -195,13 +188,11 @@ def single_post(request):
     return render(request, "core/single_post.html", context={"blogs": blogs})
 
 
-
 def about(request):
     team_members = TeamMember.objects.all()
     about_team = AboutTeam.objects.all()
     return render(request, "core/about.html", context={"team_members": team_members,
                                                        "about_team": about_team})
-
 
 
 class Contact(Home):
@@ -213,7 +204,7 @@ def search_result(request):
     blog_filter = BlogFilter(request.GET, queryset=Blog.objects.all())
 
     context = {
-        'query': query,  
+        'query': query,
         'blog_filter': blog_filter,
     }
 
@@ -229,10 +220,11 @@ def search_suggestions(request):
     search_query = request.GET.get('q', '')
 
     blogs = Blog.objects.filter(
-    Q(title__icontains=search_query) | Q(description__icontains=search_query)
-)
+        Q(title__icontains=search_query) | Q(
+            description__icontains=search_query)
+    )
 
     suggestions = [{'title': blog.title, 'description': blog.description}
                    for blog in blogs]
-    
+
     return JsonResponse(suggestions, safe=False)
