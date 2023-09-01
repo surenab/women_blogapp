@@ -13,24 +13,20 @@
           <h3 class="page-title">About us</h3>
         </div>
       </div>
+      {%for about in about_team%}
+
       <div class="row mb-5">
-        <div class="d-md-flex post-entry-2 half">
-
-          <img src="{{about_team.team_image.url}}" alt="No image" class="img-fluid">
-
-          <div class="ps-md-5 mt-4 mt-md-0">
-            <div class="post-meta mt-4">About us</div>
-
-            <p> {{about_team.our_team}}</p>
-
+        <div class="col-lg-12 d-md-flex post-entry-2 half">
+          <div class="col-lg-6"><img src="{{about.team_image.url}}" alt="No image" class="img-fluid">
+          </div>
+          <div class="col-lg-6 ps-md-5 mt-4 mt-md-0">
+            <h5> {{about.our_team}}</h5>
           </div>
         </div>
       </div>
-
+      {%endfor%}
     </div>
   </section>
-
-
 
   <section>
     <div class="container" data-aos="fade-up">
@@ -39,16 +35,15 @@
           <div class="row justify-content-center">
             <div class="col-lg-6">
               <h2 class="display-4">Our Team</h2>
-
             </div>
           </div>
         </div>
-        {% for team_member in team_members%}
+        {% for member in team_members%}
         <div class="col-lg-4 text-center mb-5">
-          <img>{{team_member.member_image}} </img>
-          <h4>{{team_member.full_name}}</h4>
-          <span class="d-block mb-3 text-uppercase">{{team_member.job_position}}</span>
-          <p> {{team_member.about_member}}</p>
+          <img src="{{member.member_image.url}}" alt="" class="img-fluid rounded-circle w-50 mb-4">
+          <h4>{{member.full_name}}</h4>
+          <span class="d-block mb-3 text-uppercase">{{member.job_position}}</span>
+          <p> {{member.about_member}}</p>
         </div>
         {% endfor %}
 

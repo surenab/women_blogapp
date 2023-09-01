@@ -103,6 +103,8 @@ class Category(Home):
     paginate_by = 6
 
 
+
+
 class MyBlog(MyFilters):
     template_name = "core/blog_list.html"
 

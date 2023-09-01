@@ -14,8 +14,10 @@
         <div class="col-lg-9" data-aos="fade-up">
 
           {% if blogs%}
-          <div id="travel">
+          <div>
+            {%for blog in blogs|slice:":1"%}
             <h3 class="category-title">Category: {{blog.get_blog_category_display}}</h3>
+            {%endfor%}
             {% for blog in blogs %}
             <div class="d-md-flex post-entry-2 half">
               <a href="{% url 'blog_details' blog.id %}" class="me-4 thumbnail">
