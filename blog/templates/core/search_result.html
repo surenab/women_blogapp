@@ -20,7 +20,7 @@
                         Search Results
                     {% endif %}
                 </h3>
-                {% for blog in blog_filter.qs %}
+                {% for blog in blog_filter %}
                 <div class="d-md-flex post-entry-2 small-img">
                     <a href="{% url 'my_blog_details' blog.id %}" class="me-4 thumbnail">
                         <img src="{{ blog.image.url }}" alt="" class="img-fluid">

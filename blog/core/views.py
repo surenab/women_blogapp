@@ -188,9 +188,10 @@ def search_result(request):
 def search_suggestions(request):
     search_query = request.GET.get('q', '')
 
-    blogs_title = get_list_or_404(Blog, title__icontains=search_query)
-    blogs_description = get_list_or_404(Blog, description__icontains=search_query)
-    blogs = list(chain(blogs_title, blogs_description))
+    blogs = Blog.objects.filter(
+    Q(title__icontains=search_query) | Q(description__icontains=search_query)
+)
+
 
     suggestions = [{'title': blog.title, 'description': blog.description}
                    for blog in blogs]

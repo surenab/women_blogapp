@@ -109,8 +109,11 @@
         // Get the selected value
         var selectedValue = this.value;
 
-        // Redirect to the current URL with the selected value as a query parameter
-        window.location.href = updateQueryStringParameter(window.location.href, 'blogs_per_page', selectedValue);
+        // Build the new URL with the updated query parameter
+        var newUrl = updateQueryStringParameter(window.location.pathname, 'blogs_per_page', selectedValue);
+
+        // Redirect to the new URL
+        window.location.href = newUrl + window.location.search + window.location.hash;
     });
 
     // Function to update query string parameter
@@ -124,4 +127,5 @@
         }
     }
 </script>
+
 {% endblock %}
