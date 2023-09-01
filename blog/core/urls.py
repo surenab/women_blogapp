@@ -25,12 +25,11 @@ from .views import (
     MyBlogUpdate,
     BlogDetail,
     single_post,
-
     Contact,
     search_result,
+    search_suggestions,
     CreateBlogComment,
     about
-
 )
 
 
@@ -45,8 +44,9 @@ urlpatterns = [
     path("singlepost/", single_post, name="singlepost"),
     path("about/", about, name="about"),
     path("contact/", Contact.as_view(), name="contact"),
-    path("searchresult/", search_result, name="searchresult"),
+    path('search/', search_result, name='search_result'),
     path("category/", Category.as_view(), name="category"),
+    path('search-suggestions/', search_suggestions, name='search_suggestions'),
     path("create_comment", CreateBlogComment.as_view(), name="create_comment"),
     path("details/<int:pk>", BlogDetail.as_view(), name="blog_details"),
 ]

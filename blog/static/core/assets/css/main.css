@@ -1305,3 +1305,14 @@ section {
 .footer .credits a {
   color: var(--color-white);
 }
+
+alert {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close {
+  margin-left: auto;
+  padding: 0; 
+}
