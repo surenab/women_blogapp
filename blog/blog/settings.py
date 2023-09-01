@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'accounts',
     'core',
     'widget_tweaks',
+    'django_filters',
+    'rest_framework'
 
 ]
 
@@ -156,3 +158,5 @@ MESSAGE_TAGS = {
     constants.WARNING: 'alert-warning',
     constants.DEBUG: 'alert-light',
 }
+
+
