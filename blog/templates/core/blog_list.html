@@ -9,60 +9,102 @@
 <main id="main">
     <section>
         <div class="container" data-aos="fade-up">
-            <div class="row">
-                <div class="col-lg-12 text-center mb-5">
-                    <h1 class="page-title">My blogs</h1>
-                </div>
+            <div class="post-meta">
+                <h6>Welcome {{user.first_name}} {{user.last_name}}</h6>
             </div>
+            <div class="col-lg-12 text-center mb-5">
 
-            <div>
-                <div class="text-center">
-                    <h4>Filtration:</h4>
-                    <form action="" method="get">
-                        {{ filter.form }}
+                <h1 class="page-title">My blogs</h1>
 
-                        <button type="submit" class="btn btn-primary">Submit</button>
 
-                    </form>
-                    <hr>
-                    <br>
-                </div>
             </div>
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-9">
+                        {% for blog in blogs %}
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="post-meta"><span>Blog ID: {{blog.id}}</span> <span
+                                        class="mx-1">&bullet;</span><span class="date">Category:
+                                        {{blog.get_blog_category_display}}</span>
+                                    <span class="mx-1">&bullet;</span>
+                                    <span>{{blog.created_on}}</span>
+                                </div>
+                                <div class="d-md-flex post-entry-2 half">
+                                    <a href="{% url 'blog_details' blog.id %}" class="me-4 thumbnail">
+                                        <img src="{{blog.image.url}}" alt="" class="img-fluid">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <h3><a href="{% url 'blog_details' blog.id %}">{{blog.titel}}</a></h3>
+                                <p>{{blog.description|truncatewords:30}}...</p>
 
-            <div class="justify-content-center">
+                                <div>
+                                    <a type="button" class="btn btn-success"
+                                        href="{% url 'blog_details' blog.id %}"><i class="far fa-eye"></i></a>
+                                    <a type="button" class="btn btn-success"
+                                        href="{% url 'my_blog_update' blog.id %}"><i class="fas fa-edit"></i></a>
+                                    <a type="button" class="btn btn-danger"
+                                        href="{% url 'my_blog_delete' blog.id  %}"><i class="far fa-trash-alt"></i></a>
+                                </div>
 
-                {% for blog in blogs %}
-                <div class="d-md-flex post-entry-2 half">
-                    <a href="{% url 'my_blog_details' blog.id %}" class="me-4 thumbnail">
-                        <img src="{{blog.image.url}}" alt="" class="img-fluid">
-                    </a>
-                    <div>
-                        <div class="post-meta"><span>Blog ID: {{blog.id}}</span> <span class="mx-1">&bullet;</span><span
-                                class="date">Category: {{blog.get_blog_category_display}}</span>
-                            <span class="mx-1">&bullet;</span>
-                            <span>{{blog.created_on}}</span>
+                            </div>
+
                         </div>
-                        <h3><a href="{% url 'my_blog_details' blog.id %}">{{blog.titel}}</a></h3>
-                        <p>{{blog.description}}</p>
-                        <div class="d-flex align-items-center author">
-                            <a type="button" class="btn btn-success" href="{% url 'my_blog_update' blog.id %}"><i
-                                    class="fas fa-edit"></i></a>
-                            <span class="mx-1">&bullet;</span>
-                            <a type="button" class="btn btn-danger" href="{% url 'my_blog_delete' blog.id  %}"><i
-                                    class="far fa-trash-alt"></i></a>
+                        {%endfor%}
+                    </div>
 
+                    <div class="col-lg-3 border-start custom-border">
+                        <div class="text-center ">
+                            <h4>Filters</h4>
+                            <br>
+                            <form action="" method="get">
+                                {%csrf_token%}
+                                
+
+
+
+                            </form>
+
+
+
+
+
+                            <form action="" method="get">
+                                <div class="filter-field ">
+                                    <h6>Filter blogs by categories:</h6>
+                                    {{ filter.form.blog_category.lable_tag }} {{filter.form.blog_category}}
+                                </div>
+                                <br>
+                                <div class="filter-field">
+                                    <h6>Sort blogs by:</h6>
+                                    {{ filter.form.sort_by.lable_tag }} {{filter.form.sort_by}}
+                                </div>
+                                <br>
+                                <div class="filter-field">
+                                    <h6>Search in titles or descriptions:</h6>
+                                    {{ filter.form.search.lable_tag }} {{filter.form.search}}
+                                </div>
+                                <br>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+
+                            <br>
+                            <br>
+                            <label for="blogs_per_page">Blogs Per Page:</label>
+                            <select name="blogs_per_page" id="blogs_per_page">
+                                <option value="5">5</option>
+                                <option value="10" selected>10</option>
+                                <option value="20">20</option>
+                            </select>
                         </div>
                     </div>
                 </div>
-
-
-
-
-                {%endfor%}
-
-
-
             </div>
+
+
+
         </div>
 
 
@@ -94,12 +136,14 @@
             </ul>
         </nav>
         {% endif %}
+
         <label for="blogs_per_page">Blogs Per Page:</label>
         <select name="blogs_per_page" id="blogs_per_page">
             <option value="5">5</option>
             <option value="10">10</option>
             <option value="20">20</option>
         </select>
+
 
     </section>
 </main>

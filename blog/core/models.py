@@ -30,6 +30,8 @@ class Blog(models.Model):
     description = models.TextField()
     image = models.ImageField(
         upload_to="Media", default=None, null=True, blank=True)
+    image1 = models.ImageField(
+        upload_to="Media", default=None, null=True, blank=True)
     view_count = models.PositiveIntegerField(default=0)
 
     def __str__(self) -> str:
@@ -50,4 +52,28 @@ class Message(models.Model):
     email = models.EmailField()
     subject = models.CharField(max_length=150)
     message = models.TextField(max_length=1000)
-    created_on = models.DateTimeField(auto_now=True)
+    created_on = models.DateTimeField(auto_now_add=True)
+
+
+class TeamMember(models.Model):
+    full_name = models.CharField(max_length=50)
+    job_position = models.CharField(max_length=50)
+    about_member = models.TextField(max_length=1000)
+    member_image = models.ImageField(
+        upload_to="Media", default=None, null=True, blank=True)
+
+
+class AboutTeam(models.Model):
+    our_team = models.TextField(max_length=1000)
+    team_image = models.ImageField(
+        upload_to="Media", default=None, null=True, blank=True)
+
+
+class BlogComment(models.Model):
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
+    text = models.TextField(max_length=400)
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self) -> str:
+        return f"{self.owner.username} is commented {self.text}"

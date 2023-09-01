@@ -19,7 +19,7 @@
               {% for blog in most_viewed_blogs%}
 
               <div class=" swiper-slide">
-                <a href="{% url 'my_blog_details' blog.id %}" class="img-bg d-flex align-items-end"
+                <a href="{% url 'blog_details' blog.id %}" class="img-bg d-flex align-items-end"
                   style="background-image: url({{blog.image.url}})">
                   <div class="img-bg-inner">
                     <h2>{{blog.title}}</h2>
@@ -53,9 +53,10 @@
         <div class="col-lg-4">
           {%for blog in most_viewed_blogs|slice:":1"%}
           <div class="post-entry-1">
-            <a href="{% url 'my_blog_details' blog.id %}"><img src="{{blog.image.url}}" alt="" class="img-fluid"></a>
+            <a href="{% url 'blog_details' blog.id %}"><img src="{{blog.image.url}}" alt="" class="img-fluid"></a>
             <div class="post-meta"><span class="date">{{blog.get_blog_category_display}}</span> <span
-                class="mx-1">&bullet;</span> <span>{{blog.created_on}}</span></div>
+                class="mx-1">&bullet;</span> <span>{{blog.created_on}}</span><span class="mx-1">&bullet;</span> Viewes:
+              {{blog.view_count}}</span> </div>
 
             <h2><a href="single-post.html">{{blog.title}}</a></h2>
             <p class="mb-4 d-block">{{blog.description}}</p>
@@ -75,7 +76,7 @@
 
               {% for blog in most_viewed_blogs%}
               <li>
-                <a href="{% url 'my_blog_details' blog.id %}">
+                <a href="{% url 'blog_details' blog.id %}">
                   <span class="number"> {{forloop.counter}}</span>
                   <h3>{{blog.title}}</h3>
                   <span class="author">{{blog.user.first_name}} {{blog.user.last_name}}</span>
@@ -95,13 +96,12 @@
             {% for blog in blogs%}
             <div class="col-lg-4 border-start custom-border">
               <div class="post-entry-1-small">
-                <a href="{% url 'my_blog_details' blog.id %}"><img src="{{blog.image.url}}" alt="" class="img-fluid"
+                <a href="{% url 'blog_details' blog.id %}"><img src="{{blog.image.url}}" alt="" class="img-fluid"
                     class="align-items-center"></a>
                 <div class="post-meta"><span class="date">{{blog.get_blog_category_display}}</span> <span
                     class="mx-1">&bullet;</span> <span>{{blog.created_on}}</span><span
-
-                    class="mx-1">&bullet;</span><span>Viewes: {{blog.annotated_view_count}}</span></div>
-                <h2><a href="{% url 'my_blog_details' blog.id %}">{{blog.title}}</a></h2>
+                    class="mx-1">&bullet;</span><span>Viewes: {{blog.view_count}}</span></div>
+                <h2><a href="{% url 'blog_details' blog.id %}">{{blog.title}}</a></h2>
 
               </div>
             </div>

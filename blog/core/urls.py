@@ -23,27 +23,30 @@ from .views import (
     MyBlog,
     BlogDelete,
     MyBlogUpdate,
-    MyBlogDetail,
+    BlogDetail,
     single_post,
-    About,
     Contact,
     search_result,
     search_suggestions,
+    CreateBlogComment,
+    about
 )
 
 
 urlpatterns = [
     path("", Home.as_view(), name="home"),
     path("my-blogs/", MyBlog.as_view(), name="my_blogs"),
-    path("my-blogs/details/<int:pk>",
-         MyBlogDetail.as_view(), name="my_blog_details"),
+    path("blog-details/<int:pk>",
+         BlogDetail.as_view(), name="blog_details"),
     path("my-blogs/update/<int:pk>", MyBlogUpdate.as_view(), name="my_blog_update"),
     path("my-blogs/delete/<int:pk>", BlogDelete.as_view(), name="my_blog_delete"),
     path("createblog/", CreateBlog.as_view(), name="createblog"),
     path("singlepost/", single_post, name="singlepost"),
-    path("about/", About.as_view(), name="about"),
+    path("about/", about, name="about"),
     path("contact/", Contact.as_view(), name="contact"),
     path('search/', search_result, name='search_result'),
     path("category/", Category.as_view(), name="category"),
     path('search-suggestions/', search_suggestions, name='search_suggestions'),
+    path("create_comment", CreateBlogComment.as_view(), name="create_comment"),
+    path("details/<int:pk>", BlogDetail.as_view(), name="blog_details"),
 ]

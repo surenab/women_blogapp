@@ -3,7 +3,7 @@ from django import forms
 from django.core.files.base import File
 from django.db.models.base import Model
 from django.forms.utils import ErrorList
-from .models import Blog, Message
+from .models import Blog, Message, BlogComment
 
 
 class BlogForm(forms.ModelForm):
@@ -29,6 +29,7 @@ class BlogForm(forms.ModelForm):
     blog_category = forms.ChoiceField(
         label="", choices=BLOG_CATEGORIES, widget=forms.Select())
     image = forms.ImageField(label="")
+    image1 = forms.ImageField(label="")
 
     class Meta:
         model = Blog
@@ -44,3 +45,11 @@ class MessageForm(forms.ModelForm):
     class Meta:
         model = Message
         exclude = ()
+
+
+class BlogCommentForm(forms.ModelForm):
+    text = forms.Textarea()
+
+    class Meta:
+        model = BlogComment
+        fields = ['text', 'blog']

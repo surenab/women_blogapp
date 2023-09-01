@@ -5,8 +5,6 @@
 {% block bodycontent %}
 
 
-
-
 <main id="main">
   <section>
     <div class="container" data-aos="fade-up">
@@ -15,64 +13,24 @@
           <h3 class="page-title">About us</h3>
         </div>
       </div>
-
       <div class="row mb-5">
-
-
         <div class="d-md-flex post-entry-2 half">
-          <a href="#" class="me-4 thumbnail">
-            <img src="assets/img/post-landscape-2.jpg" alt="" class="img-fluid">
-          </a>
+
+          <img src="{{about_team.team_image.url}}" alt="No image" class="img-fluid">
+
           <div class="ps-md-5 mt-4 mt-md-0">
             <div class="post-meta mt-4">About us</div>
-            <h2 class="mb-4 display-4">Company History</h2>
 
-            <p> About our group and our course</p>
+            <p> {{about_team.our_team}}</p>
 
           </div>
         </div>
-
-        <div class="d-md-flex post-entry-2 half mt-5">
-          <a href="#" class="me-4 thumbnail order-2">
-            <img src="assets/img/post-landscape-1.jpg" alt="" class="img-fluid">
-          </a>
-          <div class="pe-md-5 mt-4 mt-md-0">
-            <div class="post-meta mt-4">Mission &amp; Vision</div>
-            <h2 class="mb-4 display-4">Mission &amp; Vision</h2>
-
-            <p> Insert text hear </p>
-          </div>
-        </div>
-
       </div>
 
     </div>
   </section>
 
-  <section class="mb-5 bg-light py-5">
-    <div class="container" data-aos="fade-up">
-      <div class="row justify-content-between align-items-lg-center">
-        <div class="col-lg-5 mb-4 mb-lg-0">
-          <h2 class="display-4 mb-4">Latest News</h2>
 
-          <p>Insert News</p>
-
-          <p><a href="#" class="more">View All Blog Posts</a></p>
-
-        </div>
-        <div class="col-lg-6">
-          <div class="row">
-            <div class="col-6">
-              <img src="assets/img/post-portrait-3.jpg" alt="" class="img-fluid mb-4">
-            </div>
-            <div class="col-6 mt-4">
-              <img src="assets/img/post-portrait-4.jpg" alt="" class="img-fluid mb-4">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <section>
     <div class="container" data-aos="fade-up">
@@ -81,40 +39,18 @@
           <div class="row justify-content-center">
             <div class="col-lg-6">
               <h2 class="display-4">Our Team</h2>
-              <p>About our team and our experiance</p>
+
             </div>
           </div>
         </div>
+        {% for team_member in team_members%}
         <div class="col-lg-4 text-center mb-5">
-          <img src="assets/img/person-1.jpg" alt="" class="img-fluid rounded-circle w-50 mb-4">
-          <h4>Alvard</h4>
-          <span class="d-block mb-3 text-uppercase">Founder &amp; CEO</span>
-          <p> Text About Alvard </p>
+          <img>{{team_member.member_image}} </img>
+          <h4>{{team_member.full_name}}</h4>
+          <span class="d-block mb-3 text-uppercase">{{team_member.job_position}}</span>
+          <p> {{team_member.about_member}}</p>
         </div>
-        <div class="col-lg-4 text-center mb-5">
-          <img src="assets/img/person-2.jpg" alt="" class="img-fluid rounded-circle w-50 mb-4">
-          <h4>Lilit</h4>
-          <span class="d-block mb-3 text-uppercase">Founder, VP</span>
-          <p>Text About Lilit</p>
-        </div>
-        <div class="col-lg-4 text-center mb-5">
-          <img src="assets/img/person-3.jpg" alt="" class="img-fluid rounded-circle w-50 mb-4">
-          <h4>Almast</h4>
-          <span class="d-block mb-3 text-uppercase">Editor Staff</span>
-          <p>Text about Almast</p>
-        </div>
-        <div class="col-lg-4 text-center mb-5">
-          <img src="assets/img/person-4.jpg" alt="" class="img-fluid rounded-circle w-50 mb-4">
-          <h4>Mari</h4>
-          <span class="d-block mb-3 text-uppercase">Editor Staff</span>
-          <p>Text about Mari</p>
-        </div>
-        <div class="col-lg-4 text-center mb-5">
-          <img src="assets/img/person-5.jpg" alt="" class="img-fluid rounded-circle w-50 mb-4">
-          <h4>Naira</h4>
-          <span class="d-block mb-3 text-uppercase">Editor Staff</span>
-          <p>Text about Naira</p>
-        </div>
+        {% endfor %}
 
       </div>
     </div>
