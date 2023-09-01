@@ -59,7 +59,7 @@
     <!-- ======= Search Form ======= -->
     <div class="search-form-wrap js-search-form-wrap">
       <form action="{% url 'search_result' %}" method="get" class="search-form">
-        <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+        {%csrf_token %}
         <span class="icon bi-search"></span>
         <input type="text" id="search-input" name="search" placeholder="Search" class="form-control">
         <button type="submit" class="btn js-search-close"><span class="bi-x"></span></button>
@@ -111,6 +111,7 @@
             searchInput.closest('form').submit();
           }
         }
-      })});
+      })
+    });
   </script>
 </header><!-- End Header -->

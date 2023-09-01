@@ -36,8 +36,6 @@ from .views import (
 urlpatterns = [
     path("", Home.as_view(), name="home"),
     path("my-blogs/", MyBlog.as_view(), name="my_blogs"),
-    path("blog-details/<int:pk>",
-         BlogDetail.as_view(), name="blog_details"),
     path("my-blogs/update/<int:pk>", MyBlogUpdate.as_view(), name="my_blog_update"),
     path("my-blogs/delete/<int:pk>", BlogDelete.as_view(), name="my_blog_delete"),
     path("createblog/", CreateBlog.as_view(), name="createblog"),
