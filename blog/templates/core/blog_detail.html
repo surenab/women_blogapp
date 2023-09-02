@@ -29,11 +29,11 @@
                                     <div class="swiper sliderFeaturedPosts">
 
                                         <div class="swiper-wrapper">
-                                            {% if blog.image %}
+                                            
                                             <div class=" swiper-slide" class="img-bg-inner  d-flex align-items-end">
                                                 <img src="{{blog.image.url}}" alt="" height="300px" width="450px">
                                             </div>
-                                            {%endif%}
+                                           
                                             {% if blog.image1 %}
                                             <div class=" swiper-slide" class="img-bg-inner  d-flex align-items-end">
                                                 <img src="{{blog.image1.url}}" alt="" height="300px" width="450px">
@@ -43,11 +43,6 @@
                                             {% if blog.image2 %}
                                             <div class=" swiper-slide" class="img-bg-inner d-flex align-items-end">
                                                 <img src="{{blog.image2.url}}" alt="" height="300px" width="450px">
-                                            </div>
-                                            {%endif%}
-                                            {% if blog.image3 %}
-                                            <div class=" swiper-slide" class="img-bg-inner  d-flex align-items-end">
-                                                <img src="{{blog.image3.url}}" alt="" height="300px" width="450px">
                                             </div>
                                             {%endif%}
 
