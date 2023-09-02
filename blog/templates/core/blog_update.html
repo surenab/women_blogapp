@@ -16,7 +16,7 @@
             </div>
 
             <div class="text-center">
-                <form action="" method="post" class="card">
+                <form action="" method="post" class="card" enctype="multipart/form-data">
                     {% csrf_token %}
                     <p class="text-center">
                         {% render_field form.title placeholder="Title" class+="form-control" %}
