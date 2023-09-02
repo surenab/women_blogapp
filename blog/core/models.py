@@ -30,8 +30,11 @@ class Blog(models.Model):
     description = models.TextField()
     image = models.ImageField(
         upload_to="Media", default=None, null=True, blank=True)
-    # image1 = models.ImageField(
-    #     upload_to="Media", default=None, null=True, blank=True)
+    image1 = models.ImageField(
+        upload_to="Media", default=None, null=True, blank=True)
+    image2 = models.ImageField(
+        upload_to="Media", default=None, null=True, blank=True)
+
     view_count = models.PositiveIntegerField(default=0)
 
     def __str__(self) -> str:
