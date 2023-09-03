@@ -229,3 +229,7 @@ def search_suggestions(request):
                    for blog in blogs]
 
     return JsonResponse(suggestions, safe=False)
+
+
+class UserAccount(BlogBase):
+    template_name = "core/user_account.html"

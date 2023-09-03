@@ -29,7 +29,9 @@ from .views import (
     search_result,
     search_suggestions,
     CreateBlogComment,
-    about
+    about,
+    UserAccount,
+   
 )
 
 
@@ -38,6 +40,7 @@ urlpatterns = [
     path("my-blogs/", MyBlog.as_view(), name="my_blogs"),
     path("my-blogs/update/<int:pk>", MyBlogUpdate.as_view(), name="my_blog_update"),
     path("my-blogs/delete/<int:pk>", BlogDelete.as_view(), name="my_blog_delete"),
+    path("user_account/", UserAccount.as_view(), name="user_account"),
     path("createblog/", CreateBlog.as_view(), name="createblog"),
     path("singlepost/", single_post, name="singlepost"),
     path("about/", about, name="about"),

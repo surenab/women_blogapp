@@ -76,3 +76,4 @@ class BlogComment(models.Model):
 
     def __str__(self) -> str:
         return f"{self.owner.username} is commented {self.text}"
+
