@@ -13,6 +13,7 @@ from .filters import BlogFilter
 from django.http import JsonResponse
 from django.db.models import Q
 from itertools import chain
+from django.shortcuts import get_object_or_404
 
 # Create your views here.
 
@@ -55,7 +56,6 @@ class CreateBlogComment(CreateView):
 
     def form_valid(self, form):
         form.instance.owner = self.request.user
-
         messages.success(self.request, "Blog Comment instanse is created!")
         return super().form_valid(form)
 
@@ -150,14 +150,15 @@ class BlogDetail(DetailView):
 class CreateBlogComment(CreateView):
     model = BlogComment
     form_class = BlogCommentForm
-    success_text = "Created"
 
     def get_success_url(self) -> str:
         return reverse_lazy("blog_details", kwargs={"pk": self.request.POST.get("blog")})
 
     def form_valid(self, form):
         form.instance.owner = self.request.user
-
+        blog_id = self.request.POST.get("blog")
+        blog = get_object_or_404(Blog, id=blog_id)
+        form.instance.blog = blog
         messages.success(self.request, "Comment is created")
         return super().form_valid(form)
 

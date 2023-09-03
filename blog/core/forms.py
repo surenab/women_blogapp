@@ -51,4 +51,4 @@ class BlogCommentForm(forms.ModelForm):
 
     class Meta:
         model = BlogComment
-        fields = ['text', 'blog']
+        fields = ['text']
