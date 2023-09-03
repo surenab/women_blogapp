@@ -122,7 +122,7 @@ section {
   background-color: var(--color-black);
   color: var(--color-white);
   border-color: var(--color-black);
-  margin-top: 20px ;
+  margin-top: 20px;
 }
 
 /*--------------------------------------------------------------
@@ -166,11 +166,13 @@ section {
 }
 
 .search-form-wrap .search-form .form-control {
-  width: 300px;
+
   border: none;
   box-shadow: 0 15px 20px -10px rgba(var(--color-black-rgb), 0.1);
   padding-left: 40px;
   padding-right: 40px;
+  background-color: rgb(38, 34, 34);
+  font-style: var(--color-white);
 }
 
 .search-form-wrap .search-form .form-control:active,
@@ -1314,5 +1316,5 @@ alert {
 
 .close {
   margin-left: auto;
-  padding: 0; 
+  padding: 0;
 }
