@@ -2,7 +2,6 @@ from django.db import models
 from django.contrib .auth import get_user_model
 from PIL import Image
 
-
 User = get_user_model()
 
 class UserProfile(models.Model):
@@ -23,7 +22,6 @@ class UserProfile(models.Model):
 
 
 class Blog(models.Model):
-
     BLOG_CATEGORIES = (
         ("1", "Travel"),
         ("2", "Sport"),
