@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect, get_list_or_404
 from django.forms.models import BaseModelForm
-from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
+from django.views.generic import CreateView, DetailView, UpdateView, DeleteView, TemplateView
 from typing import Any, Dict
 from django.urls import reverse_lazy
 from django.http import HttpResponse, HttpRequest
-from .forms import BlogForm, MessageForm, BlogCommentForm
-from .models import Blog, BlogComment, AboutTeam, TeamMember
+from .forms import BlogForm, MessageForm, BlogCommentForm, UserProfileForm
+from .models import Blog, BlogComment, AboutTeam, TeamMember, UserProfile
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django_filters.views import FilterView
@@ -14,6 +14,7 @@ from django.http import JsonResponse
 from django.db.models import Q
 from itertools import chain
 from django.shortcuts import get_object_or_404
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -230,6 +231,46 @@ def search_suggestions(request):
 
     return JsonResponse(suggestions, safe=False)
 
-
-class UserAccount(BlogBase):
+class UserAccount(TemplateView):
     template_name = "core/user_account.html"
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(**kwargs)
+        
+        if self.request.user.is_authenticated:
+            user_profile = get_object_or_404(UserProfile, user=self.request.user)
+            context['user_profile'] = user_profile  
+        
+        return context
+    
+    def post(self, request, *args, **kwargs):
+        if self.request.user.is_authenticated:
+            user_profile = self.request.user.profile
+            form = UserProfileForm(request.POST, request.FILES, instance=user_profile)
+            if form.is_valid():
+                form.save()
+                return redirect('user_account')
+            return render(request, 'core/user_account.html', {'form': form})
+        else:
+            return redirect('login')  
+    
+
+@login_required
+def edit_profile(request):
+    user_profile = request.user.profile
+    if request.method == 'POST':
+        form = UserProfileForm(request.POST, request.FILES, instance=user_profile)
+        if form.is_valid():
+            if not request.FILES.get('photo'):  
+                form.cleaned_data.pop('photo') 
+            form.save()
+            return redirect('user_account')
+    else:
+        form = UserProfileForm(instance=user_profile)
+    return render(request, 'core/edit_profile.html', {'form': form})
+
+
+
+
+
+

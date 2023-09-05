@@ -3,7 +3,7 @@ from django import forms
 from django.core.files.base import File
 from django.db.models.base import Model
 from django.forms.utils import ErrorList
-from .models import Blog, Message, BlogComment
+from .models import Blog, Message, BlogComment, UserProfile
 
 
 class BlogForm(forms.ModelForm):
@@ -52,3 +52,13 @@ class BlogCommentForm(forms.ModelForm):
     class Meta:
         model = BlogComment
         fields = ['text']
+
+
+class UserProfileForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ['profession', 'phone', 'city', 'website', 'photo']
+    
+    photo = forms.ImageField(required=False, widget=forms.FileInput(attrs={'class': 'clearablefileinput'}), label='')
+    
+
