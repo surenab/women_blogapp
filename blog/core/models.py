@@ -19,7 +19,7 @@ class UserProfile(models.Model):
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
 
-User.profile = property(lambda u: UserProfile.objects.get_or_create(user=u)[0])
+    User.profile = property(lambda u: UserProfile.objects.get_or_create(user=u)[0])
 
 
 class Blog(models.Model):
