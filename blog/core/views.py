@@ -231,46 +231,45 @@ def search_suggestions(request):
 
     return JsonResponse(suggestions, safe=False)
 
+
 class UserAccount(TemplateView):
     template_name = "core/user_account.html"
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(**kwargs)
-        
+
         if self.request.user.is_authenticated:
-            user_profile = get_object_or_404(UserProfile, user=self.request.user)
-            context['user_profile'] = user_profile  
-        
+            user_profile = get_object_or_404(
+                UserProfile, user=self.request.user)
+            context['user_profile'] = user_profile
+
         return context
-    
+
     def post(self, request, *args, **kwargs):
         if self.request.user.is_authenticated:
             user_profile = self.request.user.profile
-            form = UserProfileForm(request.POST, request.FILES, instance=user_profile)
+            form = UserProfileForm(
+                request.POST, request.FILES, instance=user_profile)
             if form.is_valid():
                 form.save()
                 return redirect('user_account')
             return render(request, 'core/user_account.html', {'form': form})
         else:
-            return redirect('login')  
-    
+            return redirect('login')
+
 
 @login_required
 def edit_profile(request):
+
     user_profile = request.user.profile
     if request.method == 'POST':
-        form = UserProfileForm(request.POST, request.FILES, instance=user_profile)
+        form = UserProfileForm(
+            request.POST, request.FILES, instance=user_profile)
         if form.is_valid():
-            if not request.FILES.get('photo'):  
-                form.cleaned_data.pop('photo') 
+            if not request.FILES.get('photo'):
+                form.cleaned_data.pop('photo')
             form.save()
             return redirect('user_account')
     else:
         form = UserProfileForm(instance=user_profile)
     return render(request, 'core/edit_profile.html', {'form': form})
-
-
-
-
-
-
