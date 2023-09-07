@@ -52,19 +52,14 @@
                                         </ul>
                                     </div>
                                 </div>
+
+
                                 <div class="col-md-2">
-                                    <button type="button" class="profile-edit-btn" name="btnAddMore">Edit
-                                        Profile</button>
+
+                                    <a type="button" class="btn btn-light mt-2" href="{% url 'edit_profile' %}">
+                                        Edit Profile </a>
+
                                 </div>
-
-                                <script>
-                                    $(document).ready(function () {
-                                        $('.profile-edit-btn').click(function () {
-                                            window.location.href = "{% url 'edit_profile' %}";
-                                        });
-                                    });
-                                </script>
-
 
 
                             </div>
