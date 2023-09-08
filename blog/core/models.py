@@ -17,6 +17,8 @@ class UserProfile(models.Model):
     photo = models.ImageField(
         upload_to="Media", default=None, null=True, blank=True)
 
+
+
     def __str__(self):
         return self.user.username
 
