@@ -32,10 +32,13 @@
                                         <h4>Profile Photo</h4>
                                     </div>
                                     <div class="card-body text-center">
+                                        {% if user.profile.photo %}
                                         <!-- Profile picture image-->
                                         <img src="{{user.profile.photo.url}}" class="img-circle profile-avatar"
                                             alt="User avatar">
-
+                                            {%else%}
+                                            <p>Upload profile photo</p>
+                                        {%endif%}
                                     </div>
                                 </div>
                             </div>
