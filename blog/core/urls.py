@@ -31,9 +31,8 @@ from .views import (
     CreateBlogComment,
     about,
     UserAccount,
-    edit_profile,
-    delete_photo,
-
+    edit_profile
+   
 )
 
 
@@ -52,6 +51,5 @@ urlpatterns = [
     path('search-suggestions/', search_suggestions, name='search_suggestions'),
     path("create_comment", CreateBlogComment.as_view(), name="create_comment"),
     path("details/<int:pk>", BlogDetail.as_view(), name="blog_details"),
-    path('edit_profile/', edit_profile, name='edit_profile'),
-    path('delete_photo/', delete_photo, name='delete_photo')
+    path('edit_profile/', edit_profile, name='edit_profile')
 ]
