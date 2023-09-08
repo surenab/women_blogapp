@@ -20,7 +20,7 @@ class UserProfile(models.Model):
 
 
     def __str__(self):
-        return self.user.username
+        return f"{self.user.username} {self.profession}"
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
