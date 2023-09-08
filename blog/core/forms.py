@@ -63,7 +63,7 @@ class UserProfileForm(forms.ModelForm):
         max_length=30, required=True, label="Last Name")
 
     photo = forms.ImageField(required=False, widget=forms.FileInput(
-        attrs={'class': 'clearablefileinput'}), label='')
+        attrs={'class': 'clearablefileinput'}), label='Profile photo')
 
     class Meta:
         model = UserProfile

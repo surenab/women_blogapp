@@ -34,10 +34,12 @@
                                         <h4>Profile Photo</h4>
                                     </div>
                                     <div class="card-body text-center">
+                                        {% if user.profile.photo %}
                                         <!-- Profile picture image-->
                                         {% if user.profile.photo %}
                                         <img src="{{user.profile.photo.url}}" class="img-circle profile-avatar"
                                             alt="User avatar">
+
                                         <input type="file" name="photo" accept="image/*" class="form-control-file"
                                             id="photo-upload" style="display: none;">
                                         <label for="photo-upload" class="btn btn-primary">Change Photo</label>
@@ -51,6 +53,7 @@
                                             id="photo-upload" style="display: none;">
                                         <label for="photo-upload" class="btn btn-primary">Upload Photo</label>
                                         {% endif %}
+
 
                                     </div>
                                 </div>
