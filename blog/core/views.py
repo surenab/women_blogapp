@@ -260,16 +260,29 @@ class UserAccount(TemplateView):
 
 @login_required
 def edit_profile(request):
-
     user_profile = request.user.profile
+
     if request.method == 'POST':
-        form = UserProfileForm(
-            request.POST, request.FILES, instance=user_profile)
+        form = UserProfileForm(request.POST, request.FILES, instance=user_profile)
         if form.is_valid():
-            if not request.FILES.get('photo'):
-                form.cleaned_data.pop('photo')
+            if 'photo' in request.FILES:
+                form.instance.photo = request.FILES['photo']
             form.save()
             return redirect('user_account')
     else:
         form = UserProfileForm(instance=user_profile)
+
     return render(request, 'core/edit_profile.html', {'form': form})
+
+@login_required
+def delete_photo(request):
+    user_profile = request.user.profile
+
+    if request.method == 'POST':
+        if user_profile.photo:
+            user_profile.photo.delete()
+            messages.success(request, 'Profile photo deleted successfully.')
+        else:
+            messages.info(request, 'No profile photo to delete.')
+
+    return redirect('user_account')
