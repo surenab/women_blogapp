@@ -274,15 +274,15 @@ def edit_profile(request):
 
     return render(request, 'core/edit_profile.html', {'form': form})
 
-@login_required
-def delete_photo(request):
-    user_profile = request.user.profile
+# @login_required
+# def delete_photo(request):
+#     user_profile = request.user.profile
 
-    if request.method == 'POST':
-        if user_profile.photo:
-            user_profile.photo.delete()
-            messages.success(request, 'Profile photo deleted successfully.')
-        else:
-            messages.info(request, 'No profile photo to delete.')
+#     if request.method == 'POST':
+#         if user_profile.photo:
+#             user_profile.photo.delete()
+#             messages.success(request, 'Profile photo deleted successfully.')
+#         else:
+#             messages.info(request, 'No profile photo to delete.')
 
-    return redirect('user_account')
+#     return redirect('user_account')
