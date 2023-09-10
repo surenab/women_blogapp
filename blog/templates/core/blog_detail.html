@@ -91,7 +91,10 @@
 
                                             <div class="col-12 mb-3">
                                                 <h6>Enter your comment:</h6>
-                                                {{comment_form.text.lable_tag}} {{comment_form.text}}
+                                                {{ comment_form.text.label_tag }}
+                                                <textarea type="text" name="{{ comment_form.text.name }}"
+                                                    style="width: 100%;" rows="3"
+                                                    value="{{ comment_form.text.value }}"></textarea>
                                             </div>
 
                                             <!-- For sending blog -->
