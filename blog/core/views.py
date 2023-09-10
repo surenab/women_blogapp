@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect, get_list_or_404
 from django.forms.models import BaseModelForm
-from django.views.generic import CreateView, DetailView, UpdateView, DeleteView, TemplateView
+from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
 from typing import Any, Dict
 from django.urls import reverse_lazy
 from django.http import HttpResponse, HttpRequest
-from .forms import BlogForm, MessageForm, BlogCommentForm, UserProfileForm
-from .models import Blog, BlogComment, AboutTeam, TeamMember, UserProfile
+from .forms import BlogForm, MessageForm, BlogCommentForm
+from .models import Blog, BlogComment, AboutTeam, TeamMember
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django_filters.views import FilterView
@@ -14,7 +14,7 @@ from django.http import JsonResponse
 from django.db.models import Q
 from itertools import chain
 from django.shortcuts import get_object_or_404
-from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
 
@@ -232,18 +232,6 @@ def search_suggestions(request):
     return JsonResponse(suggestions, safe=False)
 
 
-class UserAccount(TemplateView):
-    template_name = "core/user_account.html"
-
-    def get_context_data(self, *args, **kwargs):
-        context = super().get_context_data(**kwargs)
-
-        if self.request.user.is_authenticated:
-            user_profile = get_object_or_404(
-                UserProfile, user=self.request.user)
-            context['user_profile'] = user_profile
-
-        return context
 
     def post(self, request, *args, **kwargs):
         if self.request.user.is_authenticated:
@@ -274,15 +262,4 @@ def edit_profile(request):
 
     return render(request, 'core/edit_profile.html', {'form': form})
 
-# @login_required
-# def delete_photo(request):
-#     user_profile = request.user.profile
 
-#     if request.method == 'POST':
-#         if user_profile.photo:
-#             user_profile.photo.delete()
-#             messages.success(request, 'Profile photo deleted successfully.')
-#         else:
-#             messages.info(request, 'No profile photo to delete.')
-
-#     return redirect('user_account')
