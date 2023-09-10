@@ -111,6 +111,7 @@ section {
   outline: none;
   box-shadow: none;
   border-color: var(--color-black);
+
 }
 
 .btn:active,
@@ -132,7 +133,7 @@ section {
   height: 90px;
   transition: all 0.5s;
   z-index: 997;
-  background: #f2f2f2;
+  background: #e6e6e3;
 }
 
 .header.sticked {
@@ -152,8 +153,10 @@ section {
 }
 
 .search-form-wrap {
+
+  width: 100%;
   position: absolute;
-  right: 0;
+  left: 0;
   top: 0;
   z-index: 9;
   transition: 0.3s all ease;
@@ -167,27 +170,30 @@ section {
 
 .search-form-wrap .search-form .form-control {
   height: 90px;
-
   border: none;
   box-shadow: 0 15px 20px -10px rgba(var(--color-black-rgb), 0.1);
   padding-left: 40px;
   padding-right: 40px;
-  background-color: rgb(38, 34, 34);
-  font-style: var(--color-white);
+  background-color: rgb(208, 205, 205);
+  font-size: 30px;
+  color: rgb(32, 31, 31)
 }
 
 .search-form-wrap .search-form .form-control:active,
 .search-form-wrap .search-form .form-control:focus {
   outline: none;
   box-shadow: none;
+
 }
 
 .search-form-wrap .search-form .icon {
   position: absolute;
   left: 0;
-  top: 7px;
+  top: 10px;
   opacity: 0.5;
   left: 10px;
+  color: #1a1a1a;
+
 }
 
 .search-form-wrap .search-form .btn {
@@ -198,6 +204,7 @@ section {
   margin: 0;
   line-height: 1;
   font-size: 30px;
+  color: rgb(48, 47, 46);
 }
 
 .search-form-wrap .search-form .btn:active,

@@ -62,7 +62,7 @@
       <form action="{% url 'search_result' %}" method="get" class="search-form">
         {%csrf_token %}
         <span class="icon bi-search"></span>
-        <input type="text" id="search-input" name="search" placeholder="Search" class="form-control">
+        <input type="text" id="search-input" name="search" placeholder="Search for..." class="form-control">
         <button type="submit" class="btn js-search-close"><span class="bi-x"></span></button>
       </form>
     </div><!-- End Search Form -->

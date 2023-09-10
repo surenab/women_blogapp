@@ -51,7 +51,7 @@ class UserPasswordChangeView(SuccessMessageMixin, PasswordChangeView):
 
 
 class UserAccount(TemplateView):
-    template_name = "core/user_account.html"
+    template_name = "registration/user_account.html"
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -71,23 +71,24 @@ class UserAccount(TemplateView):
             if form.is_valid():
                 form.save()
                 return redirect('user_account')
-            return render(request, 'core/user_account.html', {'form': form})
+            return render(request, 'registration/user_account.html', {'form': form})
         else:
             return redirect('login')
 
 
 @login_required
 def edit_profile(request):
-
     user_profile = request.user.profile
+
     if request.method == 'POST':
         form = UserProfileForm(
             request.POST, request.FILES, instance=user_profile)
         if form.is_valid():
-            if not request.FILES.get('photo'):
-                form.cleaned_data.pop('photo')
+            if 'photo' in request.FILES:
+                form.instance.photo = request.FILES['photo']
             form.save()
             return redirect('user_account')
     else:
         form = UserProfileForm(instance=user_profile)
-    return render(request, 'core/edit_profile.html', {'form': form})
+
+    return render(request, 'registration/edit_profile.html', {'form': form})
