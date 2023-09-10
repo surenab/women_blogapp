@@ -30,10 +30,9 @@ from .views import (
     search_suggestions,
     CreateBlogComment,
     about,
-    UserAccount,
-    edit_profile
-   
 )
+
+from accounts.views import (UserAccount, edit_profile)
 
 
 urlpatterns = [
