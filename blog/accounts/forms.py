@@ -82,6 +82,18 @@ class UserPasswordChangeForm(SetPasswordForm):
     """
     For changing password
     """
+    old_password = forms.CharField(
+        label="Old Password",
+        widget=forms.PasswordInput(attrs={'class': 'form-control', 'autocomplete': 'off'}),
+    )
+
+    def clean_old_password(self):
+        old_password = self.cleaned_data.get('old_password')
+        user = self.user
+        if user.check_password(old_password):
+            return old_password
+        else:
+            raise forms.ValidationError("The old password is incorrect.")
 
     def __init__(self, *args, **kwargs):
         """
@@ -93,3 +105,4 @@ class UserPasswordChangeForm(SetPasswordForm):
                 'class': 'form-control',
                 'autocomplete': 'off'
             })
+            
