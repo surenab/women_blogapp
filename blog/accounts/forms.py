@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from .models import UserProfile
+from .models import UserProfile, Subscription
 from django.contrib.auth.forms import SetPasswordForm
 
 
@@ -105,4 +105,9 @@ class UserPasswordChangeForm(SetPasswordForm):
                 'class': 'form-control',
                 'autocomplete': 'off'
             })
-            
+
+class SubscriptionForm(forms.ModelForm):
+    class Meta:
+        model = Subscription
+        fields = ['email']
+
