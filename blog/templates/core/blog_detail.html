@@ -60,8 +60,13 @@
 
                             <div class="flex-shrink-0">
                                 <div class="avatar avatar-sm rounded-circle">
+                                    {% if comment.owner.profile.photo %}
                                     <img class="avatar-img" src="{{comment.owner.profile.photo.url}}" alt=""
                                         class="img-fluid">
+                                    {%else%}
+                                    <img class="avatar-img" src="{% static '/core/assets/img/avatar.png'%}" alt=""
+                                        class="img-fluid">
+                                    {%endif%}
                                 </div>
                             </div>
                             <div class="flex-grow-1 ms-2 ms-sm-3">
