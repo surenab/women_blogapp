@@ -87,14 +87,14 @@ class  BlogTestCase(TestCase):
 
 
 
-    def test_todo_str(self):
+    def test_blog_str(self):
         self.assertTrue(
             f"{self.user.username}, {self.first_blog.title}, {self.first_blog.blog_category}, {self.first_blog.created_on}",
             str(self.first_blog),
         )
 
 
-    def test_todo_missed_field_description(self):
+    def test_blog_missed_field_description(self):
         Blog.objects.create(
             title="Test1",
             blog_category="1",
