@@ -69,7 +69,9 @@ class Filters(FilterView):
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         most_viewed_blogs = Blog.objects.order_by('-view_count')[:5]
+        newest_blogs=Blog.objects.order_by('-created_on')[:5]
         context['most_viewed_blogs'] = most_viewed_blogs
+        context['newest_blogs'] = newest_blogs
         return context
 
 
@@ -202,6 +204,7 @@ class Contact(Home):
 
 
 def search_result(request):
+    model = Blog
     query = request.GET.get('search')
     blog_filter = BlogFilter(request.GET, queryset=Blog.objects.all())
 
@@ -230,6 +233,3 @@ def search_suggestions(request):
                    for blog in blogs]
 
     return JsonResponse(suggestions, safe=False)
-
-
-

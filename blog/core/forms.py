@@ -56,3 +56,11 @@ class BlogCommentForm(forms.ModelForm):
 
 
 
+#--- New search
+from django import forms
+
+class SearchForm(forms.Form):
+    search = forms.CharField(label='Search for...')
+
+
+    

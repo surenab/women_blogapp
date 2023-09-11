@@ -17,8 +17,10 @@ class UserProfile(models.Model):
     photo = models.ImageField(
         upload_to="Media", default=None, null=True, blank=True)
 
+
     def __str__(self):
         return f"{self.user.username} {self.profession}"
+
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)

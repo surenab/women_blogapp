@@ -81,19 +81,18 @@ class UserAccount(TemplateView):
 
 @login_required
 def edit_profile(request):
-    user_profile = request.user.profile
 
+    user_profile = request.user.profile
     if request.method == 'POST':
         form = UserProfileForm(
             request.POST, request.FILES, instance=user_profile)
         if form.is_valid():
-            if 'photo' in request.FILES:
-                form.instance.photo = request.FILES['photo']
+            if not request.FILES.get('photo'):
+                form.cleaned_data.pop('photo')
             form.save()
             return redirect('user_account')
     else:
         form = UserProfileForm(instance=user_profile)
-
     return render(request, 'registration/edit_profile.html', {'form': form})
 
 

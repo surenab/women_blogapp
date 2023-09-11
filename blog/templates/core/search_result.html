@@ -14,10 +14,10 @@
       <div class="row">
         <div class="col-md-9">
           <h3 class="category-title">
-            {% if query %}
+            {% if blog_filter %}
             Search Results for "{{ query }}"
             {% else %}
-            Search Results
+            Search results for "{{ query }}" not found.
             {% endif %}
           </h3>
           {% for blog in blog_filter %}
@@ -47,5 +47,7 @@
     </div>
   </section>
 </main>
+
+
 
 {%endblock%}

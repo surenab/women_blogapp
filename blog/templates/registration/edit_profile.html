@@ -34,7 +34,7 @@
                                     <div class="card-body text-center">
 
                                         <!-- Profile picture image -->
-                                        <img src="{% if user.profile.photo %}{{ user.profile.photo.url }}{% else %}{% static 'core/assets/img/avatar.png' %}{% endif %}"
+                                        <img src="{% if user.profile.photo %}{{ user.profile.photo.url }}{% else %}{% static '/core/assets/img/avatar.png' %}{% endif %}"
                                             id="photo-preview" class="img-circle profile-avatar" alt="User avatar">
 
                                         <!-- Input for selecting a new photo -->
