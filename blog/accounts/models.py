@@ -25,3 +25,14 @@ class UserProfile(models.Model):
 
     User.profile = property(
         lambda u: UserProfile.objects.get_or_create(user=u)[0])
+    
+
+
+
+class Subscription(models.Model):
+    email = models.EmailField(unique=True)
+    subscribed_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.email
+

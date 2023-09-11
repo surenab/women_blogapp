@@ -14,6 +14,9 @@ from pathlib import Path
 import os
 from django.urls import reverse_lazy
 from django.contrib.messages import constants
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -159,4 +162,12 @@ MESSAGE_TAGS = {
     constants.DEBUG: 'alert-light',
 }
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'wobloginfo@gmail.com'
+EMAIL_HOST_PASSWORD = 'kouajjdpfekxcatr'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
 
+# EMAIL_PASSWORD = str(os.getenv("GMAIL_PASSWORD"))
