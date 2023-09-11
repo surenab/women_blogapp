@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.urls import path
 
+
 from .views import (
 
     Category,
@@ -50,5 +51,6 @@ urlpatterns = [
     path('search-suggestions/', search_suggestions, name='search_suggestions'),
     path("create_comment", CreateBlogComment.as_view(), name="create_comment"),
     path("details/<int:pk>", BlogDetail.as_view(), name="blog_details"),
-    path('edit_profile/', edit_profile, name='edit_profile')
+    path('edit_profile/', edit_profile, name='edit_profile'),
+
 ]

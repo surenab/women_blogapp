@@ -230,6 +230,3 @@ def search_suggestions(request):
                    for blog in blogs]
 
     return JsonResponse(suggestions, safe=False)
-
-
-
