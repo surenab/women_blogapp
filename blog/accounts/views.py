@@ -13,6 +13,7 @@ from .models import UserProfile
 from django.core.mail import send_mail, EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
+from django.contrib import messages
 
 # Create your views here.
 
@@ -25,6 +26,8 @@ class SignUp(CreateView):
     def form_valid(self, form):
         user = form.save()
         login(self.request, user)
+        messages.success(
+            self.request, "The account was created.")
         return redirect("home")
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:

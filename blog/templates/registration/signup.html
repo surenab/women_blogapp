@@ -12,11 +12,11 @@
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-md-9">
-                                <div class="card-group mb-0">
+                                <div class="card-group mb-3">
                                     <div class="card p-6">
                                         <div class="card-body">
                                             <h3>Sign Up</h3>
-                                            <p class="text-muted">Sign Up to our Blog</p>
+
                                             <div class="input-group mb-3 justify-content-center">
 
                                                 <form method="POST" role="form">
@@ -42,16 +42,7 @@
                                                             placeholder="Email">
                                                     </div>
 
-                                                    <div class="input-group mb-4">
-                                                        <input type="password" name="password1" class="form-control"
-                                                            id="password1" placeholder="Password">
-                                                    </div>
-
-                                                    <div class="input-group mb-4">
-                                                        <input type="password" name="password2" class="form-control"
-                                                            id="password2" placeholder="Password">
-                                                    </div>
-                                                    <div class="password-requirements ">
+                                                    <div class="password-requirements mb-3">
                                                         <p>Your password must meet the following requirements:</p>
                                                         <ul>
                                                             <li>Your password can’t be too similar to your other
@@ -62,13 +53,22 @@
                                                         </ul>
                                                     </div>
 
+                                                    <div class="input-group mb-4">
+                                                        <input type="password" name="password1" class="form-control"
+                                                            id="password1" placeholder="Password">
+                                                    </div>
 
-                                                    <div class="checkbox">
+                                                    <div class="input-group mb-4">
+                                                        <input type="password" name="password2" class="form-control"
+                                                            id="password2" placeholder="Password">
+                                                    </div>
+
+                                                    <div class="checkbox mt-5">
                                                         <input type="checkbox" id="signupCheck" required />
-                                                        <label for="signupCheck">I accept all <a
-                                                                href="{% url 'terms_conditions'%}"
-                                                                onclick="openTermsModal()" target="blank"> terms &
-                                                                conditions </a></label>
+                                                        <label for="signupCheck"><b>I accept all <a
+                                                                    href="{% url 'terms_conditions'%}"
+                                                                    onclick="openTermsModal()" target="blank"> terms &
+                                                                    conditions</a></b></label>
                                                     </div>
                                                     <br>
                                                     <p class="text-center">
@@ -84,22 +84,24 @@
 
                                     <div class="card text-white bg-primary py-5 d-md-down-none" style="width:40%">
                                         <div class="card-body text-center">
-                                            <div>
-                                                <h3>Log In</h3>
-                                                <br>
-                                                <br>
-                                                <h5>You are the member of our blog ?</h5>
-                                                <br>
-                                                <h5>Have account ? </h5>
-                                                <br>
-                                                <h5>Log into your account.</h5>
-                                                <br>
-
-                                                <a type="button" class="btn btn-lg btn-secondary btn-block"
-                                                    href="{% url 'login' %}">
-                                                    Log In</a>
-
+                                            <h3>Log In</h3>
+                                            <div class="mt-5">
+                                                <img src="{% static '/core/assets/img/logo.png'%}" width="300px">
                                             </div>
+                                            <div class="mt-5">
+                                                <p>You are the member of our blog ?</p>
+
+                                                <p>Have account ? </p>
+
+                                                <p>Log into your account.</p>
+                                            </div>
+
+
+                                            <a type="button" class="btn btn-lg btn-secondary btn-block mt-5"
+                                                href="{% url 'login' %}">
+                                                Log In</a>
+
+
                                         </div>
                                     </div>
                                 </div>
