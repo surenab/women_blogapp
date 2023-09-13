@@ -67,7 +67,7 @@
           <div class="tab-content" id="pills-tabContent">
 
             <!-- Popular -->
-          <div class="tab-pane fade show active" id="pills-popular" role="tabpanel"
+            <div class="tab-pane fade show active" id="pills-popular" role="tabpanel"
               aria-labelledby="pills-popular-tab">
               <div class="post-entry-1 border-bottom">
                 {% for blog in most_viewed_blogs%}
@@ -86,9 +86,9 @@
                   </div>
           </div>       
         
-            <!-- End Popular -->
+          <!-- End Popular -->
 
-            <!-- Latest -->
+          <!-- Latest -->
           <div class=" tab-pane fade show active" id="pills-latest" role="tabpanel" aria-labelledby="pills-latest-tab">
                     <div class="post-entry-1 border-bottom">
                       {% for blog in newest_blogs%}
@@ -100,16 +100,16 @@
                         <h2 class="mb-2"><a href="{% url 'blog_details' blog.id %}">{{blog.title}}</a></h2>
                         <p>{{blog.description|truncatewords:10}}</p>
                         <span class="post-meta""> {{blog.user.first_name}} {{blog.user.last_name}}</span>
-                  </div>
-                {% endfor %}
-              </div>
+                </div>
+              {% endfor %}
+            </div>
           </div> 
-            <!-- End Latest -->             
+          <!-- End Latest -->             
                          
-          </div>
         </div>
       </div>
     </div>
+    
   </section>
 </main>
 <!-- End #main -->
