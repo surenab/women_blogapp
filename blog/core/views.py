@@ -4,7 +4,7 @@ from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
 from typing import Any, Dict
 from django.urls import reverse_lazy
 from django.http import HttpResponse, HttpRequest
-from .forms import BlogForm, MessageForm, BlogCommentForm
+from .forms import BlogForm, MessageForm, BlogCommentForm, SubscriptionForm
 from .models import Blog, BlogComment, AboutTeam, TeamMember
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -14,6 +14,10 @@ from django.http import JsonResponse
 from django.db.models import Q
 from itertools import chain
 from django.shortcuts import get_object_or_404
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
+
 
 
 # Create your views here.
@@ -99,7 +103,7 @@ class Home(Filters):
         if messageForm.is_valid():
             messageForm.save()
             messages.success(request, "Message submitted successfully!")
-        return redirect("{% url 'home'%}")
+        return redirect('home')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -233,3 +237,34 @@ def search_suggestions(request):
                    for blog in blogs]
 
     return JsonResponse(suggestions, safe=False)
+
+def subscribe(request):
+    if request.method == 'POST':
+        form = SubscriptionForm(request.POST)
+        if form.is_valid():
+            email = form.cleaned_data['email']
+            form.save()
+
+            email_data = {
+                'email': email,
+            }
+
+            subject = 'Thank you for subscribing to our blog'
+            from_email = 'wobloginfo@gmail.com'
+            recipient_list = [email]
+
+            message_html = render_to_string(
+                'core/subscription_email.html', email_data)
+
+            send_mail(subject, strip_tags(message_html), from_email,
+                      recipient_list, html_message=message_html)
+
+            return redirect('thank_you')
+    else:
+        form = SubscriptionForm()
+
+    return render(request, 'core/home.html', {'form': form})
+
+
+def thank_you(request):
+    return render(request, 'core/thank_you.html')

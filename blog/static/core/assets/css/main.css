@@ -1327,3 +1327,6 @@ alert {
   margin-left: auto;
   padding: 0;
 }
+.search-query {
+  text-decoration: underline;
+}

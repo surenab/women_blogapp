@@ -84,7 +84,8 @@ class UserPasswordChangeForm(SetPasswordForm):
     """
     old_password = forms.CharField(
         label="Old Password",
-        widget=forms.PasswordInput(attrs={'class': 'form-control', 'autocomplete': 'off'}),
+        widget=forms.PasswordInput(
+            attrs={'class': 'form-control', 'autocomplete': 'off'}),
     )
 
     def clean_old_password(self):
@@ -106,8 +107,5 @@ class UserPasswordChangeForm(SetPasswordForm):
                 'autocomplete': 'off'
             })
 
-class SubscriptionForm(forms.ModelForm):
-    class Meta:
-        model = Subscription
-        fields = ['email']
+
 

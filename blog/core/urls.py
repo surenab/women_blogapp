@@ -31,6 +31,8 @@ from .views import (
     search_suggestions,
     CreateBlogComment,
     about,
+    subscribe,
+    thank_you
 )
 
 from accounts.views import (UserAccount, edit_profile)
@@ -52,5 +54,7 @@ urlpatterns = [
     path("create_comment", CreateBlogComment.as_view(), name="create_comment"),
     path("details/<int:pk>", BlogDetail.as_view(), name="blog_details"),
     path('edit_profile/', edit_profile, name='edit_profile'),
+    path('subscribe/', subscribe, name='subscribe'),
+    path('thank_you/', thank_you, name='thank_you'),
 
 ]
