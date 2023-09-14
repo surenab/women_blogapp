@@ -23,12 +23,25 @@ class SignUp(CreateView):
     success_url = reverse_lazy("login")
     template_name = "registration/signup.html"
 
-    def form_valid(self, form):
-        user = form.save()
-        login(self.request, user)
-        messages.success(
-            self.request, "The account was created.")
-        return redirect("home")
+
+    def add_user(request):
+        if request.POST:
+            username=request.POST['username']
+            password1=request.POST['password1']
+            password2=request.POST['password2']
+            form= SignUpForm(request.POST)
+            
+        if form.is_valid():
+            check_existing= SignUpForm.objects.filter(username=username) and SignUpForm.objects.filter(password1=password1).exists()
+            if check_existing:
+                messages.success(request, 'This username is already exists.')
+                return redirect('/')
+            else:
+                user = form.save()
+                login(request, user)
+                messages.success(
+                    request, "The account was created.")
+                return redirect("home")
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
