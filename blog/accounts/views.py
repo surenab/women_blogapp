@@ -1,15 +1,19 @@
 from typing import Any, Dict
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.views.generic import CreateView, TemplateView
-from .forms import SignUpForm, UserProfileForm, UserPasswordChangeForm
+from .forms import SignUpForm, UserProfileForm, UserPasswordChangeForm, SubscriptionForm
 from django.urls import reverse_lazy
 from django.contrib.auth import login
+from django.shortcuts import redirect
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.views import PasswordChangeView
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
 from .models import UserProfile
-
+from django.core.mail import send_mail, EmailMultiAlternatives
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
+from django.contrib import messages
 
 # Create your views here.
 
@@ -95,4 +99,35 @@ def edit_profile(request):
     return render(request, 'registration/edit_profile.html', {'form': form})
 
 
+def subscribe(request):
+    if request.method == 'POST':
+        form = SubscriptionForm(request.POST)
+        if form.is_valid():
+            email = form.cleaned_data['email']
+            form.save()
 
+            email_data = {
+                'email': email,
+            }
+
+            subject = 'Thank you for subscribing to our blog'
+            from_email = 'your_email@gmail.com'
+            recipient_list = [email]
+
+            message_html = render_to_string(
+                'registration/subscription_email.html', email_data)
+
+            email = EmailMultiAlternatives(subject, strip_tags(
+                message_html), from_email, recipient_list)
+            email.attach_alternative(message_html, "text/html")
+            email.send()
+
+            return redirect('thank_you')
+    else:
+        form = SubscriptionForm()
+
+    return render(request, 'registration/subscribe.html', {'form': form})
+
+
+def thank_you(request):
+    return render(request, 'registration/thank_you.html')

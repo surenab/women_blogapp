@@ -2,7 +2,6 @@ from django.db import models
 from django.contrib .auth import get_user_model
 from PIL import Image
 
-
 User = get_user_model()
 
 
@@ -17,7 +16,7 @@ class Blog(models.Model):
         ("7", "Science and Technology"),
         ("8", "Fashion"),
         ("9", "Medicine"),
-        ("10", "Psychology"),
+        ("10", "Psycology"),
         ("11", "Art"),
     )
 
@@ -75,11 +74,3 @@ class BlogComment(models.Model):
 
     def __str__(self) -> str:
         return f"{self.owner.username} is commented {self.text}"
-    
-
-class Subscription(models.Model):
-    email = models.EmailField(unique=True)
-    subscribed_at = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return self.email
