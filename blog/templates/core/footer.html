@@ -6,11 +6,11 @@
     <div class="container">
 
       <div class="row g-5">
-        <div class="col-lg-4">
+        <div class="col-lg-3">
           <h3 class="footer-heading">About WoBlog</h3>
-          <p>We are a dynamic team of five aspiring backend developers with a passion for Python and Django. We've come
-            together through the Woman Coders program by AGBU.Together, we make up a diverse and
-            talented group of backend developers, each with our unique strengths and experiences. </p>
+          <p>WoBlog was created with great love to make your daily life more interesting. We are sure that it
+            will interest everyone. You can find anything here that will really interest you. Moreover, you can create
+            your own blog by registering and becoming an indispensable member of our team. We are waiting for you. </p>
           <p><a href="{%url 'about' %}" class="footer-link-more">Learn More</a></p>
         </div>
         <div class="col-6 col-lg-2">
@@ -21,25 +21,32 @@
             <li><a href="{% url 'contact' %}"><i class="bi bi-chevron-right"></i> Contact</a></li>
           </ul>
         </div>
-        <div class="col-6 col-lg-2">
-          <h3 class="footer-heading">Categories</h3>
-
-          <ul class="footer-links list-unstyled">
-            <li><a href="/category/?blog_category=1">Travel</a></li>
-            <li><a href="/category/?blog_category=2">Sport</a></li>
-            <li><a href="/category/?blog_category=3">Nature</a></li>
-            <li><a href="/category/?blog_category=4">Animals</a></li>
-            <li><a href="/category/?blog_category=5">Food</a></li>
-            <li><a href="/category/?blog_category=6">DIY and Crafts</a></li>
-            <li><a href="/category/?blog_category=7">Science and Technology</a></li>
-            <li><a href="/category/?blog_category=8">Fashion</a></li>
-            <li><a href="/category/?blog_category=9">Medicine</a></li>
-            <li><a href="/category/?blog_category=10">Psycology</a></li>
-            <li><a href="/category/?blog_category=11">Art</a></li>
-          </ul>
-
+        <div class="col-6 col-lg-4">
+          <h3 class="footer-heading text-center">Categories</h3>
+          <div class="row g-5">
+            <div class="col-6 col-lg-6">
+              <ul class="footer-links list-unstyled">
+                <li><a href="/category/?blog_category=1">Travel</a></li>
+                <li><a href="/category/?blog_category=2">Sport</a></li>
+                <li><a href="/category/?blog_category=3">Nature</a></li>
+                <li><a href="/category/?blog_category=4">Animals</a></li>
+                <li><a href="/category/?blog_category=5">Food</a></li>
+                <li><a href="/category/?blog_category=6">DIY and Crafts</a></li>
+              </ul>
+            </div>
+            <div class="col-6 col-lg-6">
+              <ul class="footer-links list-unstyled">
+                <li><a href="/category/?blog_category=7">Science and Technology</a></li>
+                <li><a href="/category/?blog_category=8">Fashion</a></li>
+                <li><a href="/category/?blog_category=9">Medicine</a></li>
+                <li><a href="/category/?blog_category=10">Psycology</a></li>
+                <li><a href="/category/?blog_category=11">Art</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-3">
+          {%if most_viewed_blogs%}
           <h3 class="footer-heading">Popural Posts</h3>
 
           <ul class="footer-links footer-blog-entry list-unstyled">
@@ -58,6 +65,7 @@
             </li>
             {% endfor %}
           </ul>
+          {%endif%}
 
         </div>
       </div>

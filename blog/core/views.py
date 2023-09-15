@@ -187,11 +187,6 @@ class BlogDelete(DeleteView):
         return super().form_valid(form)
 
 
-def single_post(request):
-    blogs = Blog.objects.all()
-    return render(request, "core/single_post.html", context={"blogs": blogs})
-
-
 class About(Home):
     template_name = "core/about.html"
 
