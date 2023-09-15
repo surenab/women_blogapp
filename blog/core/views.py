@@ -73,7 +73,7 @@ class Filters(FilterView):
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         most_viewed_blogs = Blog.objects.order_by('-view_count')[:5]
-        newest_blogs=Blog.objects.order_by('-created_on')[:5]
+        newest_blogs = Blog.objects.order_by('-created_on')[:5]
         context['most_viewed_blogs'] = most_viewed_blogs
         context['newest_blogs'] = newest_blogs
         return context
@@ -196,11 +196,14 @@ def single_post(request):
     return render(request, "core/single_post.html", context={"blogs": blogs})
 
 
-def about(request):
-    team_members = TeamMember.objects.all()
-    about_team = AboutTeam.objects.all()
-    return render(request, "core/about.html", context={"team_members": team_members,
-                                                       "about_team": about_team})
+class About(Home):
+    template_name = "core/about.html"
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        data = super().get_context_data(**kwargs)
+        data["team_members"] = TeamMember.objects.all()
+        data["about_team"] = AboutTeam.objects.all()
+        return data
 
 
 class Contact(Home):
@@ -216,7 +219,6 @@ def search_result(request):
         'query': query,
         'blog_filter': blog_filter,
     }
-
     if query:
         blog_filter_qs = blog_filter.qs.filter(
             Q(title__icontains=query) | Q(description__icontains=query))
