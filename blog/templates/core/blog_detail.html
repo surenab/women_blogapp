@@ -51,9 +51,11 @@
 
                     </div>
                     <!-- ======= Comments ======= -->
+                    
                     <div class="comments">
+                        {% if comments %}
                         <h5 class="comment-title py-4">Comments</h5>
-
+                        {% endif %}
                         {% for comment in comments %}
 
                         <div class="comment d-flex mb-4">
@@ -117,6 +119,7 @@
                         {%endif%}
                         <!--End Comment Form-->
                     </div>
+                    
                 </div>
             </div>
 
