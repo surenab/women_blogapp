@@ -1327,6 +1327,8 @@ alert {
   margin-left: auto;
   padding: 0;
 }
-.search-query {
+
+.highlighted {
   text-decoration: underline;
+  color: #f0290e; 
 }
