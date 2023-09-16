@@ -47,24 +47,27 @@
                         </div>
                     </div>
 
-                </div>
-                <!-- ======= Comments ======= -->
-                <div class="comments">
-                    <h5 class="comment-title py-4">Comments</h5>
+                    <!-- ======= Comments ======= -->
+                    
+                    <div class="comments">
+                        {% if comments %}
+                        <h5 class="comment-title py-4">Comments</h5>
+                       
+                        {% for comment in comments %}
 
-                    {% for comment in comments %}
+                        <div class="comment d-flex mb-4">
 
-                    <div class="comment d-flex mb-4">
+                            <div class="flex-shrink-0">
+                                <div class="avatar avatar-sm rounded-circle">
+                                    {% if comment.owner.profile.photo %}
+                                    <img class="avatar-img" src="{{comment.owner.profile.photo.url}}" alt=""
+                                        class="img-fluid">
+                                    {%else%}
+                                    <img class="avatar-img" src="{% static '/core/assets/img/avatar.png'%}" alt=""
+                                        class="img-fluid">
+                                    {%endif%}
+                                </div>
 
-                        <div class="flex-shrink-0">
-                            <div class="avatar avatar-sm rounded-circle">
-                                {% if comment.owner.profile.photo %}
-                                <img class="avatar-img" src="{{comment.owner.profile.photo.url}}" alt=""
-                                    class="img-fluid">
-                                {%else%}
-                                <img class="avatar-img" src="{% static '/core/assets/img/avatar.png'%}" alt=""
-                                    class="img-fluid">
-                                {%endif%}
                             </div>
                         </div>
                         <div class="flex-grow-1 ms-2 ms-sm-3">
@@ -79,6 +82,7 @@
                         </div>
                     </div>
                     {%endfor%}
+                   {% endif %}
 
 
                     <!-- ======= Comments Form ======= -->
@@ -112,8 +116,9 @@
                             </div>
                         </form>
                     </div>
+
                     {%endif%}
-                    <!--End Comment Form-->
+
                 </div>
             </div>
         </div>

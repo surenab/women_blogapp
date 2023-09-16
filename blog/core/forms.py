@@ -48,7 +48,7 @@ class MessageForm(forms.ModelForm):
 
 
 class BlogCommentForm(forms.ModelForm):
-    text = forms.Textarea()
+    text = forms.CharField(label="")
 
     class Meta:
         model = BlogComment
