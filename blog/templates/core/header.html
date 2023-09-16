@@ -1,5 +1,4 @@
 {%load static %}
-{% load i18n %}
 
 <!-- ======= Header ======= -->
 <header id="header" class="header d-flex align-items-center fixed-top">
@@ -12,27 +11,27 @@
 
     <nav id="navbar" class="navbar">
       <ul>
-        <li><a href="{% url 'home' %}">{% trans "Blog" %}</a></li>
+        <li><a href="{% url 'home' %}">Blog</a></li>
 
-        <li class="dropdown"><a href=""><span>{% trans "Categories" %}</span> <i
+        <li class="dropdown"><a href=""><span>Categories</span> <i
               class="bi bi-chevron-down dropdown-indicator"></i></a>
-              <ul>
-                <li><a href="/category/?blog_category=1">{% trans "Travel" %}</a></li>
-                <li><a href="/category/?blog_category=2">{% trans "Sport" %}</a></li>
-                <li><a href="/category/?blog_category=3">{% trans "Nature" %}</a></li>
-                <li><a href="/category/?blog_category=4">{% trans "Animals" %}</a></li>
-                <li><a href="/category/?blog_category=5">{% trans "Food" %}</a></li>
-                <li><a href="/category/?blog_category=6">{% trans "DIY and Crafts" %}</a></li>
-                <li><a href="/category/?blog_category=7">{% trans "Science and Technology" %}</a></li>
-                <li><a href="/category/?blog_category=8">{% trans "Fashion" %}</a></li>
-                <li><a href="/category/?blog_category=9">{% trans "Medicine" %}</a></li>
-                <li><a href="/category/?blog_category=10">{% trans "Psychology" %}</a></li>
-                <li><a href="/category/?blog_category=11">{% trans "Art" %}</a></li>
-              </ul>
+          <ul>
+            <li><a href="/category/?blog_category=1">Travel</a></li>
+            <li><a href="/category/?blog_category=2">Sport</a></li>
+            <li><a href="/category/?blog_category=3">Nature</a></li>
+            <li><a href="/category/?blog_category=4">Animals</a></li>
+            <li><a href="/category/?blog_category=5">Food</a></li>
+            <li><a href="/category/?blog_category=6">DIY and Crafts</a></li>
+            <li><a href="/category/?blog_category=7">Science and Technology</a></li>
+            <li><a href="/category/?blog_category=8">Fashion</a></li>
+            <li><a href="/category/?blog_category=9">Medicine</a></li>
+            <li><a href="/category/?blog_category=10">Psycology</a></li>
+            <li><a href="/category/?blog_category=11">Art</a></li>
+          </ul>
         </li>
 
-        <li><a href="{% url 'about' %}">{% trans "About" %}</a></li>
-        <li><a href="{% url 'contact' %}">{% trans "Contact" %}</a></li>
+        <li><a href="{%url 'about'%}">About</a></li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
       </ul>
     </nav><!-- .navbar -->
 
@@ -41,14 +40,14 @@
       <ul>
         {% if request.user.is_authenticated %}
 
-        <li><a type="button" href="{% url 'createblog' %}">{% trans "Add new blog" %}</a></li>
-        <li><a type="button" href="{% url 'my_blogs' %}">{% trans "My blogs" %}</a></li>
-        <li><a type="button" href="{% url 'user_account' %}">{% trans "My Profile" %}</a></li>
-        <li><a type="button" href="{% url 'logout' %}">{% trans "Log Out" %}</a></li>
+        <li><a type="button" href="{% url 'createblog' %}"> Add new blog</a></li>
+        <li><a type="button" href="{% url 'my_blogs' %}"> My blogs</a></li>
+        <li><a type="button" href="{% url 'user_account' %}"> My Profile</a></li>
+        <li><a type="button" href="{% url 'logout' %}"> Log Out</a></li>
 
         {% else %}
-        <li><a type="button" href="{% url 'signup' %}">{% trans "Sign up" %}</a></li>
-        <li><a type="button" href="{% url 'login' %}">{% trans "Log in" %}</a></li>
+        <li><a type="button" href="{% url 'signup' %}">Sign up </a></li>
+        <li><a type="button" href="{% url 'login' %}"> Log in</a></li>
 
         {% endif %}
 
@@ -58,15 +57,15 @@
     </nav>
 
 
+    <!-- ======= Search Form ======= -->
     <div class="search-form-wrap js-search-form-wrap">
       <form action="{% url 'search_result' %}" method="get" class="search-form">
-        {% csrf_token %}
+        {%csrf_token %}
         <span class="icon bi-search"></span>
-        <input type="text" id="search-input" name="search" placeholder='{% trans "Search for..." %}' class="form-control">
+        <input type="text" id="search-input" name="search" placeholder="Search for..." class="form-control">
         <button type="submit" class="btn js-search-close"><span class="bi-x"></span></button>
       </form>
-    </div>
-    <!-- End Search Form -->
+    </div><!-- End Search Form -->
 
   </div>
 

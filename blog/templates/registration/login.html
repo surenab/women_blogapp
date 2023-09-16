@@ -35,6 +35,12 @@
                                                         <button class="btn btn-lg btn-primary btn-block" type="submit">
                                                             Log In
                                                         </button>
+                                                        {% if form.errors %}
+                                                        <br>
+                                                        <p>Your username or password didn't match.
+                                                            Please try again.</p>
+                                                        <br>
+                                                        {% endif %}
                                                     </div>
                                                     <div class="col-6 text-right">
                                                         <p><a href="{% url 'password_reset' %}">Forgotten your

@@ -3,169 +3,159 @@
 {% load static %}
 
 {%block bodycontent%}
+
 {% load pagination_tags %}
 
+<!-- ======= Hero Slider Section ======= -->
+<section id="hero-slider" class="hero-slider">
+  <div class="container-md" data-aos="fade-in">
+    <div class="row">
+      <div class="col-12">
+        <div class="swiper sliderFeaturedPosts">
 
-<main id="main">
-  <!-- ======= Hero Slider Section ======= -->
-  <section id="hero-slider" class="hero-slider">
-    <div class="container-md" data-aos="fade-in">
-      <div class="row">
-        <div class="col-12">
-          <div class="swiper sliderFeaturedPosts">
+          <div class="swiper-wrapper">
 
-            <div class="swiper-wrapper">
+            {% for blog in most_viewed_blogs%}
 
-              {% for blog in most_viewed_blogs%}
-
-              <div class=" swiper-slide">
-                <a href="{% url 'blog_details' blog.id %}" class="img-bg d-flex align-items-end"
-                  style="background-image: url({{blog.image.url}})">
-                  <div class="img-bg-inner">
-                    <h2>{{blog.title}}</h2>
-                    <p>{{ blog.description|truncatewords:25 }}</p>
-                  </div>
-                </a>
-              </div>
-
-              {% endfor %}
-
+            <div class=" swiper-slide">
+              <a href="{% url 'blog_details' blog.id %}" class="img-bg d-flex align-items-end"
+                style="background-image: url({{blog.image.url}})">
+                <div class="img-bg-inner">
+                  <h2>{{blog.title}}</h2>
+                  <p>{{ blog.description|truncatewords:25 }}</p>
+                </div>
+              </a>
             </div>
-            <div class="custom-swiper-button-next">
-              <span class="bi-chevron-right"></span>
-            </div>
-            <div class="custom-swiper-button-prev">
-              <span class="bi-chevron-left"></span>
-            </div>
-            <div class="swiper-pagination"></div>
+
+            {% endfor %}
+
           </div>
+          <div class="custom-swiper-button-next">
+            <span class="bi-chevron-right"></span>
+          </div>
+          <div class="custom-swiper-button-prev">
+            <span class="bi-chevron-left"></span>
+          </div>
+          <div class="swiper-pagination"></div>
         </div>
       </div>
     </div>
-
-  </section><!-- End Hero Slider Section -->
-
-  <!-- ======= Post Grid Section ======= -->
-  <section id="posts" class="posts">
-    <div class="container" data-aos="fade-up">
-      <div class="row g-5">
-
-        <div class="col-lg-4">
-          {%for blog in most_viewed_blogs|slice:":1"%}
-          <div class="post-entry-1">
-            <a href="{% url 'blog_details' blog.id %}"><img src="{{blog.image.url}}" alt="" class="img-fluid"></a>
-            <div class="post-meta"><span class="date">{{blog.get_blog_category_display}}</span> <span
-                class="mx-1">&bullet;</span> <span>{{blog.created_on}}</span><span class="mx-1">&bullet;</span> Viewes:
-              {{blog.view_count}}</span> </div>
-
-            <h2><a href="single-post.html">{{blog.title}}</a></h2>
-            <p class="mb-4 d-block">{{blog.description}}</p>
-
-            <div class="name">
-              <h3 class="m-0 p-0">{{blog.username}}</h3>
-            </div>
-
-          </div>
-          {%endfor%}
-
-
-          <!-- Start Trending Section -->
-          <div class="trending">
-            <h3>Trending</h3>
-            <ul class="trending-post">
-
-              {% for blog in most_viewed_blogs%}
-              <li>
-                <a href="{% url 'blog_details' blog.id %}">
-                  <span class="number"> {{forloop.counter}}</span>
-                  <h3>{{blog.title}}</h3>
-                  <span class="author">{{blog.user.first_name}} {{blog.user.last_name}}</span>
-                </a>
-              </li>
-              {% endfor %}
-
-            </ul>
-          </div>
-          <!-- End Trending Section -->
-
-        </div>
-
-        <div class="col-lg-8">
-
-          <div class="row g-5">
-            {% for blog in blogs%}
-            <div class="col-lg-4 border-start custom-border">
-              <div class="post-entry-1-small">
-                <a href="{% url 'blog_details' blog.id %}"><img src="{{blog.image.url}}" alt="" class="img-fluid"
-                    class="align-items-center"></a>
-                <div class="post-meta"><span class="date">{{blog.get_blog_category_display}}</span> <span
-                    class="mx-1">&bullet;</span> <span>{{blog.created_on}}</span><span
-                    class="mx-1">&bullet;</span><span>Viewes: {{blog.view_count}}</span></div>
-                <h2><a href="{% url 'blog_details' blog.id %}">{{blog.title}}</a></h2>
-
-              </div>
-            </div>
-            {%endfor%}
-          </div>
-
-        </div>
-
-
-      </div>
-
-    </div> <!-- End .row -->
-
-  </section> <!-- End Post Grid Section -->
-  <div>
-    {% if is_paginated %}
-    <nav aria-label="Page navigation example" class="d-flex justify-content-center pt-3">
-      <ul class="pagination">
-        {% if page_obj.has_previous and page_obj.number != 2 %}
-        <li class="page-item"><a class="page-link text-dark" href="?{% url_replace request 'page' 1 %}" tabindex="-1"
-            aria-disabled="true">First Page</a></li>
-        {% endif %}
-        {% if page_obj.has_previous %}
-        <li class="page-item"><a class="page-link text-dark"
-            href="?{% url_replace request 'page' page_obj.previous_page_number %}">
-            {{ page_obj.previous_page_number}}
-          </a></li>
-        {% endif %}
-        <li class="page-item disabled"><a class="page-link" href="#">{{ page_obj.number }}</a></li>
-        {% if page_obj.has_next %}
-        <li class="page-item"><a class="page-link text-dark"
-            href="?{% url_replace request 'page' page_obj.next_page_number %}">
-            {{ page_obj.next_page_number }}
-          </a>
-        </li>
-        {% endif %}
-        {% if page_obj.paginator.num_pages != page_obj.number %}
-        <li class="page-item"><a class="page-link text-dark"
-            href="?{% url_replace request 'page' page_obj.paginator.num_pages %}">Last Page</a></li>
-        {% endif %}
-      </ul>
-    </nav>
-    {% endif %}
-
   </div>
 
-    <div class="container">
-    <div class="p-5 bg-gray-200 rounded-lg py-12 m-5 text-center">
-        <h3 class="text-3xl leading-10 text-blue-800 font-bold">SUBSCRIBE TO OUR NEWSLETTER</h3>
+</section><!-- End Hero Slider Section -->
 
-        <div class="flex flex-col items-center mt-4">
-            <form method="POST" action="/subscribe/">
-                {% csrf_token %}
-                <input name="email" class="bg-white rounded-lg text-sm px-2 sm:px-3 md:px-8 py-3 mb-2" type="text" placeholder="Enter your email...">
-                <input type="submit" value="Subscribe" class="font-bold rounded-lg text-white bg-black hover:bg-gray-800 cursor-pointer px-3 py-1 md:px-6 md:py-3 focus:outline-none">
-              </form>
+<!-- ======= Post Grid Section ======= -->
+<section id="posts" class="posts">
+  <div class="container" data-aos="fade-up">
+    <div class="row g-5">
+
+      <div class="col-lg-4">
+        {%for blog in most_viewed_blogs|slice:":1"%}
+        <div class="post-entry-1">
+          <a href="{% url 'blog_details' blog.id %}"><img src="{{blog.image.url}}" alt="" class="img-fluid"></a>
+          <div class="post-meta"><span class="date">{{blog.get_blog_category_display}}</span> <span
+              class="mx-1">&bullet;</span> <span>{{blog.created_on}}</span><span class="mx-1">&bullet;</span> Viewes:
+            {{blog.view_count}}</span> </div>
+
+          <h2><a href="single-post.html">{{blog.title}}</a></h2>
+          <p class="mb-4 d-block">{{blog.description}}</p>
+
+          <div class="name">
+            <h3 class="m-0 p-0">{{blog.username}}</h3>
+          </div>
+
         </div>
+        {%endfor%}
+
+
+        <!-- Start Trending Section -->
+        <div class="trending">
+          <h3>Trending</h3>
+          <ul class="trending-post">
+
+            {% for blog in most_viewed_blogs%}
+            <li>
+              <a href="{% url 'blog_details' blog.id %}">
+                <span class="number"> {{forloop.counter}}</span>
+                <h3>{{blog.title}}</h3>
+                <span class="author">{{blog.user.first_name}} {{blog.user.last_name}}</span>
+              </a>
+            </li>
+            {% endfor %}
+
+          </ul>
+        </div>
+        <!-- End Trending Section -->
+
+      </div>
+
+      <div class="col-lg-8">
+
+        <div class="row g-5">
+          {% for blog in blogs%}
+          <div class="col-lg-4 border-start custom-border">
+            <div class="post-entry-1-small">
+              <a href="{% url 'blog_details' blog.id %}"><img src="{{blog.image.url}}" alt="" class="img-fluid"
+                  class="align-items-center"></a>
+              <div class="post-meta"><span class="date">{{blog.get_blog_category_display}}</span> <span
+                  class="mx-1">&bullet;</span> <span>{{blog.created_on}}</span><span
+                  class="mx-1">&bullet;</span><span>Viewes: {{blog.view_count}}</span></div>
+              <h2><a href="{% url 'blog_details' blog.id %}">{{blog.title}}</a></h2>
+
+            </div>
+          </div>
+          {%endfor%}
+        </div>
+
+      </div>
+
+
     </div>
+
+  </div> <!-- End .row -->
+
+</section> <!-- End Post Grid Section -->
+<div>
+  {% if is_paginated %}
+  <nav aria-label="Page navigation example" class="d-flex justify-content-center pt-3">
+    <ul class="pagination">
+      {% if page_obj.has_previous and page_obj.number != 2 %}
+      <li class="page-item"><a class="page-link text-dark" href="?{% url_replace request 'page' 1 %}" tabindex="-1"
+          aria-disabled="true">First Page</a></li>
+      {% endif %}
+      {% if page_obj.has_previous %}
+      <li class="page-item"><a class="page-link text-dark"
+          href="?{% url_replace request 'page' page_obj.previous_page_number %}">
+          {{ page_obj.previous_page_number}}
+        </a></li>
+      {% endif %}
+      <li class="page-item disabled"><a class="page-link" href="#">{{ page_obj.number }}</a></li>
+      {% if page_obj.has_next %}
+      <li class="page-item"><a class="page-link text-dark"
+          href="?{% url_replace request 'page' page_obj.next_page_number %}">
+          {{ page_obj.next_page_number }}
+        </a>
+      </li>
+      {% endif %}
+      {% if page_obj.paginator.num_pages != page_obj.number %}
+      <li class="page-item"><a class="page-link text-dark"
+          href="?{% url_replace request 'page' page_obj.paginator.num_pages %}">Last Page</a></li>
+      {% endif %}
+    </ul>
+  </nav>
+  {% endif %}
+
 </div>
 
+<section class="bg-dark text-center p-5 mt-4">
+  <div class="container p-3">
+    <h3 class="text-white">
+      <a href="{% url 'subscribe' %}" class="nav-link" role="tab">SUBSCRIBE TO OUR NEWSLETTER</a>
+    </h3>
 
-  
-
-</main><!-- End #main -->
+    </form>
+  </div>
+</section>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 

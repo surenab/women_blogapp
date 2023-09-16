@@ -4,54 +4,50 @@
 
 {% block bodycontent %}
 
-
-<main id="main">
-  <section>
-    <div class="container" data-aos="fade-up">
-      <div class="row">
-        <div class="col-lg-12 text-center mb-5">
-          <h3 class="page-title">About us</h3>
-        </div>
-      </div>
-      {%for about in about_team%}
-
-      <div class="row mb-5">
-        <div class="col-lg-12 d-md-flex post-entry-2 half">
-          <div class="col-lg-6"><img src="{{about.team_image.url}}" alt="No image" class="img-fluid">
-          </div>
-          <div class="col-lg-6 ps-md-5 mt-4 mt-md-0">
-            <h5> {{about.our_team}}</h5>
-          </div>
-        </div>
-      </div>
-      {%endfor%}
-    </div>
-  </section>
-
-  <section>
-    <div class="container" data-aos="fade-up">
-      <div class="row">
-        <div class="col-12 text-center mb-5">
-          <div class="row justify-content-center">
-            <div class="col-lg-6">
-              <h3 class="display-4">Our Team</h3>
-            </div>
-          </div>
-        </div>
-        {% for member in team_members%}
-        <div class="col-lg-4 text-center mb-5">
-          <img src="{{member.member_image.url}}" alt="" class="img-fluid rounded-circle w-50 mb-4">
-          <h4>{{member.full_name}}</h4>
-          <span class="d-block mb-3 text-uppercase">{{member.job_position}}</span>
-          <p> {{member.about_member}}</p>
-        </div>
-        {% endfor %}
-
+<section>
+  <div class="container" data-aos="fade-up">
+    <div class="row">
+      <div class="col-lg-12 text-center mb-5">
+        <h3 class="page-title">About us</h3>
       </div>
     </div>
-  </section>
+    {%for about in about_team%}
 
-</main><!-- End #main -->
+    <div class="row mb-5">
+      <div class="col-lg-12 d-md-flex post-entry-2 half">
+        <div class="col-lg-6"><img src="{{about.team_image.url}}" alt="No image" class="img-fluid">
+        </div>
+        <div class="col-lg-6 ps-md-5 mt-4 mt-md-0">
+          <h5> {{about.our_team}}</h5>
+        </div>
+      </div>
+    </div>
+    {%endfor%}
+  </div>
+</section>
+
+<section>
+  <div class="container" data-aos="fade-up">
+    <div class="row">
+      <div class="col-12 text-center mb-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <h3 class="page-title">Our Team</h3>
+          </div>
+        </div>
+      </div>
+      {% for member in team_members%}
+      <div class="col-lg-4 text-center mb-5">
+        <img src="{{member.member_image.url}}" alt="" class="img-fluid rounded-circle w-50 mb-4">
+        <h4>{{member.full_name}}</h4>
+        <span class="d-block mb-3 text-uppercase">{{member.job_position}}</span>
+        <p> {{member.about_member}}</p>
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</section>
 
 
 {%endblock%}

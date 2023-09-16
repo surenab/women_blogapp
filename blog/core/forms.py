@@ -3,9 +3,8 @@ from django import forms
 from django.core.files.base import File
 from django.db.models.base import Model
 from django.forms.utils import ErrorList
-from .models import Blog, Message, BlogComment, Subscription
+from .models import Blog, Message, BlogComment
 from django.contrib.auth.models import User
-
 
 
 class BlogForm(forms.ModelForm):
@@ -20,7 +19,7 @@ class BlogForm(forms.ModelForm):
         ("7", "Science and Technology"),
         ("8", "Fashion"),
         ("9", "Medicine"),
-        ("10", "Psychology"),
+        ("10", "Psycology"),
         ("11", "Art"),
     )
 
@@ -49,20 +48,19 @@ class MessageForm(forms.ModelForm):
 
 
 class BlogCommentForm(forms.ModelForm):
-    text = forms.Textarea()
+    text = forms.CharField(label="")
 
     class Meta:
         model = BlogComment
         fields = ['text']
 
 
+
+#--- New search
+from django import forms
+
 class SearchForm(forms.Form):
     search = forms.CharField(label='Search for...')
-
-class SubscriptionForm(forms.ModelForm):
-    class Meta:
-        model = Subscription
-        fields = ['email']
 
 
     
