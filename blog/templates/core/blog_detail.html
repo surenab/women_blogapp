@@ -48,11 +48,11 @@
                     </div>
 
                     <!-- ======= Comments ======= -->
-                    
+
                     <div class="comments">
                         {% if comments %}
                         <h5 class="comment-title py-4">Comments</h5>
-                       
+
                         {% for comment in comments %}
 
                         <div class="comment d-flex mb-4">
@@ -82,7 +82,7 @@
                         </div>
                     </div>
                     {%endfor%}
-                   {% endif %}
+                    {% endif %}
 
 
                     <!-- ======= Comments Form ======= -->
@@ -97,7 +97,7 @@
                                         {% csrf_token%}
 
                                         <div class="col-12 mb-3">
-                                            <h6>Enter your comment:</h6>
+
                                             {{ comment_form.text.label_tag }}
                                             <textarea type="text" name="{{ comment_form.text.name }}"
                                                 style="width: 100%;" rows="3"
