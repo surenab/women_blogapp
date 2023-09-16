@@ -1326,4 +1326,11 @@ alert {
 .close {
   margin-left: auto;
   padding: 0;
+
+}
+
+.highlighted {
+  text-decoration: underline;
+  color: #f0290e; 
+
 }
