@@ -1,21 +1,5 @@
-"""todoapp URL Configuration
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.1/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.urls import path
-
-
 from .views import (
 
     Category,
@@ -30,9 +14,9 @@ from .views import (
     search_result,
     search_suggestions,
     CreateBlogComment,
-    about,
     subscribe,
     thank_you
+    About,
 )
 
 from accounts.views import (UserAccount, edit_profile)
@@ -46,7 +30,7 @@ urlpatterns = [
     path("user_account/", UserAccount.as_view(), name="user_account"),
     path("createblog/", CreateBlog.as_view(), name="createblog"),
     path("singlepost/", single_post, name="singlepost"),
-    path("about/", about, name="about"),
+    path("about/", About.as_view(), name="about"),
     path("contact/", Contact.as_view(), name="contact"),
     path('search/', search_result, name='search_result'),
     path("category/", Category.as_view(), name="category"),

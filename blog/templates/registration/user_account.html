@@ -38,7 +38,6 @@
                                         <h3>
                                             {{ user.first_name }} {{ user.last_name }}
                                         </h3>
-
                                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                                             <li class="nav-item">
                                                 <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home"
@@ -46,27 +45,21 @@
                                             </li>
                                             <li class="nav-item">
                                                 <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile"
-                                                    role="tab" aria-controls="profile"
-                                                    aria-selected="false">Timeline</a>
+                                                    role="tab" aria-controls="profile" aria-selected="false">My
+                                                    blogs</a>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
 
-
                                 <div class="col-md-2">
-
                                     <a type="button" class="btn btn-outline-success mt-2"
                                         href="{% url 'edit_profile' %}">
                                         Edit Profile </a>
-
                                 </div>
-
-
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
-
                                 </div>
                                 <div class="col-md-6">
                                     <div class="tab-content profile-tab" id="myTabContent">
@@ -127,10 +120,12 @@
                                                 {%endif%}
                                             </div>
                                         </div>
-                                        <!--Activity section-->
+
+                                        <!--My blogs section-->
                                         <div class="tab-pane fade" id="profile" role="tabpanel"
                                             aria-labelledby="profile-tab">
                                             <div class="row">
+
                                                 <div class="col-md-6">
                                                     <label>Experience</label>
                                                 </div>
