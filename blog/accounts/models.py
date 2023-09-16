@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib .auth import get_user_model
 
 
+
 User = get_user_model()
 
 
@@ -17,18 +18,14 @@ class UserProfile(models.Model):
     photo = models.ImageField(
         upload_to="Media", default=None, null=True, blank=True)
 
-
     def __str__(self):
         return f"{self.user.username} {self.profession}"
-
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
 
     User.profile = property(
         lambda u: UserProfile.objects.get_or_create(user=u)[0])
-    
-
 
 
 class Subscription(models.Model):
@@ -37,4 +34,3 @@ class Subscription(models.Model):
 
     def __str__(self):
         return self.email
-

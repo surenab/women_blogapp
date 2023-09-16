@@ -6,40 +6,37 @@
 
 {% block bodycontent %}
 
-<main id="main">
-    <div class="container" data-aos="fade-up">
-        <div class="row">
-            <div class="col-lg-12 text-center mb-5">
-                <p class="page-title">Add a New Blog</p>
-            </div>
 
-            <div class="text-center">
-                <form role="form" method="POST" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <p class="text-center">
-                        {% render_field form.title placeholder="Title" class+="form-control" %}
-                        <br>
-                        {% render_field form.description placeholder="Description" class+="form-control" %}
-                        <br>
-                        {% render_field form.blog_category placeholder="Blog Category" class+="form-control" %}
-                        <br>
-                        {% render_field form.image placeholder="General Image" class+="form-control" %}
-                        <br>
-                        {% render_field form.image1 placeholder="Additional Image" class+="form-control" %}
-                        <br>
-                        {% render_field form.image2 placeholder="Additional Image" class+="form-control" %}
-                        <br>
+<div class="container" data-aos="fade-up">
+    <div class="row">
+        <div class="col-lg-12 text-center mb-5">
+            <p class="page-title">Add a New Blog</p>
+        </div>
 
+        <div class="text-center">
+            <form role="form" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <p class="text-center">
+                    {% render_field form.title placeholder="Title" class+="form-control" %}
+                    <br>
+                    {% render_field form.description placeholder="Description" class+="form-control" %}
+                    <br>
+                    {% render_field form.blog_category placeholder="Blog Category" class+="form-control" %}
+                    <br>
+                    {% render_field form.image placeholder="General Image" class+="form-control" %}
+                    <br>
+                    {% render_field form.image1 placeholder="Additional Image" class+="form-control" %}
+                    <br>
+                    {% render_field form.image2 placeholder="Additional Image" class+="form-control" %}
+                    <br>
+                </p>
 
-                        <button class="btn btn-lg btn-primary btn-block" type="submit">
-                            Add Blog
-                        </button>
-            </div>
-
+                <button class="btn btn-lg btn-primary btn-block" type="submit">
+                    Add Blog
+                </button>
             </form>
         </div>
     </div>
-    </div>
+</div>
 
-</main>
 {% endblock %}

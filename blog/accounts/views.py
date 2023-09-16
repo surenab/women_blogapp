@@ -14,6 +14,9 @@ from django.core.mail import send_mail, EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.contrib import messages
+from core.models import Blog
+from django.http import JsonResponse
+
 
 # Create your views here.
 
@@ -58,7 +61,7 @@ class UserPasswordChangeView(SuccessMessageMixin, PasswordChangeView):
 
 class UserAccount(TemplateView):
     template_name = "registration/user_account.html"
-
+    
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(**kwargs)
 
@@ -67,6 +70,10 @@ class UserAccount(TemplateView):
                 UserProfile, user=self.request.user)
             context['user_profile'] = user_profile
 
+        context['user_blogs'] = Blog.objects.filter(
+            user=self.request.user).order_by('-created_on')
+       
+        
         return context
 
     def post(self, request, *args, **kwargs):

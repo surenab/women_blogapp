@@ -40,6 +40,25 @@
   <!-- Scripts for icons - edit, delete, view -->
   <script src="https://kit.fontawesome.com/33cd771fbc.js" crossorigin="anonymous"></script>
 
+  <!-- Vendor JS Files -->
+  <script src="{% static 'core/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'core/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'core/assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'core/assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'core/assets/vendor/php-email-form/validate.js' %}"></script>
+  <script>
+    $(document).ready(function () {
+      // Bind a click event to the close button within the alerts
+      $('.alert .close').on('click', function () {
+        $(this).closest('.alert').fadeOut();
+      });
+    });
+  </script>
+
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'core/assets/js/main.js' %}"></script>
+
 </head>
 
 <body>
@@ -54,42 +73,25 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      
+
       {% endfor %}
     </div>
-    
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-  </main>
-
-  {% block bodycontent %} {% endblock %}
 
 
-  {% block footer %}
+    {% block bodycontent %} {% endblock %}
+
+
+    {% block footer %}
     {% include "core/footer.html" %}
-  {% endblock %}
+    {% endblock %}
 
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+    <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Vendor JS Files -->
-  <script src="{% static 'core/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-  <script src="{% static 'core/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
-  <script src="{% static 'core/assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
-  <script src="{% static 'core/assets/vendor/aos/aos.js' %}"></script>
-  <script src="{% static 'core/assets/vendor/php-email-form/validate.js' %}"></script>
-  <script>
-    $(document).ready(function() {
-      // Bind a click event to the close button within the alerts
-      $('.alert .close').on('click', function() {
-        $(this).closest('.alert').fadeOut();
-      });
-    });
-    </script>
-
-
-  <!-- Template Main JS File -->
-  <script src="{% static 'core/assets/js/main.js' %}"></script>
+  </main>
 
 </body>
 
