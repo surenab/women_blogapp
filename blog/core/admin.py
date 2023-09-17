@@ -17,4 +17,3 @@ admin.site.register(AboutTeam)
 admin.site.register(TeamMember, TeamMemberAdmin)
 admin.site.register(BlogComment)
 admin.site.register(Subscription) 
-

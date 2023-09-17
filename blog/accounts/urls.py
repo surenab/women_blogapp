@@ -9,5 +9,4 @@ urlpatterns = [
     path('password-change/', UserPasswordChangeView.as_view(), name='password_change'),
     path("user_account/", UserAccount.as_view(), name="user_account"),
 
-
 ]

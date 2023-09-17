@@ -29,7 +29,9 @@
               <span class="date">{{ blog.created_on }}</span>
             </div>
             <h3><a href="{% url 'blog_details' blog.id %}">{{ blog.title }}</a></h3>
-            <p class="mb-4 d-block">{{ blog.description|highlight_query:query }}</p>
+
+            <p class="mb-4 d-block">{{ blog.description|highlight_query:query}}</p>
+
             <div class="d-flex align-items-center author">
               <div class="photo">
                 <img src="{{ blog.author.profile_picture.url }}" alt="" class="img-fluid">

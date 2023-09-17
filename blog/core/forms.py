@@ -59,10 +59,8 @@ class BlogCommentForm(forms.ModelForm):
 class SearchForm(forms.Form):
     search = forms.CharField(label='Search for...')
 
+
 class SubscriptionForm(forms.ModelForm):
     class Meta:
         model = Subscription
         fields = ['email']
-
-
-    

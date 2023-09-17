@@ -20,7 +20,6 @@ from django.utils.html import strip_tags
 
 # Create your views here.
 
-
 class Base(LoginRequiredMixin, CreateView):
     def get_queryset(self):
         queryset = super(Base, self).get_queryset()
@@ -235,6 +234,7 @@ def search_suggestions(request):
                    for blog in blogs]
 
     return JsonResponse(suggestions, safe=False)
+
 
 def subscribe(request):
     if request.method == 'POST':

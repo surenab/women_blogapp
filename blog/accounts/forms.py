@@ -107,5 +107,3 @@ class UserPasswordChangeForm(SetPasswordForm):
                 'autocomplete': 'off'
             })
 
-
-

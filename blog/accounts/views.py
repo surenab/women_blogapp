@@ -54,7 +54,8 @@ class UserPasswordChangeView(SuccessMessageMixin, PasswordChangeView):
 
 class UserAccount(TemplateView):
     template_name = "registration/user_account.html"
-    
+    paginate_by = 3
+
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(**kwargs)
 
@@ -65,9 +66,22 @@ class UserAccount(TemplateView):
 
         context['user_blogs'] = Blog.objects.filter(
             user=self.request.user).order_by('-created_on')
-       
-        
+
         return context
+
+    def get_paginate_by(self, queryset):
+        blogs_per_page = self.request.GET.get('blogs_per_page')
+
+        default_blogs_per_page = 3
+
+        try:
+            blogs_per_page = int(blogs_per_page)
+        except (ValueError, TypeError):
+            blogs_per_page = default_blogs_per_page
+
+        blogs_per_page = max(1, min(blogs_per_page, 50))
+
+        return blogs_per_page
 
     def post(self, request, *args, **kwargs):
         if self.request.user.is_authenticated:

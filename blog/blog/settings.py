@@ -176,8 +176,9 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 
 
+
 LANGUAGES = [
     ('en', 'English'),
     ('hy', 'Armenian'),
     ('ru', 'Russian'),
-]
+
