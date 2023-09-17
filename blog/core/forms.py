@@ -7,6 +7,7 @@ from .models import Blog, Message, BlogComment, Subscription
 from django.contrib.auth.models import User
 
 
+
 class BlogForm(forms.ModelForm):
 
     BLOG_CATEGORIES = (
@@ -48,15 +49,18 @@ class MessageForm(forms.ModelForm):
 
 
 class BlogCommentForm(forms.ModelForm):
-    text = forms.CharField(label="")
+    text = forms.Textarea()
 
     class Meta:
         model = BlogComment
         fields = ['text']
 
 
+class SearchForm(forms.Form):
+    search = forms.CharField(label='Search for...')
+
 
 class SubscriptionForm(forms.ModelForm):
     class Meta:
         model = Subscription
-        fields = ['email'] 
+        fields = ['email']
