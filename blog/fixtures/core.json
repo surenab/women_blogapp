@@ -3,155 +3,51 @@
         "model": "core.blog",
         "pk": 1,
         "fields": {
-            "blog_category": "1",
-            "title": "Paris",
-            "created_on": "2023-09-02",
+            "blog_category": "7",
+            "title": "Robotics",
+            "created_on": "2023-09-17",
             "user": 1,
-            "description": "Paris, France's capital, is a major European city and a global center for art, fashion, gastronomy and culture. Its 19th-century cityscape is crisscrossed by wide boulevards and the River Seine. Beyond such landmarks as the Eiffel Tower and the 12th-century, Gothic Notre-Dame cathedral, the city is known for its cafe culture and designer boutiques along the Rue du Faubourg Saint-Honoré.",
-            "image": "Media/paris_L3nEvT0.jpg",
-            "view_count": 47
+            "description": "Robotics is an interdisciplinary branch of electronics and communication, computer science and engineering.[1] Robotics involves the design, construction, operation, and use of robots. The goal of robotics is to design machines that can help and assist humans. Robotics integrates fields of mechanical engineering, electrical engineering, information engineering, mechatronics engineering, electronics, biomedical engineering, computer engineering, control systems engineering, software engineering, mathematics, etc.\r\n\r\nThe field of robotics develops machines that can automate tasks and do various jobs that a human might not be able to do. Robots can be used in many situations for many purposes, but today many are used in dangerous environments (including inspection of radioactive materials, bomb detection and deactivation), manufacturing processes, or where humans cannot survive (e.g., in space, underwater, in high heat, and clean up and containment of hazardous materials and radiation). Robots can take any form, but some are made to resemble humans in appearance. This is claimed to help in the acceptance of robots in certain replicative behaviors which are usually performed by people. Such robots attempt to replicate walking, lifting, speech, cognition, or any other tasks mainly performed by a human. Many of today's robots are inspired by nature, contributing to the field of bio-inspired robotics.\r\n\r\nCertain robots require user input to operate, while other robots function autonomously. The concept of creating robots that can operate autonomously dates back to classical times, but research into the functionality and potential uses of robots did not grow substantially until the 20th century. Throughout history, it has been frequently assumed by various scholars, inventors, engineers, and technicians that robots will one day be able to mimic human behavior and manage tasks in a human-like fashion. Today, robotics is a rapidly growing field, as technological advances continue; researching, designing, and building new robots serve various practical purposes, whether domestically, commercially, or militarily. Many robots are built to do jobs that are hazardous to people, such as defusing bombs, finding survivors in unstable ruins, and exploring mines and shipwrecks. Robotics is also used in STEM (science, technology, engineering, and mathematics) as a teaching aid.[2]",
+            "image": "Media/robotics_sZxexnM.jpg",
+            "view_count": 0
         }
     },
     {
         "model": "core.blog",
         "pk": 2,
         "fields": {
-            "blog_category": "1",
-            "title": "Italy",
-            "created_on": "2023-09-02",
-            "user": 1,
-            "description": "Italy, a European country with a long Mediterranean coastline, has left a powerful mark on Western culture and cuisine. Its capital, Rome, is home to the Vatican as well as landmark art and ancient ruins. Other major cities include Florence, with Renaissance masterpieces such as Michelangelo’s \"David\" and Brunelleschi's Duomo; Venice, the city of canals; and Milan, Italy’s fashion capital.",
-            "image": "Media/italy.jpg",
-            "view_count": 19
+            "blog_category": "9",
+            "title": "How Technology is Changing the World of Medicine",
+            "created_on": "2023-09-17",
+            "user": 2,
+            "description": "A large number of digital innovations are revolutionizing healthcare — and technology in medicine is here to stay. Numerous innovations and new solutions are already on the market and they have all improved healthcare drastically.\r\n\r\nMultiple medical issues such as congestive heart failure, diabetes, medication noncompliance, even stressful isolation, are researched and solved with remarkable new technologies. Here are some areas researchers are targeting:\r\n\r\nHeart failure\r\nOne of the most common and costly diagnoses is that of heart failure, with a mortality rate closer to cancer. It includes three types of sensors – wristband, necklace and watch – which are used for testing. This type of diagnosis gives both patients and doctors continuous information on how a compromised heart is functioning.",
+            "image": "Media/AI_and_medicine_rP0C9z2.jpeg",
+            "view_count": 0
         }
     },
     {
         "model": "core.blog",
         "pk": 3,
         "fields": {
-            "blog_category": "5",
-            "title": "Croissant",
-            "created_on": "2023-09-02",
-            "user": 1,
-            "description": "A croissant is a buttery, flaky, viennoiserie pastry inspired by the shape of the Austrian kipferl but using the French yeast-leavened laminated dough. Croissants are named for their historical crescent shape.",
-            "image": "Media/cruassant.jpeg",
-            "view_count": 3
+            "blog_category": "4",
+            "title": "Golden Retriever",
+            "created_on": "2023-09-17",
+            "user": 2,
+            "description": "The Golden Retriever was developed in Scotland in the nineteenth century by Sir Dudley Marjoribanks (later to become Baron Tweedmouth) from Flat-coated Retrievers judiciously crossed with Tweed Water Spaniels and some other British dog breeds.[1][2] Prior to the 1952 publication of the very detailed stud book which had been meticulously maintained by Marjoribanks, a number of romantic tales were published about the origins of the breed.[1][2][3]\r\n\r\nIn the 1860s Marjoribanks set out to create what to his mind was the ultimate breed of retriever at his Scottish estate Guisachan.[1][4] He started by acquiring a yellow-coloured Flat-coated Retriever dog called Nous;[note 1] Nous had been whelped in June 1864 and was the only yellow pup in an otherwise all black-coloured litter.[1][3] Whilst uncommon, occasionally liver, brown, golden or yellow-coloured purebred Flat-coated Retriever pups are whelped to matings of two black parents.[2][5] It is the pedigree of Nous that was the source for the romantic tales of the heritage of the Golden Retriever.[1] One early account claimed Nous was purchased from a Russian circus trainer in Brighton, another claimed he was bought from a cobbler, and yet another claimed a gypsy.[1] The stud book states that Nous was a Flat-coated Retriever bred by Lord Chichester on his Stanmer Park estate near Brighton.[4][5][6]",
+            "image": "Media/goldenretriver2_gRm4wIv.jpeg",
+            "view_count": 0
         }
     },
     {
         "model": "core.blog",
         "pk": 4,
         "fields": {
-            "blog_category": "3",
-            "title": "Flowers",
-            "created_on": "2023-09-11",
-            "user": 18,
-            "description": "A flower, sometimes known as a bloom or blossom, is the reproductive structure found in flowering plants (plants of the division Angiospermae). Flowers produce gametophytes, which in flowering plants consist of a few haploid cells which produce gametes. The \"male\" gametophyte, which produces non-motile sperm, is enclosed within pollen grains; the \"female\" gametophyte is contained within the ovule. When pollen from the anther of a flower is deposited on the stigma, this is called pollination. Some flowers may self-pollinate, producing seed using pollen from the same flower or a different flower of the same plant, but others have mechanisms to prevent self-pollination and rely on cross-pollination, when pollen is transferred from the anther of one flower to the stigma of another flower on a different individual of the same species.\r\n\r\nSelf-pollination happens in flowers where the stamen and carpel mature at the same time, and are positioned so that the pollen can land on the flower's stigma. This pollination does not require an investment from the plant to provide nectar and pollen as food for pollinators.[1]\r\n\r\nSome flowers produce diaspores without fertilization (parthenocarpy). Flowers contain sporangia and are the site where gametophytes develop.\r\n\r\nMost flowering plants depend on animals, such as bees, moths, and butterflies, to transfer their pollen between different flowers, and have evolved to attract these pollinators by various strategies, including brightly colored, conspicuous petals, attractive scents, and the production of nectar, a food source for pollinators.[2] In this way, many flowering plants have co-evolved with pollinators to be mutually dependent on services they provide to one another—in the plant's case, a means of reproduction; in the pollinator's case, a source of food.[3] After fertilization, the ovary of the flower develops into fruit containing seeds.\r\n\r\nFlowers have long been appreciated by humans for their beauty and pleasant scents, and also hold cultural significance as religious, ritual, or symbolic objects, or sources of medicine and food.",
-            "image": "Media/Flower_poster_Z9ipTpg.jpg",
-            "view_count": 5
-        }
-    },
-    {
-        "model": "core.blog",
-        "pk": 5,
-        "fields": {
-            "blog_category": "4",
-            "title": "Golden Retrivers",
-            "created_on": "2023-09-11",
-            "user": 18,
-            "description": "The Golden Retriever was developed in Scotland in the nineteenth century by Sir Dudley Marjoribanks (later to become Baron Tweedmouth) from Flat-coated Retrievers judiciously crossed with Tweed Water Spaniels and some other British dog breeds.[1][2] Prior to the 1952 publication of the very detailed stud book which had been meticulously maintained by Marjoribanks, a number of romantic tales were published about the origins of the breed.[1][2][3]\r\n\r\nIn the 1860s Marjoribanks set out to create what to his mind was the ultimate breed of retriever at his Scottish estate Guisachan.[1][4] He started by acquiring a yellow-coloured Flat-coated Retriever dog called Nous;[note 1] Nous had been whelped in June 1864 and was the only yellow pup in an otherwise all black-coloured litter.[1][3] Whilst uncommon, occasionally liver, brown, golden or yellow-coloured purebred Flat-coated Retriever pups are whelped to matings of two black parents.[2][5] It is the pedigree of Nous that was the source for the romantic tales of the heritage of the Golden Retriever.[1] One early account claimed Nous was purchased from a Russian circus trainer in Brighton, another claimed he was bought from a cobbler, and yet another claimed a gypsy.[1] The stud book states that Nous was a Flat-coated Retriever bred by Lord Chichester on his Stanmer Park estate near Brighton.[4][5][6]\r\n\r\nIn 1868 Nous was mated to a Tweed Water Spaniel bitch named Belle, who is recorded in the stud book as being whelped in 1863 and being of \"Ladykirk breeding\".[1][5] The litter from this mating consisted of four yellow pups, Primrose, Ada, Cowslip and Crocus.[6][7] The best bitch from this litter, Cowslip, was mated to a Tweed Water Spaniel called Tweed with the mating producing a bitch pup called Topsy.[4] Cowslip was subsequently mated to a Red Setter called Sampson; that mating produced a dog pup called Jack.[4] Topsy was mated with a black Flat-coated Retriever called Sambo and a bitch pup from that litter, Zoe, was mated back to Jack and two pups from that mating were retained, a dog called Nous II and a bitch called Gill.[4] Gill was mated to a black Labrador Retriever called Tracer, and a bitch pup from that mating, Queenie, was mated back to Nous II; all Golden Retrievers descend from this mating.[4] The progeny from these various matings varied in colour from pure black to light cream, but it was the golden-coloured ones that were retained and mated to each other, forming the foundation stock of the Golden Retriever breed.[1] Marjoribanks is also known to have used a sandy-coloured Bloodhound and another Labrador in subsequent years of the breeding programme.[3][4]",
-            "image": "Media/goldenretriver2.jpeg",
-            "view_count": 4
-        }
-    },
-    {
-        "model": "core.blog",
-        "pk": 6,
-        "fields": {
-            "blog_category": "4",
-            "title": "Poodle",
-            "created_on": "2023-09-11",
-            "user": 18,
-            "description": "The Poodle, called the Pudel in German and the Caniche in French, is a breed of water dog. The breed is divided into four varieties based on size, the Standard Poodle, Medium Poodle, Miniature Poodle and Toy Poodle, although the Medium Poodle is not universally recognised. They have a distinctive thick, curly coat that comes in many colors and patterns, with only solid colors recognized by breed registries. Poodles are active and intelligent, and are particularly able to learn from humans. Poodles tend to live 10–18 years, with smaller varieties tending to live longer than larger ones.\r\n\r\nThe Poodle likely originated in Germany, although the Fédération Cynologique Internationale (FCI) and a minority of cynologists believe it originated in France. Similar dogs date back to at least the 17th century. Larger Poodles were originally used by wildfowl hunters to retrieve game from water, while smaller varieties were once commonly used as circus performers. Poodles were recognized by both the Kennel Club of the United Kingdom and the American Kennel Club (AKC) soon after the clubs' founding. Since the mid-20th century, Poodles have enjoyed enormous popularity as pets and show dogs – Poodles were the AKC's most registered breed from 1960 to 1982, and are now the FCI's third most registered breed. Poodles are also common at dog shows, where they often sport the popularly recognized Continental clip, with face and rear clipped close, and tufts of hair on the hocks and tail tip.",
-            "image": "Media/poodel.jpg",
-            "view_count": 1
-        }
-    },
-    {
-        "model": "core.blog",
-        "pk": 7,
-        "fields": {
-            "blog_category": "11",
-            "title": "Vincent van Gogh",
-            "created_on": "2023-09-11",
-            "user": 18,
-            "description": "Vincent Willem van Gogh (Dutch: [ˈvɪnsɛnt ˈʋɪləɱ vɑŋ ˈɣɔx] i;[note 1] 30 March 1853 – 29 July 1890) was a Dutch Post-Impressionist painter who is among the most famous and influential figures in the history of Western art. In just over a decade he created approximately 2100 artworks, including around 860 oil paintings, most of them in the last two years of his life. They include landscapes, still lifes, portraits and self-portraits, and are characterised by bold, symbolic colours, and dramatic, impulsive and highly expressive brushwork that contributed to the foundations of modern art. Only one of his paintings was known by name to have been sold during his lifetime. Van Gogh became famous after his suicide, aged 37, which followed years of poverty and mental illness.\r\n\r\nBorn into an upper-middle-class family, Van Gogh drew as a child and was serious, quiet and thoughtful, but showed signs of mental instability. As a young man he worked as an art dealer, often travelling, but became depressed after he was transferred to London. He turned to religion, and spent time as a missionary in southern Belgium. Later he drifted in ill-health and solitude. He was keenly aware of modernist trends in art and, while back with his parents, took up painting in 1881. His younger brother, Theo, supported him financially, and the two of them kept up a long correspondence by letter.\r\n\r\nVan Gogh's early works consisted of mostly still lifes and depictions of peasant labourers. In 1886, he moved to Paris, where he met members of the artistic avant-garde, including Émile Bernard and Paul Gauguin, who were seeking new paths beyond Impressionism. Frustrated in Paris and inspired by a growing spirit of artistic change and collaboration, Van Gogh moved to Arles in south of France in February 1888 with the goal of establishing an artistic retreat and commune. Once there, Van Gogh's art changed. His paintings grew brighter and he turned his attention to the natural world, depicting local olive groves, wheat fields and sunflowers. Van Gogh invited Gauguin to join him in Arles and eagerly anticipated Gauguin's arrival in the fall of 1888.\r\n\r\nVan Gogh suffered from psychotic episodes and delusions. Though he worried about his mental stability, he often neglected his physical health, did not eat properly and drank heavily. His friendship with Gauguin ended after a confrontation with a razor when, in a rage, he severed part of his own left ear. He spent time in psychiatric hospitals, including a period at Saint-Rémy. After he discharged himself and moved to the Auberge Ravoux in Auvers-sur-Oise near Paris, he came under the care of the homeopathic doctor Paul Gachet. His depression persisted, and on 27 July 1890, Van Gogh is believed to have shot himself in the chest with a revolver, dying from his injuries two days later.\r\n\r\nVan Gogh's art gained critical recognition after his death and his life story captured public imagination as an emblem of misunderstood genius.[6] His bold use of color, expressive line and thick application of paint inspired avant garde artistic groups like the Fauves and German Expressionists in the early 20th century. Van Gogh's work gained widespread critical and commercial success in the following decades, and he has become a lasting icon of the romantic ideal of the tortured artist. Today, Van Gogh's works are among the world's most expensive paintings to have ever sold, and his legacy is honoured by a museum in his name, the Van Gogh Museum in Amsterdam, which holds the world's largest collection of his paintings and drawings.",
-            "image": "Media/vincent_van_gogh.jpeg",
-            "view_count": 3
-        }
-    },
-    {
-        "model": "core.blog",
-        "pk": 8,
-        "fields": {
-            "blog_category": "8",
-            "title": "Giorgio Armani",
-            "created_on": "2023-09-11",
-            "user": 18,
-            "description": "Giorgio Armani (Italian pronunciation: [ˈdʒordʒo arˈmaːni]; born 11 July 1934) is an Italian fashion designer. He first gained renown working for Cerruti and then for many others, including Allegri, Bagutta, and Hilton. He formed his company, Armani, in 1975, which eventually expanded into music, sport, and luxury hotels. By 2001, Armani was acclaimed as the most successful designer of Italian origin, and is credited with pioneering red-carpet fashion. In 2010, he opened the Armani Hotel in Burj Khalifa, the world's tallest building. He is also the wealthiest openly bisexual person in the world. According to Bloomberg Billionaires Index, as of 2021, Armani had an estimated net worth of US$9.53 billion.",
-            "image": "Media/armani_main.jpg",
-            "view_count": 1
-        }
-    },
-    {
-        "model": "core.blog",
-        "pk": 9,
-        "fields": {
-            "blog_category": "11",
-            "title": "Celine Dion",
-            "created_on": "2023-09-11",
-            "user": 18,
-            "description": "Céline Marie Claudette Dion CC OQ (/seɪˌliːn diˈɒn/ say-LEEN dee-ON;[a] born 30 March 1968)[3] is a Canadian singer. Referred to as the \"Queen of Power Ballads\",[4][5] she is noted for her powerful and technically skilled vocals.[6][7] Her music has incorporated genres such as pop, rock, R&B, gospel, and classical music. Her recordings have been mainly in English and French, although she has also sung in Spanish, Italian, German, Latin, Japanese, and Chinese.\r\n\r\nBorn into a large family in Charlemagne, Quebec, Dion was discovered by her future manager and husband René Angélil, and emerged as a teen star in her home country with a series of French-language albums during the 1980s. She gained international recognition by winning the 1988 Eurovision Song Contest, where she represented Switzerland with \"Ne partez pas sans moi\". Her debut English-language album, Unison (1990), established her as a viable pop artist primarily in North America and several English-speaking markets, while The Colour of My Love (1993) gave her global superstardom. Dion continued her success throughout the 1990s with several of the bestselling English-language albums in history, such as Falling into You (1996) and Let's Talk About Love (1997), which were certified diamond in the US with more than 30 million sales worldwide each. She also released a series of international number-one hits, including \"The Power of Love\", \"Think Twice\", \"Because You Loved Me\", \"It's All Coming Back to Me Now\", \"I'm Your Angel\", \"That's the Way It Is\", \"I'm Alive\" and her signature song \"My Heart Will Go On\", the theme for the 1997 film Titanic, which solidified her popularity.[8]\r\n\r\nDion continued releasing French-language albums between each English record; D'eux (1995) became the best-selling French-language album of all time, while S'il suffisait d'aimer (1998), Sans attendre (2012), and Encore un soir (2016), were all certified diamond in France. During the 2000s, she built her reputation as a successful live performer with A New Day... on the Las Vegas Strip (2003–07), the highest-grossing concert residency of all time, and the Taking Chances World Tour (2008–09), one of the highest-grossing concert tours of the 2000s.\r\n\r\nShe has been regarded by several magazines as one of the greatest singers in music. With record sales of over 200 million worldwide, she is listed as one of the best-selling music artists of all time,[9][10][11][12] as well as the best-selling Canadian recording artist and the best-selling French-language artist in history. In 2003, she was honoured by the International Federation of the Phonographic Industry (IFPI) for selling over 50 million albums in Europe. Seven of her albums have sold at least 10 million copies worldwide, the second-most among women in history. She has won five Grammy Awards, achieved two Honorary Doctorates in Music degree from Berklee College of Music and Université Laval.[13][14] Billboard named her the \"Queen of Adult Contemporary\" for having the most number-one adult contemporary songs for a female artist.[15] Dion is also the sixth all-time best-performing female soloist in Billboard 200 history.[16] At the end of 2009, Dion was recognized by the Los Angeles Times as that decade's top-earning artist, with combined album sales and concert revenue exceeding $747 million.[17][18]",
-            "image": "Media/celine_dion.jpg",
-            "view_count": 1
-        }
-    },
-    {
-        "model": "core.blog",
-        "pk": 10,
-        "fields": {
-            "blog_category": "7",
-            "title": "Learn Python with Artificial Intelligence and Robotics",
-            "created_on": "2023-09-16",
-            "user": 1,
-            "description": "Artificial intelligence (AI) and Robotics are the IT industry's new dark. While debates regarding the safety of its growth continue, developers continue to expand artificial intelligence's capabilities and capability. Artificial Intelligence has progressed far beyond the realm of science fiction. It became a requirement. AI, which is commonly used for processing and analysing large amounts of data, aids in the handling of tasks that are no longer possible to complete manually due to their increased volume and intensity.\r\n\r\nArtificial Intelligence (AI) has become a revolutionary term in the industry, and for a good reason. Artificial Intelligence, or AI, has progressed so far in the technological area that, according to a Gartner report, AI will create 2.3 million jobs by 2020, replacing the 1.8 million jobs it would displace.\r\n\r\nPython is a frequently used programming language today. Python has become relatively simple to understand because of robotics applications. This language is ideal for creating a variety of apps. Despite the fact that there are many other languages to choose from, people choose Python for a variety of reasons. Python is a flexible and strong language when compared to other software and computer languages.",
-            "image": "Media/robotics.jpg",
-            "view_count": 3
-        }
-    },
-    {
-        "model": "core.blog",
-        "pk": 11,
-        "fields": {
-            "blog_category": "7",
-            "title": "Artificial Intelligence in Molecular Medicine",
-            "created_on": "2023-09-16",
-            "user": 1,
-            "description": "A major change in our ability to measure molecules at scale has fueled the current era of individualized medicine (Figure 1). For decades, genetic sequencing based on the technique of Sanger focused on sections of DNA or RNA that were up to a few hundred bases in length. In the early 2000s, approaches such as sequencing by synthesis (Illumina) gained traction, allowing hundreds and eventually billions of short DNA templates to be synthesized and read simultaneously. More recent methods (from Pacific Biosciences and Oxford Nanopore), which have focused on continuous sequencing of long nucleic acid molecules, have additional benefits. Whereas the Human Genome Project took 10 years to sequence one incomplete monoploid genome at a cost of several billion dollars, in 2022, a more complete human genome3 could be sequenced in 5 hours for just a few hundred dollars.4 This rapid acceleration in the availability of genomic data has created demand for fast processing and accurate interpretation of these data.",
-            "image": "Media/AI_and_medicine.jpeg",
-            "view_count": 0
-        }
-    },
-    {
-        "model": "core.blog",
-        "pk": 12,
-        "fields": {
-            "blog_category": "9",
-            "title": "COVID-19",
-            "created_on": "2023-09-16",
-            "user": 1,
-            "description": "he symptoms of COVID‑19 are variable but often include fever,[7] cough, headache,[8] fatigue, breathing difficulties, loss of smell, and loss of taste.[9][10][11] Symptoms may begin one to fourteen days after exposure to the virus. At least a third of people who are infected do not develop noticeable symptoms.[12] Of those who develop symptoms noticeable enough to be classified as patients, most (81%) develop mild to moderate symptoms (up to mild pneumonia), while 14% develop severe symptoms (dyspnea, hypoxia, or more than 50% lung involvement on imaging), and 5% develop critical symptoms (respiratory failure, shock, or multiorgan dysfunction).[13] Older people are at a higher risk of developing severe symptoms. Some people continue to experience a range of effects (long COVID) for years after infection, and damage to organs has been observed.[14] Multi-year studies are underway to further investigate the long-term effects of the disease.[15]\r\n\r\nCOVID‑19 transmits when infectious particles are breathed in or come into contact with the eyes, nose, or mouth. The risk is highest when people are in close proximity, but small airborne particles containing the virus can remain suspended in the air and travel over longer distances, particularly indoors. Transmission can also occur when people touch their eyes, nose or mouth after touching surfaces or objects that have been contaminated by the virus. People remain contagious for up to 20 days and can spread the virus even if they do not develop symptoms.[16]",
-            "image": "Media/covid-19.jpeg",
+            "blog_category": "1",
+            "title": "Italy",
+            "created_on": "2023-09-17",
+            "user": 2,
+            "description": "Italy (Italian: Italia [iˈtaːlja] i), officially the Italian Republic[a][13][14] or the Republic of Italy,[15][16] is a country in Southern[17][18][19] and Western[20][note 1] Europe. Located in the middle of the Mediterranean Sea, it consists of a peninsula delimited by the Alps and surrounded by several islands.[21] Italy shares land borders with France, Switzerland, Austria, Slovenia and the enclaved microstates of Vatican City and San Marino. It has a territorial exclave in Switzerland (Campione) and an archipelago in the African Plate (Pelagie Islands). Italy covers an area of 301,340 km2 (116,350 sq mi),[3] with a population of about 60 million;[22] it is the tenth-largest country by land area in the European continent and the third-most populous member state of the European Union. Its capital and largest city is Rome.\r\n\r\nThe Italian peninsula was historically the native place of numerous ancient peoples and destination of a myriad of different peoples and cultures who immigrated throughout history.[23] The ancient Roman state arose in Latium, and expanded throughout the peninsula and the territories around the Mediterranean basin through a process of Romanization.[24] By the first century BC, the Roman Empire expanded its territory across Europe, North Africa and the Near East, establishing the Pax Romana.[25] During the Early Middle Ages, the Western Roman Empire fell, Christian Church arose and Italy experienced inward migration from surrounding tribes. By the 11th century, Italian city-states and maritime republics expanded, bringing renewed prosperity through commerce and laying the groundwork for modern capitalism.[26][27] The Italian Renaissance flourished in Florence during the 15th and 16th centuries and spread to the rest of Europe. Italian explorers also discovered new routes to the Far East and the New World, helping to usher in the European Age of Discovery. However, centuries of rivalry and infighting between the Italian city-states among other factors left the peninsula divided into numerous states until the late modern period.[28][29] Italy's commercial and political power significantly waned during the 17th and 18th centuries with the decline of the Catholic Church and the increasing importance of trade routes that bypassed the Mediterranean.[30]",
+            "image": "Media/rome-colosseum.jpg",
             "view_count": 0
         }
     },
@@ -159,154 +55,8 @@
         "model": "core.aboutteam",
         "pk": 1,
         "fields": {
-            "our_team": "We are a very special team. Each of us has our preferences and very different professions. However, we were all brought together by our new hobby and our new profession. We all started studying Python as part of AGBU's Women Programmers program and it brought us together around this idea. \r\nWe created WoBlog with great love to make your daily life more interesting. We are sure that it will interest everyone. You can find anything here that will really interest you. Moreover, you can create your own bog by registering and becoming an indispensable member of our team. Below you can get acquainted with each of the team members.",
-            "team_image": "Media/Our_Team.png"
-        }
-    },
-    {
-        "model": "core.blogcomment",
-        "pk": 1,
-        "fields": {
-            "owner": 2,
-            "blog": 1,
-            "text": "gghh",
-            "created_on": "2023-09-03T05:15:55.517Z"
-        }
-    },
-    {
-        "model": "core.blogcomment",
-        "pk": 2,
-        "fields": {
-            "owner": 2,
-            "blog": 2,
-            "text": "good!!!",
-            "created_on": "2023-09-03T05:17:51.749Z"
-        }
-    },
-    {
-        "model": "core.blogcomment",
-        "pk": 3,
-        "fields": {
-            "owner": 2,
-            "blog": 2,
-            "text": "Perfect.",
-            "created_on": "2023-09-03T05:20:48.998Z"
-        }
-    },
-    {
-        "model": "core.blogcomment",
-        "pk": 5,
-        "fields": {
-            "owner": 2,
-            "blog": 1,
-            "text": "Good",
-            "created_on": "2023-09-10T22:07:36.062Z"
-        }
-    },
-    {
-        "model": "core.blogcomment",
-        "pk": 6,
-        "fields": {
-            "owner": 2,
-            "blog": 3,
-            "text": "Very testy",
-            "created_on": "2023-09-10T22:17:25.329Z"
-        }
-    },
-    {
-        "model": "core.blogcomment",
-        "pk": 7,
-        "fields": {
-            "owner": 1,
-            "blog": 2,
-            "text": "Beautiful",
-            "created_on": "2023-09-11T16:08:29.625Z"
-        }
-    },
-    {
-        "model": "core.blogcomment",
-        "pk": 8,
-        "fields": {
-            "owner": 2,
-            "blog": 2,
-            "text": "Good",
-            "created_on": "2023-09-11T16:11:59.031Z"
-        }
-    },
-    {
-        "model": "core.blogcomment",
-        "pk": 9,
-        "fields": {
-            "owner": 1,
-            "blog": 7,
-            "text": "My favorite.",
-            "created_on": "2023-09-11T21:33:05.530Z"
-        }
-    },
-    {
-        "model": "core.blogcomment",
-        "pk": 10,
-        "fields": {
-            "owner": 19,
-            "blog": 4,
-            "text": "Beautifule",
-            "created_on": "2023-09-11T22:06:09.276Z"
-        }
-    },
-    {
-        "model": "core.subscription",
-        "pk": 1,
-        "fields": {
-            "email": "mangasaryannaira@gmail.com",
-            "subscribed_at": "2023-09-15T03:07:00.246Z"
-        }
-    },
-    {
-        "model": "core.subscription",
-        "pk": 2,
-        "fields": {
-            "email": "naira.mangasaryan@rau.am",
-            "subscribed_at": "2023-09-15T03:09:03.816Z"
-        }
-    },
-    {
-        "model": "core.subscription",
-        "pk": 3,
-        "fields": {
-            "email": "naraman@bk.ru",
-            "subscribed_at": "2023-09-17T00:46:19.371Z"
-        }
-    },
-    {
-        "model": "core.subscription",
-        "pk": 4,
-        "fields": {
-            "email": "naira@gmail.com",
-            "subscribed_at": "2023-09-17T00:57:38.057Z"
-        }
-    },
-    {
-        "model": "core.subscription",
-        "pk": 5,
-        "fields": {
-            "email": "haroyananikaren@gmail.com",
-            "subscribed_at": "2023-09-17T00:58:30.748Z"
-        }
-    },
-    {
-        "model": "core.subscription",
-        "pk": 6,
-        "fields": {
-            "email": "nairamangasaryan@shirakatsy.am",
-            "subscribed_at": "2023-09-17T01:00:49.561Z"
-        }
-    },
-    {
-        "model": "core.subscription",
-        "pk": 7,
-        "fields": {
-            "email": "man@gmail.com",
-            "subscribed_at": "2023-09-17T15:49:47.747Z"
+            "our_team": "We are a very special team. Each of us has our preferences and very different professions. However, we were all brought together by our new hobby and our new profession. We all started studying Python as part of AGBU's Women Programmers program and it brought us together around this idea. \r\n\r\nWe created WoBlog with great love to make your daily life more interesting. We are sure that it will interest everyone. You can find anything here that will really interest you. Moreover, you can create your own bog by registering and becoming an indispensable member of our team. Below you can get acquainted with each of the team members.",
+            "team_image": "Media/Our_Team_giSg4Cd.png"
         }
     }
 ]

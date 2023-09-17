@@ -3,7 +3,7 @@
         "model": "accounts.userprofile",
         "pk": 1,
         "fields": {
-            "user": 17,
+            "user": 1,
             "profession": null,
             "phone": null,
             "city": null,
@@ -15,72 +15,6 @@
         "pk": 2,
         "fields": {
             "user": 2,
-            "profession": null,
-            "phone": null,
-            "city": null,
-            "photo": "Media/logo.png"
-        }
-    },
-    {
-        "model": "accounts.userprofile",
-        "pk": 3,
-        "fields": {
-            "user": 1,
-            "profession": null,
-            "phone": null,
-            "city": null,
-            "photo": "Media/Screenshot_from_2023-09-12_02-37-00.png"
-        }
-    },
-    {
-        "model": "accounts.userprofile",
-        "pk": 4,
-        "fields": {
-            "user": 10,
-            "profession": null,
-            "phone": null,
-            "city": null,
-            "photo": ""
-        }
-    },
-    {
-        "model": "accounts.userprofile",
-        "pk": 5,
-        "fields": {
-            "user": 18,
-            "profession": null,
-            "phone": null,
-            "city": null,
-            "photo": "Media/Flower_poster.jpg"
-        }
-    },
-    {
-        "model": "accounts.userprofile",
-        "pk": 6,
-        "fields": {
-            "user": 19,
-            "profession": null,
-            "phone": null,
-            "city": null,
-            "photo": ""
-        }
-    },
-    {
-        "model": "accounts.userprofile",
-        "pk": 7,
-        "fields": {
-            "user": 20,
-            "profession": null,
-            "phone": null,
-            "city": null,
-            "photo": ""
-        }
-    },
-    {
-        "model": "accounts.userprofile",
-        "pk": 8,
-        "fields": {
-            "user": 21,
             "profession": null,
             "phone": null,
             "city": null,
