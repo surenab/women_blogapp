@@ -18,7 +18,7 @@
             "profession": null,
             "phone": null,
             "city": null,
-            "photo": "Media/VAN_CAT_AUddBTh.png"
+            "photo": "Media/logo.png"
         }
     },
     {
@@ -29,7 +29,7 @@
             "profession": null,
             "phone": null,
             "city": null,
-            "photo": "Media/sun_QpHZZko.jpeg"
+            "photo": "Media/Screenshot_from_2023-09-12_02-37-00.png"
         }
     },
     {
@@ -52,6 +52,39 @@
             "phone": null,
             "city": null,
             "photo": "Media/Flower_poster.jpg"
+        }
+    },
+    {
+        "model": "accounts.userprofile",
+        "pk": 6,
+        "fields": {
+            "user": 19,
+            "profession": null,
+            "phone": null,
+            "city": null,
+            "photo": ""
+        }
+    },
+    {
+        "model": "accounts.userprofile",
+        "pk": 7,
+        "fields": {
+            "user": 20,
+            "profession": null,
+            "phone": null,
+            "city": null,
+            "photo": ""
+        }
+    },
+    {
+        "model": "accounts.userprofile",
+        "pk": 8,
+        "fields": {
+            "user": 21,
+            "profession": null,
+            "phone": null,
+            "city": null,
+            "photo": ""
         }
     }
 ]
