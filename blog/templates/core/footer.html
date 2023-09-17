@@ -87,11 +87,9 @@
 
       <div class="col-md-6">
         <div class="social-links mb-3 mb-lg-0 text-center text-md-end">
-          <a href="https://twitter.com/BlogWo61259" target="_blank" class="twitter"><i class="bi bi-twitter"></i></a>
-          <a href="https://www.facebook.com/profile.php?id=61551002473971" target="_blank" class="facebook"><i class="bi bi-facebook"></i></a>
-          <a href="https://www.instagram.com/wobloginfo/" target="_blank" class="instagram"><i class="bi bi-instagram"></i></a>
-          <a href="https://www.linkedin.com/in/woblog-armenia-b56992291/" target="_blank" class="linkedin"><i class="bi bi-linkedin"></i></a>
-        </div>
+          {% for link in social_links%}
+          <a href="{{link.link}}" target="_blank" class="{{link.link_name}}"><i class="{{link.icon_name}}"></i></a>
+          {% endfor %}
 
       </div>
 

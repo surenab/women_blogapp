@@ -5,7 +5,7 @@ from typing import Any, Dict
 from django.urls import reverse_lazy
 from django.http import HttpResponse, HttpRequest
 from .forms import BlogForm, MessageForm, BlogCommentForm, SubscriptionForm
-from .models import Blog, BlogComment, AboutTeam, TeamMember
+from .models import Blog, BlogComment, AboutTeam, TeamMember, SocialLink
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django_filters.views import FilterView
@@ -196,6 +196,18 @@ class About(Home):
         data["team_members"] = TeamMember.objects.all()
         data["about_team"] = AboutTeam.objects.all()
         return data
+
+
+
+class  SocialLinks(Home):
+    template_name = "core/footer.html"
+    model= SocialLink
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        data = super().get_context_data(**kwargs)
+        data["social_links"] = SocialLink.objects.all()
+        return data
+
 
 
 class Contact(Home):

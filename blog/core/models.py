@@ -82,3 +82,13 @@ class Subscription(models.Model):
 
     def __str__(self):
         return self.email
+
+
+
+class  SocialLink(models.Model):
+        link = models.URLField()
+        icon_name = models.CharField(max_length=100, blank=True, null=True)
+        link_name = models.CharField(max_length=100)
+        created_on = models.DateTimeField(auto_now_add=True)
+
+
