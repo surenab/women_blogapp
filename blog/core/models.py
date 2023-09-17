@@ -73,8 +73,8 @@ class BlogComment(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
 
     def __str__(self) -> str:
-        return f"{self.owner.username} is commented {self.text}" 
-    
+        return f"{self.owner.username} is commented {self.text}"
+
 
 class Subscription(models.Model):
     email = models.EmailField(unique=True)

@@ -8,4 +8,3 @@ class AccountsConfig(AppConfig):
 
 
 admin.site.register(UserProfile)
-
