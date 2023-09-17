@@ -39,6 +39,8 @@
         </div>
         {%else %}
         <h3> You can add first blog in this category !!!</h3>
+        <a type="button" class="btn btn-outline-success btn-lg mt-2" href="{% url 'createblog' %}"> Add
+          new blog</a>
         {%endif%}
       </div>
 
