@@ -3,7 +3,7 @@ from django import forms
 from django.core.files.base import File
 from django.db.models.base import Model
 from django.forms.utils import ErrorList
-from .models import Blog, Message, BlogComment
+from .models import Blog, Message, BlogComment, Subscription
 from django.contrib.auth.models import User
 
 
@@ -19,7 +19,7 @@ class BlogForm(forms.ModelForm):
         ("7", "Science and Technology"),
         ("8", "Fashion"),
         ("9", "Medicine"),
-        ("10", "Psycology"),
+        ("10", "Psychology"),
         ("11", "Art"),
     )
 
@@ -56,11 +56,7 @@ class BlogCommentForm(forms.ModelForm):
 
 
 
-#--- New search
-from django import forms
-
-class SearchForm(forms.Form):
-    search = forms.CharField(label='Search for...')
-
-
-    
+class SubscriptionForm(forms.ModelForm):
+    class Meta:
+        model = Subscription
+        fields = ['email'] 

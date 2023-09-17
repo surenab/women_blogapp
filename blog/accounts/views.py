@@ -1,21 +1,17 @@
 from typing import Any, Dict
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import CreateView, TemplateView
-from .forms import SignUpForm, UserProfileForm, UserPasswordChangeForm, SubscriptionForm
+from .forms import SignUpForm, UserProfileForm, UserPasswordChangeForm
 from django.urls import reverse_lazy
 from django.contrib.auth import login
-from django.shortcuts import redirect
+
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.views import PasswordChangeView
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import get_object_or_404
+
 from .models import UserProfile
-from django.core.mail import send_mail, EmailMultiAlternatives
-from django.template.loader import render_to_string
-from django.utils.html import strip_tags
-from django.contrib import messages
+
 from core.models import Blog
-from django.http import JsonResponse
 
 
 # Create your views here.
@@ -61,7 +57,8 @@ class UserPasswordChangeView(SuccessMessageMixin, PasswordChangeView):
 
 class UserAccount(TemplateView):
     template_name = "registration/user_account.html"
-    
+    paginate_by = 3
+
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(**kwargs)
 
@@ -72,9 +69,22 @@ class UserAccount(TemplateView):
 
         context['user_blogs'] = Blog.objects.filter(
             user=self.request.user).order_by('-created_on')
-       
-        
+
         return context
+
+    def get_paginate_by(self, queryset):
+        blogs_per_page = self.request.GET.get('blogs_per_page')
+
+        default_blogs_per_page = 3
+
+        try:
+            blogs_per_page = int(blogs_per_page)
+        except (ValueError, TypeError):
+            blogs_per_page = default_blogs_per_page
+
+        blogs_per_page = max(1, min(blogs_per_page, 50))
+
+        return blogs_per_page
 
     def post(self, request, *args, **kwargs):
         if self.request.user.is_authenticated:
@@ -104,37 +114,3 @@ def edit_profile(request):
     else:
         form = UserProfileForm(instance=user_profile)
     return render(request, 'registration/edit_profile.html', {'form': form})
-
-
-def subscribe(request):
-    if request.method == 'POST':
-        form = SubscriptionForm(request.POST)
-        if form.is_valid():
-            email = form.cleaned_data['email']
-            form.save()
-
-            email_data = {
-                'email': email,
-            }
-
-            subject = 'Thank you for subscribing to our blog'
-            from_email = 'your_email@gmail.com'
-            recipient_list = [email]
-
-            message_html = render_to_string(
-                'registration/subscription_email.html', email_data)
-
-            email = EmailMultiAlternatives(subject, strip_tags(
-                message_html), from_email, recipient_list)
-            email.attach_alternative(message_html, "text/html")
-            email.send()
-
-            return redirect('thank_you')
-    else:
-        form = SubscriptionForm()
-
-    return render(request, 'registration/subscribe.html', {'form': form})
-
-
-def thank_you(request):
-    return render(request, 'registration/thank_you.html')
