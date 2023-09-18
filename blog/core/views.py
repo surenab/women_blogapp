@@ -120,7 +120,7 @@ class MyBlog(MyFilters):
     def get_paginate_by(self, queryset):
         blogs_per_page = self.request.GET.get('blogs_per_page')
 
-        default_blogs_per_page = 7
+        default_blogs_per_page = 2
 
         try:
             blogs_per_page = int(blogs_per_page)

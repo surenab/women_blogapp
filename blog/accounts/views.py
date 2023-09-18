@@ -8,10 +8,9 @@ from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.views import PasswordChangeView
 from django.contrib.auth.decorators import login_required
-
 from .models import UserProfile
-
 from core.models import Blog
+from django.core.paginator import Paginator
 
 
 # Create your views here.
@@ -28,10 +27,6 @@ class SignUp(CreateView):
         messages.success(
             self.request, "The account was created.")
         return redirect("home")
-
-    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
-        context = super().get_context_data(**kwargs)
-        return super().get_context_data(**kwargs)
 
 
 def terms_conditions(request):
@@ -57,7 +52,6 @@ class UserPasswordChangeView(SuccessMessageMixin, PasswordChangeView):
 
 class UserAccount(TemplateView):
     template_name = "registration/user_account.html"
-    paginate_by = 3
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -72,20 +66,7 @@ class UserAccount(TemplateView):
 
         return context
 
-    def get_paginate_by(self, queryset):
-        blogs_per_page = self.request.GET.get('blogs_per_page')
-
-        default_blogs_per_page = 3
-
-        try:
-            blogs_per_page = int(blogs_per_page)
-        except (ValueError, TypeError):
-            blogs_per_page = default_blogs_per_page
-
-        blogs_per_page = max(1, min(blogs_per_page, 50))
-
-        return blogs_per_page
-
+    
     def post(self, request, *args, **kwargs):
         if self.request.user.is_authenticated:
             user_profile = self.request.user.profile
