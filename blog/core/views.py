@@ -272,11 +272,3 @@ def thank_you(request):
 
 
 
-def set_language(request):
-    language = request.POST.get('language')  
-    if language:
-        activate(language)
-        translation.activate(language)  
-        request.session['django_language'] = language
-    return redirect(request.META.get('HTTP_REFERER'))
-
