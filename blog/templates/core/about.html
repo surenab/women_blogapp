@@ -36,14 +36,16 @@
           </div>
         </div>
       </div>
-      {% for member in team_members%}
-      <div class="col-lg-4 text-center mb-5">
-        <img src="{{member.member_image.url}}" alt="" class="img-fluid rounded-circle w-50 mb-4">
-        <h4>{{member.full_name}}</h4>
-        <span class="d-block mb-3 text-uppercase">{{member.job_position}}</span>
-        <p> {{member.about_member}}</p>
+      <div class="align-items-center">
+        {% for member in team_members%}
+        <div class="col-lg-4 text-center mb-5">
+          <img src="{{member.member_image.url}}" alt="" class="img-fluid rounded-circle w-40 mb-4">
+          <h4>{{member.full_name}}</h4>
+          <span class="d-block mb-3 text-uppercase">{{member.job_position}}</span>
+          <p> {{member.about_member}}</p>
+        </div>
+        {% endfor %}
       </div>
-      {% endfor %}
 
     </div>
   </div>

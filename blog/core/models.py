@@ -43,6 +43,16 @@ class Blog(models.Model):
             img.thumbnail(output_size)
             img.save(self.image.path)
 
+# --- Model for multiply images
+
+
+class BlogImage(models.Model):
+    blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
+    image = models.FileField(
+        upload_to="Media", default=None, null=True, blank=True)
+
+# ---
+
 
 class Message(models.Model):
     full_name = models.CharField(max_length=100)

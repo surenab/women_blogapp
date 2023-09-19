@@ -16,26 +16,24 @@
         </div>
 
         <div class="text-center">
-            <form action="" method="post" class="card" enctype="multipart/form-data">
+            <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
-                <p class="text-center">
-                    {% render_field form.title placeholder="Title" class+="form-control" %}
-                    <br>
-                    {% render_field form.description placeholder="Description" class+="form-control" %}
-                    <br>
-                    {% render_field form.blog_category placeholder="Blog Category" class+="form-control" %}
-                    <br>
-                    {% render_field form.image placeholder="General Image" class+="form-control" %}
-                    <br>
-                    {% render_field form.image1 placeholder="Additional Image" class+="form-control" %}
-                    <br>
-                    {% render_field form.image2 placeholder="Additional Image" class+="form-control" %}
-                    <br>
+                <div class="col-lg-12 mb-5">
+                    {{ blog_form.as_p }}
+                </div>
 
+                <h4>More images</h4>
+                <div class="col-lg-12 mt-5 mb-5">
+                    {{ image_formset.management_form }}
+                    {% for image_form in image_formset %}
+                    {{ image_form.as_p }}
+                    {% endfor %}
+                </div>
+                <div class="col-lg-12 mt-5 mb-5">
                     <button class="btn btn-lg btn-primary btn-block" type="submit">
                         Update blog
                     </button>
-                </p>
+                </div>
             </form>
         </div>
     </div>

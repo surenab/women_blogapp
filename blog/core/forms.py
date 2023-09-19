@@ -3,8 +3,10 @@ from django import forms
 from django.core.files.base import File
 from django.db.models.base import Model
 from django.forms.utils import ErrorList
-from .models import Blog, Message, BlogComment, Subscription
+from .models import Blog, BlogImage, Message, BlogComment, Subscription
 from django.contrib.auth.models import User
+from django.forms import ClearableFileInput
+from django.forms import modelformset_factory
 
 
 class BlogForm(forms.ModelForm):
@@ -35,6 +37,19 @@ class BlogForm(forms.ModelForm):
         model = Blog
         fields = ["title", "description", "blog_category", "image"]
 
+# --- Multiple images
+
+
+class BlogImageForm(forms.ModelForm):
+
+    class Meta:
+        model = BlogImage
+        fields = ['image']
+
+
+BlogImageFormSet = modelformset_factory(
+    BlogImage, form=BlogImageForm, extra=1, max_num=5)
+
 
 class MessageForm(forms.ModelForm):
     full_name = forms.CharField(max_length=100, required=True)
@@ -55,8 +70,7 @@ class BlogCommentForm(forms.ModelForm):
         fields = ['text']
 
 
-
 class SubscriptionForm(forms.ModelForm):
     class Meta:
         model = Subscription
-        fields = ['email'] 
+        fields = ['email']
