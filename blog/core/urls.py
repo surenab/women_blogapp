@@ -15,7 +15,6 @@ Including another URLconf
 """
 from django.urls import path
 from accounts.views import edit_profile
-
 from .views import (
 
     Category,
@@ -31,7 +30,8 @@ from .views import (
     CreateBlogComment,
     About,
     subscribe,
-    thank_you
+    thank_you,
+    
 )
 
 from . import views
