@@ -57,7 +57,7 @@ To run this Django-based blog project locally, follow these steps:
 
 <h2 align="center">Once you join us you will be able to write your own blogs or read and comment on an existing one.
 </h2>
-<h1 align="center">Goodbye</h1 > :v:
+<h1 align="center">Goodbye</h1 :v: > 
 
 
 
