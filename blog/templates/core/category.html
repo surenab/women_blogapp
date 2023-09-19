@@ -17,7 +17,7 @@
           <h3 class="category-title">Category: {{blog.get_blog_category_display}}</h3>
           {%endfor%}
           {% for blog in blogs %}
-          <div class="d-md-flex post-entry-2 half">
+          <div class="d-md-flex post-entry-2 half mt-5">
             <a href="{% url 'blog_details' blog.id %}" class="me-4 thumbnail">
               <img src="{{blog.image.url}}" alt="" class="img-fluid">
             </a>
@@ -26,7 +26,7 @@
                   class="mx-1">&bullet;</span>
                 <span>{{blog.created_on}}</span>
               </div>
-              <h3><a href="{% url 'blog_details' blog.id %}">{{blog.titel}}</a></h3>
+              <h3><a href="{% url 'blog_details' blog.id %}">{{blog.title}}</a></h3>
               <p>{{blog.description}}</p>
               <div class="d-flex align-items-center author">
                 <div class="name">
@@ -80,10 +80,12 @@
                 <p>{{blog.description|truncatewords:10}}</p>
 
                 <span class="post-meta""> {{blog.user.first_name}} {{blog.user.last_name}}</span>
-                    </div>
-                    {% endfor %}
-                  </div>
-          </div>       
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+               
         
           <!-- End Popular -->
 
@@ -102,7 +104,7 @@
                 </div>
               {% endfor %}
             </div>
-          </div> 
+        </div> 
           <!-- End Latest -->             
                          
         </div>
