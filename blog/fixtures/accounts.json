@@ -7,7 +7,7 @@
             "profession": null,
             "phone": null,
             "city": null,
-            "photo": ""
+            "photo": "Media/nara_vLE4JRy.png"
         }
     },
     {
@@ -15,6 +15,28 @@
         "pk": 2,
         "fields": {
             "user": 2,
+            "profession": null,
+            "phone": null,
+            "city": null,
+            "photo": "Media/robotics_WLy4jzX.jpg"
+        }
+    },
+    {
+        "model": "accounts.userprofile",
+        "pk": 5,
+        "fields": {
+            "user": 3,
+            "profession": "admin",
+            "phone": null,
+            "city": null,
+            "photo": "Media/android-chrome-512x512.png"
+        }
+    },
+    {
+        "model": "accounts.userprofile",
+        "pk": 6,
+        "fields": {
+            "user": 4,
             "profession": null,
             "phone": null,
             "city": null,

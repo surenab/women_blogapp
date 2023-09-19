@@ -24,5 +24,122 @@
             "action_flag": 2,
             "change_message": "[{\"changed\": {\"fields\": [\"Team image\"]}}]"
         }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 3,
+        "fields": {
+            "action_time": "2023-09-17T20:15:22.233Z",
+            "user": 3,
+            "content_type": 7,
+            "object_id": "3",
+            "object_repr": "admin None",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 4,
+        "fields": {
+            "action_time": "2023-09-17T20:37:32.116Z",
+            "user": 3,
+            "content_type": 7,
+            "object_id": "4",
+            "object_repr": "admin None",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 5,
+        "fields": {
+            "action_time": "2023-09-19T01:02:53.090Z",
+            "user": 3,
+            "content_type": 11,
+            "object_id": "1",
+            "object_repr": "TeamMember object (1)",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 6,
+        "fields": {
+            "action_time": "2023-09-19T01:03:02.763Z",
+            "user": 3,
+            "content_type": 11,
+            "object_id": "1",
+            "object_repr": "TeamMember object (1)",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Member image\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 7,
+        "fields": {
+            "action_time": "2023-09-19T01:03:10.482Z",
+            "user": 3,
+            "content_type": 11,
+            "object_id": "1",
+            "object_repr": "TeamMember object (1)",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 8,
+        "fields": {
+            "action_time": "2023-09-19T01:03:32.381Z",
+            "user": 3,
+            "content_type": 11,
+            "object_id": "2",
+            "object_repr": "TeamMember object (2)",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 9,
+        "fields": {
+            "action_time": "2023-09-19T01:03:48.772Z",
+            "user": 3,
+            "content_type": 11,
+            "object_id": "3",
+            "object_repr": "TeamMember object (3)",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 10,
+        "fields": {
+            "action_time": "2023-09-19T01:04:12.452Z",
+            "user": 3,
+            "content_type": 11,
+            "object_id": "4",
+            "object_repr": "TeamMember object (4)",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 11,
+        "fields": {
+            "action_time": "2023-09-19T01:04:29.800Z",
+            "user": 3,
+            "content_type": 11,
+            "object_id": "5",
+            "object_repr": "TeamMember object (5)",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
     }
 ]
