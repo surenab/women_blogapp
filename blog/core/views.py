@@ -174,6 +174,8 @@ class CreateBlogComment(CreateView):
 
 
 class MyBlogUpdate(BlogBase, UpdateView):
+    form_class=BlogImageForm
+    form_class=BlogForm
 
     success_text = "Blog is updated!"
     template_name = "core/blog_update.html"
