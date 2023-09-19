@@ -42,10 +42,12 @@
         {% if request.user.is_authenticated %}
 
 
-        <li><a type="button" href="{% url 'createblog' %}">{% trans "Add new blog" %}</a></li>
+
+        <li><a type="button" href="{% url 'create_blog' %}">{% trans "Add new blog" %}</a></li>
         <li><a type="button" href="{% url 'my_blogs' %}">{% trans "My blogs" %}</a></li>
         <li><a type="button" href="{% url 'user_account' %}">{% trans "My Profile" %}</a></li>
         <li><a type="button" href="{% url 'logout' %}">{% trans "Log Out" %}</a></li>
+
 
 
         {% else %}
