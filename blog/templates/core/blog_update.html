@@ -18,17 +18,14 @@
         <div class="text-center">
             <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
-                <div class="col-lg-12 mb-5">
-                    {{ blog_form.as_p }}
-                </div>
 
-                <h4>More images</h4>
-                <div class="col-lg-12 mt-5 mb-5">
-                    {{ image_formset.management_form }}
-                    {% for image_form in image_formset %}
-                    {{ image_form.as_p }}
-                    {% endfor %}
-                </div>
+                {{form.as_p }}
+
+                {{ image_formset.management_form }}
+                {% for image_form in image_formset %}
+                {{ image_form.as_p }}
+                {% endfor %}
+
                 <div class="col-lg-12 mt-5 mb-5">
                     <button class="btn btn-lg btn-primary btn-block" type="submit">
                         Update blog
