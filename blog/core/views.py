@@ -5,7 +5,7 @@ from typing import Any, Dict
 from django.urls import reverse_lazy
 from django.http import HttpResponse, HttpRequest
 from .forms import BlogForm, MessageForm, BlogCommentForm, SubscriptionForm
-from .models import Blog, BlogComment, AboutTeam, TeamMember
+from .models import Blog, BlogComment, AboutTeam, TeamMember, Subscription
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django_filters.views import FilterView
@@ -15,7 +15,7 @@ from django.db.models import Q
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
-
+from django.core.exceptions import ValidationError
 
 # Create your views here.
 
@@ -238,23 +238,27 @@ def subscribe(request):
         form = SubscriptionForm(request.POST)
         if form.is_valid():
             email = form.cleaned_data['email']
-            form.save()
 
-            email_data = {
-                'email': email,
-            }
+            if Subscription.objects.filter(email=email).exists():
+                raise ValidationError('This email is already subscribed.')
+            else:
+                form.save()
 
-            subject = 'Thank you for subscribing to our blog'
-            from_email = 'wobloginfo@gmail.com'
-            recipient_list = [email]
+                email_data = {
+                    'email': email,
+                }
 
-            message_html = render_to_string(
-                'core/subscription_email.html', email_data)
+                subject = 'Thank you for subscribing to our blog'
+                from_email = 'wobloginfo@gmail.com'
+                recipient_list = [email]
 
-            send_mail(subject, strip_tags(message_html), from_email,
-                      recipient_list, html_message=message_html)
+                message_html = render_to_string(
+                    'core/subscription_email.html', email_data)
 
-            return redirect('thank_you')
+                send_mail(subject, strip_tags(message_html), from_email,
+                          recipient_list, html_message=message_html)
+
+                return redirect('thank_you')
     else:
         form = SubscriptionForm()
 
@@ -263,3 +267,6 @@ def subscribe(request):
 
 def thank_you(request):
     return render(request, 'core/thank_you.html')
+
+
+
