@@ -29,229 +29,230 @@
     }
 </style>
 
-<main id="main">
 
-    <!------ Include the above in your HEAD tag ---------->
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="container emp-profile py-4">
-                        <form method="post" enctype="multipart/form-data">
-                            {% csrf_token %}
-                            <div class="row">
-                                <div class="col-md-4">
+<!------ Include the above in your HEAD tag ---------->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="container emp-profile py-4">
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-4">
 
-                                    <div class="card-body text-center">
-                                        <!-- Profile picture image-->
-                                        <img src="{% if user.profile.photo %}{{ user.profile.photo.url }}{% else %}{% static '/core/assets/img/avatar.png' %}{% endif %}"
-                                            class="img-circle profile-avatar" alt="User avatar" max-height="200px">
-                                    </div>
-
+                                <div class="card-body text-center">
+                                    <!-- Profile picture image-->
+                                    <img src="{% if user.profile.photo %}{{ user.profile.photo.url }}{% else %}{% static '/core/assets/img/avatar.png' %}{% endif %}"
+                                        class="img-circle profile-avatar" alt="User avatar" max-height="200px">
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="profile-head">
-                                        <h3>
-                                            {{ user.first_name }} {{ user.last_name }}
-                                        </h3>
-                                        <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                            <li class="nav-item">
-                                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home"
-                                                    role="tab" aria-controls="home" aria-selected="true">About</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile"
-                                                    role="tab" aria-controls="profile" aria-selected="false">My
-                                                    blogs</a>
-                                            </li>
-                                        </ul>
-                                    </div>
+
+                            </div>
+                            <div class="col-md-6">
+                                <div class="profile-head">
+                                    <h3>
+                                        {{ user.first_name }} {{ user.last_name }}
+                                    </h3>
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active"
+                                                id="homeshow activeshow activeshow activeshow activeshow activeshow active-tab"
+                                                data-toggle="tab" href="#about" role="tab" aria-controls="about"
+                                                aria-selected="true">About</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="blogs-tab" data-toggle="tab" href="#blogs"
+                                                role="tab" aria-controls="blogs" aria-selected="false">My
+                                                blogs</a>
+                                        </li>
+                                    </ul>
+                                </div>
 
 
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="tab-content profile-tab" id="myTabContent">
-                                                <div class="tab-pane fade show active" id="home" role="tabpanel"
-                                                    aria-labelledby="home-tab">
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <label>Username</label>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <p>{{ user.username }}</p>
-                                                        </div>
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="tab-content blogs-tab" id="myTabContent">
+                                            <div class="tab-pane fade show active" id="about" role="tabpanel"
+                                                aria-labelledby="about-tab">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label>Username</label>
                                                     </div>
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <label>Name</label>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <p> {{ user.first_name }} {{ user.last_name }}</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <label>Email</label>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <p>{{ user.email }}</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <label>Phone</label>
-                                                        </div>
-                                                        {%if user.profile.phone%}
-                                                        <div class="col-md-6">
-                                                            <p>{{ user.profile.phone }}</p>
-                                                        </div>
-                                                        {%endif%}
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <label>Profession</label>
-                                                        </div>
-                                                        {%if user.profile.profession%}
-                                                        <div class="col-md-6">
-                                                            <p>{{ user.profile.profession }}</p>
-                                                        </div>
-                                                        {%endif%}
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <label>City</label>
-                                                        </div>
-                                                        {%if user.profile.city%}
-                                                        <div class="col-md-6">
-                                                            <p>{{ user.profile.city }}</p>
-                                                        </div>
-                                                        {%endif%}
+                                                    <div class="col-md-6">
+                                                        <p>{{ user.username }}</p>
                                                     </div>
                                                 </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label>Name</label>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <p> {{ user.first_name }} {{ user.last_name }}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label>Email</label>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <p>{{ user.email }}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label>Phone</label>
+                                                    </div>
+                                                    {%if user.profile.phone%}
+                                                    <div class="col-md-6">
+                                                        <p>{{ user.profile.phone }}</p>
+                                                    </div>
+                                                    {%endif%}
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label>Profession</label>
+                                                    </div>
+                                                    {%if user.profile.profession%}
+                                                    <div class="col-md-6">
+                                                        <p>{{ user.profile.profession }}</p>
+                                                    </div>
+                                                    {%endif%}
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label>City</label>
+                                                    </div>
+                                                    {%if user.profile.city%}
+                                                    <div class="col-md-6">
+                                                        <p>{{ user.profile.city }}</p>
+                                                    </div>
+                                                    {%endif%}
+                                                </div>
+                                            </div>
 
-                                                <!--My blogs section-->
-                                                <div class="tab-pane fade" id="profile" role="tabpanel"
-                                                    aria-labelledby="profile-tab">
-                                                    <div class="row">
+                                            <!--My blogs section-->
+                                            <div class="tab-pane fade" id="blogs" role="tabpanel"
+                                                aria-labelledby="blogs-tab">
+                                                <div class="row">
 
-                                                        {% if user_blogs %}
-                                                        <div class="col-lg-12">
-                                                            {% for blog in user_blogs %}
-                                                            <div class="row py-4">
-                                                                <div class="col-lg-4 ">
-                                                                    <div class="post-meta">
-                                                                        <span class="date">Category:
-                                                                            {{blog.get_blog_category_display}}</span>
-                                                                        <span class="mx-1">&bullet;</span>
-                                                                        <span>{{blog.created_on}}</span>
-                                                                    </div>
-
-                                                                    <div class="d-md-flex post-entry-2 half">
-                                                                        <a href="{% url 'blog_details' blog.id %}"
-                                                                            class="me-4 thumbnail">
-                                                                            <img src="{{blog.image.url}}" alt=""
-                                                                                class="img-fluid">
-                                                                        </a>
-                                                                    </div>
-
+                                                    {% if user_blogs %}
+                                                    <div class="col-lg-12">
+                                                        {% for blog in user_blogs %}
+                                                        <div class="row py-4">
+                                                            <div class="col-lg-4 ">
+                                                                <div class="post-meta">
+                                                                    <span class="date">Category:
+                                                                        {{blog.get_blog_category_display}}</span>
+                                                                    <span class="mx-1">&bullet;</span>
+                                                                    <span>{{blog.created_on}}</span>
                                                                 </div>
-                                                                <div class="col-lg-8 ">
-                                                                    <h4><a
-                                                                            href="{% url 'blog_details' blog.id %}">{{blog.title}}</a>
-                                                                    </h4>
-                                                                    {{blog.description|truncatewords:10}}...
 
-                                                                    <div>
-                                                                        <a type="button" class="btn btn-success"
-                                                                            href="{% url 'blog_details' blog.id %}"><i
-                                                                                class="far fa-eye"></i></a>
-                                                                        <a type="button" class="btn btn-success"
-                                                                            href="{% url 'my_blog_update' blog.id %}"><i
-                                                                                class="fas fa-edit"></i></a>
-                                                                        <a type="button" class="btn btn-danger"
-                                                                            href="{% url 'my_blog_delete' blog.id  %}"><i
-                                                                                class="far fa-trash-alt"></i></a>
-                                                                    </div>
+                                                                <div class="d-md-flex post-entry-2 half">
+                                                                    <a href="{% url 'blog_details' blog.id %}"
+                                                                        class="me-4 thumbnail">
+                                                                        <img src="{{blog.image.url}}" alt=""
+                                                                            class="img-fluid">
+                                                                    </a>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-lg-8 ">
+                                                                <h4><a
+                                                                        href="{% url 'blog_details' blog.id %}">{{blog.title}}</a>
+                                                                </h4>
+                                                                {{blog.description|truncatewords:10}}...
+
+                                                                <div>
+                                                                    <a type="button" class="btn btn-success"
+                                                                        href="{% url 'blog_details' blog.id %}"><i
+                                                                            class="far fa-eye"></i></a>
+                                                                    <a type="button" class="btn btn-success"
+                                                                        href="{% url 'my_blog_update' blog.id %}"><i
+                                                                            class="fas fa-edit"></i></a>
+                                                                    <a type="button" class="btn btn-danger"
+                                                                        href="{% url 'my_blog_delete' blog.id  %}"><i
+                                                                            class="far fa-trash-alt"></i></a>
                                                                 </div>
                                                             </div>
-                                                            {%endfor%}
                                                         </div>
+                                                        {%endfor%}
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="col-md-2">
-                                    <a type="button" class="btn btn-outline-success mt-2"
-                                        href="{% url 'edit_profile' %}">
-                                        Edit Profile </a>
-                                </div>
                             </div>
 
-
-                            <!--Start Paginated-->
-                            {% if is_paginated %}
-                            <nav aria-label="Page navigation example" class="d-flex justify-content-center pt-3">
-                                <ul class="pagination">
-                                    {% if page_obj.has_previous and page_obj.number != 2 %}
-                                    <li class="page-item"><a class="page-link text-dark"
-                                            href="?{% url_replace request 'page' 1 %}" tabindex="-1"
-                                            aria-disabled="true">First Page</a></li>
-                                    {% endif %}
-                                    {% if page_obj.has_previous %}
-                                    <li class="page-item"><a class="page-link text-dark"
-                                            href="?{% url_replace request 'page' page_obj.previous_page_number %}">
-                                            {{ page_obj.previous_page_number}}
-                                        </a></li>
-                                    {% endif %}
-                                    <li class="page-item disabled"><a class="page-link" href="#">{{
-                                            page_obj.number }}</a></li>
-                                    {% if page_obj.has_next %}
-                                    <li class="page-item"><a class="page-link text-dark"
-                                            href="?{% url_replace request 'page' page_obj.next_page_number %}">
-                                            {{ page_obj.next_page_number }}
-                                        </a>
-                                    </li>
-                                    {% endif %}
-                                    {% if page_obj.paginator.num_pages != page_obj.number %}
-                                    <li class="page-item"><a class="page-link text-dark"
-                                            href="?{% url_replace request 'page' page_obj.paginator.num_pages %}">Last
-                                            Page</a></li>
-                                    {% endif %}
-                                </ul>
-                            </nav>
-                            {% endif %}
-
-
-                            <!--End Paginated-->
-
-                            {%else%}
-                            <div>
-                                <h3>You haven't any blogs yet. </h3>
-                                <h3>Create your first blog now.</h3>
-                                <a type="button" class="btn btn-outline-success btn-lg mt-2"
-                                    href="{% url 'createblog' %}"> Add
-                                    new blog</a>
+                            <div class="col-md-2">
+                                <a type="button" class="btn btn-outline-success mt-2" href="{% url 'edit_profile' %}">
+                                    Edit Profile </a>
                             </div>
-                            {%endif%}
+                        </div>
 
 
+                        <!--Start Paginated-->
+                        {% if is_paginated %}
+                        <nav aria-label="Page navigation example" class="d-flex justify-content-center pt-3">
+                            <ul class="pagination">
+                                {% if page_obj.has_previous and page_obj.number != 2 %}
+                                <li class="page-item"><a class="page-link text-dark"
+                                        href="?{% url_replace request 'page' 1 %}" tabindex="-1"
+                                        aria-disabled="true">First Page</a></li>
+                                {% endif %}
+                                {% if page_obj.has_previous %}
+                                <li class="page-item"><a class="page-link text-dark"
+                                        href="?{% url_replace request 'page' page_obj.previous_page_number %}">
+                                        {{ page_obj.previous_page_number}}
+                                    </a></li>
+                                {% endif %}
+                                <li class="page-item disabled"><a class="page-link" href="#">{{
+                                        page_obj.number }}</a></li>
+                                {% if page_obj.has_next %}
+                                <li class="page-item"><a class="page-link text-dark"
+                                        href="?{% url_replace request 'page' page_obj.next_page_number %}">
+                                        {{ page_obj.next_page_number }}
+                                    </a>
+                                </li>
+                                {% endif %}
+                                {% if page_obj.paginator.num_pages != page_obj.number %}
+                                <li class="page-item"><a class="page-link text-dark"
+                                        href="?{% url_replace request 'page' page_obj.paginator.num_pages %}">Last
+                                        Page</a></li>
+                                {% endif %}
+                            </ul>
+                        </nav>
+                        {% endif %}
 
 
-                    </div>
+                        <!--End Paginated-->
+
+                        {%else%}
+                        <div>
+                            <h3>You haven't any blogs yet. </h3>
+                            <h3>Create your first blog now.</h3>
+                            <a type="button" class="btn btn-outline-success btn-lg mt-2" href="{% url 'createblog' %}">
+                                Add
+                                new blog</a>
+                        </div>
+                        {%endif%}
+
+
 
 
                 </div>
+
+
             </div>
         </div>
-        </div>
-        </form>
-        </div>
-        </div>
-        </div>
-        </div>
-    </section>
-</main>
+    </div>
+    </div>
+    </form>
+    </div>
+    </div>
+    </div>
+    </div>
+</section>
+
 {%endblock%}

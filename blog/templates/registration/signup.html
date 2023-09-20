@@ -3,109 +3,108 @@
 {% load static %}
 
 {% block bodycontent %}
-<main id="main">
-    <section>
-        <div class="container" data-aos="fade-up">
-            <div class="row">
-                <div class="col-lg-12 mb-5">
 
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-md-10">
-                                <div class="card-group mb-3">
-                                    <div class="card p-6">
+<section>
+    <div class="container" data-aos="fade-up">
+        <div class="row">
+            <div class="col-lg-12 mb-5">
 
-                                        <div class="card-body">
-                                            <div class="text-center  mb-5">
-                                                <h3>Sign Up</h3>
-                                            </div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-10">
+                            <div class="card-group mb-3">
+                                <div class="card p-6">
 
-                                            <div class="input-group mb-3 justify-content-center">
-
-                                                <form method="POST" role="form">
-                                                    {% csrf_token %}
-
-                                                    <div class="input-group mb-3">
-                                                        <input type="text" name="username" class="form-control"
-                                                            id="username" placeholder="Username">
-                                                    </div>
-
-                                                    <div class="input-group mb-3">
-                                                        <input type="text" name="first_name" class="form-control"
-                                                            id="first_name" placeholder="First Name">
-                                                    </div>
-
-                                                    <div class="input-group mb-3">
-                                                        <input type="text" name="last_name" class="form-control"
-                                                            id="last_name" placeholder="Last Name">
-                                                    </div>
-
-                                                    <div class="input-group mb-3">
-                                                        <input type="email" name="email" class="form-control" id="email"
-                                                            placeholder="Email">
-                                                    </div>
-
-                                                    <div class="password-requirements mb-3 justify-text-left">
-                                                        <h6>Your password must meet the following requirements:</h6>
-
-                                                        <li>Your password can’t be too similar to your other
-                                                            personal information.</li>
-                                                        <li>Your password must contain at least 8 characters.</li>
-                                                        <li>Your password can’t be a commonly used password.</li>
-                                                        <li>Your password can’t be entirely numeric.</li>
-
-                                                    </div>
-
-                                                    <div class="input-group mb-4">
-                                                        <input type="password" name="password1" class="form-control"
-                                                            id="password1" placeholder="Password">
-                                                    </div>
-
-                                                    <div class="input-group mb-4">
-                                                        <input type="password" name="password2" class="form-control"
-                                                            id="password2" placeholder="Password">
-                                                    </div>
-
-                                                    <div class="checkbox mt-5">
-                                                        <input type="checkbox" id="signupCheck" required />
-                                                        <label for="signupCheck"><b>I accept all <a
-                                                                    href="{% url 'terms_conditions'%}"
-                                                                    onclick="openTermsModal()" target="blank"> terms &
-                                                                    conditions</a></b></label>
-                                                    </div>
-                                                    <br>
-                                                    <p class="text-center">
-                                                        <button class="btn btn-lg btn-primary btn-block" type="submit">
-                                                            Sign Up
-                                                        </button>
-                                                    </p>
-                                                </form>
-                                            </div>
-
+                                    <div class="card-body">
+                                        <div class="text-center  mb-5">
+                                            <h3>Sign Up</h3>
                                         </div>
+
+                                        <div class="input-group mb-3 justify-content-center">
+
+                                            <form method="POST" role="form">
+                                                {% csrf_token %}
+
+                                                <div class="input-group mb-3">
+                                                    <input type="text" name="username" class="form-control"
+                                                        id="username" placeholder="Username">
+                                                </div>
+
+                                                <div class="input-group mb-3">
+                                                    <input type="text" name="first_name" class="form-control"
+                                                        id="first_name" placeholder="First Name">
+                                                </div>
+
+                                                <div class="input-group mb-3">
+                                                    <input type="text" name="last_name" class="form-control"
+                                                        id="last_name" placeholder="Last Name">
+                                                </div>
+
+                                                <div class="input-group mb-3">
+                                                    <input type="email" name="email" class="form-control" id="email"
+                                                        placeholder="Email">
+                                                </div>
+
+                                                <div class="password-requirements mb-3 justify-text-left">
+                                                    <h6>Your password must meet the following requirements:</h6>
+
+                                                    <li>Your password can’t be too similar to your other
+                                                        personal information.</li>
+                                                    <li>Your password must contain at least 8 characters.</li>
+                                                    <li>Your password can’t be a commonly used password.</li>
+                                                    <li>Your password can’t be entirely numeric.</li>
+
+                                                </div>
+
+                                                <div class="input-group mb-4">
+                                                    <input type="password" name="password1" class="form-control"
+                                                        id="password1" placeholder="Password">
+                                                </div>
+
+                                                <div class="input-group mb-4">
+                                                    <input type="password" name="password2" class="form-control"
+                                                        id="password2" placeholder="Password">
+                                                </div>
+
+                                                <div class="checkbox mt-5">
+                                                    <input type="checkbox" id="signupCheck" required />
+                                                    <label for="signupCheck"><b>I accept all <a
+                                                                href="{% url 'terms_conditions'%}"
+                                                                onclick="openTermsModal()" target="blank"> terms &
+                                                                conditions</a></b></label>
+                                                </div>
+                                                <br>
+                                                <p class="text-center">
+                                                    <button class="btn btn-lg btn-primary btn-block" type="submit">
+                                                        Sign Up
+                                                    </button>
+                                                </p>
+                                            </form>
+                                        </div>
+
                                     </div>
+                                </div>
 
-                                    <div class="card text-white bg-primary py-5 d-md-down-none">
-                                        <div class="card-body text-center">
-                                            <h3>Log In</h3>
-                                            <div class="mt-5">
-                                                <img src="{% static '/core/assets/img/logo.png'%}" width="80%">
-                                            </div>
-                                            <div class="mt-5">
-                                                <p>You are the member of our blog ?</p>
-
-                                                <p>Have account ? </p>
-
-                                                <p>Log into your account.</p>
-                                            </div>
-
-
-                                            <a type="button" class="btn btn-lg btn-secondary btn-block mt-5"
-                                                href="{% url 'login' %}">
-                                                Log In</a>
-
-
+                                <div class="card text-white bg-primary py-5 d-md-down-none">
+                                    <div class="card-body text-center">
+                                        <h3>Log In</h3>
+                                        <div class="mt-5">
+                                            <img src="{% static '/core/assets/img/logo.png'%}" width="80%">
                                         </div>
+                                        <div class="mt-5">
+                                            <p>You are the member of our blog ?</p>
+
+                                            <p>Have account ? </p>
+
+                                            <p>Log into your account.</p>
+                                        </div>
+
+
+                                        <a type="button" class="btn btn-lg btn-secondary btn-block mt-5"
+                                            href="{% url 'login' %}">
+                                            Log In</a>
+
+
                                     </div>
                                 </div>
                             </div>
@@ -114,8 +113,9 @@
                 </div>
             </div>
         </div>
-        </div>
+    </div>
+    </div>
 
-    </section>
-</main>
+</section>
+
 {%endblock%}
