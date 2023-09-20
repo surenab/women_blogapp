@@ -17,8 +17,10 @@
 }
 
 body {
+  background-image: url("../img/background.jpg");
   color: rgba(var(--color-primary-rgb), 1);
 }
+
 
 a {
   color: var(--color-links);
@@ -153,10 +155,8 @@ section {
 }
 
 .search-form-wrap {
-
-  width: 100%;
   position: absolute;
-  left: 0;
+  right: 0;
   top: 0;
   z-index: 9;
   transition: 0.3s all ease;
@@ -169,14 +169,11 @@ section {
 }
 
 .search-form-wrap .search-form .form-control {
-  height: 90px;
+  width: 300px;
   border: none;
   box-shadow: 0 15px 20px -10px rgba(var(--color-black-rgb), 0.1);
   padding-left: 40px;
   padding-right: 40px;
-  background-color: rgb(208, 205, 205);
-  font-size: 30px;
-  color: rgb(32, 31, 31)
 }
 
 .search-form-wrap .search-form .form-control:active,
@@ -189,11 +186,9 @@ section {
 .search-form-wrap .search-form .icon {
   position: absolute;
   left: 0;
-  top: 10px;
+  top: 7px;
   opacity: 0.5;
   left: 10px;
-  color: #1a1a1a;
-
 }
 
 .search-form-wrap .search-form .btn {
@@ -204,7 +199,7 @@ section {
   margin: 0;
   line-height: 1;
   font-size: 30px;
-  color: rgb(48, 47, 46);
+
 }
 
 .search-form-wrap .search-form .btn:active,
@@ -225,7 +220,7 @@ section {
 /*--------------------------------------------------------------
 # Desktop Navigation 
 --------------------------------------------------------------*/
-@media (min-width: 1280px) {
+@media (min-width: 950px) {
   .navbar {
     padding: 0;
   }
@@ -342,7 +337,7 @@ section {
   }
 }
 
-@media (min-width: 1280px) and (max-width: 1366px) {
+@media (min-width: 950px) and (max-width: 1500px) {
   .navbar .dropdown .dropdown ul {
     left: -90%;
   }
@@ -359,7 +354,7 @@ section {
 /*--------------------------------------------------------------
 # Mobile Navigation
 --------------------------------------------------------------*/
-@media (max-width: 1279px) {
+@media (max-width: 949px) {
   .navbar {
     padding: 0;
     z-index: 9997;
