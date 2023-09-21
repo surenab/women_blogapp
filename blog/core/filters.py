@@ -20,12 +20,12 @@ class BlogFilter(FilterSet):
             'blog_category': ['exact'],
         }
 
-    def custom_search(self, queryset, value):
+    def custom_search(self, queryset, value, name):
         return queryset.filter(
             Q(title__icontains=value) | Q(description__icontains=value)
         )
 
-    def custom_sort(self, queryset, value):
+    def custom_sort(self, queryset, value, name):
         if value == 'newest':
             return queryset.order_by('-created_on')
         elif value == 'oldest':
