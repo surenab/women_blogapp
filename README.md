@@ -12,7 +12,7 @@ Welcome to WoBlog, a platform created by a group of passionate women in tech. Ou
 
 # About Us
 
-<img src="/home/almastasoyan/Desktop/Courses/women_blogapp/photo_readme/-770x482-cc6.jpg" alt="Photo">
+<img src="/women_blogapp/photo_readme/-770x482-cc6.jpg" alt="Photo">
 
 We are a diverse group of women from different backgrounds, professions, and expertise areas within the tech industry. Our common goal is to empower, educate, and inspire others by sharing our experiences, expertise, and stories. We believe that diversity is our strength, and our blog is a reflection of the varied perspectives and talents that women bring to the tech world.
 
