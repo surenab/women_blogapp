@@ -12,7 +12,7 @@ from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from .filters import BlogFilter
-from .models import Blog, BlogComment, AboutTeam, TeamMember, Subscription, BlogImage
+from .models import Blog, BlogComment, AboutTeam, TeamMember, Subscription
 from .forms import (
     BlogForm,
     MessageForm,

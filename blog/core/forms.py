@@ -31,8 +31,6 @@ class BlogForm(forms.ModelForm):
         model = Blog
         fields = ["title", "description", "blog_category", "image"]
 
-# --- Multiple images
-
 
 class MessageForm(forms.ModelForm):
     full_name = forms.CharField(max_length=100, required=True)
