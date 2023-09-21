@@ -18,8 +18,7 @@ from .forms import (
     MessageForm,
     BlogCommentForm,
     SubscriptionForm,
-    BlogImageForm,
-    BlogImageFormSet,
+    
 )
 
 # Create your views here.
@@ -49,8 +48,6 @@ class BlogBase(Base):
 
 
 class CreateBlog(BlogBase):
-    """CteateBlogView for creation of blogs"""
-
     template_name = "core/create_blog.html"
 
     def form_valid(self, form):
@@ -168,20 +165,10 @@ class BlogDetail(DetailView):
 
 
 class MyBlogUpdate(BlogBase, UpdateView, Base):
-    form_class = BlogImageForm
-    form_class = BlogForm
-
     success_text = "Blog is updated!"
     template_name = "core/blog_update.html"
 
-    def get_context_data(self, *args, **kwargs):
-        context = super().get_context_data(*args, **kwargs)
-        blog_id = self.request.POST.get("blog")
-        blog = get_object_or_404(Blog, id=blog_id)
-        context["blog_images"] = BlogImage.objects.filter(blog=blog)
-        return context
-
-
+    
 class BlogDelete(DeleteView):
     model = Blog
     context_object_name = "blog"
@@ -297,46 +284,3 @@ def thank_you(request):
 # ---Multy images
 
 
-def create_blog(request):
-    """Create_blog_view for creation multy images blog"""
-
-    if request.method == "POST":
-        blog_form = BlogForm(request.POST, request.FILES)
-        image_formset = BlogImageFormSet(
-            request.POST,
-            request.FILES,
-            queryset=BlogImage.objects.none(),
-            prefix="image_formset",
-        )
-
-        if blog_form.is_valid() and image_formset.is_valid():
-            blog = blog_form.save(commit=False)
-            blog.user = request.user
-            blog.save()
-
-            for image_form in image_formset:
-                if image_form.cleaned_data.get("image"):
-                    blog_image = image_form.save(commit=False)
-                    blog_image.blog = blog
-                    blog_image.save()
-
-            return redirect("blog_detail", pk=blog.pk)
-    else:
-        blog_form = BlogForm()
-        image_formset = BlogImageFormSet(prefix="image_formset")
-
-    return render(
-        request,
-        "core/create_blog.html",
-        {"blog_form": blog_form, "image_formset": image_formset},
-    )
-
-
-def blog_detail(request, pk):
-    """blog_detail_view  for formation of blog detail info                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     """
-    blog = Blog.objects.get(pk=pk)
-    blog_images = BlogImage.objects.filter(blog=blog)
-    return render(
-        request, "core/blog_detail.html", {"blog": blog,
-                                           "blog_images": blog_images}
-    )
