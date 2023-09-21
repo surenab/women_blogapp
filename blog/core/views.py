@@ -218,7 +218,7 @@ class Contact(Home):
 
 def search_result(request):
     """Search_result_view for search section"""
-
+    model = Blog
     query = request.GET.get("search")
     blog_filter = BlogFilter(request.GET, queryset=Blog.objects.all())
 
@@ -250,42 +250,41 @@ def search_suggestions(request):
 
 def subscribe(request):
     """subscribe_view for formation of subscriby section """
+    error_message = None
 
     if request.method == "POST":
-        form = SubscriptionForm(request.POST)
-        if form.is_valid():
-            email = form.cleaned_data["email"]
+        email = request.POST.get("email")
 
-            if Subscription.objects.filter(email=email).exists():
-                raise ValidationError("This email is already subscribed.")
-            else:
-                form.save()
+        if Subscription.objects.filter(email=email).exists():
+            error_message = "This email is already subscribed. Please use a different email address."
+        else:
+            subscription = Subscription(email=email)
+            subscription.save()
 
-                email_data = {
-                    "email": email,
-                }
+            email_data = {
+                "email": email,
+            }
 
-                subject = "Thank you for subscribing to our blog"
-                from_email = "wobloginfo@gmail.com"
-                recipient_list = [email]
+            subject = "Thank you for subscribing to our blog"
+            from_email = "wobloginfo@gmail.com"
+            recipient_list = [email]
 
-                message_html = render_to_string(
-                    "core/subscription_email.html", email_data
-                )
+            message_html = render_to_string(
+                "core/subscription_email.html", email_data
+            )
 
-                send_mail(
-                    subject,
-                    strip_tags(message_html),
-                    from_email,
-                    recipient_list,
-                    html_message=message_html,
-                )
+            send_mail(
+                subject,
+                strip_tags(message_html),
+                from_email,
+                recipient_list,
+                html_message=message_html,
+            )
 
-                return redirect("thank_you")
-    else:
-        form = SubscriptionForm()
+            return redirect("thank_you")
 
-    return render(request, "core/home.html", {"form": form})
+    return render(request, "core/home.html", {"error_message": error_message})
+
 
 
 def thank_you(request):
