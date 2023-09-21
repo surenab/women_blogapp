@@ -145,7 +145,7 @@
                                                                 </div>
 
                                                                 <div class="d-md-flex post-entry-2 half">
-                                                                    <a href="{% url 'blog_details' blog.id %}"
+                                                                    <a href="{% url 'blog_detail' blog.id %}"
                                                                         class="me-4 thumbnail">
                                                                         <img src="{{blog.image.url}}" alt=""
                                                                             class="img-fluid">
@@ -155,13 +155,13 @@
                                                             </div>
                                                             <div class="col-lg-8 ">
                                                                 <h4><a
-                                                                        href="{% url 'blog_details' blog.id %}">{{blog.title}}</a>
+                                                                        href="{% url 'blog_detail' blog.id %}">{{blog.title}}</a>
                                                                 </h4>
                                                                 {{blog.description|truncatewords:10}}...
 
                                                                 <div>
                                                                     <a type="button" class="btn btn-success"
-                                                                        href="{% url 'blog_details' blog.id %}"><i
+                                                                        href="{% url 'blog_detail' blog.id %}"><i
                                                                             class="far fa-eye"></i></a>
                                                                     <a type="button" class="btn btn-success"
                                                                         href="{% url 'my_blog_update' blog.id %}"><i
@@ -179,7 +179,7 @@
                                                         <h3>You haven't any blogs yet. </h3>
                                                         <h3>Create your first blog now.</h3>
                                                         <a type="button" class="btn btn-outline-success btn-lg mt-2"
-                                                            href="{% url 'createblog' %}">
+                                                            href="{% url 'create_blog' %}">
                                                             Add
                                                             new blog</a>
                                                     </div>

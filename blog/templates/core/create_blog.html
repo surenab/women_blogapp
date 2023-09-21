@@ -9,40 +9,40 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 
-<div class="container" data-aos="fade-up">
-    <div class="row">
-        <div class="col-lg-12 text-center mb-3 mt-3">
-            <p class="page-title">Add a New Blog</p>
-        </div>
+<div class="container py-3" data-aos="fade-up">
+    <div class="card col-lg-12 px-5 py-3">
+        <div class="row">
+            <div class="col-lg-12 text-center mb-3 mt-3">
+                <p class="page-title">Add a New Blog</p>
+            </div>
 
-        <div class="text-center">
+            <div class="text-center">
+                <form role="form" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <p class="text-center">
+                        {% render_field form.title placeholder="Title" class+="form-control" %}
+                        <br>
+                        {% render_field form.description placeholder="Description" class+="form-control" %}
+                        <br>
+                        {% render_field form.blog_category placeholder="Blog Category" class+="form-control" %}
+                        <br>
+                        {% render_field form.image placeholder="General Image" class+="form-control" %}
+                        <br>
+                        {% render_field form.image1 placeholder="Additional Image" class+="form-control" %}
+                        <br>
+                        {% render_field form.image2 placeholder="Additional Image" class+="form-control" %}
+                        <br>
 
-            <form method="post" enctype="multipart/form-data">
-                {% csrf_token %}
-                <div class="col-lg-12 mb-5">
-                    {{ blog_form.as_p }}
-                </div>
 
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">
+                            Add Blog
+                        </button>
 
-                <h4>Upload more images</h4>
-                <div class="col-lg-12 mt-5 mb-5">
-                    {{ image_formset.management_form }}
-                    {% for image_form in image_formset %}
-                    {{ image_form.as_p }}
-                    {% endfor %}
-                </div>
-                <div class="col-lg-12 mt-5 mb-5">
-                    <button class="btn btn-lg btn-primary btn-block" type="submit">
-                        Create blog
-                    </button>
-                </div>
-            </form>
+                    </p>
+                </form>
+            </div>
         </div>
     </div>
-
-
-
-</div>
 </div>
 
 {% endblock %}
