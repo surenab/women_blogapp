@@ -6,7 +6,7 @@
 # Our platform
 
 
-<img src="/home/almastasoyan/Desktop/Courses/women_blogapp/photo_readme/Screenshot from 2023-09-19 03-55-57.png" alt="Photo">
+<img src="/photo_readme/Screenshot from 2023-09-19 03-55-57.png" alt="Photo">
 
 Welcome to WoBlog, a platform created by a group of passionate women in tech. Our blog is built on Django and Python and is designed to help you share your views on life with the world.
 
