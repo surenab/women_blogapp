@@ -1,18 +1,14 @@
-from typing import Any, Dict
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import CreateView, TemplateView
-from .forms import SignUpForm, UserProfileForm, UserPasswordChangeForm
 from django.urls import reverse_lazy
 from django.contrib.auth import login
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.views import PasswordChangeView
 from django.contrib.auth.decorators import login_required
-from .models import UserProfile
 from core.models import Blog
-from django.core.paginator import Paginator
-
-
+from .models import UserProfile
+from .forms import SignUpForm, UserProfileForm, UserPasswordChangeForm
 # Create your views here.
 
 

@@ -31,7 +31,6 @@ from .views import (
     About,
     subscribe,
     thank_you,
-    
 )
 
 from . import views
@@ -53,7 +52,6 @@ urlpatterns = [
     path('edit_profile/', edit_profile, name='edit_profile'),
     path('subscribe/', subscribe, name='subscribe'),
     path('thank_you/', thank_you, name='thank_you'),
-
     path('create/', views.create_blog, name='create_blog'),
     path('blog/<int:pk>/', views.blog_detail, name='blog_detail'),
 

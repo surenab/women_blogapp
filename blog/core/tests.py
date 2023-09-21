@@ -1,15 +1,12 @@
 from django.test import TestCase
-from accounts.models import UserProfile
 from django.contrib .auth import get_user_model
+from django.core.files.uploadedfile import SimpleUploadedFile
+from accounts.models import UserProfile
 from .forms import BlogForm
 from .models import Blog
-from django.contrib.auth import get_user_model
-from django.core.files.uploadedfile import SimpleUploadedFile
-
 
 # Create your tests here.
 User = get_user_model()
-
 
 # TestCase for UserProfile model
 class UserProfileTestCase (TestCase):
