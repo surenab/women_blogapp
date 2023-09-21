@@ -1,8 +1,8 @@
 from django import forms
 from django.contrib.auth.models import User
+from django.contrib.auth.forms import SetPasswordForm
 from django.contrib.auth.forms import UserCreationForm
 from .models import UserProfile
-from django.contrib.auth.forms import SetPasswordForm
 
 
 class UserProfileForm(forms.ModelForm):
@@ -71,6 +71,7 @@ class SignUpForm(UserCreationForm):
         # Create the user profile
         user_profile, created = UserProfile.objects.get_or_create(user=user)
         # Update user profile attributes
+
         user_profile.first_name = user.first_name
         user_profile.last_name = user.last_name
         user_profile.save()

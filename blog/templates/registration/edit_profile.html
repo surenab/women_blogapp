@@ -7,24 +7,23 @@
 {% block bodycontent %}
 
 
-
 <!-- Add your CSS stylesheets or links here -->
 <link rel="stylesheet" href="{% static 'core/assets/css/edit_profile.css' %}">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
 
-
 <section>
-
-    <div class="container" data-aos="fade-up">
+    <div class="container emp-profile py-5 px-5" data-aos="fade-up">
         <div class="row">
-            <div class="col-md-12  mb-5 ">
+            <div class="col-md-12  my-3  px-5">
+
 
                 <!-- Your main content goes here -->
                 <form method="post" enctype="multipart/form-data">
                     {% csrf_token %}
+
                     <div class="row">
-                        <div class="col-md-4 ">
+                        <div class="col-md-4">
                             <!-- Profile picture card-->
                             <div class="card mb-4 mb-xl-0">
                                 <div class="card-header text-center">
@@ -42,7 +41,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4 ">
                             <div class="panel panel-default">
                                 <h4>User Info</h4>
                             </div>
@@ -57,7 +56,7 @@
                             {%endif%}
                             {%endfor%}
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <div class="panel panel-default">
                                 <a type="button" class="btn btn-outline-success btn-lg mt-2"
                                     href="{% url 'password_change' %}">
@@ -71,6 +70,8 @@
                             </div>
                         </div>
                     </div>
+
+
                 </form>
             </div>
         </div>

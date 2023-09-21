@@ -1,12 +1,6 @@
-from typing import Any, Dict, Mapping, Optional, Type, Union
 from django import forms
-from django.core.files.base import File
-from django.db.models.base import Model
-from django.forms.utils import ErrorList
-from .models import Blog, BlogImage, Message, BlogComment, Subscription
-from django.contrib.auth.models import User
-from django.forms import ClearableFileInput
 from django.forms import modelformset_factory
+from .models import Blog, BlogImage, Message, BlogComment, Subscription
 
 
 class BlogForm(forms.ModelForm):
@@ -59,7 +53,7 @@ class MessageForm(forms.ModelForm):
 
     class Meta:
         model = Message
-        exclude = ()
+        fields = ["full_name", "email", "subject", "message"]
 
 
 class BlogCommentForm(forms.ModelForm):
