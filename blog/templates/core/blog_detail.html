@@ -20,39 +20,13 @@
                         </div>
 
                         <h1 class="mb-5">{{blog.title}}</h1>
-                        <div class=" swiper-slide" class="img-bg-inner  d-flex align-items-end">
-                            <img src="{{blog.image.url}}" alt="" width="500px">
+                        <div class="col-md-12" class="img-bg-inner  d-flex align-items-end">
+                            <img src="{{blog.image.url}}" alt="" class="img-detail">
                         </div>
 
                         <div class="mt-5"> {{blog.description}} </div>
 
-                        <div class="container-md" data-aos="fade-in">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="swiper sliderFeaturedPosts">
-                                        {% if blog_images %}
-                                        <div class="swiper-wrapper">
 
-                                            {% for blog_image in blog_images %}
-                                            <div class=" swiper-slide  mt-5">
-                                                <img src="{{ blog_image.image.url }}" alt="" width="500px">
-                                            </div>
-
-                                            {% endfor %}
-                                        </div>
-                                        {%endif%}
-
-                                    </div>
-                                    <div class=" custom-swiper-button-next">
-                                        <span class="bi-chevron-right"></span>
-                                    </div>
-                                    <div class="custom-swiper-button-prev">
-                                        <span class="bi-chevron-left"></span>
-                                    </div>
-                                    <div class="swiper-pagination"></div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
 

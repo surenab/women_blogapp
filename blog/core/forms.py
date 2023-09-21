@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import modelformset_factory
-from .models import Blog, BlogImage, Message, BlogComment, Subscription
+from .models import Blog, Message, BlogComment, Subscription
 
 
 class BlogForm(forms.ModelForm):
@@ -32,17 +32,6 @@ class BlogForm(forms.ModelForm):
         fields = ["title", "description", "blog_category", "image"]
 
 # --- Multiple images
-
-
-class BlogImageForm(forms.ModelForm):
-
-    class Meta:
-        model = BlogImage
-        fields = ['image']
-
-
-BlogImageFormSet = modelformset_factory(
-    BlogImage, form=BlogImageForm, extra=1, max_num=5)
 
 
 class MessageForm(forms.ModelForm):
