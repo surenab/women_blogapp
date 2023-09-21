@@ -1329,3 +1329,19 @@ alert {
   color: #f0290e;
 
 }
+
+
+.search-and-subscribe-container {
+  display: flex;
+  /* Display the forms side by side */
+  align-items: center;
+  /* Vertically center align the forms */
+  margin-bottom: 10px;
+  /* Add margin between the forms and other content */
+}
+
+.search-form-wrap {
+  margin-right: 10px;
+  display: none;
+  /* Add other styling as needed */
+}

@@ -68,8 +68,9 @@
 
 
           <!-- Start Trending Section -->
+          {%if most_viewed_blogs%}
           <div class="trending">
-            <h3>Trending</h3>
+            <h3>Popular Blogs</h3>
             <ul class="trending-post">
 
               {% for blog in most_viewed_blogs%}
@@ -84,6 +85,7 @@
 
             </ul>
           </div>
+          {%endif%}
           <!-- End Trending Section -->
 
         </div>
@@ -151,19 +153,24 @@
   <div class="p-5 bg-gray-200 rounded-lg py-12 m-5 text-center">
     <h3 class="text-3xl leading-10 text-blue-800 font-bold">SUBSCRIBE TO OUR NEWSLETTER</h3>
 
+    {% if error_message %}
+    <div style="color: red; font-weight: bold;" class="mt-2">{{ error_message }}</div>
+    {% endif %}
+
     <div class="flex flex-col items-center mt-4">
-      <form method="POST" action="/subscribe/">
+
+      <form method="POST" action="/subscribe/" class="flex flex-col md:flex-row">
         {% csrf_token %}
-        <input name="email" class="bg-white rounded-lg text-sm px-2 sm:px-3 md:px-8 py-3 mb-2" type="text"
+        <input name="email"
+          class="bg-white rounded-lg text-sm px-4 sm:px-5 md:px-10 py-20 mb-5 focus:outline-none rounded" type="text"
           placeholder="Enter your email...">
         <input type="submit" value="Subscribe"
-          class="font-bold rounded-lg text-white bg-black hover:bg-gray-800 cursor-pointer px-3 py-1 md:px-6 md:py-3 focus:outline-none">
+          class="font-bold rounded-lg text-white bg-black hover:bg-gray-800 cursor-pointer px-3 py-1 md:px-6 md:py-3 focus:outline-none focus:outline-none rounded md:w-auto md:w-[150px]">
+
       </form>
     </div>
   </div>
 </div>
-
-
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
