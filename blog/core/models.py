@@ -34,15 +34,6 @@ class Blog(models.Model):
     def __str__(self) -> str:
         return f"{self.user.username} , {self.title}, {self.blog_category}, {self.created_on}"
 
-    def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)
-        img = Image.open(self.image)
-
-        if img.height > 500 or img.width > 700:
-            output_size = (500, 700)
-            img.thumbnail(output_size)
-            img.save(self.image)
-
 
 # --- Model for multiply images
 
