@@ -9,7 +9,7 @@
             "user": 1,
             "description": "Robotics is an interdisciplinary branch of electronics and communication, computer science and engineering.[1] Robotics involves the design, construction, operation, and use of robots. The goal of robotics is to design machines that can help and assist humans. Robotics integrates fields of mechanical engineering, electrical engineering, information engineering, mechatronics engineering, electronics, biomedical engineering, computer engineering, control systems engineering, software engineering, mathematics, etc.\r\n\r\nThe field of robotics develops machines that can automate tasks and do various jobs that a human might not be able to do. Robots can be used in many situations for many purposes, but today many are used in dangerous environments (including inspection of radioactive materials, bomb detection and deactivation), manufacturing processes, or where humans cannot survive (e.g., in space, underwater, in high heat, and clean up and containment of hazardous materials and radiation). Robots can take any form, but some are made to resemble humans in appearance. This is claimed to help in the acceptance of robots in certain replicative behaviors which are usually performed by people. Such robots attempt to replicate walking, lifting, speech, cognition, or any other tasks mainly performed by a human. Many of today's robots are inspired by nature, contributing to the field of bio-inspired robotics.\r\n\r\nCertain robots require user input to operate, while other robots function autonomously. The concept of creating robots that can operate autonomously dates back to classical times, but research into the functionality and potential uses of robots did not grow substantially until the 20th century. Throughout history, it has been frequently assumed by various scholars, inventors, engineers, and technicians that robots will one day be able to mimic human behavior and manage tasks in a human-like fashion. Today, robotics is a rapidly growing field, as technological advances continue; researching, designing, and building new robots serve various practical purposes, whether domestically, commercially, or militarily. Many robots are built to do jobs that are hazardous to people, such as defusing bombs, finding survivors in unstable ruins, and exploring mines and shipwrecks. Robotics is also used in STEM (science, technology, engineering, and mathematics) as a teaching aid.[2]",
             "image": "Media/robotics_sZxexnM.jpg",
-            "view_count": 9
+            "view_count": 14
         }
     },
     {
@@ -17,12 +17,12 @@
         "pk": 2,
         "fields": {
             "blog_category": "9",
-            "title": "How Technology is Changing the World of Medicine",
+            "title": "World of Medicine",
             "created_on": "2023-09-17",
             "user": 2,
             "description": "A large number of digital innovations are revolutionizing healthcare — and technology in medicine is here to stay. Numerous innovations and new solutions are already on the market and they have all improved healthcare drastically.\r\n\r\nMultiple medical issues such as congestive heart failure, diabetes, medication noncompliance, even stressful isolation, are researched and solved with remarkable new technologies. Here are some areas researchers are targeting:\r\n\r\nHeart failure\r\nOne of the most common and costly diagnoses is that of heart failure, with a mortality rate closer to cancer. It includes three types of sensors – wristband, necklace and watch – which are used for testing. This type of diagnosis gives both patients and doctors continuous information on how a compromised heart is functioning.",
-            "image": "Media/AI_and_medicine_rP0C9z2.jpeg",
-            "view_count": 3
+            "image": "Media/CT-3.jpeg",
+            "view_count": 7
         }
     },
     {
@@ -34,8 +34,8 @@
             "created_on": "2023-09-17",
             "user": 2,
             "description": "The Golden Retriever was developed in Scotland in the nineteenth century by Sir Dudley Marjoribanks (later to become Baron Tweedmouth) from Flat-coated Retrievers judiciously crossed with Tweed Water Spaniels and some other British dog breeds.[1][2] Prior to the 1952 publication of the very detailed stud book which had been meticulously maintained by Marjoribanks, a number of romantic tales were published about the origins of the breed.[1][2][3]\r\n\r\nIn the 1860s Marjoribanks set out to create what to his mind was the ultimate breed of retriever at his Scottish estate Guisachan.[1][4] He started by acquiring a yellow-coloured Flat-coated Retriever dog called Nous;[note 1] Nous had been whelped in June 1864 and was the only yellow pup in an otherwise all black-coloured litter.[1][3] Whilst uncommon, occasionally liver, brown, golden or yellow-coloured purebred Flat-coated Retriever pups are whelped to matings of two black parents.[2][5] It is the pedigree of Nous that was the source for the romantic tales of the heritage of the Golden Retriever.[1] One early account claimed Nous was purchased from a Russian circus trainer in Brighton, another claimed he was bought from a cobbler, and yet another claimed a gypsy.[1] The stud book states that Nous was a Flat-coated Retriever bred by Lord Chichester on his Stanmer Park estate near Brighton.[4][5][6]",
-            "image": "Media/goldenretriver2_gRm4wIv.jpeg",
-            "view_count": 0
+            "image": "Media/golden-retriever3.webp",
+            "view_count": 2
         }
     },
     {
@@ -48,7 +48,7 @@
             "user": 2,
             "description": "Italy (Italian: Italia [iˈtaːlja] i), officially the Italian Republic[a][13][14] or the Republic of Italy,[15][16] is a country in Southern[17][18][19] and Western[20][note 1] Europe. Located in the middle of the Mediterranean Sea, it consists of a peninsula delimited by the Alps and surrounded by several islands.[21] Italy shares land borders with France, Switzerland, Austria, Slovenia and the enclaved microstates of Vatican City and San Marino. It has a territorial exclave in Switzerland (Campione) and an archipelago in the African Plate (Pelagie Islands). Italy covers an area of 301,340 km2 (116,350 sq mi),[3] with a population of about 60 million;[22] it is the tenth-largest country by land area in the European continent and the third-most populous member state of the European Union. Its capital and largest city is Rome.\r\n\r\nThe Italian peninsula was historically the native place of numerous ancient peoples and destination of a myriad of different peoples and cultures who immigrated throughout history.[23] The ancient Roman state arose in Latium, and expanded throughout the peninsula and the territories around the Mediterranean basin through a process of Romanization.[24] By the first century BC, the Roman Empire expanded its territory across Europe, North Africa and the Near East, establishing the Pax Romana.[25] During the Early Middle Ages, the Western Roman Empire fell, Christian Church arose and Italy experienced inward migration from surrounding tribes. By the 11th century, Italian city-states and maritime republics expanded, bringing renewed prosperity through commerce and laying the groundwork for modern capitalism.[26][27] The Italian Renaissance flourished in Florence during the 15th and 16th centuries and spread to the rest of Europe. Italian explorers also discovered new routes to the Far East and the New World, helping to usher in the European Age of Discovery. However, centuries of rivalry and infighting between the Italian city-states among other factors left the peninsula divided into numerous states until the late modern period.[28][29] Italy's commercial and political power significantly waned during the 17th and 18th centuries with the decline of the Catholic Church and the increasing importance of trade routes that bypassed the Mediterranean.[30]",
             "image": "Media/rome-colosseum.jpg",
-            "view_count": 3
+            "view_count": 4
         }
     },
     {
@@ -86,7 +86,7 @@
             "created_on": "2023-09-18",
             "user": 2,
             "description": "The Moon is Earth's only natural satellite. It orbits around Earth at an average distance of 384,400 km (238,900 mi), or about 30 times Earth's diameter, having a sidereal period of 27.3 days and a synodic period of 29.5 days. The Moon faces Earth always with its near side by having a rotation period that equals its orbital period, resulting from being tidally locked to Earth. Its gravitational influence is the main driver of Earth's tides and causes Earth's day to lengthen very slowly. Its diameter is 3,474 km (2,159 mi), which is roughly one-quarter that of Earth or twice the width of Australia,[17] making it by far the largest and most massive satellite in the Solar System in relation to its parent planet and the fifth-largest Solar System satellite overall. The Moon is a satellite planet in geophysical terms and among all planetary-mass objects of the Solar System larger and more massive than all known solar dwarf planets.[18] The Moon's mass, density and surface gravity of about one-sixth of Earth's (at 0.1654 g), are rivaled among Solar System satellites only by Jupiter's moon Io. The body of the Moon is differentiated and terrestrial, with no significant atmosphere, hydrosphere, or magnetic field.",
-            "image": "Media/moon.webp",
+            "image": "Media/moon_T0Fnzkr.webp",
             "view_count": 1
         }
     },
@@ -113,7 +113,7 @@
             "user": 2,
             "description": "Paris, France's capital, is a major European city and a global center for art, fashion, gastronomy and culture. Its 19th-century cityscape is crisscrossed by wide boulevards and the River Seine. Beyond such landmarks as the Eiffel Tower and the 12th-century, Gothic Notre-Dame cathedral, the city is known for its cafe culture and designer boutiques along the Rue du Faubourg Saint-Honoré.",
             "image": "Media/paris.jpg",
-            "view_count": 0
+            "view_count": 18
         }
     },
     {
@@ -126,63 +126,42 @@
             "user": 2,
             "description": "Physical fitness is a state of health and well-being and, more specifically, the ability to perform aspects of sports, occupations and daily activities. Physical fitness is generally achieved through proper nutrition,[1] moderate-vigorous physical exercise,[2] and sufficient rest along with a formal recovery plan.[3]\r\n\r\nBefore the Industrial Revolution, fitness was defined as the capacity to carry out the day's activities without undue fatigue or lethargy. However, with automation and changes in lifestyles, physical fitness is now considered a measure of the body's ability to function efficiently and effectively in work and leisure activities, to be healthy, to resist hypokinetic diseases, improve immune system and to meet emergency situations.[4]",
             "image": "Media/Fitness-Goals3_BNVNW6A.jpg",
-            "view_count": 0
+            "view_count": 4
         }
     },
     {
-        "model": "core.blogimage",
-        "pk": 4,
+        "model": "core.blog",
+        "pk": 20,
         "fields": {
-            "blog": 14,
-            "image": "Media/space2.jpeg"
+            "blog_category": "4",
+            "title": "Van Cats",
+            "created_on": "2023-09-21",
+            "user": 6,
+            "description": "The Van cat is a distinctive landrace of the domestic cat found around Lake Van in the Eastern Anatolia Region of Turkey. Van cats are relatively large, have a chalky white coat, sometimes with ruddy coloration on the head and hindquarters, and have blue or amber eyes or have heterochromia.",
+            "image": "Media/VAN_CAT_2KvhJyC.png",
+            "view_count": 21
         }
     },
     {
-        "model": "core.blogimage",
-        "pk": 5,
+        "model": "core.message",
+        "pk": 1,
         "fields": {
-            "blog": 14,
-            "image": "Media/moon2.webp"
+            "full_name": "Naira",
+            "email": "naraman@bk.ru",
+            "subject": "Hallo",
+            "message": "fuikhlij",
+            "created_on": "2023-09-21T23:27:59.026Z"
         }
     },
     {
-        "model": "core.blogimage",
-        "pk": 6,
+        "model": "core.message",
+        "pk": 2,
         "fields": {
-            "blog": 15,
-            "image": "Media/vangoh.jpeg"
-        }
-    },
-    {
-        "model": "core.blogimage",
-        "pk": 7,
-        "fields": {
-            "blog": 15,
-            "image": "Media/Vangoh2_SAoCyO0.webp"
-        }
-    },
-    {
-        "model": "core.blogimage",
-        "pk": 8,
-        "fields": {
-            "blog": 16,
-            "image": "Media/robotics_hPkomHw.jpg"
-        }
-    },
-    {
-        "model": "core.blogimage",
-        "pk": 9,
-        "fields": {
-            "blog": 17,
-            "image": "Media/fitness-4_K1sYj57.jpeg"
-        }
-    },
-    {
-        "model": "core.blogimage",
-        "pk": 10,
-        "fields": {
-            "blog": 17,
-            "image": "Media/fitness2_B1MpALv.jpeg"
+            "full_name": "Naira",
+            "email": "naraman@bk.ru",
+            "subject": "Good morning",
+            "message": "h lvlasjvo;asvp;a",
+            "created_on": "2023-09-21T23:33:11.978Z"
         }
     },
     {
@@ -192,7 +171,7 @@
             "full_name": "Naira Mangasaryan",
             "job_position": "Back-end Developer",
             "about_member": "Back-end Developer",
-            "member_image": "Media/nara_GO6Cd2W.png"
+            "member_image": "Media/myPhoto.jpg"
         }
     },
     {
@@ -202,7 +181,7 @@
             "full_name": "Lilit Khachatryan",
             "job_position": "Back-end Developer",
             "about_member": "Back-end Developer",
-            "member_image": "Media/lilit.png"
+            "member_image": "Media/Screenshot_from_2023-09-22_04-27-24.png"
         }
     },
     {
@@ -212,7 +191,7 @@
             "full_name": "Almast Hasoyan",
             "job_position": "Back-end Developer",
             "about_member": "Back-end Developer",
-            "member_image": "Media/almast1.png"
+            "member_image": "Media/Screenshot_from_2023-09-22_04-07-31.png"
         }
     },
     {
@@ -222,7 +201,7 @@
             "full_name": "Alvard  Telunts",
             "job_position": "Back-end Developer",
             "about_member": "Back-end Developer",
-            "member_image": "Media/Alvard.png"
+            "member_image": "Media/Screenshot_from_2023-09-22_04-07-09.png"
         }
     },
     {
@@ -232,7 +211,7 @@
             "full_name": "Mari Arakelyan",
             "job_position": "Back-end Developer",
             "about_member": "Back-end Developer",
-            "member_image": "Media/mari.png"
+            "member_image": "Media/Screenshot_from_2023-09-22_04-11-24.png"
         }
     },
     {
@@ -254,11 +233,93 @@
         }
     },
     {
+        "model": "core.blogcomment",
+        "pk": 3,
+        "fields": {
+            "owner": 6,
+            "blog": 16,
+            "text": "Very beautiful!",
+            "created_on": "2023-09-21T23:10:29.812Z"
+        }
+    },
+    {
         "model": "core.subscription",
         "pk": 1,
         "fields": {
             "email": "naraman@bk.ru",
             "subscribed_at": "2023-09-17T19:22:09.276Z"
+        }
+    },
+    {
+        "model": "core.subscription",
+        "pk": 2,
+        "fields": {
+            "email": "haroyananikaren@gmail.com",
+            "subscribed_at": "2023-09-21T19:39:38.459Z"
+        }
+    },
+    {
+        "model": "core.subscription",
+        "pk": 4,
+        "fields": {
+            "email": "naira@gmail.com",
+            "subscribed_at": "2023-09-21T23:14:01.037Z"
+        }
+    },
+    {
+        "model": "core.subscription",
+        "pk": 5,
+        "fields": {
+            "email": "van@gmail.com",
+            "subscribed_at": "2023-09-21T23:19:08.360Z"
+        }
+    },
+    {
+        "model": "core.subscription",
+        "pk": 6,
+        "fields": {
+            "email": "hovo@gmail.com",
+            "subscribed_at": "2023-09-21T23:19:39.169Z"
+        }
+    },
+    {
+        "model": "core.subscription",
+        "pk": 7,
+        "fields": {
+            "email": "kara@gmail.com",
+            "subscribed_at": "2023-09-21T23:20:37.594Z"
+        }
+    },
+    {
+        "model": "core.subscription",
+        "pk": 8,
+        "fields": {
+            "email": "karmen@gmail.com",
+            "subscribed_at": "2023-09-21T23:20:50.419Z"
+        }
+    },
+    {
+        "model": "core.subscription",
+        "pk": 9,
+        "fields": {
+            "email": "gaya@gmail.com",
+            "subscribed_at": "2023-09-21T23:21:09.266Z"
+        }
+    },
+    {
+        "model": "core.subscription",
+        "pk": 10,
+        "fields": {
+            "email": "mara@mail.ru",
+            "subscribed_at": "2023-09-21T23:21:47.089Z"
+        }
+    },
+    {
+        "model": "core.subscription",
+        "pk": 11,
+        "fields": {
+            "email": "kamil45@mail.ru",
+            "subscribed_at": "2023-09-21T23:23:31.800Z"
         }
     }
 ]

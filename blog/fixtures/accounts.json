@@ -15,9 +15,9 @@
         "pk": 2,
         "fields": {
             "user": 2,
-            "profession": null,
-            "phone": null,
-            "city": null,
+            "profession": "student",
+            "phone": "------------",
+            "city": "Yerevan, Armenia",
             "photo": "Media/robotics_WLy4jzX.jpg"
         }
     },
@@ -41,6 +41,50 @@
             "phone": null,
             "city": null,
             "photo": ""
+        }
+    },
+    {
+        "model": "accounts.userprofile",
+        "pk": 7,
+        "fields": {
+            "user": 5,
+            "profession": null,
+            "phone": null,
+            "city": null,
+            "photo": ""
+        }
+    },
+    {
+        "model": "accounts.userprofile",
+        "pk": 8,
+        "fields": {
+            "user": 6,
+            "profession": null,
+            "phone": null,
+            "city": null,
+            "photo": "Media/VAN_CAT_NoFQBIc.png"
+        }
+    },
+    {
+        "model": "accounts.userprofile",
+        "pk": 9,
+        "fields": {
+            "user": 7,
+            "profession": null,
+            "phone": null,
+            "city": null,
+            "photo": ""
+        }
+    },
+    {
+        "model": "accounts.userprofile",
+        "pk": 10,
+        "fields": {
+            "user": 8,
+            "profession": null,
+            "phone": null,
+            "city": null,
+            "photo": "Media/robotics_U1pw7nl.jpg"
         }
     }
 ]
