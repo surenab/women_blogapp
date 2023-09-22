@@ -3,32 +3,37 @@
 
 {% block bodycontent %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You for Subscribing</title>
-    <style>
-        /* Add CSS to center content */
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            /* This ensures the content takes the full height of the viewport */
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You for Subscribing</title>
+<style>
+    /* Add CSS to center content */
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        /* This ensures the content takes the full height of the viewport */
+    }
 
-        h1,
-        p {
-            text-align: center;
-        }
-    </style>
-</head>
+    h1,
+    p {
+        text-align: center;
+    }
+</style>
 
-<body>
+
+<div>
     <h1>Thank You for Subscribing!</h1>
     <p>We appreciate your subscription to our blog. You will receive updates and newsletters in your inbox.</p>
-</body>
+</div>
+
+<div class="py-5 text-center">
+    <a type="button" class="btn btn-outline-success mt-2" href="{% url 'home' %}">
+        Go To Home Page </a>
+</div>
+
 {% endblock %}
 
 {% block footer %}

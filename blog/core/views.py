@@ -110,7 +110,7 @@ class Home(Filters):
         if messageForm.is_valid():
             messageForm.save()
             messages.success(request, "Message submitted successfully!")
-        return redirect("home")
+        return redirect("contact")
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -130,7 +130,7 @@ class MyBlog(MyFilters):
     def get_paginate_by(self, queryset):
         blogs_per_page = self.request.GET.get("blogs_per_page")
 
-        default_blogs_per_page = 2
+        default_blogs_per_page = 7
 
         try:
             blogs_per_page = int(blogs_per_page)
