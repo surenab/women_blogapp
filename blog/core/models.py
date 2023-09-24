@@ -56,6 +56,7 @@ class TeamMember(models.Model):
     full_name = models.CharField(max_length=50)
     job_position = models.CharField(max_length=50)
     about_member = models.TextField(max_length=1000)
+    social_link = models.URLField(null=True, blank=True)
     member_image = models.ImageField(
         upload_to="Media", default=None, null=True, blank=True)
 

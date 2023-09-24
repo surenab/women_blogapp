@@ -28,7 +28,7 @@ a {
 }
 
 a:hover {
-  color: var(--color-links-hover);
+  color: rgba(225, 38, 122, 0.978);
   text-decoration: none;
 }
 
@@ -1333,11 +1333,10 @@ alert {
 
 .search-and-subscribe-container {
   display: flex;
-  /* Display the forms side by side */
   align-items: center;
-  /* Vertically center align the forms */
-  margin-bottom: 10px;
-  /* Add margin between the forms and other content */
+  justify-content: center;
+
+
 }
 
 .search-form-wrap {
@@ -1349,4 +1348,10 @@ alert {
 .img-detail {
   max-width: 700px;
   max-height: 500px;
+}
+
+/* CSS to make form fields equal in width */
+.form-field {
+  width: 100%;
+  /* This sets each form element to take up 100% of the available width */
 }

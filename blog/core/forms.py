@@ -1,23 +1,34 @@
 from django import forms
-from django.forms import modelformset_factory
 from .models import Blog, Message, BlogComment, Subscription
+from .filters import BlogFilter  # Import your BlogFilter
+
+
+class BlogFilterForm(forms.Form):
+    SORT_CHOICES = BlogFilter.SORT_CHOICES  # Get SORT_CHOICES from your BlogFilter
+
+    sort_by = forms.ChoiceField(
+        choices=SORT_CHOICES,
+        label='Sort By',
+        required=False,
+        widget=forms.Select(attrs={'style': 'width: 300px;'})
+    )
+    search = forms.CharField(
+        label='Search',
+        required=False,
+        widget=forms.TextInput(attrs={'style': 'width: 300px;'})
+    )
+    blog_category = forms.ModelChoiceField(
+        queryset=Blog.objects.all(),
+        label='Blog Category',
+        required=False,
+        empty_label='All',
+        widget=forms.Select(attrs={'style': 'width: 300px;'})
+    )
 
 
 class BlogForm(forms.ModelForm):
 
-    BLOG_CATEGORIES = (
-        ("1", "Travel"),
-        ("2", "Sport"),
-        ("3", "Nature"),
-        ("4", "Animals"),
-        ("5", "Food"),
-        ("6", "DIY and Crafts"),
-        ("7", "Science and Technology"),
-        ("8", "Fashion"),
-        ("9", "Medicine"),
-        ("10", "Psychology"),
-        ("11", "Art"),
-    )
+    BLOG_CATEGORIES = Blog.BLOG_CATEGORIES
 
     title = forms.CharField(label="", widget=forms.TextInput(
         attrs={'placeholder': 'Title'}))

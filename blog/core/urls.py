@@ -18,7 +18,6 @@ from .views import (
     thank_you,
 )
 
-from . import views
 
 
 urlpatterns = [
