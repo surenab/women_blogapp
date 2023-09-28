@@ -25,7 +25,8 @@
               <div>
                 <div class="post-meta"><span class="date">{{blog.get_blog_category_display}}</span> <span
                     class="mx-1">&bullet;</span>
-                  <span>{{blog.created_on}}</span>
+                  <span>{{blog.created_on}}</span><span class="mx-1">&bullet;</span><span>Viewes:
+                    {{blog.view_count}}</span>
                 </div>
                 <h3><a href="{% url 'blog_detail' blog.id %}">{{blog.title}}</a></h3>
                 <p>{{blog.description}}</p>
@@ -76,7 +77,8 @@
                 <div class="post-entry-1 border-bottom">
                   <div class="post-meta"><span class="date">{{blog.get_blog_category_display}}</span> <span
                       class="mx-1">&bullet;</span>
-                    <span>{{blog.created_on}}</span>
+                    <span>{{blog.created_on}}</span><span class="mx-1">&bullet;</span><span>Viewes:
+                      {{blog.view_count}}</span>
                   </div>
                   <h2 class="mb-2"><a href="{% url 'blog_detail' blog.id %}">{{blog.title}}</a></h2>
                   <p>{{blog.description|truncatewords:10}}</p>
@@ -98,7 +100,8 @@
                       <div class="post-entry-1 border-bottom">
                         <div class="post-meta"><span class="date">{{blog.get_blog_category_display}}</span> <span
                             class="mx-1">&bullet;</span>
-                          <span>{{blog.created_on}}</span>
+                          <span>{{blog.created_on}}</span><span class="mx-1">&bullet;</span><span>Viewes:
+                            {{blog.view_count}}</span>
                         </div>
                         <h2 class="mb-2"><a href="{% url 'blog_detail' blog.id %}">{{blog.title}}</a></h2>
                         <p>{{blog.description|truncatewords:10}}</p>

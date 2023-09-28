@@ -9,38 +9,41 @@
 
 <!-- ======= Search Results ======= -->
 <section id="search-result" class="search-result">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-9">
-        <h3 class="category-title">
-          {% if blog_filter %}
-          Search Results for "{{ query }}"
-          {% else %}
-          Search results for "{{ query }}" not found.
-          {% endif %}
-        </h3>
-        {% for blog in blog_filter %}
-        <div class="d-md-flex post-entry-2 small-img">
-          <a href="{% url 'blog_detail' blog.id %}" class="me-4 thumbnail">
-            <img src="{{ blog.image.url }}" alt="" class="img-fluid">
-          </a>
-          <div>
-            <div class="post-meta">
-              <span class="date">{{ blog.created_on }}</span>
-            </div>
-            <h3><a href="{% url 'blog_detail' blog.id %}">{{ blog.title|highlight_query:query }}</a></h3>
-            <p class="mb-4 d-block">{{ blog.description|highlight_query:query}}</p>
-            <div class="d-flex align-items-center author">
-              <div class="photo">
-                <img src="{{ blog.author.profile_picture.url }}" alt="" class="img-fluid">
+  <div class="container emp-profile py-3">
+    <div class="card col-lg-12 px-5 py-5">
+
+      <div class="row">
+        <div class="col-md-9">
+          <h3 class="category-title">
+            {% if blog_filter %}
+            Search Results for "{{ query }}"
+            {% else %}
+            Search results for "{{ query }}" not found.
+            {% endif %}
+          </h3>
+          {% for blog in blog_filter %}
+          <div class="d-md-flex post-entry-2 small-img">
+            <a href="{% url 'blog_detail' blog.id %}" class="me-4 thumbnail">
+              <img src="{{ blog.image.url }}" alt="" class="img-fluid">
+            </a>
+            <div>
+              <div class="post-meta">
+                <span class="date">{{ blog.created_on }}</span>
               </div>
-              <div class="name">
-                <h3 class="m-0 p-0">{{ blog.author.username }}</h3>
+              <h3><a href="{% url 'blog_detail' blog.id %}">{{ blog.title|highlight_query:query }}</a></h3>
+              <p class="mb-4 d-block">{{ blog.description|highlight_query:query}}</p>
+              <div class="d-flex align-items-center author">
+                <div class="photo">
+                  <img src="{{ blog.author.profile_picture.url }}" alt="" class="img-fluid">
+                </div>
+                <div class="name">
+                  <h3 class="m-0 p-0">{{ blog.author.username }}</h3>
+                </div>
               </div>
             </div>
           </div>
+          {% endfor %}
         </div>
-        {% endfor %}
       </div>
     </div>
   </div>

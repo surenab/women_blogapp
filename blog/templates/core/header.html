@@ -73,11 +73,11 @@
       <!-- ======= Subscribe Form ======= -->
       <form method="POST" action="/subscribe/" class="subscribe-form">
         {% csrf_token %}
-        <input name="email" class="bg-white text-sm px-0.5 sm:px-0.5 md:px-0.5 py-0.5 mb-1 rounded" type="text"
+        <input name="email" class="bg-white text-sm px-0.5 sm:px-0.5 md:px-0.5 py-0.5 mb-1 rounded" type="email"
           placeholder="  Enter your email...">
         <input type="submit" value="Subscribe"
           class="font-bold text-white bg-black hover:bg-gray-800 cursor-pointer px-0.5 py-0.5 md:px-1 md:py-0.5 focus:outline-none rounded">
-      </form>
+        </form>
       <!-- End Subscribe Form -->
 
     </div>
