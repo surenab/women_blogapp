@@ -258,5 +258,174 @@
             "action_flag": 2,
             "change_message": "[{\"changed\": {\"fields\": [\"Member image\"]}}]"
         }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 21,
+        "fields": {
+            "action_time": "2023-09-24T18:42:34.251Z",
+            "user": 3,
+            "content_type": 11,
+            "object_id": "1",
+            "object_repr": "TeamMember object (1)",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Social link\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 22,
+        "fields": {
+            "action_time": "2023-09-24T18:42:39.313Z",
+            "user": 3,
+            "content_type": 11,
+            "object_id": "1",
+            "object_repr": "TeamMember object (1)",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 23,
+        "fields": {
+            "action_time": "2023-09-28T19:04:49.127Z",
+            "user": 3,
+            "content_type": 11,
+            "object_id": "1",
+            "object_repr": "TeamMember object (1)",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"About member\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 24,
+        "fields": {
+            "action_time": "2023-09-28T19:12:05.422Z",
+            "user": 3,
+            "content_type": 11,
+            "object_id": "2",
+            "object_repr": "TeamMember object (2)",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"About member\", \"Social link\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 25,
+        "fields": {
+            "action_time": "2023-09-28T19:12:12.259Z",
+            "user": 3,
+            "content_type": 11,
+            "object_id": "2",
+            "object_repr": "TeamMember object (2)",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 26,
+        "fields": {
+            "action_time": "2023-09-28T19:14:40.590Z",
+            "user": 3,
+            "content_type": 11,
+            "object_id": "4",
+            "object_repr": "TeamMember object (4)",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"About member\", \"Social link\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 27,
+        "fields": {
+            "action_time": "2023-09-28T19:14:43.257Z",
+            "user": 3,
+            "content_type": 11,
+            "object_id": "4",
+            "object_repr": "TeamMember object (4)",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 28,
+        "fields": {
+            "action_time": "2023-09-28T19:18:28.446Z",
+            "user": 3,
+            "content_type": 11,
+            "object_id": "5",
+            "object_repr": "TeamMember object (5)",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Social link\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 29,
+        "fields": {
+            "action_time": "2023-09-28T19:18:31.271Z",
+            "user": 3,
+            "content_type": 11,
+            "object_id": "5",
+            "object_repr": "TeamMember object (5)",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 30,
+        "fields": {
+            "action_time": "2023-09-28T19:19:00.238Z",
+            "user": 3,
+            "content_type": 11,
+            "object_id": "3",
+            "object_repr": "TeamMember object (3)",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"About member\", \"Social link\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 31,
+        "fields": {
+            "action_time": "2023-09-28T19:19:06.833Z",
+            "user": 3,
+            "content_type": 11,
+            "object_id": "3",
+            "object_repr": "TeamMember object (3)",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 32,
+        "fields": {
+            "action_time": "2023-09-28T19:24:43.236Z",
+            "user": 3,
+            "content_type": 11,
+            "object_id": "5",
+            "object_repr": "TeamMember object (5)",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"About member\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 33,
+        "fields": {
+            "action_time": "2023-09-28T19:24:45.922Z",
+            "user": 3,
+            "content_type": 11,
+            "object_id": "5",
+            "object_repr": "TeamMember object (5)",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
     }
 ]

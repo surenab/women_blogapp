@@ -113,7 +113,7 @@
             "user": 2,
             "description": "Paris, France's capital, is a major European city and a global center for art, fashion, gastronomy and culture. Its 19th-century cityscape is crisscrossed by wide boulevards and the River Seine. Beyond such landmarks as the Eiffel Tower and the 12th-century, Gothic Notre-Dame cathedral, the city is known for its cafe culture and designer boutiques along the Rue du Faubourg Saint-Honoré.",
             "image": "Media/paris.jpg",
-            "view_count": 18
+            "view_count": 21
         }
     },
     {
@@ -139,7 +139,7 @@
             "user": 6,
             "description": "The Van cat is a distinctive landrace of the domestic cat found around Lake Van in the Eastern Anatolia Region of Turkey. Van cats are relatively large, have a chalky white coat, sometimes with ruddy coloration on the head and hindquarters, and have blue or amber eyes or have heterochromia.",
             "image": "Media/VAN_CAT_2KvhJyC.png",
-            "view_count": 21
+            "view_count": 24
         }
     },
     {
@@ -165,12 +165,24 @@
         }
     },
     {
+        "model": "core.message",
+        "pk": 3,
+        "fields": {
+            "full_name": "Naira",
+            "email": "naraman@bk.ru",
+            "subject": "test",
+            "message": "cbkljvlas",
+            "created_on": "2023-09-28T17:24:47.408Z"
+        }
+    },
+    {
         "model": "core.teammember",
         "pk": 1,
         "fields": {
             "full_name": "Naira Mangasaryan",
             "job_position": "Back-end Developer",
-            "about_member": "Back-end Developer",
+            "about_member": "I am outgoing, dedicated and open. I easily find a common language with people and easily adapt to changes. I believe that a person should constantly work on developing his professional skills and learn something new.\r\nI have participated in the \"Python\" course of the AGBU \"Women Coders\" program. I have   managed to study the core of Python, and investigated the Django framework for back-end development.",
+            "social_link": "https://www.linkedin.com/feed/?trk=seo-authwall-base_sign-in-submit",
             "member_image": "Media/myPhoto.jpg"
         }
     },
@@ -180,7 +192,8 @@
         "fields": {
             "full_name": "Lilit Khachatryan",
             "job_position": "Back-end Developer",
-            "about_member": "Back-end Developer",
+            "about_member": "As a beginner Python Developer with a background in Biology, Veterinary Medicine, and Design, I bring a diverse skill set and a unique perspective to software development. With a passion for innovation and a commitment to excellence, I am excited to contribute my expertise to create impactful solutions in the ever-evolving world of technology.",
+            "social_link": "https://www.linkedin.com/in/lilit-khachatryan-12510a293/",
             "member_image": "Media/Screenshot_from_2023-09-22_04-27-24.png"
         }
     },
@@ -190,7 +203,8 @@
         "fields": {
             "full_name": "Almast Hasoyan",
             "job_position": "Back-end Developer",
-            "about_member": "Back-end Developer",
+            "about_member": "I am a beginner Python Developer, I love my profession and I want to use it to change the world for the better.",
+            "social_link": "https://almastasoyan.pythonanywhere.com/",
             "member_image": "Media/Screenshot_from_2023-09-22_04-07-31.png"
         }
     },
@@ -200,7 +214,8 @@
         "fields": {
             "full_name": "Alvard  Telunts",
             "job_position": "Back-end Developer",
-            "about_member": "Back-end Developer",
+            "about_member": "I am beginner Python programmer. I am at the initial stages of my coding journey, focusing on building a strong foundation in programming concepts and gradually working my way towards more complex and challenging projects. I have a Growth Mindset: I am enthusiastic and eager to learn. I am understand that programming is a skill that requires practice and patience.\r\nWe must remember that innovation often comes from a combination of knowledge, creativity and perseverance. I accept challenges and failures as opportunities to learn and improve. My desire to contribute and create innovative solutions will be valuable in the world of technology.",
+            "social_link": "https://www.linkedin.com/in/alvard-telunts-572214280/",
             "member_image": "Media/Screenshot_from_2023-09-22_04-07-09.png"
         }
     },
@@ -210,7 +225,8 @@
         "fields": {
             "full_name": "Mari Arakelyan",
             "job_position": "Back-end Developer",
-            "about_member": "Back-end Developer",
+            "about_member": "Recent graduate with a Bachelor's degree in Geography and a Master of Business Administration (MBA) with a passion for backend development in Python. Leveraging a unique combination of technical and business skills to contribute to web development projects, I am eager to apply my problem-solving abilities and analytical mindset to create efficient and robust backend solutions while continuously expanding my programming knowledge.",
+            "social_link": "https://www.linkedin.com/in/mari-arakelyan-4b0005254/",
             "member_image": "Media/Screenshot_from_2023-09-22_04-11-24.png"
         }
     },
@@ -320,6 +336,46 @@
         "fields": {
             "email": "kamil45@mail.ru",
             "subscribed_at": "2023-09-21T23:23:31.800Z"
+        }
+    },
+    {
+        "model": "core.subscription",
+        "pk": 12,
+        "fields": {
+            "email": "mangasaryannaira@gmail.com",
+            "subscribed_at": "2023-09-22T10:33:08.011Z"
+        }
+    },
+    {
+        "model": "core.subscription",
+        "pk": 13,
+        "fields": {
+            "email": "naraman@mail.ru",
+            "subscribed_at": "2023-09-24T20:20:47.481Z"
+        }
+    },
+    {
+        "model": "core.subscription",
+        "pk": 14,
+        "fields": {
+            "email": "kar@gmail.com",
+            "subscribed_at": "2023-09-24T21:57:38.016Z"
+        }
+    },
+    {
+        "model": "core.subscription",
+        "pk": 15,
+        "fields": {
+            "email": "hranush@mail.ru",
+            "subscribed_at": "2023-09-24T22:12:09.615Z"
+        }
+    },
+    {
+        "model": "core.subscription",
+        "pk": 16,
+        "fields": {
+            "email": "kkl",
+            "subscribed_at": "2023-09-28T17:50:47.837Z"
         }
     }
 ]
