@@ -112,11 +112,7 @@ class Home(Filters):
             messages.success(request, "Message submitted successfully!")
         return redirect("contact")
 
-    def get_context_data(self, *args, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["filter"] = BlogFilter(
-            self.request.GET, queryset=self.get_queryset())
-        return context
+    
 
 
 class Category(Home):
